@@ -10,12 +10,14 @@
       src="https://plausible.io/js/script.js"
     ></script>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap');
 
-      body {
+      html, body {
         background-color: #181225;
+      }
+      body {
         color: #fff;
-        font-family: "IBM Plex Mono", monospace;
+        font-family: "Libre Franklin", sans-serif;
         font-size: 1rem;
         font-style: normal;
         font-weight: 400;
@@ -29,12 +31,12 @@
         margin: 1.5rem 0 1rem;
       }
       hr {
-
         display: block;
         margin: 2rem 0;
         border: 1px dashed;
       }
       a:link {
+        font-weight: bold;
         color: #9E86FF;
         background-color: transparent;
         text-decoration: underline;
@@ -75,18 +77,19 @@
         box-shadow: -4px 4px 0px 0px #FFD00E;
       }
       div.container {
-        max-width: 36rem;
+        max-width: 32rem;
         padding: 1rem 4rem 2rem;
         margin: 4rem auto;
-        border: 1px dashed #9E86FF;
-        background:  #1F1633;
+      }
+      .footer {
+        margin: 2rem 0;
       }
     </style>
   </head>
   <body>
     <div class="container">
       <h1>OSS Pledge</h1>
-      <h2>Launching in October</h2>
+      <p><em>Launching in October</em></p>
 
       <p>Open Source is <a href="https://openpath.chadwhitacre.com/2024/open-source-is-a-restaurant/">a restaurant</a>.</p>
 
@@ -114,13 +117,11 @@
 
       <p>Let's make it happen.</p>
 
-      <hr>
+      <a class="btn" href="https://github.com/getsentry/team-ospo/issues/245">Get involved</a>
 
-      <p>
+      <p class="footer">
         Brought to you by <a href="https://sentry.io/welcome/">Sentry</a>.
       </p>
-
-      <a class="btn" href="https://github.com/getsentry/team-ospo/issues/245">Get involved</a>
     </div>
   </body>
 </html>
