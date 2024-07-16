@@ -9,23 +9,88 @@
       data-domain="osspledge.com"
       src="https://plausible.io/js/script.js"
     ></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+      body {
+        background-color: #181225;
+        color: #fff;
+        font-family: "IBM Plex Mono", monospace;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%; /* 1.2rem */
+      }
+      h1, h2, h3 {
+        margin: 2rem 0 1rem;
+        color: #C0ED49;
+      }
+      p {
+        margin: 1.5rem 0 1rem;
+      }
+      hr {
+
+        display: block;
+        margin: 2rem 0;
+        border: 1px dashed;
+      }
+      a:link {
+        color: #9E86FF;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+      a:visited {
+        color: #FF70BC;
+        background-color: transparent;
+        text-decoration: underline;
+      }
+      a:hover {
+        color: #FF70BC;
+        background-color: transparent;
+        text-decoration: none;
+      }
+      a:active {
+        color: #FFD00E;
+        background-color: transparent;
+        text-decoration: none;
+      }
+      a.btn {
+        border: 1px solid #9E86FF;
+        box-shadow: -4px 4px 0px 0px #9E86FF;
+        padding: 1rem;
+        margin: 1rem 0;
+        display: inline-block;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1px;
+        font-size: 1.25em;
+      }
+      a.btn:hover {
+        border-color: #FF70BC;
+        box-shadow: -4px 4px 0px 0px #FF70BC;
+      }
+      a.btn:active {
+        border-color: #FFD00E;
+        box-shadow: -4px 4px 0px 0px #FFD00E;
+      }
+      div.container {
+        max-width: 36rem;
+        padding: 1rem 4rem 2rem;
+        margin: 4rem auto;
+        border: 1px dashed #9E86FF;
+        background:  #1F1633;
+      }
+    </style>
   </head>
   <body>
-    <div
-      style="
-        text-align: left;
-        padding: 30vh 20px 10vh;
-        max-width: 360px;
-        margin: 0 auto;
-        font: normal 14pt/150% sans-serif;
-      "
-    >
+    <div class="container">
       <h1>OSS Pledge</h1>
       <h2>Launching in October</h2>
 
       <p>Open Source is <a href="https://openpath.chadwhitacre.com/2024/open-source-is-a-restaurant/">a restaurant</a>.</p>
 
-      <ul style="color: #999; font-size: smaller">
+      <ul>
         <li>not a grocery store (pay first, eat after)</li>
         <li>not a soup kitchen (someone else pays)</li>
         <li>but a restaurant (eat first, pay after)</li>
@@ -34,7 +99,9 @@
       <p>Our companies feast year after year at the Open Source table. It's
       time to settle up.</p>
 
-      <h2>How</h2> <b>Step 1:</b> Pay Open Source maintainers.<br>
+      <h2>How</h2>
+
+      <b>Step 1:</b> Pay Open Source maintainers.<br>
 
       <p>The minimum to participate is $2,000 per full-time employed developer
       per year.</p>
@@ -45,13 +112,15 @@
         <li>payments to maintainers by platform or foundation</li>
       </ol>
 
-      <p>Let's make it happen! 🙌 💃</p>
+      <p>Let's make it happen.</p>
 
       <hr>
 
       <p>
-        Brought to you by <a href="https://sentry.io/welcome/">Sentry</a>. <a href="https://github.com/getsentry/team-ospo/issues/245">Get involved</a>.
+        Brought to you by <a href="https://sentry.io/welcome/">Sentry</a>.
       </p>
+
+      <a class="btn" href="https://github.com/getsentry/team-ospo/issues/245">Get involved</a>
     </div>
   </body>
 </html>
