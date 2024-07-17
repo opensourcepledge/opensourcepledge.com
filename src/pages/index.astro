@@ -1,0 +1,68 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Prose from "../components/Prose.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout title="OSS Pledge">
+  <main class="flex items-center self-center max-w-xl p-4">
+    <Prose>
+      <h1 class="text-app-green mt-8 mb-4 text-5xl font-bold">OSS Pledge</h1>
+      <p class="text-app-muted"><em>Launching in October</em></p>
+      <p>
+        Open Source is <a
+          href="https://openpath.chadwhitacre.com/2024/open-source-is-a-restaurant/"
+          >a restaurant</a
+        >.
+      </p>
+
+      <ul>
+        <li>not a grocery store (pay first, eat after)</li>
+        <li>not a soup kitchen (someone else pays)</li>
+        <li>but a restaurant (eat first, pay after)</li>
+      </ul>
+
+      <p>
+        Our companies feast year after year at the Open Source table. It's time
+        to settle up.
+      </p>
+
+      <h2 class="text-app-green mt-8 mb-4 text-3xl font-bold">How</h2>
+
+      <b>Step 1:</b> Pay Open Source maintainers.<br />
+
+      <p>
+        The minimum to participate is $2,000 per full-time employed developer
+        per year.
+      </p>
+
+      <b>Step 2:</b> Self-report annually:
+      <ol>
+        <li>number of full-time employed developers</li>
+        <li>payments to maintainers by platform or foundation</li>
+      </ol>
+
+      <p>Let's make it happen.</p>
+
+      <Button href="https://github.com/getsentry/team-ospo/issues/245"
+        >Get involved</Button
+      >
+
+      <p class="my-8">
+        Brought to you by <a href="https://sentry.io/welcome/">Sentry</a>.
+      </p>
+    </Prose>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+</style>
