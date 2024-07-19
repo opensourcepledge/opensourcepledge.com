@@ -1,0 +1,90 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from "../../layouts/Layout.astro";
+import Prose from "../../components/Prose.astro";
+
+export async function getStaticPaths() {
+  const members = await getCollection('members');
+  return members.map(member => ({params: {id: member.id}, props: { member }}));
+}
+
+const { member } = Astro.props;
+const reports = member.data.annualReports;
+---
+<Layout title="OSS Pledge">
+  <main class="flex justify-center max-w-xl p-4">
+    <Prose>
+      <h1 class="text-app-green mt-8 mb-4 text-5xl font-bold">OSS Pledge</h1>
+
+      <a href="/">Home</a>
+
+      <h2>{member.data.name}</h2>
+
+      <img src={member.data.urlLogoWithBackground}>
+
+      <a href={member.data.urlLearnMore}>Learn more ...</a>
+
+      {reports.map(report => <div class="annual-report">
+        <h3>Year Ending {report.dateYearEnding}</h3>
+  
+        <b>$3000 / dev</b>
+
+        <h4>Total Contributions</h4>
+        <table>
+          <tr>
+            <th>Item</th>
+            <th>Amount ($)</th>
+          </tr>
+          <tr>
+            <td>payments</td>
+            <td>30000</td>
+          </tr>
+          <tr>
+            <td>value of time</td>
+            <td>{report.monetaryValueOfTime}</td>
+          </tr>
+          <tr>
+            <td>value of materials</td>
+            <td>{report.monetaryValueOfMaterials}</td>
+          </tr>
+        </table>
+        <h4>Payments</h4>
+        <table>
+          <tr>
+            <th>Recipient</th>
+            <th>Amount ($)</th>
+          </tr>
+          {Object.keys(report.monetaryPayments).sort().map(recipient => <tr>
+            <td>{recipient}</td>
+            <td>{report.monetaryPayments[recipient]}</td>
+          </tr>)}
+          <tr>
+            <td></td>
+            <td>30000</td>
+          </tr>
+          <tr>
+            <td>average number of devs</td>
+            <td>{report.averageNumberOfDevs}</td>
+          </tr>
+          <tr>
+            <td>$ / dev</td>
+            <td>3000</td>
+          </tr>
+        </table>
+      </div>)}
+
+    </Prose>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+</style>
