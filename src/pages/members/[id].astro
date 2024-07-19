@@ -29,26 +29,7 @@ const reports = member.data.annualReports;
   
         <b>$3000 / dev</b>
 
-        <h4>Total Contributions</h4>
-        <table>
-          <tr>
-            <th>Item</th>
-            <th>Amount ($)</th>
-          </tr>
-          <tr>
-            <td>payments</td>
-            <td>30000</td>
-          </tr>
-          <tr>
-            <td>value of time</td>
-            <td>{report.monetaryValueOfTime}</td>
-          </tr>
-          <tr>
-            <td>value of materials</td>
-            <td>{report.monetaryValueOfMaterials}</td>
-          </tr>
-        </table>
-        <h4>Payments</h4>
+        <h4>Payments to Independent Maintainers</h4>
         <table>
           <tr>
             <th>Recipient</th>
@@ -69,6 +50,30 @@ const reports = member.data.annualReports;
           <tr>
             <td>$ / dev</td>
             <td>3000</td>
+          </tr>
+        </table>
+
+        <h4>Total Contributions</h4>
+        <table>
+          <tr>
+            <th>Item</th>
+            <th>Amount ($)</th>
+          </tr>
+          <tr>
+            <td>payments to independent maintainers</td>
+            <td>30000</td>
+          </tr>
+          <tr>
+            <td>value of time</td>
+            <td>{report.monetaryValueOfTime}</td>
+          </tr>
+          <tr>
+            <td>value of materials</td>
+            <td>{report.monetaryValueOfMaterials}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>540000</td>
           </tr>
         </table>
       </div>)}
