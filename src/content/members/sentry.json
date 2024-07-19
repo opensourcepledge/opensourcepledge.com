@@ -1,0 +1,21 @@
+{
+  "domain": "sentry.io",
+  "urlSource": "https://open.sentry.io/osspledge/data.json",
+  "datetimeModified": "2024-07-19T12:24:46Z",
+  "name": "Sentry",
+  "urlLogoWithBackground": "https://fossfunders.com/logos/sentry.svg",
+  "urlLearnMore": "https://open.sentry.io/osspledge/",
+  "annualReports": [
+    {
+      "dateYearEnding": "2024-01-31",
+      "averageNumberOfDevs": 10,
+      "monetaryPayments": {
+        "python": 10000,
+        "openjsf": 10000,
+        "rust": 10000
+      },
+      "monetaryValueOfTime": 10000,
+      "monetaryValueOfMaterials": 500000
+    }
+  ]
+}

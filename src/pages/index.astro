@@ -1,7 +1,10 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from "../layouts/Layout.astro";
 import Prose from "../components/Prose.astro";
 import Button from "../components/Button.astro";
+
+const members = await getCollection('members');
 ---
 
 <Layout title="OSS Pledge">
@@ -26,6 +29,16 @@ import Button from "../components/Button.astro";
         Our companies feast year after year at the Open Source table. It's time
         to settle up.
       </p>
+
+      <h2 class="text-app-green mt-8 mb-4 text-3xl font-bold">Who</h2>
+
+      <ul>
+        {members.map(member => (
+          <li>
+            <a href={`/members/${member.id}/`}>{member.data.name}</a>
+          </li>
+        ))}
+      </ul>
 
       <h2 class="text-app-green mt-8 mb-4 text-3xl font-bold">How</h2>
 
