@@ -19,6 +19,7 @@ const memberProvidedData = z.object({
   name: z.string(),
   urlLogoWithBackground: z.string().url(),
   urlLearnMore: z.string().url(),
+  description: z.string().optional(),
   annualReports: z
     .object({
       dateYearEnding: z.string().date(),

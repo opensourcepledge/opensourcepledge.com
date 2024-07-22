@@ -2,12 +2,13 @@
   "domain": "sentry.io",
   "urlSource": "https://open.sentry.io/osspledge/data.json",
   "datetimeModified": "2024-07-19T12:24:46Z",
+  "description": "Sentry has given to Open Source for soooooo many years.",
   "name": "Sentry",
   "urlLogoWithBackground": "https://fossfunders.com/logos/sentry.svg",
   "urlLearnMore": "https://open.sentry.io/osspledge/",
   "annualReports": [
     {
-      "dateYearEnding": "2024-01-31",
+      "dateYearEnding": "2023-01-31",
       "averageNumberOfDevs": 135,
       "monetaryPayments": [
         {"amount": 435000, "urlDetails": "https://thanks.dev/d/gh/getsentry/dependencies"},
