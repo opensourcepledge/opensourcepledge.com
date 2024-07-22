@@ -13,23 +13,11 @@ up](https://osspledge.com/).
 - **September 15**—member onboarding deadline to participate in a ...
 - **October 7–November 3**—major outdoor advertising campaign
 
-## Governance and Structure
-
-We have four working groups and a steering committee comprised of working group leads.
-
-| Working Group       | Lead                                                     |
-| ------------------- | -------------------------------------------------------- |
-| member outreach     | [**@vladh**](https://github.com/vladh)                   |
-| maintainer outreach | [**@Ethan-Arrowood**](https://github.com/Ethan-Arrowood) |
-| marketing & media   | [**@selviano**](https://github.com/selviano)             |
-| design / build      | [**@chadwhitacre**](https://github.com/chadwhitacre)     |
-| steering            | [**@chadwhitacre**](https://github.com/chadwhitacre)     |
-
 ## Onboarding
 
 To help us build [OSS Pledge](https://osspledge.com/), please [dive into our
 issues](https://github.com/osspledge/osspledge.com/issues) or reach out to the
-working group leads listed above either in issues or [on
+working group leads listed below either in issues or [on
 Discord](https://discord.gg/v8vuSwky).
 
 ### Members
@@ -59,3 +47,15 @@ receive funding from OSS Pledge Members:
 - [StackAid](https://www.stackaid.us/)
 - [Thanks.dev](https://thanks.dev/)
 - [Tidelift](https://tidelift.com/)
+
+## Governance and Structure
+
+We have four working groups and a steering committee comprised of working group leads.
+
+| Working Group       | Lead                                                     |
+| ------------------- | -------------------------------------------------------- |
+| member outreach     | [**@vladh**](https://github.com/vladh)                   |
+| maintainer outreach | [**@Ethan-Arrowood**](https://github.com/Ethan-Arrowood) |
+| marketing & media   | [**@selviano**](https://github.com/selviano)             |
+| design / build      | [**@chadwhitacre**](https://github.com/chadwhitacre)     |
+| steering            | [**@chadwhitacre**](https://github.com/chadwhitacre)     |
