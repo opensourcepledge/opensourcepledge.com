@@ -43,17 +43,17 @@ full-time developer on staff.
 
 OSS Pledge is not involved in any flow of funds and so we do not directly
 onboard maintainers. We encourage you to onboard to the following platforms to
-receive funding from OSS Pledge Members (⭐️ = recommended):
+receive funding from OSS Pledge Members:
 
 - [Buy Me a Coffee](https://www.buymeacoffee.com/)
-- [GitHub Sponsors](https://github.com/sponsors) ⭐️
+- [GitHub Sponsors](https://github.com/sponsors)
 - [IssueHunt](https://issuehunt.io/)
 - [Ko-fi](https://ko-fi.com/)
 - [LFX Mentorship](https://lfx.linuxfoundation.org/tools/mentorship)
 - [Liberapay](https://en.liberapay.com/)
-- [Open Collective](https://opencollective.com/) ⭐️
+- [Open Collective](https://opencollective.com/)
 - [Patreon](https://www.patreon.com/)
 - [Polar](https://www.polar.sh/)
 - [StackAid](https://www.stackaid.us/)
-- [Thanks.dev](https://thanks.dev/) ⭐️
+- [Thanks.dev](https://thanks.dev/)
 - [Tidelift](https://tidelift.com/)
