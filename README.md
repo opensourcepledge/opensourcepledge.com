@@ -17,11 +17,11 @@ We have four working groups and a steering committee comprised of working group 
 
 | Working Group | Lead |
 |---|---|
-| member outreach | @vladh |
-| maintainer outreach | @Ethan-Arrowood |
-| marketing & media | @selviano |
-| design / build | @chadwhitacre |
-| steering | @chadwhitacre |
+| member outreach | [**@vladh**](https://github.com/vladh) |
+| maintainer outreach | [**@Ethan-Arrowood**](https://github.com/Ethan-Arrowood) |
+| marketing & media | [**@selviano**](https://github.com/selviano) |
+| design / build | [**@chadwhitacre**](https://github.com/chadwhitacre) |
+| steering | [**@chadwhitacre**](https://github.com/chadwhitacre) |
 
 ## Onboarding
 
