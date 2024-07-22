@@ -4,7 +4,7 @@ _Brought to you by [Sentry](https://sentry.io/welcome/) and contributors._
 
 Open Source [is a
 restaurant](https://openpath.chadwhitacre.com/2024/open-source-is-a-restaurant/).
-Our companies feast at the table year after year. Let's [settle
+Our companies feast at the table year after year. [Let's settle
 up](https://osspledge.com/).
 
 ## Timeline
