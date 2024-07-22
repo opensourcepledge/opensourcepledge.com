@@ -1,9 +1,11 @@
 # OSS Pledge
 
-*Brought to you by [Sentry](https://sentry.io/welcome/) and contributors.*
+_Brought to you by [Sentry](https://sentry.io/welcome/) and contributors._
 
-Open Source is a restaurant. Our companies feast at the table year after year.
-Let's [settle up](https://osspledge.com/).
+Open Source [is a
+restaurant](https://openpath.chadwhitacre.com/2024/open-source-is-a-restaurant/).
+Our companies feast at the table year after year. Let's [settle
+up](https://osspledge.com/).
 
 ## Timeline
 
@@ -15,13 +17,13 @@ Let's [settle up](https://osspledge.com/).
 
 We have four working groups and a steering committee comprised of working group leads.
 
-| Working Group | Lead |
-|---|---|
-| member outreach | [**@vladh**](https://github.com/vladh) |
+| Working Group       | Lead                                                     |
+| ------------------- | -------------------------------------------------------- |
+| member outreach     | [**@vladh**](https://github.com/vladh)                   |
 | maintainer outreach | [**@Ethan-Arrowood**](https://github.com/Ethan-Arrowood) |
-| marketing & media | [**@selviano**](https://github.com/selviano) |
-| design / build | [**@chadwhitacre**](https://github.com/chadwhitacre) |
-| steering | [**@chadwhitacre**](https://github.com/chadwhitacre) |
+| marketing & media   | [**@selviano**](https://github.com/selviano)             |
+| design / build      | [**@chadwhitacre**](https://github.com/chadwhitacre)     |
+| steering            | [**@chadwhitacre**](https://github.com/chadwhitacre)     |
 
 ## Onboarding
 
