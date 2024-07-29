@@ -1,4 +1,4 @@
-# OSS Pledge
+# Open Source Pledge
 
 _Brought to you by [Sentry](https://sentry.io/welcome/) and contributors._
 
@@ -15,9 +15,9 @@ up](https://osspledge.com/).
 
 ## Onboarding
 
-To help us build [OSS Pledge](https://osspledge.com/), please [dive into our
-issues](https://github.com/osspledge/osspledge.com/issues) or reach out to the
-working group leads listed below either in issues or [on
+To help us build [Open Source Pledge](https://osspledge.com/), please [dive
+into our issues](https://github.com/osspledge/osspledge.com/issues) or reach
+out to the working group leads listed below either in issues or [on
 Discord](https://discord.gg/v8vuSwky).
 
 ### Members
@@ -31,9 +31,9 @@ full-time developer on staff.
 
 ### Maintainers
 
-OSS Pledge is not involved in any flow of funds and so we do not directly
-onboard maintainers. We encourage you to onboard to the following platforms to
-receive funding from OSS Pledge Members:
+Open Source Pledge is not involved in any flow of funds and so we do not
+directly onboard maintainers. We encourage you to onboard to the following
+platforms to receive funding from Open Source Pledge Members:
 
 - [Buy Me a Coffee](https://www.buymeacoffee.com/)
 - [GitHub Sponsors](https://github.com/sponsors)
