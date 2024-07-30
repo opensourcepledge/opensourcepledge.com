@@ -5,6 +5,6 @@ import sentry from "@sentry/astro";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://osspledge.com",
+  site: "https://opensourcepledge.com",
   integrations: [tailwind(), sentry()],
 });
