@@ -20,7 +20,7 @@ To help us build [Open Source Pledge](https://opensourcepledge.com/), please
 [dive into our
 issues](https://github.com/opensourcepledge/opensourcepledge.com/issues) or
 reach out to the working group leads listed below either in issues or [on
-Discord](https://discord.gg/v8vuSwky).
+Discord](https://discord.gg/svH5XzDsBd).
 
 ### Members
 
