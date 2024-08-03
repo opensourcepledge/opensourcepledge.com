@@ -1,0 +1,125 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from "../../layouts/Layout.astro";
+import Prose from "../../components/Prose.astro";
+
+export async function getStaticPaths() {
+  const members = await getCollection('members');
+  return members.map(member => ({params: {id: member.id}, props: { member }}));
+}
+
+const { member } = Astro.props;
+const reports = member.data.annualReports;
+
+function getPlatformName(url) {
+  let host = '';
+  let name = 'Other';
+  try {
+    host = new URL(url).host;
+  } catch (err) {
+    host = '';
+  }
+  switch(host) {
+    case 'github.com':
+      name = 'GitHub Sponsors';
+      break;
+    case 'thanks.dev':
+      name = 'Thanks.dev';
+      break;
+  }
+  return name;
+}
+---
+<Layout title="OSS Pledge">
+  <main class="flex justify-center max-w-xl p-4">
+    <Prose>
+      <h1 class="text-app-green mt-8 mb-4 text-5xl font-bold">OSS Pledge</h1>
+
+      <a href="/">Home</a>
+
+      <h2>{member.data.name}</h2>
+
+      <img src={member.data.urlLogoWithBackground}>
+
+      <p>{member.data.description}</p>
+
+      <a href={member.data.urlLearnMore}>Learn more ...</a>
+
+      {reports.map(report => <div class="annual-report">
+        <h3>Year Ending {report.dateYearEnding}</h3>
+  
+        <b>$3700 / dev</b>
+
+        <h4>Payments to Independent Maintainers</h4>
+        <table>
+          <tr>
+            <th>Platform</th>
+            <th>Amount ($)</th>
+          </tr>
+          {report.monetaryPayments.map(entry => <tr>
+            <td><a href={entry.urlDetails}>{getPlatformName(entry.urlDetails)}</a></td>
+            <td class="text-right">{entry.amount}</td>
+          </tr>)}
+          <tr>
+            <td>total</td>
+            <td class="text-right">500000</td>
+          </tr>
+          <tr>
+            <td>average number of devs</td>
+            <td class="text-right">{report.averageNumberOfDevs}</td>
+          </tr>
+          <tr>
+            <td>$ / dev</td>
+            <td class="text-right">3700</td>
+          </tr>
+        </table>
+
+        <h4>Other Contributions</h4>
+        <table>
+          <tr>
+            <th>Item</th>
+            <th class="text-right">Amount ($)</th>
+          </tr>
+          <tr>
+            <td>value of time</td>
+            <td class="text-right">{report.monetaryValueOfTime}</td>
+          </tr>
+          <tr>
+            <td>value of materials</td>
+            <td class="text-right">{report.monetaryValueOfMaterials}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td class="text-right">600000</td>
+          </tr>
+          <tr>
+            <td>payments to independent maintainers</td>
+            <td class="text-right">500000</td>
+          </tr>
+          <tr>
+            <td>total</td>
+            <td class="text-right">1100000</td>
+          </tr>
+        </table>
+      </div>)}
+
+      <small>
+        This information is provided directly by {member.data.name}. Open
+        Source Pledge does not carry out any in-depth validation of this data.
+      </small>
+
+    </Prose>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+</style>
