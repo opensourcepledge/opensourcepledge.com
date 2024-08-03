@@ -5,27 +5,27 @@ _Brought to you by [Sentry](https://sentry.io/welcome/) and contributors._
 Open Source [is a
 restaurant](https://openpath.chadwhitacre.com/2024/open-source-is-a-restaurant/).
 Our companies feast at the table year after year. [Let's settle
-up](https://opensourcepledge.com/).
+up](https://osspledge.com/).
 
 ## Timeline
 
 - **September 1**—website launch 👉
-  **[opensourcepledge.com](https://opensourcepledge.com/)**
+  **[osspledge.com](https://osspledge.com/)**
 - **September 15**—member onboarding deadline to participate in a ...
 - **October 7–November 3**—major outdoor advertising campaign
 
 ## Onboarding
 
-To help us build [Open Source Pledge](https://opensourcepledge.com/), please
+To help us build [Open Source Pledge](https://osspledge.com/), please
 [dive into our
-issues](https://github.com/opensourcepledge/opensourcepledge.com/issues) or
+issues](https://github.com/opensourcepledge/osspledge.com/issues) or
 reach out to the working group leads listed below either in issues or [on
 Discord](https://discord.gg/svH5XzDsBd).
 
 ### Members
 
 The Pledge is [under active
-development](https://github.com/opensourcepledge/opensourcepledge.com/issues/4).
+development](https://github.com/opensourcepledge/osspledge.com/issues/4).
 We aim to publish a website by September 1, with instructions on how your
 company can publish your Pledge report with us. In the mean time, **pay Open
 Source maintainers**. The minimum to participate in the Pledge is $2,000 per
