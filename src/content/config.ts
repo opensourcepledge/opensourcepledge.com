@@ -38,7 +38,6 @@ export const collections = {
     schema: z
       .object({
         domain: z.string(),
-        urlSource: z.string().url(),
         datetimeModified: z.string().datetime(),
       })
       .merge(memberProvidedData),

@@ -1,0 +1,68 @@
+#!/usr/bin/env node
+
+import fs from 'fs';
+import fetch from 'node-fetch';
+
+
+const USAGE = `USAGE: ./bin/update-member foocorp https://foocorp.example.com/foocorp.json
+Must be run in the repo's root.`;
+
+
+async function updateMember(name, url) {
+  const localPath = `./src/content/members/${name}.json`;
+  console.log(`Fetching member: ${name}`);
+  console.log(`\t* Remote URL: ${url}`);
+  console.log(`\t* Local path: ${localPath}`);
+
+  let localMemberData = undefined;
+  if (fs.existsSync(localPath)) {
+    try {
+      localMemberData = JSON.parse(fs.readFileSync(localPath, 'utf8'));
+    } catch(e) {
+      console.log(`Saw invalid JSON in ${localPath}, ignoring local data`);
+    }
+  }
+
+  let remoteMemberData = undefined;
+  try {
+    remoteMemberData = await fetch(url)
+      .then((res) => res.text())
+      .then((text) => JSON.parse(text));
+  } catch (e) {
+    console.error(`ERROR: Failed to get JSON from ${url}`, e);
+    process.exit(1);
+  }
+
+  let shouldWrite = (localMemberData == undefined);
+
+  if (!shouldWrite) {
+    const localMtime = new Date(localMemberData.datetimeModified);
+    const remoteMtime = new Date(remoteMemberData.datetimeModified);
+    shouldWrite = remoteMtime > localMtime;
+  }
+
+  if (shouldWrite) {
+    console.log(`Remote JSON is newer, writing to ${localPath}`);
+    try {
+      fs.writeFileSync(localPath, JSON.stringify(remoteMemberData, null, 2));
+    } catch (e) {
+      console.error(`ERROR: Failed to write to ${localPath}`, e);
+      process.exit(1);
+    }
+  } else {
+    console.log("Remote JSON is older, skipping");
+  }
+}
+
+
+function main() {
+  const args = process.argv.slice(2);
+  if (args.length != 2) {
+    console.error(USAGE);
+    process.exit(1);
+  }
+  updateMember(args[0], args[1]);
+}
+
+
+main()
