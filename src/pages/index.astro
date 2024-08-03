@@ -30,16 +30,6 @@ const members = await getCollection('members');
         to settle up.
       </p>
 
-      <h2 class="text-app-green mt-8 mb-4 text-3xl font-bold">Who</h2>
-
-      <ul>
-        {members.map(member => (
-          <li>
-            <a href={`/members/${member.id}/`}>{member.data.name}</a>
-          </li>
-        ))}
-      </ul>
-
       <h2 class="text-app-green mt-8 mb-4 text-3xl font-bold">How</h2>
 
       <b>Step 1:</b> Pay Open Source maintainers.<br />
