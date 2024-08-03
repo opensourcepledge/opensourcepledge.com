@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 const { member } = Astro.props;
 const reports = member.data.annualReports;
 
-function getPlatformName(url) {
+function getPlatformName(url: string) {
   let host = '';
   let name = 'Other';
   try {
@@ -47,7 +47,7 @@ function getPlatformName(url) {
 
       {reports.map(report => <div class="annual-report">
         <h3>Year Ending {report.dateYearEnding}</h3>
-  
+
         <b>$3700 / dev</b>
 
         <h4>Payments to Independent Maintainers</h4>
@@ -57,7 +57,7 @@ function getPlatformName(url) {
             <th>Amount ($)</th>
           </tr>
           {report.monetaryPayments.map(entry => <tr>
-            <td><a href={entry.urlDetails}>{getPlatformName(entry.urlDetails)}</a></td>
+            <td>{entry.urlDetails && <a href={entry.urlDetails}>{getPlatformName(entry.urlDetails)}</a>}</td>
             <td class="text-right">{entry.amount}</td>
           </tr>)}
           <tr>
