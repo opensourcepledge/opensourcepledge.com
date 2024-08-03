@@ -1,0 +1,17 @@
+#!/bin/bash -eu
+# This script fetches the JSON files specified for all members that have been
+# added to `members.csv` compared to the `main` branch. Must be run in the
+# repo's root.
+
+new_member_lines=$(
+  diff \
+    --changed-group-format='%>' \
+    --unchanged-group-format='' \
+    <( git show main:members.csv ) \
+    members.csv
+) || true
+
+while IFS= read -r line; do
+  line_parts=(${line//,/ })
+  ./bin/update-member ${line_parts[0]} ${line_parts[1]}
+done <<< "$new_member_lines"

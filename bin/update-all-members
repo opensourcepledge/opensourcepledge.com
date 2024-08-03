@@ -1,0 +1,8 @@
+#!/bin/bash -eu
+# This script fetches the JSON files specified in `members.csv` for all
+# members. Must be run in the repo's root.
+
+while IFS= read -r line; do
+    line_parts=(${line//,/ })
+    ./bin/update-member ${line_parts[0]} ${line_parts[1]}
+done < members.csv
