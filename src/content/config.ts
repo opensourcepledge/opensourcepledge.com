@@ -15,31 +15,33 @@ const monetaryPayment = z.object({
   urlDetails: z.string().url().optional(),
 })
 
+const memberReport = z.object({
+  dateYearEnding: z.string().date(),
+  averageNumberOfDevs: z.number().nonnegative(),
+  monetaryPayments: monetaryPayment.array().nonempty(),
+  monetaryValueOfTime: z.number().nonnegative(),
+  monetaryValueOfMaterials: z.number().nonnegative(),
+});
+
 const memberProvidedData = z.object({
   name: z.string(),
   urlLogoWithBackground: z.string().url(),
   urlLearnMore: z.string().url(),
   description: z.string().optional(),
-  annualReports: z
-    .object({
-      dateYearEnding: z.string().date(),
-      averageNumberOfDevs: z.number().nonnegative(),
-      monetaryPayments: monetaryPayment.array().nonempty(),
-      monetaryValueOfTime: z.number().nonnegative(),
-      monetaryValueOfMaterials: z.number().nonnegative(),
-    })
-    .array()
-    .nonempty(),
+  annualReports: memberReport.array().nonempty(),
 });
+
+const member = z.object({
+  domain: z.string(),
+  datetimeModified: z.string().datetime(),
+}).merge(memberProvidedData);
+
+export type Member = z.infer<typeof member>;
+export type MemberReport = z.infer<typeof memberReport>;
 
 export const collections = {
   members: defineCollection({
     type: "data",
-    schema: z
-      .object({
-        domain: z.string(),
-        datetimeModified: z.string().datetime(),
-      })
-      .merge(memberProvidedData),
+    schema: member,
   }),
 };

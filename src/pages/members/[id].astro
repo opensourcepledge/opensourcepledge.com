@@ -1,42 +1,50 @@
 ---
 import { getCollection } from 'astro:content';
+import type { Member, MemberReport } from "../../content/config.ts";
 import Layout from "../../layouts/Layout.astro";
 import Prose from "../../components/Prose.astro";
 
-export async function getStaticPaths() {
-  const members = await getCollection('members');
-  return members.map(member => ({params: {id: member.id}, props: { member }}));
+interface Props {
+  member: Member;
 }
 
 const { member } = Astro.props;
-const reports = member.data.annualReports;
+
+export async function getStaticPaths() {
+  const memberItems = await getCollection('members');
+  return memberItems.map(({ id, data }: { id: string, data: Member }) => {
+    return { params: { id }, props: { member: data } };
+  });
+}
 
 function getPlatformName(url: string) {
-  let platformNames = {
-    'github.com': 'GitHub Sponsors',
-    'thanks.dev': 'Thanks.dev',
-  };
+  const platformNames = new Map<string, string>([
+    ['github.com', 'GitHub Sponsors'],
+    ['thanks.dev', 'Thanks.dev'],
+  ]);
   let host = '';
   try {
     host = new URL(url).host;
   } catch (err) {
   }
-  return platformNames[host] || 'Other';
+  return platformNames.get(host) || 'Other';
 }
 
-function getReportCashTotal(report) {
-  return report.monetaryPayments.map((d) => d.amount).reduce((acc, d) => acc + d, 0);
+function getReportCashTotal(report: MemberReport) {
+  return report.monetaryPayments
+    .map((d) => d.amount)
+    .reduce((acc, d) => acc + d, 0);
 }
 
-function getReportFullTotal(report) {
+function getReportFullTotal(report: MemberReport) {
   return getReportCashTotal(report) + report.monetaryValueOfTime + report.monetaryValueOfMaterials;
 }
 
-function getDollarsPerDev(report) {
+function getDollarsPerDev(report: MemberReport) {
   return getReportCashTotal(report) / report.averageNumberOfDevs;
 }
 
-function fmtCurrency(num) {
+function fmtCurrency(num: number) {
   return '$' + num.toLocaleString(undefined, {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
@@ -50,15 +58,15 @@ function fmtCurrency(num) {
 
       <a href="/">Home</a>
 
-      <h2>{member.data.name}</h2>
+      <h2>{member.name}</h2>
 
-      <img src={member.data.urlLogoWithBackground}>
+      <img src={member.urlLogoWithBackground}>
 
-      <p>{member.data.description}</p>
+      <p>{member.description}</p>
 
-      <a href={member.data.urlLearnMore}>Learn more →</a>
+      <a href={member.urlLearnMore}>Learn more →</a>
 
-      {reports.map(report => <div class="annual-report">
+      {member.annualReports.map(report => <div class="annual-report">
         <h3>Year Ending {report.dateYearEnding}</h3>
 
         <b>{fmtCurrency(getDollarsPerDev(report))} / dev</b>
@@ -113,7 +121,7 @@ function fmtCurrency(num) {
       </div>)}
 
       <small>
-        This information is provided directly by {member.data.name}. Open
+        This information is provided directly by {member.name}. Open
         Source Pledge does not carry out any in-depth validation of this data.
       </small>
 
