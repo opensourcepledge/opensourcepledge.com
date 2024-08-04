@@ -12,22 +12,35 @@ const { member } = Astro.props;
 const reports = member.data.annualReports;
 
 function getPlatformName(url: string) {
+  let platformNames = {
+    'github.com': 'GitHub Sponsors',
+    'thanks.dev': 'Thanks.dev',
+  };
   let host = '';
-  let name = 'Other';
   try {
     host = new URL(url).host;
   } catch (err) {
-    host = '';
   }
-  switch(host) {
-    case 'github.com':
-      name = 'GitHub Sponsors';
-      break;
-    case 'thanks.dev':
-      name = 'Thanks.dev';
-      break;
-  }
-  return name;
+  return platformNames[host] || 'Other';
+}
+
+function getReportCashTotal(report) {
+  return report.monetaryPayments.map((d) => d.amount).reduce((acc, d) => acc + d, 0);
+}
+
+function getReportFullTotal(report) {
+  return getReportCashTotal(report) + report.monetaryValueOfTime + report.monetaryValueOfMaterials;
+}
+
+function getDollarsPerDev(report) {
+  return getReportCashTotal(report) / report.averageNumberOfDevs;
+}
+
+function fmtCurrency(num) {
+  return '$' + num.toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
 }
 ---
 <Layout title="OSS Pledge">
@@ -43,62 +56,58 @@ function getPlatformName(url: string) {
 
       <p>{member.data.description}</p>
 
-      <a href={member.data.urlLearnMore}>Learn more ...</a>
+      <a href={member.data.urlLearnMore}>Learn more →</a>
 
       {reports.map(report => <div class="annual-report">
         <h3>Year Ending {report.dateYearEnding}</h3>
 
-        <b>$3700 / dev</b>
+        <b>{fmtCurrency(getDollarsPerDev(report))} / dev</b>
 
         <h4>Payments to Independent Maintainers</h4>
         <table>
           <tr>
-            <th>Platform</th>
-            <th>Amount ($)</th>
+            <th class="text-left">Platform</th>
+            <th class="text-right">Amount ($)</th>
           </tr>
           {report.monetaryPayments.map(entry => <tr>
             <td>{entry.urlDetails && <a href={entry.urlDetails}>{getPlatformName(entry.urlDetails)}</a>}</td>
-            <td class="text-right">{entry.amount}</td>
+            <td class="text-right">{fmtCurrency(entry.amount)}</td>
           </tr>)}
           <tr>
-            <td>total</td>
-            <td class="text-right">500000</td>
+            <td>Total</td>
+            <td class="text-right">{fmtCurrency(getReportCashTotal(report))}</td>
           </tr>
           <tr>
-            <td>average number of devs</td>
-            <td class="text-right">{report.averageNumberOfDevs}</td>
+            <td>Average number of devs</td>
+            <td class="text-right">{fmtCurrency(report.averageNumberOfDevs)}</td>
           </tr>
           <tr>
             <td>$ / dev</td>
-            <td class="text-right">3700</td>
+            <td class="text-right">{fmtCurrency(getDollarsPerDev(report))}</td>
           </tr>
         </table>
 
         <h4>Other Contributions</h4>
         <table>
           <tr>
-            <th>Item</th>
+            <th class="text-left">Item</th>
             <th class="text-right">Amount ($)</th>
           </tr>
           <tr>
-            <td>value of time</td>
-            <td class="text-right">{report.monetaryValueOfTime}</td>
+            <td>Value of time</td>
+            <td class="text-right">{fmtCurrency(report.monetaryValueOfTime)}</td>
           </tr>
           <tr>
-            <td>value of materials</td>
-            <td class="text-right">{report.monetaryValueOfMaterials}</td>
+            <td>Value of materials</td>
+            <td class="text-right">{fmtCurrency(report.monetaryValueOfMaterials)}</td>
           </tr>
           <tr>
-            <td></td>
-            <td class="text-right">600000</td>
+            <td>Payments to independent maintainers</td>
+            <td class="text-right">{fmtCurrency(getReportCashTotal(report))}</td>
           </tr>
           <tr>
-            <td>payments to independent maintainers</td>
-            <td class="text-right">500000</td>
-          </tr>
-          <tr>
-            <td>total</td>
-            <td class="text-right">1100000</td>
+            <td>Total</td>
+            <td class="text-right">{fmtCurrency(getReportFullTotal(report))}</td>
           </tr>
         </table>
       </div>)}
