@@ -1,0 +1,30 @@
+{
+  "domain": "sentry.io",
+  "datetimeModified": "2024-07-19T12:24:46Z",
+  "description": "Sentry has given to Open Source for soooooo many years.",
+  "name": "Sentry",
+  "urlLogoWithBackground": "https://fossfunders.com/logos/sentry.svg",
+  "urlLearnMore": "https://open.sentry.io/osspledge/",
+  "annualReports": [
+    {
+      "dateYearEnding": "2023-01-31",
+      "averageNumberOfDevs": 135,
+      "monetaryPayments": [
+        {
+          "amount": 435000,
+          "urlDetails": "https://thanks.dev/d/gh/getsentry/dependencies"
+        },
+        {
+          "amount": 50000,
+          "urlDetails": "https://github.com/orgs/getsentry/sponsoring"
+        },
+        {
+          "amount": 15000,
+          "urlDetails": "https://blog.sentry.io/we-just-gave-500-000-dollars-to-open-source-maintainers/"
+        }
+      ],
+      "monetaryValueOfTime": 100000,
+      "monetaryValueOfMaterials": 500000
+    }
+  ]
+}
