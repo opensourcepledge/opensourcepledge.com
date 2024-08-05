@@ -8,10 +8,15 @@ import Button from "../components/Button.astro";
   <div class="flex items-center min-h-screen">
     <Prose>
       <img
-        class="max-w-72"
+        class="max-w-72 oss-logo"
         src="/logos/opensourcepledge-logo-horiz-color.png"
-      >
+      />
+      <h1 class="text-white hero-header">Open Source Pledge</h1>
       <p class="text-app-muted"><em>Launching in October</em></p>
+
+      <h2 class="text-white mt-8 mb-4 text-3xl font-bold">
+        What is Open Source?
+      </h2>
       <p>
         Open Source is <a
           href="https://openpath.chadwhitacre.com/2024/open-source-is-a-restaurant/"
@@ -30,26 +35,32 @@ import Button from "../components/Button.astro";
         to settle up.
       </p>
 
-      <h2 class="text-app-green mt-8 mb-4 text-3xl font-bold">How</h2>
+      <h2 class="text-white mt-8 mb-4 text-3xl font-bold">How?</h2>
 
-      <b>Step 1:</b> Pay Open Source maintainers.<br />
+      <div class="highlight-box">
+        <h3>Step One</h3>
+        <p>Pay Open Source maintainers.</p>
+        <p>
+          The minimum to participate is $2,000 per full-time employed developer
+          per year.
+        </p>
+      </div>
 
-      <p>
-        The minimum to participate is $2,000 per full-time employed developer
-        per year.
-      </p>
+      <div class="highlight-box">
+        <h3>Step Two</h3>
+        <p>Self-report annually.</p>
+        <ol>
+          <li>number of full-time employed developers</li>
+          <li>payments to maintainers by platform or foundation</li>
+        </ol>
+      </div>
+      <div class="footer-cta-box">
+        <h2>Let's make it happen.</h2>
 
-      <b>Step 2:</b> Self-report annually:
-      <ol>
-        <li>number of full-time employed developers</li>
-        <li>payments to maintainers by platform or foundation</li>
-      </ol>
-
-      <p>Let's make it happen.</p>
-
-      <Button href="https://github.com/getsentry/team-ospo/issues/245"
-        >Get involved</Button
-      >
+        <Button href="https://github.com/getsentry/team-ospo/issues/245"
+          >Get involved</Button
+        >
+      </div>
 
       <p class="my-8">
         Brought to you by <a href="https://sentry.io/welcome/">Sentry</a>.
@@ -59,4 +70,55 @@ import Button from "../components/Button.astro";
 </Layout>
 
 <style>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  h1.hero-header {
+    font-size: 8em;
+    line-height: 1;
+    margin: 4rem 0;
+  }
+  .oss-logo {
+    max-height: 5rem;
+  }
+
+  .highlight-box,
+  .footer-cta-box {
+    background: #162a2d;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+  }
+
+  .highlight-box {
+    padding: 0.25rem 1.25rem;
+
+    p,
+    h3 {
+      margin: 1rem 0;
+    }
+  }
+
+  .footer-cta-box {
+    background: #162a2d;
+    display: flex;
+    padding: 1.25rem;
+    align-items: center;
+    h2 {
+      font-size: 2.5em;
+      margin: 0 1rem;
+      flex: 1 1;
+    }
+    a {
+      padding: 1em 2em;
+      margin: 1rem;
+      text-align: center;
+    }
+  }
 </style>
