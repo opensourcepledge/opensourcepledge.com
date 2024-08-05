@@ -25,7 +25,7 @@ const memberReport = z.object({
 
 const memberProvidedData = z.object({
   name: z.string(),
-  urlLogoWithBackground: z.string().url(),
+  urlSquareLogoWithBackground: z.string().url(),
   urlLearnMore: z.string().url(),
   description: z.string().optional(),
   annualReports: memberReport.array().nonempty(),

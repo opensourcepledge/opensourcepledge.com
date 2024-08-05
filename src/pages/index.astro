@@ -4,10 +4,13 @@ import Prose from "../components/Prose.astro";
 import Button from "../components/Button.astro";
 ---
 
-<Layout title="Open Source Pledge">
-  <main class="flex justify-center max-w-xl p-4">
+<Layout title="Open Source Pledge" navless="true">
+  <div class="flex items-center min-h-screen">
     <Prose>
-      <h1 class="text-app-green mt-8 mb-4 text-5xl font-bold">Open Source Pledge</h1>
+      <img
+        class="max-w-72"
+        src="/logos/opensourcepledge-logo-horiz-color.png"
+      >
       <p class="text-app-muted"><em>Launching in October</em></p>
       <p>
         Open Source is <a
@@ -52,17 +55,8 @@ import Button from "../components/Button.astro";
         Brought to you by <a href="https://sentry.io/welcome/">Sentry</a>.
       </p>
     </Prose>
-  </main>
+  </div>
 </Layout>
 
 <style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
 </style>
