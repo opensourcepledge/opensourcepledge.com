@@ -29,10 +29,14 @@ Here's how to join:
    you depend on, you can use a tool like [Thanks.dev](https://thanks.dev/).
 2. **Create a short JSON file with your company and donation info**, and host it
    at any URL you wish. You can check out an [example JSON
-   report][example-report] or the [full schema][schema]. You should update this
-   JSON file at least yearly — we'll fetch it regularly. We understand your
-   fiscal year might end on various dates — you can record the end date of your
-   fiscal year in the `dateYearEnding` field.
+   report][example-report] or the [full schema][schema].
+   * You should update this JSON file at least yearly — we'll fetch it
+     regularly.
+   * We understand your fiscal year might end on various dates — you can record
+     the end date of your fiscal year in the `dateYearEnding` field.
+   * The logo image in `urlSquareLogoWithBackground` should be square and have a
+     non-transparent background. Please try to keep this image under 200x200px,
+     and to compress it appropriately.
 3. **Create a pull request to add yourself to the member list** by changing
    [members.csv][members-csv].
 4. **Include links to your branding materials** in the pull request so that we
