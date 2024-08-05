@@ -1,9 +1,10 @@
 ---
 interface Props {
   title: string;
+  navless: bool;
 }
 
-const { title } = Astro.props;
+const { title, navless } = Astro.props;
 ---
 
 <!doctype html>
@@ -22,11 +23,19 @@ const { title } = Astro.props;
       src="https://plausible.io/js/script.js"></script>
   </head>
   <body>
-    <section
-      class="flex items-center justify-center flex-col flex-grow min-h-screen"
-    >
+    { !navless && <nav class="py-8">
+      <div class="container">
+        <a href="/">
+          <img
+            class="max-h-14"
+            src="/logos/opensourcepledge-logo-horiz-color.png"
+          >
+        </a>
+      </div>
+    </nav> }
+    <div class="container">
       <slot />
-    </section>
+    </div>
   </body>
 </html>
 <style is:global>
@@ -45,5 +54,13 @@ const { title } = Astro.props;
       Bitstream Vera Sans Mono,
       Courier New,
       monospace;
+  }
+  .container {
+    margin: auto;
+    padding: 0 1rem;
+    max-width: 42rem;
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
   }
 </style>
