@@ -3,6 +3,7 @@ name: Update all changed member files
 on:
   schedule:
     - cron: "25 16 * * 1"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -14,8 +15,6 @@ jobs:
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
-      - name: Fetch main branch
-        run: git fetch origin main:main
       - name: Install npm packages
         run: npm install
       - name: Update all changed member files
