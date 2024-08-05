@@ -35,7 +35,7 @@ Here's how to join:
    * We understand your fiscal year might end on various dates — you can record
      the end date of your fiscal year in the `dateYearEnding` field.
    * The logo image in `urlSquareLogoWithBackground` should be square and have a
-     non-transparent background. Please try to keep this image under 200x200px,
+     non-transparent background. Please try to keep this image around 200x200px,
      and to compress it appropriately.
 3. **Create a pull request to add yourself to the member list** by changing
    [members.csv][members-csv].
