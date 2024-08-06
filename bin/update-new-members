@@ -1,13 +1,18 @@
 #!/bin/bash -eu
+# USAGE: ./bin/update-new-members <sha_of_commit_to_check_since>
 # This script fetches the JSON files specified for all members that have been
 # added to `members.csv` compared to the `main` branch. Must be run in the
 # repo's root.
+
+if [ $# -eq 0 ]; then
+  echo "USAGE: ./bin/update-new-members <sha_of_commit_to_check_since>"
+fi
 
 new_member_lines=$(
   diff \
     --changed-group-format='%>' \
     --unchanged-group-format='' \
-    <( git show main:members.csv ) \
+    <( git show $1:members.csv ) \
     members.csv
 ) || true
 
