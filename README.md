@@ -32,11 +32,21 @@ Here's how to join:
    report][example-report] or the [full schema][schema].
    * You should update this JSON file at least yearly — we'll fetch it
      regularly.
+   * All amounts are in USD so that different reports can be compared to each
+     other. If you're using a different currency, you should convert all amounts
+     to the USD equivalents, using the most appropriate exchange rate.
    * We understand your fiscal year might end on various dates — you can record
      the end date of your fiscal year in the `dateYearEnding` field.
    * The logo image in `urlSquareLogoWithBackground` should be square and have a
-     non-transparent background. Please try to keep this image around 200x200px,
-     and to compress it appropriately.
+     non-transparent background. This image should be between 400x400px and
+     800x800px, and should be appropriately compressed.
+   * The `description` will be shown on your member page and ideally includes a
+     general description of your company and some notes on your company's
+     relationship with Open Source software.
+   * Time and material contributions are optional and do not count towards the
+     cash pledge. `monetaryValueOfTime` and `monetaryValueOfMaterials` will show
+     up on your member page, because we acknowledge that these kinds of
+     contributions are also important.
 3. **Create a pull request to add yourself to the member list** by changing
    [members.csv][members-csv].
 4. **Include links to your branding materials** in the pull request so that we
