@@ -38,6 +38,10 @@ const member = z.object({
 
 export type Member = z.infer<typeof member>;
 export type MemberReport = z.infer<typeof memberReport>;
+export interface MemberWithId {
+  id: string,
+  data: Member,
+}
 
 export const collections = {
   members: defineCollection({
