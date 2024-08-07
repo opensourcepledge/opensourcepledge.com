@@ -14,7 +14,7 @@ function getMockMembers() {
   return mockDevCounts.map((mockDevCount, idx) => {
     let newMember = structuredClone(exampleMember);
     newMember.name = `Example Member (${mockDevCount} ${mockDevCount == 1 ? "Dev" : "Devs"})`;
-    newMember.urlSquareLogoWithBackground = `example-member-${idx}.svg`;
+    newMember.urlSquareLogoWithBackground = `/example-member-${idx}.svg`;
     newMember.annualReports = newMember.annualReports.map((report) => {
       report.averageNumberOfDevs = mockDevCount;
       return report;
