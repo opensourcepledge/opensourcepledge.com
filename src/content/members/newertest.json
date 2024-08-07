@@ -1,0 +1,50 @@
+{
+  "domain": "sentry.io",
+  "datetimeModified": "2024-08-05T01:00:00Z",
+  "description": "People sometimes ask why Sentry is an open source company. However, they are typically asking about our business model: conversion funnel, product roadmap, monetization strategy. In our experience as engineers and as professionals, there is no other choice but open source for building a viable software company serving modern development cycles. As a mantra, Sentry is an open source company because the right to learn and to share what is learned with others is fundamental to product growth and relevance.",
+  "name": "Sentry",
+  "urlSquareLogoWithBackground": "https://avatars.githubusercontent.com/u/1396951?s=200&v=4",
+  "urlLearnMore": "https://open.sentry.io/osspledge/",
+  "annualReports": [
+    {
+      "dateYearEnding": "2023-01-31",
+      "averageNumberOfDevs": 135,
+      "monetaryPayments": [
+        {
+          "amount": 435000,
+          "urlDetails": "https://thanks.dev/d/gh/getsentry/dependencies"
+        },
+        {
+          "amount": 50000,
+          "urlDetails": "https://github.com/orgs/getsentry/sponsoring"
+        },
+        {
+          "amount": 15000,
+          "urlDetails": "https://blog.sentry.io/we-just-gave-500-000-dollars-to-open-source-maintainers/"
+        }
+      ],
+      "monetaryValueOfTime": 100000,
+      "monetaryValueOfMaterials": 500000
+    },
+    {
+      "dateYearEnding": "2023-01-31",
+      "averageNumberOfDevs": 135,
+      "monetaryPayments": [
+        {
+          "amount": 435000,
+          "urlDetails": "https://thanks.dev/d/gh/getsentry/dependencies"
+        },
+        {
+          "amount": 50000,
+          "urlDetails": "https://github.com/orgs/getsentry/sponsoring"
+        },
+        {
+          "amount": 15000,
+          "urlDetails": "https://blog.sentry.io/we-just-gave-500-000-dollars-to-open-source-maintainers/"
+        }
+      ],
+      "monetaryValueOfTime": 100000,
+      "monetaryValueOfMaterials": 500000
+    }
+  ]
+}
