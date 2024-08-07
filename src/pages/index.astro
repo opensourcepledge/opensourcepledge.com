@@ -81,9 +81,12 @@ import Button from "../components/Button.astro";
   }
 
   h1.hero-header {
-    font-size: 8em;
+    font-size: 5em;
     line-height: 1;
     margin: 4rem 0;
+    @media (min-width: 768px) {
+      font-size: 8em;
+    }
   }
   .oss-logo {
     max-height: 5rem;
@@ -108,6 +111,8 @@ import Button from "../components/Button.astro";
   .footer-cta-box {
     background: #162a2d;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     padding: 1.25rem;
     align-items: center;
     h2 {
