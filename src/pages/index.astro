@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Prose from "../components/Prose.astro";
 import Button from "../components/Button.astro";
+import Leaderboard from "../components/Leaderboard.astro";
 ---
 
 <Layout title="Open Source Pledge" navless={true}>
@@ -65,6 +66,11 @@ import Button from "../components/Button.astro";
       <p class="my-8">
         Brought to you by <a href="https://sentry.io/welcome/">Sentry</a>.
       </p>
+
+      {import.meta.env.DEV && (
+        <h2>Member Leaderboard</h2>
+        <Leaderboard grouped={true}></Leaderboard>
+      )}
     </Prose>
   </div>
 </Layout>
