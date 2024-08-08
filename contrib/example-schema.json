@@ -1,50 +1,26 @@
 {
-  "domain": "sentry.io",
+  "domain": "example.com",
   "datetimeModified": "2024-08-05T01:00:00Z",
-  "description": "People sometimes ask why Sentry is an open source company. However, they are typically asking about our business model: conversion funnel, product roadmap, monetization strategy. In our experience as engineers and as professionals, there is no other choice but open source for building a viable software company serving modern development cycles. As a mantra, Sentry is an open source company because the right to learn and to share what is learned with others is fundamental to product growth and relevance.",
-  "name": "Sentry",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "name": "Acme Widgets",
   "urlSquareLogoWithBackground": "https://avatars.githubusercontent.com/u/1396951?s=200&v=4",
-  "urlLearnMore": "https://open.sentry.io/osspledge/",
+  "urlLearnMore": "https://example.com/osspledge/",
   "annualReports": [
     {
-      "dateYearEnding": "2023-01-31",
+      "url": "https://example.com/blog/2",
+      "dateYearEnding": "2023-12-31",
       "averageNumberOfDevs": 135,
-      "monetaryPayments": [
-        {
-          "amount": 435000,
-          "urlDetails": "https://thanks.dev/d/gh/getsentry/dependencies"
-        },
-        {
-          "amount": 50000,
-          "urlDetails": "https://github.com/orgs/getsentry/sponsoring"
-        },
-        {
-          "amount": 15000,
-          "urlDetails": "https://blog.sentry.io/we-just-gave-500-000-dollars-to-open-source-maintainers/"
-        }
-      ],
+      "paymentsToProjects": 500000,
       "monetaryValueOfTime": 100000,
       "monetaryValueOfMaterials": 500000
     },
     {
-      "dateYearEnding": "2023-01-31",
-      "averageNumberOfDevs": 135,
-      "monetaryPayments": [
-        {
-          "amount": 435000,
-          "urlDetails": "https://thanks.dev/d/gh/getsentry/dependencies"
-        },
-        {
-          "amount": 50000,
-          "urlDetails": "https://github.com/orgs/getsentry/sponsoring"
-        },
-        {
-          "amount": 15000,
-          "urlDetails": "https://blog.sentry.io/we-just-gave-500-000-dollars-to-open-source-maintainers/"
-        }
-      ],
-      "monetaryValueOfTime": 100000,
-      "monetaryValueOfMaterials": 500000
+      "url": "https://example.com/blog/1",
+      "dateYearEnding": "2022-12-31",
+      "averageNumberOfDevs": 100,
+      "paymentsToProjects": 400000,
+      "monetaryValueOfTime": 10000,
+      "monetaryValueOfMaterials": 50000
     }
   ]
 }

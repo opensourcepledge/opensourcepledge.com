@@ -6,7 +6,7 @@ import { z, defineCollection } from "astro:content";
  * need to understand how to format it, you've found the source of truth. If
  * you have questions or run into limitations, please open an issue:
  *
- *    https://github.com/getsentry/osspledge.com/issues/new
+ *    https://github.com/opensourcepledge/osspledge.com/issues/new
  *
  */
 
@@ -18,7 +18,7 @@ const monetaryPayment = z.object({
 const memberReport = z.object({
   dateYearEnding: z.string().date(),
   averageNumberOfDevs: z.number().nonnegative(),
-  monetaryPayments: monetaryPayment.array().nonempty(),
+  paymentsToProjects: z.number().nonnegative(),
   monetaryValueOfTime: z.number().nonnegative(),
   monetaryValueOfMaterials: z.number().nonnegative(),
 });
