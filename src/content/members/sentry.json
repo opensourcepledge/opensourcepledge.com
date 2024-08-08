@@ -10,19 +10,19 @@
       "url": "https://blog.sentry.io/we-just-gave-500-000-dollars-to-open-source-maintainers/",
       "dateYearEnding": "2024-01-31",
       "averageNumberOfDevs": 135,
-      "money": 500000
+      "moneyToIndependentMaintainers": 500000
     },
     {
       "url": "https://blog.sentry.io/we-just-gave-260-028-dollars-to-open-source-maintainers/",
       "dateYearEnding": "2023-01-31",
       "averageNumberOfDevs": 130,
-      "money": 260280
+      "moneyToIndependentMaintainers": 260280
     },
     {
       "url": "https://blog.sentry.io/we-just-gave-154-999-dollars-and-89-cents-to-open-source-maintainers/",
       "dateYearEnding": "2022-01-31",
       "averageNumberOfDevs": 75,
-      "money": 155000
+      "moneyToIndependentMaintainers": 155000
     }
   ]
 }
