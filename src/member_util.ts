@@ -1,5 +1,5 @@
 import { getCollection } from 'astro:content';
-import type { MemberReport } from "./content/config.ts";
+import type { Member, MemberWithId, MemberReport } from "./content/config.ts";
 import exampleMember from '../contrib/example-schema.json';
 
 const isDev = import.meta.env.DEV;
@@ -7,18 +7,17 @@ const isDev = import.meta.env.DEV;
 /**
  * Generates some member data for testing to be used in dev mode.
  */
-function getMockMembers() {
+function getMockMembers(): MemberWithId[] {
   const mockDevCounts = [
     1, 34, 79, 230, 1004, 4052, 10245, 11245, 17353, 21324, 50124,
   ]
-  return mockDevCounts.map((mockDevCount, idx) => {
-    let newMember = structuredClone(exampleMember);
+  return mockDevCounts.map((mockDevCount, idx): MemberWithId => {
+    let newMember = { ...exampleMember } as Member;
     newMember.name = `Example Member (${mockDevCount} ${mockDevCount == 1 ? "Dev" : "Devs"})`;
     newMember.urlSquareLogoWithBackground = `/example-member-${idx}.svg`;
-    newMember.annualReports = newMember.annualReports.map((report) => {
-      report.averageNumberOfDevs = mockDevCount;
-      return report;
-    });
+    for (let idx in newMember.annualReports) {
+      newMember.annualReports[idx].averageNumberOfDevs = mockDevCount;
+    }
     return {
       id: `example-member-${idx}`,
       data: newMember,
@@ -26,9 +25,9 @@ function getMockMembers() {
   });
 }
 
-export async function getMembers() {
+export async function getMembers(): Promise<MemberWithId[]> {
   if (isDev) {
-    return getMockMembers();
+    return Promise.resolve(getMockMembers());
   } else {
     return getCollection('members');
   }
