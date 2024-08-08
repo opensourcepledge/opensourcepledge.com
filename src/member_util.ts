@@ -33,18 +33,12 @@ export async function getMembers(): Promise<MemberWithId[]> {
   }
 }
 
-export function getReportCashTotal(report: MemberReport) {
-  return report.monetaryPayments
-    .map((d) => d.amount)
-    .reduce((acc, d) => acc + d, 0);
-}
-
 export function getReportFullTotal(report: MemberReport) {
-  return getReportCashTotal(report) + report.monetaryValueOfTime + report.monetaryValueOfMaterials;
+  return report.paymentsToProjects + report.monetaryValueOfTime + report.monetaryValueOfMaterials;
 }
 
 export function getDollarsPerDev(report: MemberReport) {
-  return getReportCashTotal(report) / report.averageNumberOfDevs;
+  return report.paymentsToProjects / report.averageNumberOfDevs;
 }
 
 export function fmtCurrency(num: number) {
