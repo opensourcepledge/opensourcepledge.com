@@ -45,7 +45,6 @@ function filterInactiveMembers(members: MemberWithId[]): MemberWithId[] {
 function groupMembers(members: MemberWithId[]): MemberWithId[][] {
   let groups: MemberWithId[][] = DEV_GROUP_BOUNDS.map(() => []);
   for (let member of members) {
-    const dpd = getDollarsPerDev(member.data.annualReports[0]);
     const nDevs = member.data.annualReports[0].averageNumberOfDevs;
     for (let idx in DEV_GROUP_BOUNDS) {
       const [max, min] = DEV_GROUP_BOUNDS[idx];
