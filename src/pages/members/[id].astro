@@ -51,7 +51,7 @@ function getPlatformName(url: string) {
 
     {member.annualReports.map(report => <div class="annual-report mt-12">
       <div class="text-center">
-        <h3 class="mt-0 text-2xl">Year Ending {report.dateYearEnding}</h3>
+        <h3 class="mt-0 text-2xl"><a href={report.url}>Year Ending {report.dateYearEnding}</a></h3>
         <strong>{fmtCurrency(getDollarsPerDev(report))} / dev</strong>
       </div>
 
