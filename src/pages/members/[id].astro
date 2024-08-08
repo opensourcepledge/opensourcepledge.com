@@ -1,6 +1,8 @@
 ---
-import { getCollection } from 'astro:content';
-import type { Member, MemberReport } from "../../content/config.ts";
+import {
+  getMembers, getReportCashTotal, getReportFullTotal, getDollarsPerDev, fmtCurrency
+} from '../../member_util.ts';
+import type { Member } from "../../content/config.ts";
 import Layout from "../../layouts/Layout.astro";
 import Prose from "../../components/Prose.astro";
 
@@ -11,7 +13,7 @@ interface Props {
 const { member } = Astro.props;
 
 export async function getStaticPaths() {
-  const memberItems = await getCollection('members');
+  const memberItems = await getMembers();
   return memberItems.map(({ id, data }: { id: string, data: Member }) => {
     return { params: { id }, props: { member: data } };
   });
@@ -29,27 +31,6 @@ function getPlatformName(url: string) {
   }
   return platformNames.get(host) || 'Other';
 }
-
-function getReportCashTotal(report: MemberReport) {
-  return report.monetaryPayments
-    .map((d) => d.amount)
-    .reduce((acc, d) => acc + d, 0);
-}
-
-function getReportFullTotal(report: MemberReport) {
-  return getReportCashTotal(report) + report.monetaryValueOfTime + report.monetaryValueOfMaterials;
-}
-
-function getDollarsPerDev(report: MemberReport) {
-  return getReportCashTotal(report) / report.averageNumberOfDevs;
-}
-
-function fmtCurrency(num: number) {
-  return '$' + num.toLocaleString(undefined, {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  });
-}
 ---
 <Layout title="Open Source Pledge" navless={false}>
   <Prose>
@@ -58,7 +39,7 @@ function fmtCurrency(num: number) {
         class="h-28 m-0 mr-8"
         src={member.urlSquareLogoWithBackground}
       >
-      <h2 class="text-6xl m-0">
+      <h2 class="text-4xl m-0">
         {member.name}
         <small class="block text-base font-normal pt-2">Open Source Pledge Member</small>
       </h2>
