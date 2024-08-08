@@ -10,17 +10,13 @@ import { z, defineCollection } from "astro:content";
  *
  */
 
-const monetaryPayment = z.object({
-  amount: z.number().nonnegative(),
-  urlDetails: z.string().url().optional(),
-})
-
 const memberReport = z.object({
+  url: z.string().url(),
   dateYearEnding: z.string().date(),
   averageNumberOfDevs: z.number().nonnegative(),
   paymentsToProjects: z.number().nonnegative(),
-  monetaryValueOfTime: z.number().nonnegative(),
-  monetaryValueOfMaterials: z.number().nonnegative(),
+  monetaryValueOfTime: z.number().nonnegative().default(0),
+  monetaryValueOfMaterials: z.number().nonnegative().default(0),
 });
 
 const memberProvidedData = z.object({
