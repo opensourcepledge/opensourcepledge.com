@@ -55,47 +55,26 @@ function getPlatformName(url: string) {
         <strong>{fmtCurrency(getDollarsPerDev(report))} / dev</strong>
       </div>
 
-      <h4 class="text-xl">Payments to Independent Maintainers</h4>
-      <table>
-        <tr>
-          <th class="text-left">Platform</th>
-          <th class="text-right">Amount ($)</th>
-        </tr>
-        {report.monetaryPayments.map(entry => <tr>
-          <td>{entry.urlDetails && <a href={entry.urlDetails}>{getPlatformName(entry.urlDetails)}</a>}</td>
-          <td class="text-right">{fmtCurrency(entry.amount)}</td>
-        </tr>)}
-        <tr>
-          <td>Total</td>
-          <td class="text-right">{fmtCurrency(getReportCashTotal(report))}</td>
-        </tr>
-        <tr>
-          <td>Average number of devs</td>
-          <td class="text-right">{report.averageNumberOfDevs}</td>
-        </tr>
-        <tr>
-          <td>$ / dev</td>
-          <td class="text-right">{fmtCurrency(getDollarsPerDev(report))}</td>
-        </tr>
-      </table>
-
-      <h4 class="text-xl">Other Contributions</h4>
       <table>
         <tr>
           <th class="text-left">Item</th>
           <th class="text-right">Amount ($)</th>
         </tr>
         <tr>
-          <td>Value of time</td>
+          <td>Payments to Projects</td>
+          <td class="text-right">{fmtCurrency(report.paymentsToProjects)}</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="text-right">= {fmtCurrency(getDollarsPerDev(report))} / dev</td>
+        </tr>
+        <tr>
+          <td>Value of Time</td>
           <td class="text-right">{fmtCurrency(report.monetaryValueOfTime)}</td>
         </tr>
         <tr>
-          <td>Value of materials</td>
+          <td>Value of Materials</td>
           <td class="text-right">{fmtCurrency(report.monetaryValueOfMaterials)}</td>
-        </tr>
-        <tr>
-          <td>Payments to independent maintainers</td>
-          <td class="text-right">{fmtCurrency(getReportCashTotal(report))}</td>
         </tr>
         <tr>
           <td>Total</td>
