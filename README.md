@@ -90,6 +90,7 @@ For projects that do not have existing ways to recieve funds, the following is
 a partial list of platforms, in alphabetical order only, that enable funding of
 open source projects.
 
+- [Apache Software Foundation: Incubator](https://incubator.apache.org/)
 - [Buy Me a Coffee](https://www.buymeacoffee.com/)
 - [GitHub Sponsors](https://github.com/sponsors)
 - [IssueHunt](https://issuehunt.io/)
