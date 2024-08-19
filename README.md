@@ -100,6 +100,8 @@ open source projects.
 - [Open Collective](https://opencollective.com/)
 - [Patreon](https://www.patreon.com/)
 - [Polar](https://www.polar.sh/)
+- [Software Freedom Conservancy (SFC)](https://sfconservancy.org/projects/apply/)
+- [Software in the Public Interest (SPI)](https://www.spi-inc.org/projects/)
 - [StackAid](https://www.stackaid.us/)
 - [Thanks.dev](https://thanks.dev/)
 - [Tidelift](https://tidelift.com/)
