@@ -81,14 +81,9 @@ issues or [on Discord][discord].
 ## Maintainers
 
 Open Source Pledge is not involved in any flow of funds and so we do not
-directly onboard maintainers. Please confirm with each open source project
-about their individual best means of recieving funds, as platforms and fiscal
-hosts have varying fee structures, and the recipient projects may have specific
-ways to maximize the impact of your contributions.
-
-For projects that do not have existing ways to recieve funds, the following is
-a partial list of platforms, in alphabetical order only, that enable funding of
-open source projects.
+directly onboard maintainers. For projects that do not have existing ways to
+recieve funds, the following is a partial list of platforms, in alphabetical
+order only, that enable funding of open source projects.
 
 - [Apache Software Foundation: Incubator](https://incubator.apache.org/)
 - [Buy Me a Coffee](https://www.buymeacoffee.com/)
