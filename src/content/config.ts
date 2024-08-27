@@ -29,7 +29,6 @@ const memberProvidedData = z.object({
 
 const member = z.object({
   domain: z.string(),
-  datetimeModified: z.string().datetime(),
 }).merge(memberProvidedData);
 
 export type Member = z.infer<typeof member>;
