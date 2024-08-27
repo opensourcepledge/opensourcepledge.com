@@ -19,7 +19,7 @@ jobs:
       - name: Build website files
         uses: withastro/action@v2
       - name: Update new member files
-        run: bash ./bin/update-new-members ${{github.event.before}}
+        run: bash ./bin/update-new-members ${{ github.event.before }}
       - name: Commit member changes, if any
         run: bash ./bin/commit-member-changes
   deploy:
