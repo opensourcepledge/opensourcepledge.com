@@ -19,17 +19,13 @@ const memberReport = z.object({
   monetaryValueOfMaterials: z.number().nonnegative().default(0),
 });
 
-const memberProvidedData = z.object({
+const member = z.object({
   name: z.string(),
   urlSquareLogoWithBackground: z.string().url(),
   urlLearnMore: z.string().url(),
   description: z.string().optional(),
   annualReports: memberReport.array().nonempty(),
 });
-
-const member = z.object({
-  domain: z.string(),
-}).merge(memberProvidedData);
 
 export type Member = z.infer<typeof member>;
 export type MemberReport = z.infer<typeof memberReport>;
