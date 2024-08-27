@@ -32,25 +32,11 @@ async function updateMember(name, url) {
     console.error(`ERROR: Failed to get JSON from ${url}`, e);
     process.exit(1);
   }
-
-  let shouldWrite = (localMemberData == undefined);
-
-  if (!shouldWrite) {
-    const localMtime = new Date(localMemberData.datetimeModified);
-    const remoteMtime = new Date(remoteMemberData.datetimeModified);
-    shouldWrite = remoteMtime > localMtime;
-  }
-
-  if (shouldWrite) {
-    console.log(`Remote JSON is newer, writing to ${localPath}`);
-    try {
-      fs.writeFileSync(localPath, JSON.stringify(remoteMemberData, null, 2));
-    } catch (e) {
-      console.error(`ERROR: Failed to write to ${localPath}`, e);
-      process.exit(1);
-    }
-  } else {
-    console.log("Remote JSON is older, skipping");
+  try {
+    fs.writeFileSync(localPath, JSON.stringify(remoteMemberData, null, 2));
+  } catch (e) {
+    console.error(`ERROR: Failed to write to ${localPath}`, e);
+    process.exit(1);
   }
 }
 
