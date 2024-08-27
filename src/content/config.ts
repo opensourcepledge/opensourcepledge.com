@@ -14,7 +14,7 @@ const memberReport = z.object({
   url: z.string().url(),
   dateYearEnding: z.string().date(),
   averageNumberOfDevs: z.number().nonnegative(),
-  paymentsToProjects: z.number().nonnegative(),
+  payments: z.number().nonnegative(),
   monetaryValueOfTime: z.number().nonnegative().default(0),
   monetaryValueOfMaterials: z.number().nonnegative().default(0),
 });
