@@ -8,95 +8,9 @@ after year. [Let's settle up][osp].
 [osp]: https://osspledge.com/
 [restaurant]: https://openpath.chadwhitacre.com/2024/open-source-is-a-restaurant/
 
-## Timeline
+## Launch Ticket
 
-- **September 1**—website launch 👉 **[osspledge.com][osp]**
-- **September 15**—member onboarding deadline to participate in a ...
-- **October 7–November 3**—major outdoor advertising campaign
-
-## Member Onboarding
-
-Want to join the Pledge and contribute to a healthy Open Source ecosystem? We'd
-love to have you! :balloon:
-
-Here's how to join:
-
-1. **Donate $2,000 per full-time equivalent developer on staff** to Open Source
-   maintainers or foundations of your choice, and commit to doing so in future
-   years. The projects you're donating to should meet the [Open Source
-   Definition][osd]. Of course, this includes any existing donations you've made
-   this fiscal year. You can donate to any projects you like, but if you need
-   help figuring out which projects you depend on, you can use a tool like
-   [Thanks.dev][thanksd].
-2. **Publish a blog post**, or equivalent, on your company website, detailing
-   the contributions your company has made to the Open Source ecosystem this
-   fiscal year. This post does not need to be long or exhaustive. If in doubt,
-   check out sample posts by [Sentry][sentry-2023-post] or
-   [Astral][astral-post].
-   * Ideally, this post would include an itemized list of how much was paid to
-   each maintainer/foundation. When this is undesirable or unrealistic, we ask
-   that you make a best effort. To more conveniently get an itemized list,
-   consider using the [Open Source Pledge GitHub Reporter][osp-github-reporter],
-   or [Thanks.dev][thanksd].
-4. **Create a short JSON file with your company and donation info**, and host it
-   at any URL you wish. You can check out an [example JSON
-   report][example-report] or the [full schema][schema].
-   * You should update this JSON file at least once per calendar year — we'll
-     fetch it regularly.
-   * All amounts are in USD so that different reports can be compared to each
-     other. If you're using a different currency, you should convert all amounts
-     to the USD equivalents, using the most appropriate exchange rate.
-   * `name`: The name of your company.
-   * `description`: Will be shown on your member page and ideally includes a
-     general description of your company and some notes on your company's
-     relationship with Open Source software.
-   * `urlLearnMore`: A URL not to your company's homepage, but to some kind of
-     page that describes your relationship to Open Source and/or your commitment
-     to supporting Open Source. This page need not be exhaustive.
-   * `urlSquareLogoWithBackground`: Your logo, which should be square and have a
-     non-transparent background. This image should be between 400x400px and
-     800x800px, and should be appropriately compressed.
-   * Each `annualReport` should contain:
-     * `url`: The URL to the blog post for this fiscal year, as detailed above.
-     * `dateYearEnding`: We understand your fiscal year might end on various
-       dates — you can record the end date of your fiscal year in this field.
-     * `averageNumberOfDevs`: The average number of full-time equivalent
-       developers employed by your company during that fiscal year.
-     * `payments`: The total US dollar amount of cash contributions you have
-       made towards Open Source maintainers and foundations during this fiscal
-       year.
-     * `monetaryValueofTime`, `monetaryValueOfMaterials`: You may also
-       optionally specify, in approximate US dollar equivalents, your
-       contributions to the Open Source ecosystem in sponsored developer time
-       (in `monetaryValueOfTime`) or gifts in kind (in
-       `monetaryValueOfMaterials`). While we acknowledge that contributions in
-       time and in kind are important, they are not included in the cash pledge
-       amount. They will still be displayed on your member page.
-5. **Create a pull request to add yourself to the member list** by changing
-   [members.csv][members-csv].
-6. **Include links to your branding materials** in the pull request so that we
-   can promote you! For those pledging before September 15, this means you'll be
-   included in our major outdoor advertising campaign.
-
-Once that's all done, you'll officially be a member. This means that your
-company and reports will show up on [our website][osp], and you'll be entitled
-to use the [Open Source Pledge Member logo][member-logo] on your website and
-marketing materials if you wish. Thank you so much for joining us in
-contributing to a healthy Open Source ecosystem that supports maintainers.
-
-If you have any questions, feel free to [open an issue][new-issue], and the
-relevant member of our team will get back to you.
-
-[osd]: https://opensource.org/osd
-[example-report]: https://github.com/opensourcepledge/osspledge.com/blob/main/contrib/example-schema.json
-[schema]: https://github.com/opensourcepledge/osspledge.com/blob/main/src/content/config.ts
-[members-csv]: https://github.com/opensourcepledge/osspledge.com/blob/main/members.csv
-[member-logo]: https://github.com/opensourcepledge/osspledge.com/tree/main/public/logos
-[new-issue]: https://github.com/opensourcepledge/osspledge.com/issues/new
-[sentry-2023-post]: https://blog.sentry.io/we-just-gave-500-000-dollars-to-open-source-maintainers/
-[astral-post]: https://astral.sh/blog/astral-oss-fund
-[osp-github-reporter]: https://github.com/opensourcepledge/osp-github-reporter
-[thanksd]: https://thanks.dev
+**https://github.com/opensourcepledge/osspledge.com/issues/4**
 
 ## Want to Help?
 
@@ -106,29 +20,6 @@ issues or [on Discord][discord].
 
 [issues]: https://github.com/opensourcepledge/osspledge.com/issues
 [discord]: https://discord.gg/svH5XzDsBd
-
-## Maintainers
-
-Open Source Pledge is not involved in any flow of funds and so we do not
-directly onboard maintainers. For projects that do not have existing ways to
-recieve funds, the following is a partial list of platforms, in alphabetical
-order only, that enable funding of Open Source projects.
-
-- [Apache Software Foundation: Incubator](https://incubator.apache.org/)
-- [Buy Me a Coffee](https://www.buymeacoffee.com/)
-- [GitHub Sponsors](https://github.com/sponsors)
-- [IssueHunt](https://issuehunt.io/)
-- [Ko-fi](https://ko-fi.com/)
-- [LFX Mentorship](https://lfx.linuxfoundation.org/tools/mentorship)
-- [Liberapay](https://en.liberapay.com/)
-- [Open Collective](https://opencollective.com/)
-- [Patreon](https://www.patreon.com/)
-- [Polar](https://www.polar.sh/)
-- [Software Freedom Conservancy (SFC)](https://sfconservancy.org/projects/apply/)
-- [Software in the Public Interest (SPI)](https://www.spi-inc.org/projects/associated-project-howto/)
-- [StackAid](https://www.stackaid.us/)
-- [Thanks.dev](https://thanks.dev/)
-- [Tidelift](https://tidelift.com/)
 
 ## Governance and Structure
 
@@ -142,3 +33,9 @@ leads.
 | marketing & media   | [**@selviano**](https://github.com/selviano)             |
 | design / build      | [**@chadwhitacre**](https://github.com/chadwhitacre)     |
 | steering            | [**@chadwhitacre**](https://github.com/chadwhitacre)     |
+
+## Maintainers
+
+Open Source Pledge is for companies. If you are a maintainer, or represent a
+foundation or funding platform, join an upcoming [ecosystem partners
+call](https://cal.com/osspledge/ecosystem-call) to learn more and be heard.
