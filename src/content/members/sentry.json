@@ -1,27 +1,25 @@
 {
-  "domain": "sentry.io",
-  "description": "Sentry started life as an Open Source side project in 2008. We grew that way for years before commercializing. We've always given back to the community and now we're happy to help other companies do the same through the Open Source Pledge.",
-  "name": "Sentry",
+  "domain": "example.com",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  "name": "Acme Widgets",
   "urlSquareLogoWithBackground": "https://avatars.githubusercontent.com/u/1396951?s=200&v=4",
-  "urlLearnMore": "https://open.sentry.io/osspledge/",
+  "urlLearnMore": "https://example.com/osspledge/",
   "annualReports": [
     {
-      "url": "https://blog.sentry.io/we-just-gave-500-000-dollars-to-open-source-maintainers/",
-      "dateYearEnding": "2024-01-31",
+      "url": "https://example.com/blog/2",
+      "dateYearEnding": "2023-12-31",
       "averageNumberOfDevs": 135,
-      "paymentsToProjects": 500000
+      "paymentsToProjects": 500000,
+      "monetaryValueOfTime": 100000,
+      "monetaryValueOfMaterials": 500000
     },
     {
-      "url": "https://blog.sentry.io/we-just-gave-260-028-dollars-to-open-source-maintainers/",
-      "dateYearEnding": "2023-01-31",
-      "averageNumberOfDevs": 130,
-      "paymentsToProjects": 260280
-    },
-    {
-      "url": "https://blog.sentry.io/we-just-gave-154-999-dollars-and-89-cents-to-open-source-maintainers/",
-      "dateYearEnding": "2022-01-31",
-      "averageNumberOfDevs": 75,
-      "paymentsToProjects": 155000
+      "url": "https://example.com/blog/1",
+      "dateYearEnding": "2022-12-31",
+      "averageNumberOfDevs": 100,
+      "paymentsToProjects": 400000,
+      "monetaryValueOfTime": 10000,
+      "monetaryValueOfMaterials": 50000
     }
   ]
 }
