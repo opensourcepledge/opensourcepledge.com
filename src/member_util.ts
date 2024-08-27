@@ -34,11 +34,11 @@ export async function getMembers(): Promise<MemberWithId[]> {
 }
 
 export function getReportFullTotal(report: MemberReport) {
-  return report.paymentsToProjects + report.monetaryValueOfTime + report.monetaryValueOfMaterials;
+  return report.payments + report.monetaryValueOfTime + report.monetaryValueOfMaterials;
 }
 
 export function getDollarsPerDev(report: MemberReport) {
-  return report.paymentsToProjects / report.averageNumberOfDevs;
+  return report.payments / report.averageNumberOfDevs;
 }
 
 export function fmtCurrency(num: number) {
