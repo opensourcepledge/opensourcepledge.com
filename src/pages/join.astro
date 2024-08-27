@@ -1,0 +1,238 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Prose from "../components/Prose.astro";
+import Button from "../components/Button.astro";
+---
+
+<Layout title="Open Source Pledge" navless={true}>
+ <div class="flex items-center min-h-screen">
+    <Prose>
+      <a href="/"><img
+        class="max-w-72 oss-logo"
+        src="/logos/opensourcepledge-logo-horiz-color.png"
+        /></a>
+
+      <h2>How to Join the Pledge</h2>
+      <p>
+        Want to join the Pledge and contribute to a healthy Open Source ecosystem?
+        We’d love to have you! 🎈
+      </p>
+      <p>Here’s how to join:</p>
+      <ol>
+        <li>
+          <strong
+            >Donate $2,000 per full-time equivalent developer on staff</strong
+          >
+          to Open Source maintainers or foundations of your choice, and commit to
+          doing so in future years. The projects you’re donating to should meet
+          the
+          <a href="https://opensource.org/osd">Open Source Definition</a>. Of
+          course, this includes any existing donations you’ve made this fiscal
+          year. You can donate to any projects you like, but if you need help
+          figuring out which projects you depend on, you can use a tool like
+          <a href="https://thanks.dev">Thanks.dev</a>.
+        </li>
+        <li>
+          <strong>Publish a blog post</strong>, or equivalent, on your company
+          website, detailing the contributions your company has made to the Open
+          Source ecosystem this fiscal year. This post does not need to be long or
+          exhaustive. If in doubt, check out sample posts by
+          <a
+            href="https://blog.sentry.io/we-just-gave-500-000-dollars-to-open-source-maintainers/"
+            >Sentry</a
+          >
+          or
+          <a href="https://astral.sh/blog/astral-oss-fund">Astral</a>.
+          <ul>
+            <li>
+              Ideally, this post would include an itemized list of how much was
+              paid to each maintainer/foundation. When this is undesirable or
+              unrealistic, we ask that you make a best effort. To more
+              conveniently get an itemized list, consider using the
+              <a href="https://github.com/opensourcepledge/osp-github-reporter"
+                >Open Source Pledge GitHub Reporter</a
+              >, or <a href="https://thanks.dev">Thanks.dev</a>.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong
+            >Create a short JSON file with your company and donation info</strong
+          >, and host it at any URL you wish. You can check out an
+          <a
+            href="https://github.com/opensourcepledge/osspledge.com/blob/main/contrib/example-schema.json"
+            >example JSON report</a
+          >
+          or the
+          <a
+            href="https://github.com/opensourcepledge/osspledge.com/blob/main/src/content/config.ts"
+            >full schema</a
+          >.
+          <ul>
+            <li>
+              You should update this JSON file at least once per calendar year —
+              we’ll fetch it regularly.
+            </li>
+            <li>
+              All amounts are in USD so that different reports can be compared to
+              each other. If you’re using a different currency, you should convert
+              all amounts to the USD equivalents, using the most appropriate
+              exchange rate.
+            </li>
+            <li><code>name</code>: The name of your company.</li>
+            <li>
+              <code>description</code>: Will be shown on your member page and
+              ideally includes a general description of your company and some
+              notes on your company’s relationship with Open Source software.
+            </li>
+            <li>
+              <code>urlLearnMore</code>: A URL not to your company’s homepage, but
+              to some kind of page that describes your relationship to Open Source
+              and/or your commitment to supporting Open Source. This page need not
+              be exhaustive.
+            </li>
+            <li>
+              <code>urlSquareLogoWithBackground</code>: Your logo, which should be
+              square and have a non-transparent background. This image should be
+              between 400x400px and 800x800px, and should be appropriately
+              compressed.
+            </li>
+            <li>
+              Each <code>annualReport</code> should contain:
+              <ul>
+                <li>
+                  <code>url</code>: The URL to the blog post for this fiscal year,
+                  as detailed above.
+                </li>
+                <li>
+                  <code>dateYearEnding</code>: We understand your fiscal year
+                  might end on various dates — you can record the end date of your
+                  fiscal year in this field.
+                </li>
+                <li>
+                  <code>averageNumberOfDevs</code>: The average number of
+                  full-time equivalent developers employed by your company during
+                  that fiscal year.
+                </li>
+                <li>
+                  <code>payments</code>: The total US dollar amount of cash
+                  contributions you have made towards Open Source maintainers and
+                  foundations during this fiscal year.
+                </li>
+                <li>
+                  <code>monetaryValueofTime</code>,
+                  <code>monetaryValueOfMaterials</code>: You may also optionally
+                  specify, in approximate US dollar equivalents, your
+                  contributions to the Open Source ecosystem in sponsored
+                  developer time (in <code>monetaryValueOfTime</code>) or gifts in
+                  kind (in <code>monetaryValueOfMaterials</code>). While we
+                  acknowledge that contributions in time and in kind are
+                  important, they are not included in the cash pledge amount. They
+                  will still be displayed on your member page.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong
+            >Create a pull request to add yourself to the member list</strong
+          >
+          by changing
+          <a
+            href="https://github.com/opensourcepledge/osspledge.com/blob/main/members.csv"
+            >members.csv</a
+          >.
+        </li>
+        <li>
+          <strong>Include links to your branding materials</strong> in the pull
+          request so that we can promote you! For those pledging before September
+          15, this means you’ll be included in our major outdoor advertising
+          campaign.
+        </li>
+      </ol>
+      <p>
+        Once that’s all done, you’ll officially be a member. This means that your
+        company and reports will show up on [our website][osp], and you’ll be
+        entitled to use the
+        <a
+          href="https://github.com/opensourcepledge/osspledge.com/tree/main/public/logos"
+          >Open Source Pledge Member logo</a
+        >
+        on your website and marketing materials if you wish. Thank you so much for
+        joining us in contributing to a healthy Open Source ecosystem that
+        supports maintainers.
+      </p>
+      <p>
+        If you have any questions, feel free to
+        <a href="https://github.com/opensourcepledge/osspledge.com/issues/new"
+          >open an issue</a
+        >, and the relevant member of our team will get back to you.
+      </p>
+
+    </Prose>
+  </div>
+</Layout>
+
+<style>
+  code {
+    color: #fff;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #fff;
+    font-weight: 600;
+  }
+
+  h1.hero-header {
+    font-size: 5em;
+    line-height: 1;
+    margin: 4rem 0;
+    @media (min-width: 768px) {
+      font-size: 8em;
+    }
+  }
+  .oss-logo {
+    max-height: 5rem;
+  }
+
+  .highlight-box,
+  .footer-cta-box {
+    background: #162a2d;
+    border-radius: 0.5rem;
+    margin: 2rem 0;
+  }
+
+  .highlight-box {
+    padding: 0.25rem 1.25rem;
+
+    p,
+    h3 {
+      margin: 1rem 0;
+    }
+  }
+
+  .footer-cta-box {
+    background: #162a2d;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1.25rem;
+    align-items: center;
+    h2 {
+      font-size: 2.5em;
+      margin: 0 1rem;
+      flex: 1 1;
+    }
+    a {
+      padding: 1em 2em;
+      margin: 1rem;
+      text-align: center;
+    }
+  }
+</style>
+
