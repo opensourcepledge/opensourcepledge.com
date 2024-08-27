@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Run npm install
+        run: npm install
       - name: Update new member files
         run: bash ./bin/update-new-members ${{ github.event.before }}
       - name: Commit member changes, if any
