@@ -6,6 +6,7 @@
 
 if [ $# -eq 0 ]; then
   echo "USAGE: ./bin/update-new-members <sha_of_commit_to_check_since>"
+  exit 1
 fi
 
 new_member_lines=$(
