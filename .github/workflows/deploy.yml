@@ -22,6 +22,8 @@ jobs:
         run: bash ./bin/update-new-members ${{ github.event.before }}
       - name: Commit member changes, if any
         run: bash ./bin/commit-member-changes
+      - name: Rebuild website files
+        uses: withastro/action@v2
   deploy:
     needs: build
     runs-on: ubuntu-latest
