@@ -19,11 +19,11 @@ const members = await getMembers();
  * developers will be placed in the second one, and so on.
  */
 const DEV_GROUP_BOUNDS: [number, number][] = [
-  [Infinity, 25001],
-  [25000, 10001],
-  [10000, 1001],
-  [1001, 100],
-  [100, 1],
+  [Infinity, 25000],
+  [24999, 10000],
+  [9999, 1000],
+  [999, 100],
+  [99, 1],
 ];
 
 function formatDevGroupBounds([max, min]: [number, number]) {
