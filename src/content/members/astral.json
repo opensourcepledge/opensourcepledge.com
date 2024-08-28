@@ -1,0 +1,14 @@
+{
+  "description": "Open source software is at the heart of Astral. We're excited to establish a precedent for giving early and often. We hope to encourage, empower, and thank open source maintainers that inspire us.",
+  "name": "Astral",
+  "urlSquareLogoWithBackground": "https://avatars.githubusercontent.com/u/115962839?s=200&v=4",
+  "urlLearnMore": "https://astral.sh/blog/astral-oss-fund",
+  "annualReports": [
+    {
+      "url": "https://astral.sh/blog/astral-oss-fund",
+      "dateYearEnding": "2024-07-31",
+      "averageNumberOfDevs": 8,
+      "payments": 26000
+    }
+  ]
+}
