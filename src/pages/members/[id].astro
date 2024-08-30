@@ -4,7 +4,6 @@ import {
 } from '../../member_util.ts';
 import type { Member } from "../../content/config.ts";
 import Layout from "../../layouts/Layout.astro";
-import Prose from "../../components/Prose.astro";
 
 interface Props {
   member: Member;
@@ -19,63 +18,59 @@ export async function getStaticPaths() {
   });
 }
 ---
+
 <Layout title={member.name} navless={false}>
-  <Prose>
-    <div class="flex items-center">
-      <img
-        class="h-28 m-0 mr-8"
-        src={member.urlSquareLogoWithBackground}
-      >
-      <h2 class="text-4xl m-0">
-        {member.name}
-        <small class="block text-base font-normal pt-2">Open Source Pledge Member</small>
-      </h2>
+  <div>
+    <img src={member.urlSquareLogoWithBackground}>
+    <h2>
+      {member.name}
+      <small>Open Source Pledge Member</small>
+    </h2>
+  </div>
+
+  <p>{member.description}</p>
+
+  <a href={member.urlLearnMore}>Learn more →</a>
+
+  {member.annualReports.map(report => <div class="annual-report">
+    <div>
+      <h3><a href={report.url}>Year Ending {report.dateYearEnding}</a></h3>
+      <strong>{fmtCurrency(getDollarsPerDev(report))} / dev</strong>
     </div>
 
-    <p>{member.description}</p>
+    <table>
+      <tr>
+        <th>Item</th>
+        <th>Amount ($)</th>
+      </tr>
+      <tr>
+        <td>Payments to Projects</td>
+        <td>{fmtCurrency(report.payments)}</td>
+      </tr>
+      <tr>
+        <td></td>
+        <t>= {fmtCurrency(getDollarsPerDev(report))} / dev</td>
+      </tr>
+      <tr>
+        <td>Value of Time</td>
+        <td>{fmtCurrency(report.monetaryValueOfTime)}</td>
+      </tr>
+      <tr>
+        <td>Value of Materials</td>
+        <td>{fmtCurrency(report.monetaryValueOfMaterials)}</td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td>{fmtCurrency(getReportFullTotal(report))}</td>
+      </tr>
+    </table>
+  </div>)}
 
-    <a href={member.urlLearnMore}>Learn more →</a>
-
-    {member.annualReports.map(report => <div class="annual-report mt-12">
-      <div class="text-center">
-        <h3 class="mt-0 text-2xl"><a href={report.url}>Year Ending {report.dateYearEnding}</a></h3>
-        <strong>{fmtCurrency(getDollarsPerDev(report))} / dev</strong>
-      </div>
-
-      <table>
-        <tr>
-          <th class="text-left">Item</th>
-          <th class="text-right">Amount ($)</th>
-        </tr>
-        <tr>
-          <td>Payments to Projects</td>
-          <td class="text-right">{fmtCurrency(report.payments)}</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="text-right">= {fmtCurrency(getDollarsPerDev(report))} / dev</td>
-        </tr>
-        <tr>
-          <td>Value of Time</td>
-          <td class="text-right">{fmtCurrency(report.monetaryValueOfTime)}</td>
-        </tr>
-        <tr>
-          <td>Value of Materials</td>
-          <td class="text-right">{fmtCurrency(report.monetaryValueOfMaterials)}</td>
-        </tr>
-        <tr>
-          <td>Total</td>
-          <td class="text-right">{fmtCurrency(getReportFullTotal(report))}</td>
-        </tr>
-      </table>
-    </div>)}
-
-    <small>
-      This information is provided directly by {member.name}. Open
-      Source Pledge does not carry out any in-depth validation of this data.
-    </small>
-
-  </Prose>
+  <small>
+    This information is provided directly by {member.name}. Open
+    Source Pledge does not carry out any in-depth validation of this data.
+  </small>
 </Layout>
+
 <style>
 </style>

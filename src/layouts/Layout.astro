@@ -8,12 +8,12 @@ const { title, navless } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" class="bg-app-dark text-white">
+<html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="generator" content={Astro.generator}>
 
     <title>{ title ? (title + " | Open Source Pledge") : "Open Source Pledge" }</title>
     <meta name="description" content="Our companies feast year after year at the Open Source table. It's time to settle up.">
@@ -32,36 +32,39 @@ const { title, navless } = Astro.props;
   <body>
     {
       !navless && (
-        <nav class="py-8">
+        <nav>
           <div class="container">
             <a href="/">
-              <img
-                class="max-h-14"
-                src="/logos/opensourcepledge-logo-horiz-color.png"
-              />
+              <img src="/logos/opensourcepledge-logo-horiz-color.png">
             </a>
           </div>
         </nav>
       )
     }
     <div class="container">
-      <slot />
+      <slot></slot>
     </div>
   </body>
 </html>
+
 <style is:global>
   @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap");
 
+  :root {
+    --color-dark: #181225;
+    --color-muted: #ccc;
+    --color-purple: #9e86ff;
+    --color-pink: #ff70bc;
+    --color-yellow: #ffd00e;
+    --color-green: #2dde74;
+  }
   html {
     font-family: "Libre Franklin", system-ui, sans-serif;
+    background-color: var(--color-dark);
+    color: white;
   }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h1, h2, h3, h4, h5, h6 {
     font-family: "Azeret Mono", "Courier New", Courier, monospace;
   }
   code {
@@ -82,5 +85,14 @@ const { title, navless } = Astro.props;
     color: white;
     font-size: 20px;
     line-height: 1.6;
+  }
+</style>
+
+<style>
+  nav {
+    padding: 2rem 0;
+    img {
+      max-height: 3.5rem;
+    }
   }
 </style>

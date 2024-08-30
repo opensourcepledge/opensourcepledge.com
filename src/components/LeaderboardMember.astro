@@ -8,12 +8,13 @@ const { member } = Astro.props;
 import { getDollarsPerDev, fmtCurrency } from '../member_util.ts';
 import type { MemberWithId } from "../content/config.ts";
 ---
-<td class="text-left p-0 pb-2">
-  <a class="flex items-center" href={`/members/${member.id}`}>
-    <img src={member.data.urlSquareLogoWithBackground} class="w-14 h-14 m-0 mr-4">
+
+<td>
+  <a href={`/members/${member.id}`}>
+    <img src={member.data.urlSquareLogoWithBackground}>
     {member.data.name}
   </div>
 </td>
-<td class="text-right p-0 pb-2 align-middle">
+<td>
   {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))}
 </td>
