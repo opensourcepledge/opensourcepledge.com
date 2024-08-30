@@ -1,71 +1,61 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Prose from "../components/Prose.astro";
 import Button from "../components/Button.astro";
 ---
 
 <Layout navless={true}>
-  <div class="flex items-center min-h-screen">
-    <Prose>
-      <img
-        class="max-w-72 oss-logo"
-        src="/logos/opensourcepledge-logo-horiz-color.png"
-      />
-      <p class="text-app-muted"><em>Launching in October</em></p>
+  <img src="/logos/opensourcepledge-logo-horiz-color.png">
+  <p><em>Launching in October</em></p>
 
-      <h2 class="text-white mt-8 mb-4 text-3xl font-bold">
-        The Economics of Open Source
-      </h2>
-      <p>
-        Open Source is <a
-          href="https://openpath.chadwhitacre.com/2024/open-source-is-a-restaurant/"
-          >a restaurant</a
-        >.
-      </p>
+  <h2>The Economics of Open Source</h2>
+  <p>
+    Open Source is <a
+      href="https://openpath.chadwhitacre.com/2024/open-source-is-a-restaurant/"
+      >a restaurant</a
+    >.
+  </p>
 
-      <ul>
-        <li>not a grocery store (pay first, eat after)</li>
-        <li>not a soup kitchen (someone else pays)</li>
-        <li>but a restaurant (eat first, pay after)</li>
-      </ul>
+  <ul>
+    <li>not a grocery store (pay first, eat after)</li>
+    <li>not a soup kitchen (someone else pays)</li>
+    <li>but a restaurant (eat first, pay after)</li>
+  </ul>
 
-      <p>
-        Our companies feast year after year at the Open Source table. It's time
-        to settle up.
-      </p>
+  <p>
+    Our companies feast year after year at the Open Source table. It's time
+    to settle up.
+  </p>
 
-      <h2 class="text-white mt-8 mb-4 text-3xl font-bold">How the Pledge Works</h2>
+  <h2>How the Pledge Works</h2>
 
-      <div class="highlight-box">
-        <h3>Step One</h3>
-        <p>Pay Open Source maintainers.</p>
-        <p>
-          The minimum to participate is $2,000 per full-time employed developer
-          per year.
-        </p>
-      </div>
-
-      <div class="highlight-box">
-        <h3>Step Two</h3>
-        <p>Self-report annually.</p>
-        <ol>
-          <li>number of full-time employed developers</li>
-          <li>payments to maintainers by platform or foundation</li>
-        </ol>
-      </div>
-      <div class="footer-cta-box">
-        <h2>Let's make it happen.</h2>
-
-        <Button href="/join"
-          >Join the Pledge</Button
-        >
-      </div>
-
-      <p class="my-8">
-        Brought to you by <a href="https://sentry.io/welcome/">Sentry</a>.
-      </p>
-    </Prose>
+  <div class="highlight-box">
+    <h3>Step One</h3>
+    <p>Pay Open Source maintainers.</p>
+    <p>
+      The minimum to participate is $2,000 per full-time employed developer
+      per year.
+    </p>
   </div>
+
+  <div class="highlight-box">
+    <h3>Step Two</h3>
+    <p>Self-report annually.</p>
+    <ol>
+      <li>number of full-time employed developers</li>
+      <li>payments to maintainers by platform or foundation</li>
+    </ol>
+  </div>
+  <div class="footer-cta-box">
+    <h2>Let's make it happen.</h2>
+
+    <Button href="/join"
+      >Join the Pledge</Button
+    >
+  </div>
+
+  <p>
+    Brought to you by <a href="https://sentry.io/welcome/">Sentry</a>.
+  </p>
 </Layout>
 
 <style>

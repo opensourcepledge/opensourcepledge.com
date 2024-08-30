@@ -1,11 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Prose from "../../components/Prose.astro";
 import Leaderboard from "../../components/Leaderboard.astro";
 ---
 
 <Layout title="Members" navless={false}>
-  <Prose>
-    <Leaderboard grouped={true}></Leaderboard>
-  </Prose>
+  <Leaderboard grouped={true}></Leaderboard>
 </Layout>

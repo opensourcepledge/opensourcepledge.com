@@ -11,12 +11,9 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.8.1",
-    "@astrojs/tailwind": "^5.1.0",
     "@sentry/astro": "^8.18.0",
-    "@tailwindcss/typography": "^0.5.13",
     "astro": "^4.11.5",
     "node-fetch": "^3.3.2",
-    "tailwindcss": "^3.4.6",
     "typescript": "^5.5.3"
   }
 }
