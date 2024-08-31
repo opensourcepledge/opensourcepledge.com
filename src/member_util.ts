@@ -14,7 +14,7 @@ function getMockMembers(): MemberWithId[] {
   return mockDevCounts.map((mockDevCount, idx): MemberWithId => {
     let newMember = { ...exampleMember } as Member;
     newMember.name = `Example Member (${mockDevCount} ${mockDevCount == 1 ? "Dev" : "Devs"})`;
-    newMember.urlSquareLogoWithBackground = `/example-member-${idx}.svg`;
+    newMember.urlSquareLogoWithBackground = `/images/example-members/example-member-${idx}.svg`;
     for (let idx in newMember.annualReports) {
       newMember.annualReports[idx].averageNumberOfDevs = mockDevCount;
     }
