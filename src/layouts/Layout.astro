@@ -1,7 +1,7 @@
 ---
 interface Props {
   title?: string;
-  navless: boolean;
+  navless?: boolean;
 }
 
 const { title, navless } = Astro.props;
@@ -30,20 +30,25 @@ const { title, navless } = Astro.props;
       src="https://plausible.io/js/script.js"></script>
   </head>
   <body>
-    {
-      !navless && (
-        <nav>
-          <div class="container">
-            <a href="/">
-              <img src="/logos/opensourcepledge-logo-horiz-color.png">
-            </a>
-          </div>
-        </nav>
-      )
-    }
-    <div class="container">
-      <slot></slot>
-    </div>
+    { !navless && (
+      <nav class="container">
+        <a href="/">
+          <img src="/logos/opensourcepledge-logo-horiz-color.png">
+        </a>
+        <ul>
+          <li>
+            <a href="/join">Join</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+          <li>
+            <a href="/members">Members</a>
+          </li>
+        </ul>
+      </nav>
+    ) }
+    <slot></slot>
   </body>
 </html>
 
@@ -163,47 +168,66 @@ const { title, navless } = Astro.props;
 
 <style is:global>
   :root {
-    --color-dark: #181225;
+    --color-bg: #080e17;
+    --color-light-bg: #16212d;
+    --color-primary: #2ad870;
+    --color-secondary: #9e86ff;
     --color-muted: #ccc;
-    --color-purple: #9e86ff;
     --color-pink: #ff70bc;
     --color-yellow: #ffd00e;
-    --color-green: #2dde74;
   }
   html {
     font-family: Libre Franklin, system-ui, sans-serif;
-    background-color: var(--color-dark);
+    font-size: 20px;
+    line-height: 1.6;
+    background-color: var(--color-bg);
     color: white;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: Azeret Mono, Courier New, Courier, monospace;
   }
   code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
+    font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, monospace;
+  }
+  a {
+    color: var(--color-primary);
+    &:hover {
+      color: var(--color-secondary);
+    }
   }
   .container {
     margin: auto;
     padding: 0 1rem;
-    max-width: 42rem;
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
+    max-width: 860px;
   }
 </style>
 
 <style>
   nav {
+    display: flex;
+    align-items: center;
     padding: 2rem 0;
-    img {
-      max-height: 3.5rem;
+    a {
+      flex: 1 0;
+      color: white;
+      text-decoration: none;
+      &:hover {
+        color: var(--color-secondary);
+        text-decoration: underline;
+      }
+      img {
+        max-height: 3.5rem;
+      }
+    }
+    ul {
+      flex: 0 1;
+      list-style: none;
+      margin: 0 -1rem;
+      padding: 0;
+      display: flex;
+      li {
+        margin: 0 1rem;
+      }
     }
   }
 </style>

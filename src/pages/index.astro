@@ -3,116 +3,68 @@ import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 ---
 
-<Layout navless={true}>
-  <img src="/logos/opensourcepledge-logo-horiz-color.png">
-  <p><em>Launching in October</em></p>
-
-  <h2>The Economics of Open Source</h2>
-  <p>
-    Open Source is <a
-      href="https://openpath.chadwhitacre.com/2024/open-source-is-a-restaurant/"
-      >a restaurant</a
-    >.
-  </p>
-
-  <ul>
-    <li>not a grocery store (pay first, eat after)</li>
-    <li>not a soup kitchen (someone else pays)</li>
-    <li>but a restaurant (eat first, pay after)</li>
-  </ul>
-
-  <p>
-    Our companies feast year after year at the Open Source table. It's time
-    to settle up.
-  </p>
-
-  <h2>How the Pledge Works</h2>
-
-  <div class="highlight-box">
-    <h3>Step One</h3>
-    <p>Pay Open Source maintainers.</p>
+<Layout>
+  <div class="container">
+    <h2>Pay your share</h2>
     <p>
-      The minimum to participate is $2,000 per full-time employed developer
-      per year.
+      Open Source is <a
+        href="https://openpath.chadwhitacre.com/2024/open-source-is-a-restaurant/"
+        >a restaurant</a
+      >.
+    </p>
+
+    <ul>
+      <li>not a grocery store (pay first, eat after)</li>
+      <li>not a soup kitchen (someone else pays)</li>
+      <li>but a restaurant (eat first, pay after)</li>
+    </ul>
+
+    <p>
+      Our companies feast year after year at the Open Source table. It's time
+      to settle up.
+    </p>
+
+    <h2>How the Pledge Works</h2>
+
+    <div class="highlight-box">
+      <h3>Step One</h3>
+      <p>Pay Open Source maintainers.</p>
+      <p>
+        The minimum to participate is $2,000 per full-time employed developer
+        per year.
+      </p>
+    </div>
+
+    <div class="highlight-box">
+      <h3>Step Two</h3>
+      <p>Self-report annually.</p>
+      <ol>
+        <li>number of full-time employed developers</li>
+        <li>payments to maintainers by platform or foundation</li>
+      </ol>
+    </div>
+    <div class="footer-cta-box">
+      <h2>Let's make it happen.</h2>
+
+      <Button href="/join"
+        >Join the Pledge</Button
+      >
+    </div>
+
+    <p>
+      Brought to you by <a href="https://sentry.io/welcome/">Sentry</a>.
     </p>
   </div>
-
-  <div class="highlight-box">
-    <h3>Step Two</h3>
-    <p>Self-report annually.</p>
-    <ol>
-      <li>number of full-time employed developers</li>
-      <li>payments to maintainers by platform or foundation</li>
-    </ol>
-  </div>
-  <div class="footer-cta-box">
-    <h2>Let's make it happen.</h2>
-
-    <Button href="/join"
-      >Join the Pledge</Button
-    >
-  </div>
-
-  <p>
-    Brought to you by <a href="https://sentry.io/welcome/">Sentry</a>.
-  </p>
 </Layout>
 
 <style>
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    color: #fff;
-    font-weight: 600;
-  }
-
-  h1.hero-header {
-    font-size: 5em;
-    line-height: 1;
-    margin: 4rem 0;
-    @media (min-width: 768px) {
-      font-size: 8em;
-    }
-  }
-  .oss-logo {
-    max-height: 5rem;
-  }
-
-  .highlight-box,
-  .footer-cta-box {
-    background: #162a2d;
-    border-radius: 0.5rem;
-    margin: 2rem 0;
-  }
-
   .highlight-box {
+    margin: 2rem 0;
     padding: 0.25rem 1.25rem;
-
-    p,
-    h3 {
+    background: var(--color-light-bg);
+    border-radius: 0.5rem;
+    p, h3 {
       margin: 1rem 0;
-    }
-  }
-
-  .footer-cta-box {
-    background: #162a2d;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 1.25rem;
-    align-items: center;
-    h2 {
-      font-size: 2.5em;
-      margin: 0 1rem;
-      flex: 1 1;
-    }
-    a {
-      padding: 1em 2em;
-      margin: 1rem;
-      text-align: center;
     }
   }
 </style>
