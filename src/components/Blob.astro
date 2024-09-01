@@ -62,12 +62,12 @@ const zIndex = isGrad ? 100 : 90;
 
 const { default: svg } = await import (`../assets/images/blobs/blob-${kind}.svg?raw`);
 ---
-<div data-blob={blobGenre}>
+<div class="blob" data-blob={blobGenre}>
   <Fragment set:html={svg} />
 </div>
 
 <style define:vars={{ top, left, right, zIndex }}>
-  [data-blob] :global(svg) {
+  .blob :global(svg) {
     position: absolute;
     top: var(--top);
     left: var(--left);
