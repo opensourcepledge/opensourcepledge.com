@@ -10,7 +10,7 @@ import type { MemberWithId } from "../content/config.ts";
 ---
 
 <td>
-  <a href={`/members/${member.id}`}>
+  <a class="sneaky" href={`/members/${member.id}`}>
     <img src={member.data.urlSquareLogoWithBackground}>
     {member.data.name}
   </div>
@@ -18,3 +18,22 @@ import type { MemberWithId } from "../content/config.ts";
 <td>
   {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))}
 </td>
+
+<style>
+  img {
+    max-width: 3.5rem;
+    margin-right: 1rem;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    min-width: 15rem;
+    font-weight: bold;
+  }
+  td:nth-child(1) {
+    text-align: left;
+  }
+  td:nth-child(2) {
+    text-align: right;
+  }
+</style>
