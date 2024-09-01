@@ -178,7 +178,7 @@ const { title, navless } = Astro.props;
     --color-primary: #2ad870;
     --color-secondary: #9e86ff;
     --color-tertiary: #ffd00e;
-    --color-muted: #ccc;
+    --color-muted: #37485c;
     --color-pink: #ff70bc;
     --color-text: white;
   }
@@ -226,11 +226,32 @@ const { title, navless } = Astro.props;
     padding-left: 1rem;
     padding-right: 1rem;
     max-width: 860px;
+    &.container--narrow {
+      max-width: 600px;
+    }
   }
   table {
     width: 100%;
+    border-collapse: collapse;
     tr {
       text-align: left;
+    }
+    &.table--bordered {
+      border-top: 2px solid var(--color-muted);
+      tr {
+        td, th {
+          padding: 0.3rem 0;
+          border-bottom: 1px solid var(--color-muted);
+        }
+      }
+    }
+    &.table--lr {
+      td:nth-child(1), th:nth-child(1) {
+        text-align: left;
+      }
+      td:nth-child(2), th:nth-child(2) {
+        text-align: right;
+      }
     }
   }
   ul {
