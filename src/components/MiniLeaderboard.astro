@@ -8,7 +8,7 @@ import {
 const members = await getMembers();
 ---
 
-<table>
+<table class="table--lr">
   <tr>
     <th>Name</th>
     <th>$/dev in latest report</th>
@@ -32,12 +32,6 @@ const members = await getMembers();
       font-weight: normal;
       font-size: 0.9rem;
       padding-bottom: 0.3rem;
-    }
-    td:nth-child(1), th:nth-child(1) {
-      text-align: left;
-    }
-    td:nth-child(2), th:nth-child(2) {
-      text-align: right;
     }
   }
   img {
