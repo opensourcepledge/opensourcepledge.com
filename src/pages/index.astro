@@ -22,8 +22,13 @@ import TextButton from "../components/TextButton.astro";
 
     <section class="pc-hero">
       <Blob kind="grad-dots-05" top="65%" right="-3.5rem"></Blob>
-      <div>
-        <h1>Pay your share</h1>
+      <div class="pc-hero-container">
+        <div class="heading-and-mini-pc">
+          <h1>Pay your share</h1>
+          <div class="mini-pc">
+            <img src="/images/piggybank.png">
+          </div>
+        </div>
         <p
           >Whether you're a CEO, CFO, CTO, or just a dev, chances are your company is building using OSS. It's time to
           pledge back.</p
@@ -37,13 +42,13 @@ import TextButton from "../components/TextButton.astro";
     <section>
       <h2>TL;DR</h2>
 
-      <div class="highlight-box">
-        <h3><span class="circled">1</span> Pay Open Source maintainers</h3>
+      <div class="highlight-box highlight-box--circled">
+        <h3><div><span class="circled">1</span></div><span>Pay Open Source maintainers</span></h3>
         <p>The minimum to participate is $2,000 per full-time equivalent employed developer per year.</p>
       </div>
 
-      <div class="highlight-box">
-        <h3><span class="circled">2</span> Self-report annually</h3>
+      <div class="highlight-box highlight-box--circled">
+        <h3><div><span class="circled">2</span></div><span>Self-report annually</span></h3>
         <p
           >Each year, create a blog post outlining your payments to maintainers, as well as your FTE developer
           count.</p
@@ -70,7 +75,7 @@ import TextButton from "../components/TextButton.astro";
     <section class="flex-center bottom-cta">
       <div>
         <div class="text-center">
-          <h2>Do the right thing,<br>support Open Source</h2>
+          <h2>Do the right thing, support Open Source</h2>
         </div>
 
         <div class="text-center">
@@ -93,12 +98,18 @@ import TextButton from "../components/TextButton.astro";
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right center;
-    & > div {
+    .pc-hero-container {
       padding-right: 60%;
-      h1 {
-        margin: 0;
-        font-size: 6rem;
-        line-height: 1;
+      .heading-and-mini-pc {
+        position: relative;
+        h1 {
+          margin: 0;
+          font-size: 6rem;
+          line-height: 1;
+        }
+        .mini-pc {
+          display: none;
+        }
       }
     }
   }
@@ -106,6 +117,38 @@ import TextButton from "../components/TextButton.astro";
     h2 {
       font-size: 2.8rem;
       line-height: 1.2;
+    }
+  }
+  @media (max-width: 800px) {
+    .pc-hero {
+      background-image: none;
+      & > :global(.blob) {
+        display: none;
+      }
+      .pc-hero-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-right: 0;
+        .heading-and-mini-pc {
+          display: flex;
+          align-items: center;
+          h1 {
+            font-size: 3rem;
+          }
+          .mini-pc {
+            display: block;
+            img {
+              max-width: 6rem;
+            }
+          }
+        }
+      }
+    }
+    .bottom-cta {
+      h2 {
+        font-size: 2rem;
+      }
     }
   }
 </style>
