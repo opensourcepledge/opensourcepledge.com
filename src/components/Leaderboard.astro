@@ -13,29 +13,46 @@ import {
 const members = await getMembers();
 ---
 
-<div class="leaderboard">
-  {grouped ? <div>
-    <h2>Member Companies</h2>
-    {groupMembers(filterInactiveMembers(members)).map((groupMembers, idx) => groupMembers.length > 0 && <div>
-      <table>
-        <tr>
-          <th><h3>{formatDevGroupBounds(DEV_GROUP_BOUNDS[idx])}</h3></th>
-          <th>$/dev in latest report</th>
-        </tr>
-        {sortMembers(groupMembers).map((member) => <tr>
-          <LeaderboardMember member={member}></LeaderboardMember>
-        </tr>)}
-      </table>
-    </div>)}
-  </div> : (
+{grouped ? <div>
+  {groupMembers(filterInactiveMembers(members)).map((groupMembers, idx) => groupMembers.length > 0 && <div>
+    <h2>{formatDevGroupBounds(DEV_GROUP_BOUNDS[idx])}</h2>
     <table>
       <tr>
-        <th><h2>Member Leaderboard</h2></th>
+        <th>Name</th>
         <th>$/dev in latest report</th>
       </tr>
-      {sortMembers(filterInactiveMembers(members)).map((member) => <tr>
+      {sortMembers(groupMembers).map((member) => <tr>
         <LeaderboardMember member={member}></LeaderboardMember>
       </tr>)}
     </table>
-  )}
-</div>
+  </div>)}
+</div> : (
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>$/dev in latest report</th>
+    </tr>
+    {sortMembers(filterInactiveMembers(members)).map((member) => <tr>
+      <LeaderboardMember member={member}></LeaderboardMember>
+    </tr>)}
+  </table>
+)}
+
+<style>
+  h2 {
+    margin-top: 2rem;
+    padding: 0.2rem 0.5rem;
+    background: var(--color-light-bg);
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  th {
+    font-weight: normal;
+    &:nth-child(1) {
+      text-align: left;
+    }
+    &:nth-child(2) {
+      text-align: right;
+    }
+  }
+</style>
