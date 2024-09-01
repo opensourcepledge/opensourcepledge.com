@@ -26,6 +26,8 @@ There are three main suggested ways to use Blobs.
 3. If the Blob should be anchored to the edge of the screen:
   1. Put the Blob outside of any `position: relative` container other than
     `<html>`, and give it an appropriate `top` and `left`/`right` position.
+  2. Wrap all such Blobs in a `div` with `class="edge-blobs"`, so that they're
+    only shown on large screens.
 
 “grad” blobs have a higher z-index than “solid” blobs.
 */

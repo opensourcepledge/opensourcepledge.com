@@ -2,77 +2,109 @@
 import Blob from "../components/Blob.astro";
 import Button from "../components/Button.astro";
 import Layout from "../layouts/Layout.astro";
+import MiniLeaderboard from "../components/MiniLeaderboard.astro";
+import TextButton from "../components/TextButton.astro";
 ---
 
 <Layout>
+  <div class="edge-blobs">
+    <Blob kind="solid-fill-03" top="35%" right="-10rem"></Blob>
+    <Blob kind="grad-dots-02" top="60%" right="-1rem"></Blob>
+  </div>
   <div class="container">
-    <Blob kind="grad-dots-01" top="-5%" right="-3rem"></Blob>
-    <Blob kind="grad-dots-02" top="45%" left="-12rem"></Blob>
-    <Blob kind="grad-dots-03" top="65%" right="-35rem"></Blob>
-    <Blob kind="solid-fill-01" top="-5%" right="-3rem"></Blob>
-    <Blob kind="solid-fill-02" top="65%" right="-35rem"></Blob>
-    <Blob kind="solid-fill-04" top="40%" left="-14rem"></Blob>
-    <Blob kind="solid-fill-05" top="15%" right="-25rem"></Blob>
-    <h2>Pay your share</h2>
-    <p>
-      Open Source is <a
-        href="https://openpath.chadwhitacre.com/2024/open-source-is-a-restaurant/"
-        >a restaurant</a
-      >.
-    </p>
+    <Blob kind="grad-dots-04" top="-2%" left="-20rem"></Blob>
+    <Blob kind="grad-dots-03" top="50%" left="-20rem"></Blob>
+    <Blob kind="solid-fill-01" top="2%" left="-20rem"></Blob>
+    <Blob kind="solid-fill-05" top="20%" left="-16rem"></Blob>
+    <Blob kind="solid-fill-02" top="70%" left="-20rem"></Blob>
+    <Blob kind="grad-dots-01" top="80%" left="-13rem"></Blob>
+    <Blob kind="solid-fill-04" top="90%" right="-20rem"></Blob>
 
-    <ul>
-      <li>not a grocery store (pay first, eat after)</li>
-      <li>not a soup kitchen (someone else pays)</li>
-      <li>but a restaurant (eat first, pay after)</li>
-    </ul>
+    <section class="pc-hero">
+      <Blob kind="grad-dots-05" top="65%" right="-3.5rem"></Blob>
+      <div>
+        <h1>Pay your share</h1>
+        <p
+          >Whether you're a CEO, CFO, CTO, or just a dev, chances are your company is building using OSS. It's time to
+          pledge back.</p
+        >
+        <Button href="/join"
+          >Join the Pledge</Button
+        >
+      </div>
+    </section>
 
-    <p>
-      Our companies feast year after year at the Open Source table. It's time
-      to settle up.
-    </p>
+    <section>
+      <h2>TL;DR</h2>
 
-    <h2>How the Pledge Works</h2>
+      <div class="highlight-box">
+        <h3><span class="circled">1</span> Pay Open Source maintainers</h3>
+        <p>The minimum to participate is $2,000 per full-time equivalent employed developer per year.</p>
+      </div>
 
-    <div class="highlight-box">
-      <h3>Step One</h3>
-      <p>Pay Open Source maintainers.</p>
-      <p>
-        The minimum to participate is $2,000 per full-time employed developer
-        per year.
-      </p>
-    </div>
+      <div class="highlight-box">
+        <h3><span class="circled">2</span> Self-report annually</h3>
+        <p
+          >Each year, create a blog post outlining your payments to maintainers, as well as your FTE developer
+          count.</p
+        >
+      </div>
+    </section>
 
-    <div class="highlight-box">
-      <h3>Step Two</h3>
-      <p>Self-report annually.</p>
-      <ol>
-        <li>number of full-time employed developers</li>
-        <li>payments to maintainers by platform or foundation</li>
-      </ol>
-    </div>
-    <div class="footer-cta-box">
-      <h2>Let's make it happen.</h2>
+    <section class="flex-center">
+      <div>
+        <div class="text-center">
+          <h2>Top orgs opening up</h2>
+        </div>
 
-      <Button href="/join"
-        >Join the Pledge</Button
-      >
-    </div>
+        <MiniLeaderboard></MiniLeaderboard>
 
-    <p>
-      Brought to you by <a href="https://sentry.io/welcome/">Sentry</a>.
-    </p>
+        <div class="text-center">
+          <TextButton href="/members"
+            >Go to all members</TextButton
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="flex-center bottom-cta">
+      <div>
+        <div class="text-center">
+          <h2>Do the right thing,<br>support Open Source</h2>
+        </div>
+
+        <div class="text-center">
+          <Button href="/join"
+            >Join the Pledge</TextButton
+          >
+        </div>
+      </div>
+    </section>
   </div>
 </Layout>
 
 <style>
-  .highlight-box {
-    margin: 2rem 0;
-    padding: 0.25rem 1.25rem;
-    background: var(--color-light-bg);
-    border-radius: 0.5rem;
-    p, h3 {
-      margin: 1rem 0;
+  .pc-hero {
+    position: relative;
+    margin: 1rem -4rem;
+    padding: 0 4rem;
+    background-image: url(/images/piggybank.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+    & > div {
+      padding-right: 60%;
+      h1 {
+        margin: 0;
+        font-size: 6rem;
+        line-height: 1;
+      }
+    }
+  }
+  .bottom-cta {
+    h2 {
+      font-size: 2.8rem;
+      line-height: 1.2;
     }
   }
 </style>
