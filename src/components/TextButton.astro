@@ -1,0 +1,33 @@
+---
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a href={href}>
+  <slot></slot>
+</a>
+
+<style>
+  a {
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0.4rem 2rem;
+    color: var(--color-primary);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1em;
+  }
+  a:hover {
+    color: #fff;
+    border-color: #fff;
+  }
+  a:active {
+    color: #ffd00e;
+    border-color: #ffd00e;
+  }
+</style>
