@@ -1,9 +1,13 @@
 ---
+import Blob from "../../components/Blob.astro";
+import Button from "../../components/Button.astro";
+import Layout from "../../layouts/Layout.astro";
+import TextButton from "../../components/TextButton.astro";
+
 import {
   getMembers, getReportFullTotal, getDollarsPerDev, fmtCurrency
 } from '../../members.ts';
 import type { Member } from "../../content/config.ts";
-import Layout from "../../layouts/Layout.astro";
 
 interface Props {
   member: Member;
@@ -20,57 +24,103 @@ export async function getStaticPaths() {
 ---
 
 <Layout title={member.name}>
-  <div>
-    <img src={member.urlSquareLogoWithBackground}>
-    <h2>
-      {member.name}
-      <small>Open Source Pledge Member</small>
-    </h2>
+  <div class="container container--narrow">
+    <Blob kind="grad-dots-04" top="-2%" right="-20rem"></Blob>
+    <Blob kind="solid-fill-04" top="2%" right="-24rem"></Blob>
+    <Blob kind="grad-dots-05" top="35%" left="-20rem"></Blob>
+    <Blob kind="solid-fill-03" top="30%" left="-30rem"></Blob>
+    <Blob kind="grad-dots-03" top="65%" right="-20rem"></Blob>
+    <Blob kind="solid-fill-02" top="60%" right="-24rem"></Blob>
+
+    <section>
+      <div class="company-intro">
+        <img src={member.urlSquareLogoWithBackground}>
+        <h1>
+          {member.name}
+          <small>Open Source Pledge Member</small>
+        </h1>
+      </div>
+
+      <p>{member.description}</p>
+
+      <a href={member.urlLearnMore}>Learn more →</a>
+
+      {member.annualReports.map(report => <section class="annual-report">
+        <div>
+          <h2>Year Ending {report.dateYearEnding}</h2>
+          {fmtCurrency(getDollarsPerDev(report))} / dev
+        </div>
+
+        <table class="table--bordered table--lr">
+          <tr>
+            <th>Item</th>
+            <th>Amount ($)</th>
+          </tr>
+          <tr>
+            <td>Payments to Projects</td>
+            <td>{fmtCurrency(report.payments)}</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>= {fmtCurrency(getDollarsPerDev(report))} / dev</td>
+          </tr>
+          <tr>
+            <td>Value of Time</td>
+            <td>{fmtCurrency(report.monetaryValueOfTime)}</td>
+          </tr>
+          <tr>
+            <td>Value of Materials</td>
+            <td>{fmtCurrency(report.monetaryValueOfMaterials)}</td>
+          </tr>
+          <tr>
+            <td>Total</td>
+            <td>{fmtCurrency(getReportFullTotal(report))}</td>
+          </tr>
+        </table>
+        <div class="text-center">
+          <TextButton href={report.url}>Read report</TextButton>
+        </div>
+      </section>)}
+
+      <small>
+        This information is provided directly by {member.name}. Open
+        Source Pledge does not carry out any in-depth validation of this data.
+      </small>
+    </section>
   </div>
-
-  <p>{member.description}</p>
-
-  <a href={member.urlLearnMore}>Learn more →</a>
-
-  {member.annualReports.map(report => <div class="annual-report">
-    <div>
-      <h3><a href={report.url}>Year Ending {report.dateYearEnding}</a></h3>
-      <strong>{fmtCurrency(getDollarsPerDev(report))} / dev</strong>
-    </div>
-
-    <table>
-      <tr>
-        <th>Item</th>
-        <th>Amount ($)</th>
-      </tr>
-      <tr>
-        <td>Payments to Projects</td>
-        <td>{fmtCurrency(report.payments)}</td>
-      </tr>
-      <tr>
-        <td></td>
-        <t>= {fmtCurrency(getDollarsPerDev(report))} / dev</td>
-      </tr>
-      <tr>
-        <td>Value of Time</td>
-        <td>{fmtCurrency(report.monetaryValueOfTime)}</td>
-      </tr>
-      <tr>
-        <td>Value of Materials</td>
-        <td>{fmtCurrency(report.monetaryValueOfMaterials)}</td>
-      </tr>
-      <tr>
-        <td>Total</td>
-        <td>{fmtCurrency(getReportFullTotal(report))}</td>
-      </tr>
-    </table>
-  </div>)}
-
-  <small>
-    This information is provided directly by {member.name}. Open
-    Source Pledge does not carry out any in-depth validation of this data.
-  </small>
 </Layout>
 
 <style>
+  .company-intro {
+    display: flex;
+    align-items: center;
+    img {
+      max-width: 7rem;
+      margin-right: 2rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+      small {
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 1rem;
+        font-weight: normal;
+      }
+    }
+  }
+  .annual-report {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: var(--color-light-bg);
+    h2 {
+      font-size: 1rem;
+    }
+    table {
+      margin-top: 2rem;
+    }
+    a {
+      margin-bottom: 0;
+    }
+  }
 </style>

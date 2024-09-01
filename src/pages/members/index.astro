@@ -6,7 +6,7 @@ import Leaderboard from "../../components/Leaderboard.astro";
 ---
 
 <Layout title="Members">
-  <div class="container">
+  <div class="container container--narrow">
     <Blob kind="solid-fill-04" top="-15%" left="-16rem"></Blob>
     <Blob kind="grad-dots-01" top="8%" right="-20rem"></Blob>
     <Blob kind="solid-fill-02" top="2%" right="-22rem"></Blob>
@@ -17,9 +17,7 @@ import Leaderboard from "../../components/Leaderboard.astro";
       <div class="text-center">
         <h1>Member<br>groups</h1>
       </div>
-      <div class="flex-center">
-        <Leaderboard grouped={true}></Leaderboard>
-      </div>
+      <Leaderboard grouped={true}></Leaderboard>
     </section>
 
     <section class="flex-center bottom-cta">
