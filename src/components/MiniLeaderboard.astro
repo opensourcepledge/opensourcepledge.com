@@ -1,0 +1,53 @@
+---
+import LeaderboardMember from "./LeaderboardMember.astro";
+import {
+  getMembers, formatDevGroupBounds, filterInactiveMembers, groupMembers, sortMembers, DEV_GROUP_BOUNDS,
+  getDollarsPerDev, fmtCurrency
+} from '../members.ts';
+
+const members = await getMembers();
+---
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>$/dev in latest report</th>
+  </tr>
+  {sortMembers(filterInactiveMembers(members)).slice(0, 5).map((member) => <tr>
+    <td>
+      <a class="sneaky" href={`/members/${member.id}`}>
+        <img src={member.data.urlSquareLogoWithBackground}>
+        {member.data.name}
+      </div>
+    </td>
+    <td>
+      {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))}
+    </td>
+  </tr>)}
+</table>
+
+<style>
+  tr {
+    th {
+      font-weight: normal;
+      font-size: 0.9rem;
+      padding-bottom: 0.3rem;
+    }
+    td:nth-child(1), th:nth-child(1) {
+      text-align: left;
+    }
+    td:nth-child(2), th:nth-child(2) {
+      text-align: right;
+    }
+  }
+  img {
+    max-width: 3.5rem;
+    margin-right: 1rem;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    min-width: 15rem;
+    font-weight: bold;
+  }
+</style>
