@@ -6,12 +6,12 @@ interface Props {
 const { href } = Astro.props;
 ---
 
-<a href={href}>
+<a class="button" href={href}>
   <slot></slot>
 </a>
 
 <style>
-  a {
+  .button {
     display: inline-block;
     margin: 1rem 0;
     padding: 0.8rem 2rem;
@@ -22,11 +22,11 @@ const { href } = Astro.props;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 1.2em;
-  }
-  a:hover {
-    color: var(--color-secondary);
-  }
-  a:active {
-    color: var(--color-tertiary);
+    &:hover {
+      background: var(--color-secondary);
+    }
+    &:active {
+      background: var(--color-tertiary);
+    }
   }
 </style>
