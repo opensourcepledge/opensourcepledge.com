@@ -1,0 +1,93 @@
+---
+import Blob from "../components/Blob.astro";
+import Button from "../components/Button.astro";
+import Layout from "../layouts/Layout.astro";
+import MiniLeaderboard from "../components/MiniLeaderboard.astro";
+import TextButton from "../components/TextButton.astro";
+---
+
+<Layout>
+  <div class="edge-blobs">
+    <Blob kind="solid-fill-03" top="75%" left="-10rem"></Blob>
+  </div>
+  <div class="container">
+    <Blob kind="grad-dots-04" top="-2%" right="-20rem"></Blob>
+    <Blob kind="solid-fill-05" top="20%" left="-16rem"></Blob>
+    <Blob kind="solid-fill-04" top="90%" right="-20rem"></Blob>
+
+    <section>
+      <h1>About Open Source Pledge</h1>
+
+      <p>Open Source Pledge is brought to you by <a href="https://sentry.io">Sentry</a>.</p>
+
+      <p>We have four working groups and a steering committee comprised of working group leads.</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Working Group</th>
+            <th>Lead</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Member Outreach</td>
+            <td><a href="https://vladh.net">Vlad-Stefan Harbuz</a></td>
+          </tr>
+          <tr>
+            <td>Maintainer Outreach</td>
+            <td><a href="https://ethanarrowood.com/">Ethan Arrowood</a></td>
+          </tr>
+          <tr>
+            <td>Marketing &amp; Media</td>
+            <td><a href="https://github.com/selviano">Michael Selvidge</a></td>
+          </tr>
+          <tr>
+            <td>Design &amp; Build</td>
+            <td><a href="https://chadwhitacre.com/">Chad Whitacre</a></td>
+          </tr>
+          <tr>
+            <td>Steering</td>
+            <td><a href="https://chadwhitacre.com/">Chad Whitacre</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Want to help?</h2>
+      <p
+        >To help us build Open Source Pledge, please
+        <a href="https://github.com/opensourcepledge/osspledge.com/issues">dive into our issues</a>
+        or reach out to the working group leads listed here either in issues or
+        <a href="https://discord.gg/svH5XzDsBd">on Discord</a>.</p
+      >
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .pc-hero {
+    position: relative;
+    margin: 1rem -4rem;
+    padding: 0 4rem;
+    background-image: url(/images/piggybank.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+    & > div {
+      padding-right: 60%;
+      h1 {
+        margin: 0;
+        font-size: 6rem;
+        line-height: 1;
+      }
+    }
+  }
+  .bottom-cta {
+    h2 {
+      font-size: 2.8rem;
+      line-height: 1.2;
+    }
+  }
+</style>

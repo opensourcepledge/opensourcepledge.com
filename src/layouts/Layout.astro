@@ -215,15 +215,49 @@ const { title, navless } = Astro.props;
   }
   .container {
     position: relative;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     padding-left: 1rem;
     padding-right: 1rem;
     max-width: 860px;
   }
+  table {
+    width: 100%;
+    tr {
+      text-align: left;
+    }
+  }
   section {
-    margin: 5rem 0;
+    margin: 4rem 0;
+    h1 {
+      font-size: 4rem;
+      line-height: 1.3;
+    }
     h2 {
       font-size: 1.8rem;
+    }
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    a {
+      flex: 1 0;
+      text-decoration: none;
+      img {
+        max-height: 3.5rem;
+      }
+    }
+    ul {
+      flex: 0 1;
+      list-style: none;
+      margin: 0 -1rem;
+      padding: 0;
+      display: flex;
+      li {
+        margin: 0 1rem;
+      }
     }
   }
   footer {
@@ -263,30 +297,5 @@ const { title, navless } = Astro.props;
     border-radius: 100%;
     border: 3px solid var(--color-text);
     text-align: center;
-  }
-</style>
-
-<style>
-  nav {
-    display: flex;
-    align-items: center;
-    padding: 2rem 0;
-    a {
-      flex: 1 0;
-      text-decoration: none;
-      img {
-        max-height: 3.5rem;
-      }
-    }
-    ul {
-      flex: 0 1;
-      list-style: none;
-      margin: 0 -1rem;
-      padding: 0;
-      display: flex;
-      li {
-        margin: 0 1rem;
-      }
-    }
   }
 </style>
