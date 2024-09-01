@@ -36,18 +36,24 @@ const { title, navless } = Astro.props;
         </a>
         <ul>
           <li>
-            <a href="/join">Join</a>
+            <a class="sneaky" href="/join">Join</a>
           </li>
           <li>
-            <a href="/about">About</a>
+            <a class="sneaky" href="/about">About</a>
           </li>
           <li>
-            <a href="/members">Members</a>
+            <a class="sneaky" href="/members">Members</a>
           </li>
         </ul>
       </nav>
     ) }
     <slot></slot>
+    <footer class="container">
+      <a class="sneaky" href="https://sentry.io">Brought to you by Sentry</a>
+      <a class="sneaky" href="/join">Join</a>
+      <a class="sneaky" href="/about">About</a>
+      <a class="sneaky" href="/members">Members</a>
+    </footer>
   </body>
 </html>
 
@@ -171,18 +177,23 @@ const { title, navless } = Astro.props;
     --color-light-bg: #16212d;
     --color-primary: #2ad870;
     --color-secondary: #9e86ff;
+    --color-tertiary: #ffd00e;
     --color-muted: #ccc;
     --color-pink: #ff70bc;
-    --color-yellow: #ffd00e;
+    --color-text: white;
   }
   html {
     font-family: Libre Franklin, system-ui, sans-serif;
     font-size: 20px;
     line-height: 1.6;
     background-color: var(--color-bg);
-    color: white;
+    color: var(--color-text);
+    position: relative;
+    overflow-x: hidden;
   }
   h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    margin-bottom: 0.5em;
     font-family: Azeret Mono, Courier New, Courier, monospace;
   }
   code {
@@ -194,11 +205,64 @@ const { title, navless } = Astro.props;
       color: var(--color-secondary);
     }
   }
+  a.sneaky {
+    color: var(--color-text);
+    text-decoration: none;
+    &:hover {
+      color: var(--color-secondary);
+      text-decoration: underline;
+    }
+  }
   .container {
     position: relative;
     margin: auto;
-    padding: 0 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     max-width: 860px;
+  }
+  section {
+    margin: 5rem 0;
+    h2 {
+      font-size: 1.8rem;
+    }
+  }
+  footer {
+    padding: 2rem 0;
+    text-align: center;
+    a {
+      display: inline-block;
+      margin: 0 1rem;
+    }
+  }
+  .flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .highlight-box {
+    margin: 1rem 0;
+    padding: 0.25rem 1.25rem;
+    background: var(--color-light-bg);
+    border-radius: 0.5rem;
+    p, h3 {
+      margin: 1rem 0;
+    }
+  }
+  .edge-blobs {
+    @media (max-width: 1200px) {
+      display: none;
+    }
+  }
+  .circled {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+    border: 3px solid var(--color-text);
+    text-align: center;
   }
 </style>
 
@@ -209,12 +273,7 @@ const { title, navless } = Astro.props;
     padding: 2rem 0;
     a {
       flex: 1 0;
-      color: white;
       text-decoration: none;
-      &:hover {
-        color: var(--color-secondary);
-        text-decoration: underline;
-      }
       img {
         max-height: 3.5rem;
       }
