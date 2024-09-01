@@ -191,6 +191,10 @@ const { title, navless } = Astro.props;
     position: relative;
     overflow-x: hidden;
   }
+  body {
+    margin: 0;
+    overflow-x: hidden;
+  }
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
     margin-bottom: 0.5em;
@@ -240,7 +244,7 @@ const { title, navless } = Astro.props;
       border-top: 2px solid var(--color-muted);
       tr {
         td, th {
-          padding: 0.3rem 0;
+          padding: 0.3rem;
           border-bottom: 1px solid var(--color-muted);
         }
       }
@@ -267,9 +271,15 @@ const { title, navless } = Astro.props;
   }
   section {
     margin: 4rem 0;
+    @media (max-width: 800px) {
+      margin: 2rem 0;
+    }
     h1 {
       font-size: 4rem;
       line-height: 1.3;
+      @media (max-width: 800px) {
+       font-size: 2rem;
+      }
     }
     h2 {
       font-size: 1.8rem;
@@ -280,6 +290,10 @@ const { title, navless } = Astro.props;
     align-items: center;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    @media (max-width: 800px) {
+      flex-direction: column;
+      gap: 1rem;
+    }
     a {
       flex: 1 0;
       text-decoration: none;
@@ -322,6 +336,15 @@ const { title, navless } = Astro.props;
     h2, h3 {
       line-height: 1.3;
     }
+    &.highlight-box--circled {
+      h3 {
+        display: flex;
+        align-items: center;
+        .circled {
+          margin-right: 1rem;
+        }
+      }
+    }
   }
   .edge-blobs {
     @media (max-width: 1200px) {
@@ -329,12 +352,14 @@ const { title, navless } = Astro.props;
     }
   }
   .circled {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     width: 2rem;
     height: 2rem;
     border-radius: 100%;
     border: 3px solid var(--color-text);
-    text-align: center;
     font-weight: bold;
     font-size: 1.2rem;
   }

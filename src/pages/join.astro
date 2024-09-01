@@ -25,7 +25,7 @@ import Layout from "../layouts/Layout.astro";
           <span class="circled">1</span>
         </div>
         <div>
-          <h3>Donate $2,000 per full-time equivalent developer on staff</h3>
+          <h3><span class="inline-number">1. </span>Donate $2,000 per full-time equivalent developer on staff</h3>
           to Open Source maintainers or
           <a href="https://fossfoundation.info/">foundations</a>
           of your choice, and commit to doing so in future years. The projects you're donating to should meet the
@@ -40,9 +40,10 @@ import Layout from "../layouts/Layout.astro";
           <span class="circled">2</span>
         </div>
         <div>
-          <h3>Publish a blog post</h3> or equivalent on your company website, detailing the contributions your company
-          has made to the Open Source ecosystem the past year. This post does not need to be long or exhaustive. If in
-          doubt, check out sample posts by
+          <h3><span class="inline-number">2. </span>Publish a blog post</h3>
+          or equivalent on your company website, detailing the contributions your company has made to the Open Source
+          ecosystem the past year. This post does not need to be long or exhaustive. If in doubt, check out sample posts
+          by
           <a
             href="https://blog.sentry.io/we-just-gave-500-000-dollars-to-open-source-maintainers/"
             >Sentry</a
@@ -63,7 +64,7 @@ import Layout from "../layouts/Layout.astro";
           <span class="circled">3</span>
         </div>
         <div>
-          <h3>Create a short JSON file with your company and donation info,</h3>
+          <h3><span class="inline-number">3. </span>Create a short JSON file with your company and donation info,</h3>
           and host it at any URL you wish. You can check out an
           <a
             href="https://github.com/opensourcepledge/osspledge.com/blob/main/contrib/example-schema.json"
@@ -129,7 +130,7 @@ import Layout from "../layouts/Layout.astro";
           <span class="circled">4</span>
         </div>
         <div>
-          <h3>Create a pull request to add yourself to the member list</h3>
+          <h3><span class="inline-number">4. </span>Create a pull request to add yourself to the member list</h3>
           by changing
           <a
             href="https://github.com/opensourcepledge/osspledge.com/blob/main/members.csv"
@@ -142,9 +143,9 @@ import Layout from "../layouts/Layout.astro";
           <span class="circled">5</span>
         </div>
         <div>
-          <h3>Include links to your high-resolution logo,</h3> and optionally any other branding materials, in the pull
-          request so that we can promote you! For those pledging before September 15, this means you'll be included in
-          our major outdoor advertising campaign.
+          <h3><span class="inline-number">5. </span>Include links to your high-resolution logo,</h3>
+          and optionally any other branding materials, in the pull request so that we can promote you! For those
+          pledging before September 15, this means you'll be included in our major outdoor advertising campaign.
         </div>
       </div>
 
@@ -174,6 +175,18 @@ import Layout from "../layouts/Layout.astro";
     display: flex;
     .number {
       flex: 0 0 4rem;
+    }
+    .inline-number {
+      display: none;
+    }
+    @media (max-width: 800px) {
+      display: block;
+      .number {
+        display: none;
+      }
+      .inline-number {
+        display: inline;
+      }
     }
   }
 </style>
