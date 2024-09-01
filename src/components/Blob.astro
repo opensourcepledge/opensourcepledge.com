@@ -32,8 +32,6 @@ There are three main suggested ways to use Blobs.
 “grad” blobs have a higher z-index than “solid” blobs.
 */
 
-import { Image } from 'astro:assets';
-
 type BlobKind =
   "grad-dots-01" |
   "grad-dots-02" |
@@ -90,18 +88,32 @@ const { default: svg } = await import (`../assets/images/blobs/blob-${kind}.svg?
         x: e.pageX,
         y: e.pageY
       };
-      $gradBlobs.forEach(($blob, idx) => {
+      $gradBlobs.forEach(($blob) => {
         const blobRect = $blob.getBoundingClientRect();
         const blobCenter = {
           x: window.scrollX + blobRect.left + blobRect.width / 2,
           y: window.scrollY + blobRect.top + blobRect.height / 2,
         }
         const $grad = $blob.querySelector('linearGradient');
-        const $mask = $blob.querySelector('mask');
+        if (!$grad) {
+          console.error('Could not get $grad for blob.');
+          return;
+        }
         const angle = Math.atan2(blobCenter.y - mousePos.y, blobCenter.x - mousePos.x);
         const angleDeg = angle * 180 / Math.PI;
-        const rx = $mask.getAttribute('width') / 2;
-        const ry = $mask.getAttribute('height') / 2;
+        const $mask = $blob.querySelector('mask');
+        if (!$mask) {
+          console.error('Could not get $mask for blob.');
+          return;
+        }
+        const maskWidth = $mask.getAttribute('width');
+        const maskHeight = $mask.getAttribute('height');
+        if (!maskWidth || !maskHeight) {
+          console.error('Could not get $mask dimensions for blob.');
+          return;
+        }
+        const rx = +maskWidth / 2;
+        const ry = +maskHeight / 2;
         $grad.setAttribute('gradientTransform', `rotate(${angleDeg} ${rx} ${ry})`);
       });
     });
