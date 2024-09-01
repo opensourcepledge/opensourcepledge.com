@@ -196,6 +196,12 @@ const { title, navless } = Astro.props;
     margin-bottom: 0.5em;
     font-family: Azeret Mono, Courier New, Courier, monospace;
   }
+  p {
+    margin: 1rem 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
   code {
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, monospace;
   }
@@ -226,6 +232,17 @@ const { title, navless } = Astro.props;
     tr {
       text-align: left;
     }
+  }
+  ul {
+    padding-left: 0;
+    li {
+      list-style-position: inside;
+    }
+  }
+  code {
+    padding: 0.1rem 0.2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   section {
     margin: 4rem 0;
@@ -278,11 +295,11 @@ const { title, navless } = Astro.props;
   }
   .highlight-box {
     margin: 1rem 0;
-    padding: 0.25rem 1.25rem;
+    padding: 1rem 1.25rem;
     background: var(--color-light-bg);
     border-radius: 0.5rem;
-    p, h3 {
-      margin: 1rem 0;
+    h2, h3 {
+      line-height: 1.3;
     }
   }
   .edge-blobs {
@@ -297,5 +314,7 @@ const { title, navless } = Astro.props;
     border-radius: 100%;
     border: 3px solid var(--color-text);
     text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
   }
 </style>
