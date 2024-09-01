@@ -6,73 +6,11 @@ interface Props {
 const { grouped } = Astro.props;
 
 import LeaderboardMember from "./LeaderboardMember.astro";
-import { getMembers, getDollarsPerDev } from '../member_util.ts';
-import type { MemberWithId } from "../content/config.ts";
+import {
+  getMembers, formatDevGroupBounds, filterInactiveMembers, groupMembers, sortMembers, DEV_GROUP_BOUNDS
+} from '../members.ts';
 
 const members = await getMembers();
-
-/**
- * The groups members will be sorted into when `groupMembers()` is used.
- * This is a list of the maximum and minimum developer count for each group,
- * inclusive. So, `[[1, 100], [101, 500]]` means that a company with 100
- * developers will be placed in the first group, but a company with 101
- * developers will be placed in the second one, and so on.
- */
-const DEV_GROUP_BOUNDS: [number, number][] = [
-  [Infinity, 25000],
-  [24999, 10000],
-  [9999, 1000],
-  [999, 100],
-  [99, 1],
-];
-
-function formatDevGroupBounds([max, min]: [number, number]) {
-  if (max == Infinity) {
-    return `${min} developers or more`;
-  } else {
-    return `${min} to ${max} developers`;
-  }
-}
-
-function filterInactiveMembers(members: MemberWithId[]): MemberWithId[] {
-  return members.filter((m) => m.data.annualReports.length > 0);
-}
-
-/**
- * Puts members into groups based on the dollars per dev donated in their latest
- * annual report, where the groups are set out by `DEV_GROUP_BOUNDS`.
- */
-function groupMembers(members: MemberWithId[]): MemberWithId[][] {
-  let groups: MemberWithId[][] = DEV_GROUP_BOUNDS.map(() => []);
-  for (let member of members) {
-    const nDevs = member.data.annualReports[0].averageNumberOfDevs;
-    for (let idx in DEV_GROUP_BOUNDS) {
-      const [max, min] = DEV_GROUP_BOUNDS[idx];
-      if ((nDevs <= max || max == Infinity) && nDevs >= min) {
-        groups[idx].push(member);
-        break;
-      }
-    }
-  }
-  return groups;
-}
-
-/**
- * Sorts members by the dollars per dev donated in their latest annual report.
- */
-function sortMembers(members: MemberWithId[]): MemberWithId[] {
-  return members.toSorted((m1, m2) => {
-    if (m1.data.annualReports.length == 0) {
-      return 1;
-    }
-    if (m2.data.annualReports.length == 0) {
-      return -1;
-    }
-    const dpd1 = getDollarsPerDev(m1.data.annualReports[0]);
-    const dpd2 = getDollarsPerDev(m2.data.annualReports[0]);
-    return dpd2 - dpd1;
-  });
-}
 ---
 
 <div class="leaderboard">
