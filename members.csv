@@ -1,2 +1,3 @@
 sentry,https://open.sentry.io/osspledge.json
 astral,https://astral.sh/static/osspledge.json
+scalar,https://raw.githubusercontent.com/scalar/scalar/main/oss-pledge.json
