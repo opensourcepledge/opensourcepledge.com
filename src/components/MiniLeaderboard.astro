@@ -1,0 +1,45 @@
+---
+import {
+  getMembers, filterInactiveMembers, sortMembers,
+  getDollarsPerDev, fmtCurrency
+} from '../members.ts';
+
+const members = await getMembers();
+---
+
+<table class="table--lr">
+  <tr>
+    <th>Name</th>
+    <th>$/dev in latest report</th>
+  </tr>
+  {sortMembers(filterInactiveMembers(members)).slice(0, 5).map((member) => <tr>
+    <td>
+      <a class="sneaky" href={`/members/${member.id}`}>
+        <img src={member.data.urlSquareLogoWithBackground}>
+        {member.data.name}
+      </div>
+    </td>
+    <td>
+      {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))}
+    </td>
+  </tr>)}
+</table>
+
+<style>
+  tr {
+    th {
+      font-weight: normal;
+      font-size: 0.9rem;
+      padding-bottom: 0.3rem;
+    }
+  }
+  img {
+    max-width: 3.5rem;
+    margin-right: 1rem;
+  }
+  a {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+  }
+</style>

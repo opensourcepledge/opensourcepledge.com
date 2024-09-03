@@ -6,29 +6,27 @@ interface Props {
 const { href } = Astro.props;
 ---
 
-<a href={href}>
-  <slot />
+<a class="button" href={href}>
+  <slot></slot>
 </a>
+
 <style>
-  a {
-    color: #2dde74;
-    border: 1px solid #2dde74;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    margin: 1rem 0;
+  .button {
     display: inline-block;
+    margin: 1rem 0;
+    padding: 0.8rem 2rem;
+    color: var(--color-bg);
+    background-color: var(--color-primary);
+    border-radius: 0.5rem;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 1px;
-    font-size: 1.25em;
-  }
-  a:hover {
-    color: #fff;
-    border-color: #fff;
-  }
-  a:active {
-    color: #ffd00e;
-    border-color: #ffd00e;
+    font-size: 1.2em;
+    &:hover {
+      background: var(--color-secondary);
+    }
+    &:active {
+      background: var(--color-tertiary);
+    }
   }
 </style>
