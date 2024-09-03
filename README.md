@@ -30,15 +30,3 @@ Open Source Pledge is brought to you by [Sentry][sentry] and [contributors][cont
 [osp]: https://osspledge.com/
 [restaurant]: https://openpath.chadwhitacre.com/2024/open-source-is-a-restaurant/
 [sentry]: https://sentry.io/welcome/
-
-## Governance and Structure
-
-We have four working groups and a steering committee comprised of working group leads.
-
-| Working Group       | Lead                                                     |
-| ------------------- | -------------------------------------------------------- |
-| Member Outreach     | [**@vladh**](https://vladh.net)                          |
-| Maintainer Outreach | [**@Ethan-Arrowood**](https://ethanarrowood.com/)        |
-| Marketing & Media   | [**@selviano**](https://github.com/selviano)             |
-| Design / Build      | [**@chadwhitacre**](https://chadwhitacre.com/)           |
-| Steering            | [**@chadwhitacre**](https://chadwhitacre.com/)           |

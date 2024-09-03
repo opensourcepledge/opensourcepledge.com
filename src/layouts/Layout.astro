@@ -49,10 +49,10 @@ const { title, navless } = Astro.props;
     ) }
     <slot></slot>
     <footer class="container">
-      <a class="sneaky" href="https://sentry.io">Brought to you by Sentry</a>
-      <a class="sneaky" href="/join">Join</a>
-      <a class="sneaky" href="/about">About</a>
-      <a class="sneaky" href="/members">Members</a>
+      <span>Brought to you by <a class="sneaky" href="https://sentry.io">Sentry</a> and <a href="https://github.com/opensourcepledge/osspledge.com/graphs/contributors">contributors</a>.</span>
+      <span><a class="sneaky" href="/join">Join</a></span>
+      <span><a class="sneaky" href="/about">About</a></span>
+      <span><a class="sneaky" href="/members">Members</a></span>
     </footer>
   </body>
 </html>
@@ -315,7 +315,7 @@ const { title, navless } = Astro.props;
   footer {
     padding: 2rem 0;
     text-align: center;
-    a {
+    span {
       display: inline-block;
       margin: 0 1rem;
     }
