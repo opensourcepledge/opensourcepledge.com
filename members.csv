@@ -1,4 +1,3 @@
 sentry,https://open.sentry.io/osspledge.json
 astral,https://astral.sh/static/osspledge.json
 val-town,https://std-oss_pledge.web.val.run
-scalar,https://raw.githubusercontent.com/scalar/scalar/main/oss-pledge.json
