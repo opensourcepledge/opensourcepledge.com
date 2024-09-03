@@ -1,4 +1,8 @@
 #!/bin/bash -eu
+
+# © 2024 Vlad-Stefan Harbuz <vlad@vladh.net>
+# SPDX-License-Identifier: Apache-2.0
+
 # USAGE: ./bin/update-new-members <sha_of_commit_to_check_since>
 # This script fetches the JSON files specified for all members that have been
 # added to `members.csv` compared to the `main` branch. Must be run in the

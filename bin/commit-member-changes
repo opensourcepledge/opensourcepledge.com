@@ -1,4 +1,8 @@
 #!/bin/bash -eu
+
+# © 2024 Vlad-Stefan Harbuz <vlad@vladh.net>
+# SPDX-License-Identifier: Apache-2.0
+
 # Creates a commit with the changes in `src/content/members`, if any. Must be
 # run in the repo's root.
 
