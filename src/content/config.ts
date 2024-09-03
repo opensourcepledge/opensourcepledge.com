@@ -1,3 +1,7 @@
+// © 2024 Chad Whitacre <chadwhitacre@sentry.io>
+// © 2024 Vlad-Stefan Harbuz <vlad@vladh.net>
+// SPDX-License-Identifier: Apache-2.0
+
 import { z, defineCollection } from "astro:content";
 
 /* Welcome to the schema for OSS Pledge.

@@ -1,3 +1,9 @@
+<!--
+© 2024 Chad Whitacre <chadwhitacre@sentry.io>
+© 2024 Vlad-Stefan Harbuz <vlad@vladh.net>
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
 # Open Source Pledge
 
 <p align="center">

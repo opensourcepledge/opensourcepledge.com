@@ -1,4 +1,8 @@
 #!/bin/bash -eu
+
+# © 2024 Vlad-Stefan Harbuz <vlad@vladh.net>
+# SPDX-License-Identifier: Apache-2.0
+
 # This script fetches the JSON files specified in `members.csv` for all
 # members. Must be run in the repo's root.
 
