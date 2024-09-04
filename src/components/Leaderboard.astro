@@ -24,9 +24,9 @@ const members = await getMembers();
         <th>Name</th>
         <th>$/dev in latest report</th>
       </tr>
-      {sortMembers(groupMembers).map((member) => <tr>
+      {sortMembers(groupMembers).map((member) =>
         <LeaderboardMember member={member}></LeaderboardMember>
-      </tr>)}
+      )}
     </table>
   </div>)}
 </div> : (
