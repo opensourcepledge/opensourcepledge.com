@@ -15,8 +15,9 @@ function getMockMembers(): MemberWithId[] {
     1, 34, 79, 230, 1004, 4052, 10245, 11245, 17353, 21324, 50124,
   ]
   const mockDevNames = [
-    "Blorp", "Quip", "Flange", "Smidge", "Gwarp", "Twiner", "Yapper",
-    "Snark", "Smorge", "Llanger", "Frrr", "Zq", "Blobber", "Cork",
+    "Blorp Sparkler", "Quip", "Flange", "Smidge", "Gwarp", "Twiner",
+    "Yapper Yapper Yapper", "Snark", "Smorge", "Llanger", "Frrr", "Zq",
+    "Blobber", "Cork",
   ]
   return mockDevCounts.map((mockDevCount, idx): MemberWithId => {
     let newMember = structuredClone(exampleMember) as Member;
