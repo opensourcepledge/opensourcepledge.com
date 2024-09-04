@@ -65,7 +65,7 @@ const zIndex = isGrad ? 100 : 90;
 
 const { default: svg } = await import (`../assets/images/blobs/blob-${kind}.svg?raw`);
 ---
-<div class="blob" data-blob={blobGenre}>
+<div class="blob" data-blob={blobGenre} role="img">
   <Fragment set:html={svg} />
 </div>
 
