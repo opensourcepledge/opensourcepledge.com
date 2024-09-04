@@ -12,15 +12,17 @@ import { getDollarsPerDev, fmtCurrency } from '../members.ts';
 import type { MemberWithId } from "../content/config.ts";
 ---
 
-<td>
-  <a class="sneaky" href={`/members/${member.id}`}>
-    <img src={member.data.urlSquareLogoWithBackground}>
-    {member.data.name}
-  </div>
-</td>
-<td>
-  {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))}
-</td>
+<tr>
+  <td>
+    <a class="sneaky" href={`/members/${member.id}`}>
+      <img src={member.data.urlSquareLogoWithBackground}>
+      {member.data.name}
+    </a>
+  </td>
+  <td>
+    {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))}
+  </td>
+</tr>
 
 <style>
   img {
