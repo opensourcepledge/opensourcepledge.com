@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.8.1",
-    "@sentry/astro": "^8.18.0",
     "astro": "^4.11.5",
     "node-fetch": "^3.3.2",
     "typescript": "^5.5.3"
