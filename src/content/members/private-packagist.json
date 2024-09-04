@@ -1,0 +1,14 @@
+{
+  "description": "Private Packagist is a PHP Composer package repository. It's built with the help of a large number of open-source software. As open-source maintainers ourselves we wish to do our part in helping the entire ecosystem of open-source software thrive.",
+  "name": "Private Packagist",
+  "urlSquareLogoWithBackground": "https://avatars.githubusercontent.com/u/22449788?s=200&u=3306e734c8e4dd49b779995747ed4ad99c8dd483&v=4",
+  "urlLearnMore": "https://blog.packagist.com/packagist-is-joining-the-open-source-pledge/",
+  "annualReports": [
+    {
+      "url": "https://blog.packagist.com/packagist-is-joining-the-open-source-pledge/",
+      "dateYearEnding": "2023-12-31",
+      "averageNumberOfDevs": 4,
+      "payments": 26528
+    }
+  ]
+}
