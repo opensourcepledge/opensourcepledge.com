@@ -18,25 +18,27 @@ import Leaderboard from "../../components/Leaderboard.astro";
     <Blob kind="grad-dots-02" top="30%" left="-20rem"></Blob>
     <Blob kind="grad-dots-03" top="60%" right="-20rem"></Blob>
 
-    <section>
-      <div class="text-center">
-        <h1>Member<br>Companies</h1>
-      </div>
-      <Leaderboard grouped={true}></Leaderboard>
-    </section>
-
-    <section class="flex-center bottom-cta">
-      <div>
+    <main id="main-content">
+      <section>
         <div class="text-center">
-          <h2>Join the list</h2>
+          <h1>Member<br>Companies</h1>
         </div>
+        <Leaderboard grouped={true}></Leaderboard>
+      </section>
 
-        <div class="text-center">
-          <Button href="/join"
-            >Learn what it takes</TextButton
-          >
+      <section class="flex-center bottom-cta">
+        <div>
+          <div class="text-center">
+            <h2>Join the list</h2>
+          </div>
+
+          <div class="text-center">
+            <Button href="/join"
+              >Learn what it takes</TextButton
+            >
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
   </div>
 </Layout>

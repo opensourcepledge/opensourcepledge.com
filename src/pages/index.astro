@@ -25,69 +25,71 @@ import TextButton from "../components/TextButton.astro";
     <Blob kind="grad-dots-01" top="80%" left="-13rem"></Blob>
     <Blob kind="solid-fill-04" top="90%" right="-20rem"></Blob>
 
-    <section class="pc-hero">
-      <Blob kind="grad-dots-05" top="65%" right="-3.5rem"></Blob>
-      <div class="pc-hero-container">
-        <div class="heading-and-mini-pc">
-          <h1>Pay your share</h1>
-          <div class="mini-pc">
-            <img src="/images/piggybank.webp" alt="A hand puts bills into a computer monitor">
+    <main id="main-content">
+      <section class="pc-hero">
+        <Blob kind="grad-dots-05" top="65%" right="-3.5rem"></Blob>
+        <div class="pc-hero-container">
+          <div class="heading-and-mini-pc">
+            <h1>Pay your share</h1>
+            <div class="mini-pc">
+              <img src="/images/piggybank.webp" alt="A hand puts bills into a computer monitor">
+            </div>
+          </div>
+          <p
+            >Whether you're a CEO, CFO, CTO, or just a dev, chances are your company depends on Open Source software. It's time to pledge back.</p
+          >
+          <Button href="/join"
+            >Join the Pledge</Button
+          >
+        </div>
+      </section>
+
+      <section>
+        <h2>TL;DR</h2>
+
+        <div class="highlight-box highlight-box--circled">
+          <h3><div><span class="circled">1</span></div><span>Pay Open Source maintainers</span></h3>
+          <p>The minimum to participate is $2,000 per year per developer at your company.</p>
+        </div>
+
+        <div class="highlight-box highlight-box--circled">
+          <h3><div><span class="circled">2</span></div><span>Self-report annually</span></h3>
+          <p
+            >Each year, publish a blog post outlining your payments to maintainers.</p
+          >
+        </div>
+      </section>
+
+      <section class="flex-center">
+        <div>
+          <div class="text-center">
+            <h2>Top orgs opening up</h2>
+          </div>
+
+          <MiniLeaderboard></MiniLeaderboard>
+
+          <div class="text-center">
+            <TextButton href="/members"
+              >Go to all members</TextButton
+            >
           </div>
         </div>
-        <p
-          >Whether you're a CEO, CFO, CTO, or just a dev, chances are your company depends on Open Source software. It's time to pledge back.</p
-        >
-        <Button href="/join"
-          >Join the Pledge</Button
-        >
-      </div>
-    </section>
+      </section>
 
-    <section>
-      <h2>TL;DR</h2>
+      <section class="flex-center bottom-cta">
+        <div>
+          <div class="text-center">
+            <h2>Do the right thing, support Open Source</h2>
+          </div>
 
-      <div class="highlight-box highlight-box--circled">
-        <h3><div><span class="circled">1</span></div><span>Pay Open Source maintainers</span></h3>
-        <p>The minimum to participate is $2,000 per year per developer at your company.</p>
-      </div>
-
-      <div class="highlight-box highlight-box--circled">
-        <h3><div><span class="circled">2</span></div><span>Self-report annually</span></h3>
-        <p
-          >Each year, publish a blog post outlining your payments to maintainers.</p
-        >
-      </div>
-    </section>
-
-    <section class="flex-center">
-      <div>
-        <div class="text-center">
-          <h2>Top orgs opening up</h2>
+          <div class="text-center">
+            <Button href="/join"
+              >Join the Pledge</TextButton
+            >
+          </div>
         </div>
-
-        <MiniLeaderboard></MiniLeaderboard>
-
-        <div class="text-center">
-          <TextButton href="/members"
-            >Go to all members</TextButton
-          >
-        </div>
-      </div>
-    </section>
-
-    <section class="flex-center bottom-cta">
-      <div>
-        <div class="text-center">
-          <h2>Do the right thing, support Open Source</h2>
-        </div>
-
-        <div class="text-center">
-          <Button href="/join"
-            >Join the Pledge</TextButton
-          >
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
   </div>
 </Layout>
 
