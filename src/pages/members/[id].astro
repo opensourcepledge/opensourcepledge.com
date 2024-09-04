@@ -97,10 +97,20 @@ export async function getStaticPaths() {
 <style>
   .company-intro {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    @media (max-width: 800px) {
+      display: block;
+    }
     img {
       max-width: 7rem;
       margin-right: 2rem;
+      @media (max-width: 800px) {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1rem;
+      }
     }
     h1 {
       margin: 0;
