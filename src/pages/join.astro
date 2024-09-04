@@ -20,164 +20,166 @@ import Layout from "../layouts/Layout.astro";
     <Blob kind="solid-fill-05" top="65%" left="-7rem"></Blob>
     <Blob kind="grad-dots-02" top="80%" left="-16rem"></Blob>
 
-    <section>
-      <h1>Join the Pledge</h1>
+    <main id="main-content">
+      <section>
+        <h1>Join the Pledge</h1>
 
-      <p>Our companies feast at the Open Source table year after year. Through
-      the Open Source Pledge, we pay the maintainers of the software we
-      consume. This prevents the maintainer burnout that flares up in
-      high-profile security incidents such as XZ, Log4j, and Heartbleed.</p>
+        <p>Our companies feast at the Open Source table year after year. Through
+        the Open Source Pledge, we pay the maintainers of the software we
+        consume. This prevents the maintainer burnout that flares up in
+        high-profile security incidents such as XZ, Log4j, and Heartbleed.</p>
 
-      <h2>How to Join</h2>
+        <h2>How to Join</h2>
 
-      <div class="highlight-box">
-        <div class="number">
-          <span class="circled">1</span>
+        <div class="highlight-box">
+          <div class="number">
+            <span class="circled">1</span>
+          </div>
+          <div>
+            <h3><span class="inline-number">1. </span>Donate $2,000 per full-time equivalent developer on staff</h3>
+            to Open Source maintainers or
+            <a href="https://fossfoundation.info/">foundations</a>
+            of your choice, and commit to doing so in future years. The projects you're donating to should meet the
+            <a href="https://opensource.org/osd">Open Source Definition</a>.
+            Of course, this includes any existing donations you've made this year. You can donate to any projects you
+            like, but if you need help figuring out which projects you depend on, you can use a tool like
+            <a href="https://thanks.dev">Thanks.dev</a>.
+          </div>
         </div>
-        <div>
-          <h3><span class="inline-number">1. </span>Donate $2,000 per full-time equivalent developer on staff</h3>
-          to Open Source maintainers or
-          <a href="https://fossfoundation.info/">foundations</a>
-          of your choice, and commit to doing so in future years. The projects you're donating to should meet the
-          <a href="https://opensource.org/osd">Open Source Definition</a>.
-          Of course, this includes any existing donations you've made this year. You can donate to any projects you
-          like, but if you need help figuring out which projects you depend on, you can use a tool like
-          <a href="https://thanks.dev">Thanks.dev</a>.
+        <div class="highlight-box">
+          <div class="number">
+            <span class="circled">2</span>
+          </div>
+          <div>
+            <h3><span class="inline-number">2. </span>Publish a blog post</h3>
+            or equivalent on your company website, detailing the contributions your company has made to the Open Source
+            ecosystem the past year. This post does not need to be long or exhaustive. If in doubt, check out sample posts
+            by
+            <a
+              href="https://blog.sentry.io/we-just-gave-500-000-dollars-to-open-source-maintainers/"
+              >Sentry</a
+            >
+            or
+            <a href="https://astral.sh/blog/astral-oss-fund">Astral</a>.
+
+            Ideally, this post would include an itemized list of how much was paid to each maintainer/foundation. When
+            this is undesirable or unrealistic, we ask that you make a best effort. To more conveniently get an
+            itemized list, consider using the
+            <a href="https://github.com/opensourcepledge/osp-github-reporter">Open Source Pledge GitHub Reporter</a>,
+            or
+            <a href="https://thanks.dev">Thanks.dev</a>.
+          </div>
         </div>
-      </div>
-      <div class="highlight-box">
-        <div class="number">
-          <span class="circled">2</span>
+        <div class="highlight-box">
+          <div class="number">
+            <span class="circled">3</span>
+          </div>
+          <div>
+            <h3><span class="inline-number">3. </span>Create a short JSON file with your company and donation info,</h3>
+            and host it at any URL you wish. You can check out an
+            <a
+              href="https://github.com/opensourcepledge/osspledge.com/blob/main/contrib/example-schema.json"
+              >example JSON report</a
+            >
+            or the
+            <a
+              href="https://github.com/opensourcepledge/osspledge.com/blob/main/src/content/config.ts"
+              >full schema</a
+            >. You should update this JSON file at least once per calendar year — we'll fetch it regularly. All amounts
+            are in USD so that different reports can be compared to each other. If you're using a different currency, you
+            should convert all amounts to the USD equivalents, using the most appropriate exchange rate.
+
+            <ul>
+              <li>
+                <code>name</code>: The name of your company.
+              </li>
+              <li>
+                <code>description</code>: Will be shown on your member page and ideally includes a general description of
+                your company and some notes on your company's relationship with Open Source software.
+              </li>
+              <li>
+                <code>urlLearnMore</code>: The URL to a page that describes your relationship to Open Source and/or your
+                commitment to supporting Open Source. This page need not be exhaustive, and if you don't have such a page,
+                you can just link to one of the report blog posts. This shouldn't be a link to your homepage.
+              </li>
+              <li>
+                <code>urlSquareLogoWithBackground</code>: Your logo, which should be square and have a non-transparent
+                background. This image should be between 400x400px and 800x800px, and should be appropriately compressed.
+              </li>
+            </ul>
+
+            Each <code>annualReport</code> should contain:
+
+            <ul>
+              <li>
+                <code>dateYearEnding</code>: The end date of the year you are reporting on.
+              </li>
+              <li>
+                <code>url</code>: The URL to the blog post for the year in question, as detailed above.
+              </li>
+              <li>
+                <code>averageNumberOfDevs</code>: The average number of full-time equivalent developers employed by
+                your company during the year.
+              </li>
+              <li>
+                <code>payments</code>: The total US dollar amount of cash contributions you have made towards Open
+                Source maintainers and foundations during the year.
+              </li>
+              <li>
+                <code>monetaryValueofTime</code>, <code>monetaryValueOfMaterials</code>: You may also optionally
+                specify, in approximate US dollar equivalents, your contributions to the Open Source ecosystem in
+                sponsored developer time (in <code>monetaryValueOfTime</code>) or gifts in kind (in
+                <code>monetaryValueOfMaterials</code>). While we acknowledge that contributions in time and in kind
+                are important, they are not included in the cash pledge amount. They will still be displayed on your
+                member page.
+              </li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <h3><span class="inline-number">2. </span>Publish a blog post</h3>
-          or equivalent on your company website, detailing the contributions your company has made to the Open Source
-          ecosystem the past year. This post does not need to be long or exhaustive. If in doubt, check out sample posts
-          by
+        <div class="highlight-box">
+          <div class="number">
+            <span class="circled">4</span>
+          </div>
+          <div>
+            <h3><span class="inline-number">4. </span>Create a pull request to add yourself to the member list</h3>
+            by changing
+            <a
+              href="https://github.com/opensourcepledge/osspledge.com/blob/main/members.csv"
+              >members.csv</a
+            >. The format is <code>company-slug,json-url</code>. Please note that there should be no space in the company
+            slug.
+          </div>
+        </div>
+        <div class="highlight-box">
+          <div class="number">
+            <span class="circled">5</span>
+          </div>
+          <div>
+            <h3><span class="inline-number">5. </span>Include links to your high-resolution logo,</h3>
+            and optionally any other branding materials, in the pull request so that we can promote you! For those
+            pledging before September 15, this means you'll be included in our major outdoor advertising campaign.
+          </div>
+        </div>
+
+        <p>
+          Once that's all done, you'll officially be a member. This means that your company and reports will show up on
+          <a href="https://osspledge.com/members">our website</a>,
+          and you'll be entitled to use the
           <a
-            href="https://blog.sentry.io/we-just-gave-500-000-dollars-to-open-source-maintainers/"
-            >Sentry</a
+            href="https://github.com/opensourcepledge/osspledge.com/tree/main/public/logos"
+            >Open Source Pledge Member logo</a
           >
-          or
-          <a href="https://astral.sh/blog/astral-oss-fund">Astral</a>.
-
-          Ideally, this post would include an itemized list of how much was paid to each maintainer/foundation. When
-          this is undesirable or unrealistic, we ask that you make a best effort. To more conveniently get an
-          itemized list, consider using the
-          <a href="https://github.com/opensourcepledge/osp-github-reporter">Open Source Pledge GitHub Reporter</a>,
-          or
-          <a href="https://thanks.dev">Thanks.dev</a>.
-        </div>
-      </div>
-      <div class="highlight-box">
-        <div class="number">
-          <span class="circled">3</span>
-        </div>
-        <div>
-          <h3><span class="inline-number">3. </span>Create a short JSON file with your company and donation info,</h3>
-          and host it at any URL you wish. You can check out an
-          <a
-            href="https://github.com/opensourcepledge/osspledge.com/blob/main/contrib/example-schema.json"
-            >example JSON report</a
-          >
-          or the
-          <a
-            href="https://github.com/opensourcepledge/osspledge.com/blob/main/src/content/config.ts"
-            >full schema</a
-          >. You should update this JSON file at least once per calendar year — we'll fetch it regularly. All amounts
-          are in USD so that different reports can be compared to each other. If you're using a different currency, you
-          should convert all amounts to the USD equivalents, using the most appropriate exchange rate.
-
-          <ul>
-            <li>
-              <code>name</code>: The name of your company.
-            </li>
-            <li>
-              <code>description</code>: Will be shown on your member page and ideally includes a general description of
-              your company and some notes on your company's relationship with Open Source software.
-            </li>
-            <li>
-              <code>urlLearnMore</code>: The URL to a page that describes your relationship to Open Source and/or your
-              commitment to supporting Open Source. This page need not be exhaustive, and if you don't have such a page,
-              you can just link to one of the report blog posts. This shouldn't be a link to your homepage.
-            </li>
-            <li>
-              <code>urlSquareLogoWithBackground</code>: Your logo, which should be square and have a non-transparent
-              background. This image should be between 400x400px and 800x800px, and should be appropriately compressed.
-            </li>
-          </ul>
-
-          Each <code>annualReport</code> should contain:
-
-          <ul>
-            <li>
-              <code>dateYearEnding</code>: The end date of the year you are reporting on.
-            </li>
-            <li>
-              <code>url</code>: The URL to the blog post for the year in question, as detailed above.
-            </li>
-            <li>
-              <code>averageNumberOfDevs</code>: The average number of full-time equivalent developers employed by
-              your company during the year.
-            </li>
-            <li>
-              <code>payments</code>: The total US dollar amount of cash contributions you have made towards Open
-              Source maintainers and foundations during the year.
-            </li>
-            <li>
-              <code>monetaryValueofTime</code>, <code>monetaryValueOfMaterials</code>: You may also optionally
-              specify, in approximate US dollar equivalents, your contributions to the Open Source ecosystem in
-              sponsored developer time (in <code>monetaryValueOfTime</code>) or gifts in kind (in
-              <code>monetaryValueOfMaterials</code>). While we acknowledge that contributions in time and in kind
-              are important, they are not included in the cash pledge amount. They will still be displayed on your
-              member page.
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="highlight-box">
-        <div class="number">
-          <span class="circled">4</span>
-        </div>
-        <div>
-          <h3><span class="inline-number">4. </span>Create a pull request to add yourself to the member list</h3>
-          by changing
-          <a
-            href="https://github.com/opensourcepledge/osspledge.com/blob/main/members.csv"
-            >members.csv</a
-          >. The format is <code>company-slug,json-url</code>. Please note that there should be no space in the company
-          slug.
-        </div>
-      </div>
-      <div class="highlight-box">
-        <div class="number">
-          <span class="circled">5</span>
-        </div>
-        <div>
-          <h3><span class="inline-number">5. </span>Include links to your high-resolution logo,</h3>
-          and optionally any other branding materials, in the pull request so that we can promote you! For those
-          pledging before September 15, this means you'll be included in our major outdoor advertising campaign.
-        </div>
-      </div>
-
-      <p>
-        Once that's all done, you'll officially be a member. This means that your company and reports will show up on
-        <a href="https://osspledge.com/members">our website</a>,
-        and you'll be entitled to use the
-        <a
-          href="https://github.com/opensourcepledge/osspledge.com/tree/main/public/logos"
-          >Open Source Pledge Member logo</a
-        >
-        on your website and marketing materials if you wish. Thank you so much for joining us in contributing to a
-        healthy Open Source ecosystem that supports maintainers.
-      </p>
-      <p>
-        If you have any questions, feel free to
-        <a href="https://github.com/opensourcepledge/osspledge.com/issues/new"
-          >open an issue</a
-        >, and the relevant member of our team will get back to you.
-      </p>
-    </section>
+          on your website and marketing materials if you wish. Thank you so much for joining us in contributing to a
+          healthy Open Source ecosystem that supports maintainers.
+        </p>
+        <p>
+          If you have any questions, feel free to
+          <a href="https://github.com/opensourcepledge/osspledge.com/issues/new"
+            >open an issue</a
+          >, and the relevant member of our team will get back to you.
+        </p>
+      </section>
+    </main>
   </div>
 </Layout>
 

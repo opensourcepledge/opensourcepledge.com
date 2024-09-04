@@ -34,6 +34,7 @@ const { title, navless } = Astro.props;
       src="https://plausible.io/js/script.js"></script>
   </head>
   <body>
+    <a class="skiplink" href="#main-content">Skip to main content</a>
     { !navless && (
       <nav class="container">
         <a href="/">
@@ -226,6 +227,13 @@ const { title, navless } = Astro.props;
     &:hover {
       color: var(--color-secondary);
       text-decoration: underline;
+    }
+  }
+  a.skiplink {
+    position: absolute;
+    transform: translateY(-100%);
+    &:focus {
+      transform: translateY(0);
     }
   }
   .container {
