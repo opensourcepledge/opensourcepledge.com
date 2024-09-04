@@ -18,7 +18,7 @@ const members = await getMembers();
   {sortMembers(filterInactiveMembers(members)).slice(0, 5).map((member) => <tr>
     <td>
       <a class="sneaky" href={`/members/${member.id}`}>
-        <img src={member.data.urlSquareLogoWithBackground}>
+        <img src={member.data.urlSquareLogoWithBackground} alt={`The ${member.data.name} logo`}>
         {member.data.name}
       </div>
     </td>
