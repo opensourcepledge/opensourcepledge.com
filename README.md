@@ -8,7 +8,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 
 <p align="center">
   <a href="https://osspledge.com">
-    <img src="public/images/piggybank.png" alt="A hand puts bills into a computer monitor" width="200px">
+    <img src="public/images/piggybank.webp" alt="A hand puts bills into a computer monitor" width="200px">
   </a>
 </p>
 
