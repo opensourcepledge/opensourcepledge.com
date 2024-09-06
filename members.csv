@@ -5,3 +5,4 @@ scalar,https://raw.githubusercontent.com/scalar/scalar/main/oss-pledge.json
 gitbutler,https://docs.gitbutler.com/oss/pledge.json
 httptoolkit,https://httptoolkit.com/data/oss-pledge.json
 private-packagist,https://raw.githubusercontent.com/packagist/oss-pledge/main/osspledge.json
+emerge-tools,http://emergetools.com/api/misc/open-source-pledge
