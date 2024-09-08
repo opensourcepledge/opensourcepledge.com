@@ -35,22 +35,21 @@ import Layout from "../layouts/Layout.astro";
           <div class="number">
             <span class="circled">1</span>
           </div>
-          <div>
+          <div class="step">
             <h3><span class="inline-number">1. </span>Donate $2,000 per full-time equivalent developer on staff</h3>
-            to Open Source maintainers or
+            to any Open Source maintainers or
             <a href="https://fossfoundation.info/">foundations</a>
             of your choice, and commit to doing so in future years. The projects you're donating to should meet the
             <a href="https://opensource.org/osd">Open Source Definition</a>.
-            Of course, this includes any existing donations you've made this year. You can donate to any projects you
-            like, but if you need help figuring out which projects you depend on, you can use a tool like
-            <a href="https://thanks.dev">Thanks.dev</a>.
+            Of course, this includes any existing donations you've made this year. If you need help figuring out which
+            projects you depend on, you can use a tool like <a href="https://thanks.dev">Thanks.dev</a>.
           </div>
         </div>
         <div class="highlight-box">
           <div class="number">
             <span class="circled">2</span>
           </div>
-          <div>
+          <div class="step">
             <h3><span class="inline-number">2. </span>Publish a blog post</h3>
             or equivalent on your company website, detailing the contributions your company has made to the Open Source
             ecosystem the past year. This post does not need to be long or exhaustive. If in doubt, check out sample posts
@@ -74,73 +73,143 @@ import Layout from "../layouts/Layout.astro";
           <div class="number">
             <span class="circled">3</span>
           </div>
-          <div>
+          <div class="step">
             <h3><span class="inline-number">3. </span>Create a short JSON file with your company and donation info,</h3>
-            and host it at any URL you wish. You can check out an
-            <a
-              href="https://github.com/opensourcepledge/osspledge.com/blob/main/contrib/example-schema.json"
-              >example JSON report</a
-            >
-            or the
-            <a
-              href="https://github.com/opensourcepledge/osspledge.com/blob/main/src/content/config.ts"
-              >full schema</a
-            >. You should update this JSON file at least once per calendar year — we'll fetch it regularly. All amounts
-            are in USD so that different reports can be compared to each other. If you're using a different currency, you
-            should convert all amounts to the USD equivalents, using the most appropriate exchange rate.
+            and host it at any URL you wish. Update it at least once per calendar year — we'll fetch it regularly.
 
-            <ul>
-              <li>
-                <code>name</code>: The name of your company.
-              </li>
-              <li>
-                <code>description</code>: Will be shown on your member page and ideally includes a general description of
-                your company and some notes on your company's relationship with Open Source software.
-              </li>
-              <li>
-                <code>urlLearnMore</code>: The URL to a page that describes your relationship to Open Source and/or your
-                commitment to supporting Open Source. This page need not be exhaustive, and if you don't have such a page,
-                you can just link to one of the report blog posts. This shouldn't be a link to your homepage.
-              </li>
-              <li>
-                <code>urlSquareLogoWithBackground</code>: Your logo, which should be square and have a non-transparent
-                background. This image should be between 400x400px and 800x800px, and should be appropriately compressed.
-              </li>
-            </ul>
+            <p>
+              Want to do things by hand?
+              Check out an
+              <a
+                href="https://github.com/opensourcepledge/osspledge.com/blob/main/contrib/example-schema.json"
+                >example JSON report</a
+              >
+              or the
+              <a
+                href="https://github.com/opensourcepledge/osspledge.com/blob/main/src/content/config.ts"
+                >full schema</a
+              >.
+            </p>
 
-            Each <code>annualReport</code> should contain:
+            <p>Want us to create your JSON file for you? Fill in this form:</p>
 
-            <ul>
-              <li>
-                <code>dateYearEnding</code>: The end date of the year you are reporting on.
-              </li>
-              <li>
-                <code>url</code>: The URL to the blog post for the year in question, as detailed above.
-              </li>
-              <li>
-                <code>averageNumberOfDevs</code>: The average number of full-time equivalent developers employed by
-                your company during the year.
-              </li>
-              <li>
-                <code>payments</code>: The total US dollar amount of cash contributions you have made towards Open
-                Source maintainers and foundations during the year.
-              </li>
-              <li>
-                <code>monetaryValueofTime</code>, <code>monetaryValueOfMaterials</code>: You may also optionally
-                specify, in approximate US dollar equivalents, your contributions to the Open Source ecosystem in
-                sponsored developer time (in <code>monetaryValueOfTime</code>) or gifts in kind (in
-                <code>monetaryValueOfMaterials</code>). While we acknowledge that contributions in time and in kind
-                are important, they are not included in the cash pledge amount. They will still be displayed on your
-                member page.
-              </li>
-            </ul>
+            <div class="divider">
+              <h4>JSON Creation Form</h4>
+            </div>
+
+            <form x-data="jsonBuilder" action="">
+              <div class="control">
+                <label>Company name</label>
+                <input type="text" x-model="details.name" placeholder="Foocorp">
+              </div>
+              <div class="control">
+                <label>
+                  Company description, incl. relationship to Open Source
+                </label>
+                <textarea
+                  x-model="details.description"
+                  placeholder="We build widgets that make the world better. We use a lot of Open Source software, and we think it's only right that we give back."
+                ></textarea>
+              </div>
+              <div class="control">
+                <label>
+                  Link to info about your company's Open Source commitments
+                  <small>Don't have such a page? Link to an annual report blog post!</small>
+                </label>
+                <input type="url" x-model="details.urlLearnMore" placeholder="https://foocorp.com/open-source">
+                <div class="hint">Please make sure this is a valid URL.</div>
+              </div>
+              <div class="control">
+                <label>
+                   Link to logo
+                   <small>400px to 800px, non-transparent background — try using your GitHub avatar!</small>
+                </label>
+                <input
+                  type="url"
+                  x-model="details.urlSquareLogoWithBackground"
+                  placeholder="https://foocorp.com/static/logo.png"
+                >
+                <div class="hint">Please make sure this is a valid URL.</div>
+              </div>
+              <template x-for="(annualReport, index) in details.annualReports">
+                <div class="annual-report">
+                  <h5>Yearly report <span x-text="index + 1"></span></h5>
+                  <div class="control">
+                    <label>Year ending</label>
+                    <input
+                      type="text"
+                      x-model="annualReport.dateYearEnding"
+                      pattern="[0-9]{4,4}-[0-9]{2,2}-[0-9]{2,2}"
+                      placeholder="2024-12-31"
+                    >
+                    <div class="hint">Please make sure the date is formatted as YYYY-MM-DD.</div>
+                  </div>
+                  <div class="control">
+                    <label>Link to blog post with report</label>
+                    <input
+                      type="url"
+                      x-model="annualReport.url"
+                      placeholder="https://foocorp.com/blog/we-just-gave-money-to-open-source-maintainers"
+                    >
+                    <div class="hint">Please make sure this is a valid URL.</div>
+                  </div>
+                  <div class="control">
+                    <label>
+                      Average employed
+                      <abbr title="full-time equivalent">FTE</abbr>
+                      developers for this period
+                    </label>
+                    <input type="number" x-model.number="annualReport.averageNumberOfDevs" placeholder="52">
+                  </div>
+                  <div class="control">
+                    <label>Total payments to maintainers and foundations</label>
+                    <div class="input-wrapper">
+                      <span class="prefix">US $</span>
+                      <input type="number" x-model.number="annualReport.payments" placeholder="150000">
+                    </div>
+                  </div>
+                  <div class="control">
+                    <label>
+                      Monetary value of time (optional)
+                      <small>
+                        Value of employee time spent contributing to Open Source. Doesn't count towards pledge amount.
+                      </small>
+                    </label>
+                    <div class="input-wrapper">
+                      <span class="prefix">US $</span>
+                      <input type="number" x-model.number="annualReport.monetaryValueOfTime" placeholder="0">
+                    </div>
+                  </div>
+                  <div class="control">
+                    <label>
+                      Monetary value of material (optional)
+                      <small>
+                        Value of gifts in kind, e.g. cloud service credits. Doesn't count towards pledge amount.
+                      </small>
+                    </label>
+                    <div class="input-wrapper">
+                      <span class="prefix">US $</span>
+                      <input type="number" x-model.number="annualReport.monetaryValueOfMaterials" placeholder="0">
+                    </div>
+                  </div>
+                </div>
+              </template>
+              <div class="buttons">
+                <template x-if="details.annualReports.length > 1">
+                  <button type="button" @click="removeAnnualReport()">Remove year</button>
+                </template>
+                <button type="button" @click="addAnnualReport">Add year (optional)</button>
+              </div>
+              <p>Here's your JSON:</p>
+              <pre x-text="makeJson(details)"></pre>
+            </form>
           </div>
         </div>
         <div class="highlight-box">
           <div class="number">
             <span class="circled">4</span>
           </div>
-          <div>
+          <div class="step">
             <h3><span class="inline-number">4. </span>Create a pull request to add yourself to the member list</h3>
             by changing
             <a
@@ -154,7 +223,7 @@ import Layout from "../layouts/Layout.astro";
           <div class="number">
             <span class="circled">5</span>
           </div>
-          <div>
+          <div class="step">
             <h3><span class="inline-number">5. </span>Include links to your high-resolution logo,</h3>
             and optionally any other branding materials, in the pull request so that we can promote you! For those
             pledging before September 15, this means you'll be included in our major outdoor advertising campaign.
@@ -184,6 +253,24 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  .annual-report {
+    margin: 1rem 0;
+    padding-left: 0.5rem;
+    border-left: 3px solid var(--color-secondary);
+    h5 {
+      margin-left: -0.5rem;
+      padding: 0 0.5rem;
+      background: var(--color-secondary);
+      color: var(--color-bg);
+      font-size: 1rem;
+      font-weight: normal;
+    }
+  }
   .highlight-box {
     display: flex;
     .number {
@@ -191,6 +278,10 @@ import Layout from "../layouts/Layout.astro";
     }
     .inline-number {
       display: none;
+    }
+    .step {
+      /* QUIRK(@vladh): https://stackoverflow.com/a/66689926/3803222 */
+      min-width: 0;
     }
     @media (max-width: 800px) {
       display: block;
@@ -203,3 +294,45 @@ import Layout from "../layouts/Layout.astro";
     }
   }
 </style>
+
+<script>
+  document.addEventListener('alpine:init', () => {
+    const DEFAULT_ANNUAL_REPORT = {
+      url: '',
+      dateYearEnding: '',
+      averageNumberOfDevs: null,
+      payments: null,
+      monetaryValueOfTime: null,
+      monetaryValueOfMaterials: null,
+    };
+    Alpine.data('jsonBuilder', () => ({
+        details: {
+          name: '',
+          description: '',
+          urlLearnMore: '',
+          urlSquareLogoWithBackground: '',
+          annualReports: [{ ...DEFAULT_ANNUAL_REPORT }],
+        },
+
+        makeJson(details) {
+          details.annualReports.forEach((report) => {
+            report.averageNumberOfDevs ||= 0;
+            report.payments ||= 0;
+            report.monetaryValueOfTime ||= 0;
+            report.monetaryValueOfMaterials ||= 0;
+          });
+          return JSON.stringify(details, undefined, 2);
+        },
+
+        addAnnualReport() {
+          this.details.annualReports.push({ ...DEFAULT_ANNUAL_REPORT });
+        },
+
+        removeAnnualReport() {
+          if (this.details.annualReports.length > 1) {
+            this.details.annualReports.splice(-1);
+          }
+        }
+    }))
+  })
+</script>
