@@ -305,6 +305,7 @@ import Layout from "../layouts/Layout.astro";
       monetaryValueOfTime: null,
       monetaryValueOfMaterials: null,
     };
+    // @ts-ignore: Astro doesn't know about `Alpine` here
     Alpine.data('jsonBuilder', () => ({
         details: {
           name: '',
@@ -314,8 +315,8 @@ import Layout from "../layouts/Layout.astro";
           annualReports: [{ ...DEFAULT_ANNUAL_REPORT }],
         },
 
-        makeJson(details) {
-          details.annualReports.forEach((report) => {
+        makeJson(details: any) {
+          details.annualReports.forEach((report: any) => {
             report.averageNumberOfDevs ||= 0;
             report.payments ||= 0;
             report.monetaryValueOfTime ||= 0;
