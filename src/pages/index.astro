@@ -114,6 +114,7 @@ import TextButton from "../components/TextButton.astro";
         }
         .mini-pc {
           display: none;
+          margin-left: 1rem;
         }
       }
     }
@@ -124,7 +125,7 @@ import TextButton from "../components/TextButton.astro";
       line-height: 1.2;
     }
   }
-  @media (max-width: 800px) {
+  @media (max-width: 600px) {
     .pc-hero {
       background-image: none;
       & > :global(.blob) {
@@ -139,12 +140,14 @@ import TextButton from "../components/TextButton.astro";
           display: flex;
           align-items: center;
           h1 {
+            flex: 1;
             font-size: 3rem;
           }
           .mini-pc {
+            flex: 1;
             display: block;
             img {
-              max-width: 6rem;
+              max-width: 100%;
             }
           }
         }
