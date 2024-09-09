@@ -178,6 +178,9 @@ const { title, navless } = Astro.props;
 </style>
 
 <style is:global>
+  * {
+    box-sizing: border-box;
+  }
   :root {
     --color-bg: #080e17;
     --color-light-bg: #16212d;
@@ -194,11 +197,11 @@ const { title, navless } = Astro.props;
     line-height: 1.6;
     background-color: var(--color-bg);
     color: var(--color-text);
-    position: relative;
     overflow-x: hidden;
   }
   body {
     margin: 0;
+    position: relative;
     overflow-x: hidden;
   }
   h1, h2, h3, h4, h5, h6 {
@@ -212,8 +215,21 @@ const { title, navless } = Astro.props;
   p:last-child {
     margin-bottom: 0;
   }
-  code {
+  code, pre {
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, monospace;
+    font-size: 0.8rem;
+  }
+  code {
+    padding: 0.1rem 0.2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  pre {
+    display: block;
+    width: 100%;
+    overflow-x: scroll;
+    padding: 1rem;
+    background: var(--color-bg);
   }
   a {
     color: var(--color-primary);
@@ -234,6 +250,83 @@ const { title, navless } = Astro.props;
     transform: translateY(-100%);
     &:focus {
       transform: translateY(0);
+    }
+  }
+  form {
+    margin: 1rem 0;
+    button {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      color: var(--color-bg);
+      background-color: var(--color-primary);
+      border: 0;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 0.8rem;
+      cursor: pointer;
+      &:hover {
+        background: var(--color-secondary);
+      }
+      &:active {
+        background: var(--color-tertiary);
+      }
+    }
+    input, textarea {
+      display: block;
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid var(--color-light-bg);
+      background: var(--color-bg);
+      color: white;
+      font-size: 1rem;
+      font-family: Libre Franklin, sans-serif;
+    }
+    .input-wrapper {
+      position: relative;
+      .prefix {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        padding: 0.5rem;
+      }
+      input {
+        padding-left: 3rem;
+      }
+    }
+    input {
+      &[type=number] {
+        -moz-appearance: textfield;
+        &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+          display: none;
+        }
+      }
+      &:invalid {
+        border-color: var(--color-tertiary);
+        outline: none;
+        & + .hint {
+          display: block;
+        }
+      }
+    }
+    .control {
+      margin: 0.7rem 0;
+      label {
+        display: block;
+        small {
+          display: block;
+          font-style: italic;
+        }
+      }
+      .hint {
+        display: none;
+        color: var(--color-tertiary);
+      }
     }
   }
   .container {
@@ -276,11 +369,6 @@ const { title, navless } = Astro.props;
     li {
       list-style-position: inside;
     }
-  }
-  code {
-    padding: 0.1rem 0.2rem;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.1);
   }
   section {
     margin: 4rem 0;
@@ -340,6 +428,19 @@ const { title, navless } = Astro.props;
   }
   .text-center {
     text-align: center;
+  }
+  .divider {
+    margin-top: 2rem;
+    border-bottom: 1px solid var(--color-secondary);
+    h1, h2, h3, h4, h5, h6 {
+      display: inline-block;
+      margin: 0;
+      padding: 0.3rem 0.5rem;
+      font-size: 1rem;
+      font-weight: normal;
+      color: var(--color-bg);
+      background: var(--color-secondary);
+    }
   }
   .highlight-box {
     margin: 1rem 0;
