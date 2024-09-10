@@ -296,6 +296,9 @@ import Layout from "../layouts/Layout.astro";
 </style>
 
 <script>
+  import Alpine from 'alpinejs'
+  import type { Member, MemberReport } from "../content/config.ts";
+
   document.addEventListener('alpine:init', () => {
     const DEFAULT_ANNUAL_REPORT = {
       url: '',
@@ -305,7 +308,6 @@ import Layout from "../layouts/Layout.astro";
       monetaryValueOfTime: null,
       monetaryValueOfMaterials: null,
     };
-    // @ts-ignore: Astro doesn't know about `Alpine` here
     Alpine.data('jsonBuilder', () => ({
         details: {
           name: '',
@@ -315,8 +317,8 @@ import Layout from "../layouts/Layout.astro";
           annualReports: [{ ...DEFAULT_ANNUAL_REPORT }],
         },
 
-        makeJson(details: any) {
-          details.annualReports.forEach((report: any) => {
+        makeJson(details: Member) {
+          details.annualReports.forEach((report: MemberReport) => {
             report.averageNumberOfDevs ||= 0;
             report.payments ||= 0;
             report.monetaryValueOfTime ||= 0;
