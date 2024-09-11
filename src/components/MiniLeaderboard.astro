@@ -8,24 +8,40 @@ import {
 } from '../members.ts';
 
 const members = await getMembers();
+
+function shuffle(array: any[]) {
+    for (let i = array.length - 1; i >= 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
+
+const N_TO_SHOW = 5;
 ---
 
-<table class="table--lr">
-  <tr>
-    <th>Name</th>
-    <th>$/dev in latest report</th>
-  </tr>
-  {sortMembers(filterInactiveMembers(members)).slice(0, 5).map((member) => <tr>
-    <td>
-      <a class="sneaky" href={`/members/${member.id}`}>
-        <img src={member.data.urlSquareLogoWithBackground} alt={`The ${member.data.name} logo`}>
-        {member.data.name}
-      </div>
-    </td>
-    <td>
-      {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))}
-    </td>
-  </tr>)}
+<table class="mini-leaderboard table--lr">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>$/dev in latest report</th>
+    </tr>
+  </thead>
+  <tbody>
+    {shuffle(sortMembers(filterInactiveMembers(members))).map((member, idx) => <tr hidden={ idx >= N_TO_SHOW }>
+      <td>
+        <a class="sneaky" href={`/members/${member.id}`}>
+          <img src={member.data.urlSquareLogoWithBackground} alt={`The ${member.data.name} logo`}>
+          {member.data.name}
+        </div>
+      </td>
+      <td>
+        {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))}
+      </td>
+    </tr>)}
+  </tbody>
 </table>
 
 <style>
@@ -47,3 +63,25 @@ const members = await getMembers();
     padding: 0.25rem 0
   }
 </style>
+
+<script>
+  const N_TO_SHOW = 5;
+  const $miniLeaderboards = document.querySelectorAll<HTMLElement>('.mini-leaderboard');
+  $miniLeaderboards.forEach(($miniLeaderboard) => {
+    const $rows = $miniLeaderboard.querySelectorAll<HTMLElement>('tbody tr');
+    const rowIds = [...Array($rows.length).keys()];
+    let rowsToShow = [];
+    for (let i = 0; i < N_TO_SHOW; i++) {
+      const randomIdx = Math.round(Math.random() * (rowIds.length - 1));
+      rowsToShow.push(rowIds[randomIdx]);
+      rowIds.splice(randomIdx, 1);
+    }
+    $rows.forEach(($row, idx) => {
+      if (rowsToShow.includes(idx)) {
+        $row.hidden = false;
+      } else {
+        $row.hidden = true;
+      }
+    });
+  });
+</script>
