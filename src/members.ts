@@ -130,7 +130,10 @@ function sortReportsForMember(member: MemberWithId): MemberWithId {
     ...member,
     data: {
       ...member.data,
-      annualReports: sortedReports,
+      annualReports: sortedReports as [
+        MemberReport,
+        ...MemberReport[],
+      ],
     },
   };
 }
