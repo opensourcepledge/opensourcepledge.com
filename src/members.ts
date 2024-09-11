@@ -36,9 +36,11 @@ function getMockMembers(): MemberWithId[] {
 export async function getMembers(): Promise<MemberWithId[]> {
   if (isDev) {
     return Promise.resolve(getMockMembers());
-  } else {
-    return getCollection('members');
   }
+
+  const members = await getCollection('members');
+
+  return members.map(sortReportsForMember);
 }
 
 export function getReportFullTotal(report: MemberReport) {
@@ -117,4 +119,18 @@ export function sortMembers(members: MemberWithId[]): MemberWithId[] {
     const dpd2 = getDollarsPerDev(m2.data.annualReports[0]);
     return dpd2 - dpd1;
   });
+}
+
+function sortReportsForMember(member: MemberWithId): MemberWithId {
+  const sortedReports = member.data.annualReports.toSorted((a, b) =>
+    new Date(a.dateYearEnding) < new Date(b.dateYearEnding) ? 1 : -1
+  );
+
+  return {
+    ...member,
+    data: {
+      ...member.data,
+      annualReports: sortedReports,
+    },
+  };
 }
