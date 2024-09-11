@@ -20,24 +20,32 @@ const members = await getMembers();
   {groupMembers(filterInactiveMembers(members)).map((groupMembers, idx) => groupMembers.length > 0 && <div>
     <h2>{formatDevGroupBounds(DEV_GROUP_BOUNDS[idx])}</h2>
     <table class="table--lr">
-      <tr>
-        <th>Name</th>
-        <th>$/dev in latest report</th>
-      </tr>
-      {sortMembers(groupMembers).map((member) =>
-        <LeaderboardMember member={member}></LeaderboardMember>
-      )}
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>$/dev in latest report</th>
+        </tr>
+      </thead>
+      <tbody>
+        {sortMembers(groupMembers).map((member) =>
+          <LeaderboardMember member={member}></LeaderboardMember>
+        )}
+      </tbody>
     </table>
   </div>)}
 </div> : (
   <table class="table--lr">
-    <tr>
-      <th>Name</th>
-      <th>$/dev in latest report</th>
-    </tr>
-    {sortMembers(filterInactiveMembers(members)).map((member) => <tr>
-      <LeaderboardMember member={member}></LeaderboardMember>
-    </tr>)}
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>$/dev in latest report</th>
+      </tr>
+    </thead>
+    <tbody>
+      {sortMembers(filterInactiveMembers(members)).map((member) => <tr>
+        <LeaderboardMember member={member}></LeaderboardMember>
+      </tr>)}
+    </tbody>
   </table>
 )}
 

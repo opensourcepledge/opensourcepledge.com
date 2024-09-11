@@ -59,30 +59,34 @@ export async function getStaticPaths() {
           </div>
 
           <table class="table--bordered table--lr">
-            <tr>
-              <th>Item</th>
-              <th>Amount ($)</th>
-            </tr>
-            <tr>
-              <td>Payments to Projects</td>
-              <td>{fmtCurrency(report.payments)}</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td>= {fmtCurrency(getDollarsPerDev(report))} / dev</td>
-            </tr>
-            <tr>
-              <td>Value of Time</td>
-              <td>{fmtCurrency(report.monetaryValueOfTime)}</td>
-            </tr>
-            <tr>
-              <td>Value of Materials</td>
-              <td>{fmtCurrency(report.monetaryValueOfMaterials)}</td>
-            </tr>
-            <tr>
-              <td>Total</td>
-              <td>{fmtCurrency(getReportFullTotal(report))}</td>
-            </tr>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Amount ($)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Payments to Projects</td>
+                <td>{fmtCurrency(report.payments)}</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>= {fmtCurrency(getDollarsPerDev(report))} / dev</td>
+              </tr>
+              <tr>
+                <td>Value of Time</td>
+                <td>{fmtCurrency(report.monetaryValueOfTime)}</td>
+              </tr>
+              <tr>
+                <td>Value of Materials</td>
+                <td>{fmtCurrency(report.monetaryValueOfMaterials)}</td>
+              </tr>
+              <tr>
+                <td>Total</td>
+                <td>{fmtCurrency(getReportFullTotal(report))}</td>
+              </tr>
+            </tbody>
           </table>
           <div class="text-center">
             <TextButton href={report.url}>Read report</TextButton>
