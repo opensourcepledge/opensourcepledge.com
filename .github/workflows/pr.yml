@@ -1,0 +1,15 @@
+name: Run checks on pull request
+
+on:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Run npm install
+        run: npm install
+      - name: Run checks
+        run: npx astro check
