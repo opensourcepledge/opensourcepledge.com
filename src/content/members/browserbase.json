@@ -1,0 +1,16 @@
+{
+  "name": "Browserbase",
+  "description": "Headless browsers that work everywhere, every time. Control fleets of stealth browsers to build reliable browser automations. We believe in the power of open source software and its impact on the growth of the tech community.",
+  "urlLearnMore": "https://www.browserbase.com/blog/browserbase-pledge-to-open-source",
+  "urlSquareLogoWithBackground": "https://browserbase.notion.site/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2Fc95bb911-2cca-4693-9150-97dbf85938bc%2Ff72c0e6e-2b99-467b-96c8-603a651887f3%2Fbb-logo.png?table=block&id=a3d5d7d7-3726-4d82-82ce-5b64a49ed6c0&spaceId=c95bb911-2cca-4693-9150-97dbf85938bc&width=380&userId=&cache=v2",
+  "annualReports": [
+    {
+      "url": "https://www.browserbase.com/blog/browserbase-pledge-to-open-source",
+      "dateYearEnding": "2024-12-31",
+      "averageNumberOfDevs": 6,
+      "payments": 12000,
+      "monetaryValueOfTime": 0,
+      "monetaryValueOfMaterials": 0
+    }
+  ]
+}
