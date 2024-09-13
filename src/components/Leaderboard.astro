@@ -10,7 +10,7 @@ const { grouped } = Astro.props;
 
 import LeaderboardMember from "./LeaderboardMember.astro";
 import {
-  getMembers, formatDevGroupBounds, filterInactiveMembers, groupMembers, sortMembers, DEV_GROUP_BOUNDS
+  getMembers, formatDevGroupBounds, filterInactiveMembers, groupMembers, sortMembersByDollarsPerDev, DEV_GROUP_BOUNDS
 } from '../members.ts';
 
 const members = await getMembers();
@@ -27,7 +27,7 @@ const members = await getMembers();
         </tr>
       </thead>
       <tbody>
-        {sortMembers(groupMembers).map((member) =>
+        {sortMembersByDollarsPerDev(groupMembers).map((member) =>
           <LeaderboardMember member={member}></LeaderboardMember>
         )}
       </tbody>
@@ -42,7 +42,7 @@ const members = await getMembers();
       </tr>
     </thead>
     <tbody>
-      {sortMembers(filterInactiveMembers(members)).map((member) => <tr>
+      {sortMembersByDollarsPerDev(filterInactiveMembers(members)).map((member) => <tr>
         <LeaderboardMember member={member}></LeaderboardMember>
       </tr>)}
     </tbody>
