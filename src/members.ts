@@ -105,9 +105,26 @@ export function groupMembers(members: MemberWithId[]): MemberWithId[][] {
 }
 
 /**
+ * Sorts members by the average number of devs in their latest annual report.
+ */
+export function sortMembersByDevs(members: MemberWithId[]): MemberWithId[] {
+  return members.toSorted((m1, m2) => {
+    if (m1.data.annualReports.length == 0) {
+      return 1;
+    }
+    if (m2.data.annualReports.length == 0) {
+      return -1;
+    }
+    const devs1 = m1.data.annualReports[0].averageNumberOfDevs;
+    const devs2 = m2.data.annualReports[0].averageNumberOfDevs;
+    return devs2 - devs1;
+  });
+}
+
+/**
  * Sorts members by the dollars per dev donated in their latest annual report.
  */
-export function sortMembers(members: MemberWithId[]): MemberWithId[] {
+export function sortMembersByDollarsPerDev(members: MemberWithId[]): MemberWithId[] {
   return members.toSorted((m1, m2) => {
     if (m1.data.annualReports.length == 0) {
       return 1;

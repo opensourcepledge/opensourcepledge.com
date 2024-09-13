@@ -3,29 +3,33 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import {
-  getMembers, filterInactiveMembers, sortMembers,
-  getDollarsPerDev, fmtCurrency
+  getMembers, filterInactiveMembers, getDollarsPerDev, fmtCurrency, sortMembersByDevs,
 } from '../members.ts';
 
-const members = await getMembers();
+const N_TO_CHOOSE = 5;
+const members = sortMembersByDevs(filterInactiveMembers(await getMembers()));
 ---
 
-<table class="table--lr">
-  <tr>
-    <th>Name</th>
-    <th>$/dev in latest report</th>
-  </tr>
-  {sortMembers(filterInactiveMembers(members)).slice(0, 5).map((member) => <tr>
-    <td>
-      <a class="sneaky" href={`/members/${member.id}`}>
-        <img src={member.data.urlSquareLogoWithBackground} alt={`The ${member.data.name} logo`}>
-        {member.data.name}
-      </div>
-    </td>
-    <td>
-      {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))}
-    </td>
-  </tr>)}
+<table class="mini-leaderboard table--lr">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>$/dev in latest report</th>
+    </tr>
+  </thead>
+  <tbody>
+    {members.map((member, idx) => <tr hidden={idx >= N_TO_CHOOSE}>
+      <td>
+        <a class="sneaky" href={`/members/${member.id}`}>
+          <img src={member.data.urlSquareLogoWithBackground} alt={`The ${member.data.name} logo`}>
+          {member.data.name}
+        </div>
+      </td>
+      <td>
+        {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))}
+      </td>
+    </tr>)}
+  </tbody>
 </table>
 
 <style>
@@ -47,3 +51,27 @@ const members = await getMembers();
     padding: 0.25rem 0
   }
 </style>
+
+<script>
+  const N_TO_CHOOSE = 5;
+  const PROBABILITY_TO_SKIP = 0.5;
+
+  const $miniLeaderboards = document.querySelectorAll<HTMLElement>('.mini-leaderboard');
+  $miniLeaderboards.forEach(($miniLeaderboard) => {
+    const $rows = $miniLeaderboard.querySelectorAll<HTMLElement>('tbody tr');
+    let nChosen = 0;
+    const nTotal = $rows.length;
+    $rows.forEach(($row, idx) => {
+      const mustChoose = idx == 0 || (N_TO_CHOOSE - nChosen == nTotal - idx);
+      const mustNotChoose = nChosen == N_TO_CHOOSE;
+      if (mustNotChoose) {
+        $row.hidden = true;
+      } else if (mustChoose || Math.random() < PROBABILITY_TO_SKIP) {
+        $row.hidden = false;
+        nChosen++;
+      } else {
+        $row.hidden = true;
+      }
+    });
+  });
+</script>
