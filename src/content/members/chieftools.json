@@ -1,0 +1,14 @@
+{
+  "name": "Chief Tools",
+  "description": "Building, deploying and monitoring. Our tools supporting your applications.",
+  "urlLearnMore": "https://aka.chief.app/osspledge?ref=osspledge",
+  "urlSquareLogoWithBackground": "https://static.assets.chief.tools/icons/accountchief_512.jpg",
+  "annualReports": [
+    {
+      "url": "https://aka.chief.app/osspledge?ref=osspledge",
+      "dateYearEnding": "2024-12-31",
+      "averageNumberOfDevs": 1,
+      "payments": 2072
+    }
+  ]
+}
