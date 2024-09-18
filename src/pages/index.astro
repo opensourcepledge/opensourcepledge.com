@@ -9,6 +9,11 @@ import Button from "../components/Button.astro";
 import Layout from "../layouts/Layout.astro";
 import MiniLeaderboard from "../components/MiniLeaderboard.astro";
 import TextButton from "../components/TextButton.astro";
+import {
+  getMembers, filterInactiveMembers,
+} from '../members.ts';
+
+const members = filterInactiveMembers(await getMembers());
 ---
 
 <Layout>
@@ -69,9 +74,7 @@ import TextButton from "../components/TextButton.astro";
           <MiniLeaderboard></MiniLeaderboard>
 
           <div class="text-center">
-            <TextButton href="/members"
-              >Explore all members</TextButton
-            >
+            <TextButton href="/members">Explore all {members.length} members</TextButton>
           </div>
         </div>
       </section>
