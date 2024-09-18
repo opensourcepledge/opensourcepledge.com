@@ -3,29 +3,124 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import Blob from "../components/Blob.astro";
+import Button from "../components/Button.astro";
 import Layout from "../layouts/Layout.astro";
+import MiniLeaderboard from "../components/MiniLeaderboard.astro";
+import TextButton from "../components/TextButton.astro";
+import {
+  getMembers, filterInactiveMembers,
+} from '../members.ts';
+
+const members = filterInactiveMembers(await getMembers());
 ---
 
 <Layout>
   <div class="edge-blobs">
     <Blob kind="solid-fill-03" top="72%" left="-13rem"></Blob>
+    <Blob kind="grad-dots-04" top="8%" right="-3rem"></Blob>
     <Blob kind="grad-dots-06" top="37%" right="-5rem"></Blob>
   </div>
   <div class="container">
     <Blob kind="solid-fill-05" top="20%" left="-16rem"></Blob>
     <Blob kind="solid-fill-04" top="90%" right="-20rem"></Blob>
+    <Blob kind="grad-dots-03" top="10%" left="-15rem"></Blob>
 
     <main id="main-content">
+      <h1>About the Pledge</h1>
+
       <section>
-        <h1>About the Pledge</h1>
+        <h2>What is the Open Source Pledge?</h2>
 
-        <p>Open Source Pledge is a group of companies with a shared commitment to
-        paying the maintainers of the Open Source software we all consume. We aim
-        to prevent maintainer burnout and reduce flare-ups of high-profile
-        security incidents such as XZ, Log4Shell, and Heartbleed. We invite all
-        companies to <a href="/join">join the Pledge</a>.</p>
+        <p
+          >Open Source Pledge is a group of companies with a shared commitment to paying the maintainers of the Open
+          Source software we all consume. Our goal is to establish a new social norm in the tech industry of companies
+          paying Open Source maintainers, so that burnout and related security issues such as those in XZ and Log4j can
+          become a thing of the past.</p
+        >
+      </section>
 
-        <h2>Governance and Structure</h2>
+      <section>
+        <h2>What does making the Pledge entail?</h2>
+
+        <p
+          >Our new norm is for companies to pay a minimum of $2000 per year per full-time equivalent developer on the
+          company's staff, to Open Source maintainers of each company's choosing.</p
+        >
+      </section>
+
+      <section>
+        <h2
+          >Can companies become eligible by hiring developers to work on Open Source software, or giving gifts such as
+          cloud computing credits?</h2
+        >
+
+        <p
+          >Only cash payments count towards the Pledge. While we agree that developer time and gifts in kind are
+          valuable and important, the point of the Pledge is to get money to underpaid and overworked maintainers of
+          important Open Source projects. If maintainers of software we rely on can pay the bills, we will have a
+          healthier, fairer, more stable and more secure Open Source ecosystem.</p
+        >
+      </section>
+
+      <section>
+        <h2>What payments are eligible?</h2>
+
+        <p
+          >Companies directly pay maintainers of Open Source projects they depend on, with no strings attached. Paying
+          developers to do specific work does not count towards the Pledge. Feel free to participate in <a
+          href="https://github.com/opensourcepledge/osspledge.com/issues/112">our ongoing discussion</a> on what counts
+          and what doesn't.</p
+        >
+      </section>
+
+      <section>
+        <h2>Does Open Source Pledge handle funds?</h2>
+
+        <p>Payments are made directly to maintainers — we never handle any funds.</p>
+      </section>
+
+      <section>
+        <h2>How does Open Source Pledge promote members?</h2>
+
+        <p
+          >We want to promote companies that support a healthy Open Source ecosystem, which is why we're launching a
+          major promotional campaign on October 8, including outdoor advertising in prime San Francisco and NYC
+          locations. As part of this campaign, we will celebrate Open Source Pledge Innovators who who join us by
+          September 24.</p
+        >
+      </section>
+
+      <section>
+        <h2>Who has already joined?</h2>
+
+        <p>Here are some of our members:</p>
+
+        <div class="flex-center">
+          <div>
+            <MiniLeaderboard></MiniLeaderboard>
+
+            <div class="text-center">
+              <TextButton href="/members">See all {members.length} members</TextButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>How can I join?</h2>
+
+        <p
+          >To join our {members.length} members and help promote a healthy Open Source ecosystem, see our
+          instructions:</p
+        >
+
+        <div class="flex-center">
+          <Button href="/join">Join the Pledge</Button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Who maintains Open Source Pledge?</h2>
 
         <p
           >Open Source Pledge is brought to you by
@@ -69,7 +164,8 @@ import Layout from "../layouts/Layout.astro";
       </section>
 
       <section>
-        <h2>Want to help?</h2>
+        <h2>How can I help?</h2>
+
         <p
           >To help us build Open Source Pledge, read
           <a href="https://github.com/opensourcepledge/opensourcepledge.com/blob/main/CONTRIBUTING.md"
@@ -83,3 +179,9 @@ import Layout from "../layouts/Layout.astro";
     </main>
   </div>
 </Layout>
+
+<style>
+  h2 {
+    font-size: 1rem;
+  }
+</style>
