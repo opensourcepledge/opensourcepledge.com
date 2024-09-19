@@ -26,8 +26,8 @@ Open Source Pledge is brought to you by [Sentry][sentry] and [contributors][cont
 * **Want to make the Pledge?** Find out [how to join][join].
 * **Want to participate as a maintainer, foundation or funding platform?** Join an upcoming [ecosystem partners
   call][ecosystem-call] to learn more and be heard.
-* **Want to help?** [Dive into our issues][issues] or reach out to the working group leads listed below either in issues
-  or [on Discord][discord].
+* **Want to help?** Read [CONTRIBUTING.md](CONTRIBUTING.md), [dive into our issues][issues], and feel free to reach out
+  to the working group leads either in issues or [on Discord][discord].
 
 [contributors]: (https://github.com/opensourcepledge/osspledge.com/graphs/contributors).
 [discord]: https://discord.gg/svH5XzDsBd
