@@ -10,7 +10,8 @@ const { grouped } = Astro.props;
 
 import LeaderboardMember from "./LeaderboardMember.astro";
 import {
-  getMembers, formatDevGroupBounds, filterInactiveMembers, groupMembers, sortMembersByDollarsPerDev, DEV_GROUP_BOUNDS
+  getMembers, formatDevGroupBounds, filterInactiveMembers, groupMembers,
+  sortMembersByDevs, DEV_GROUP_BOUNDS
 } from '../members.ts';
 
 const members = await getMembers();
@@ -19,30 +20,32 @@ const members = await getMembers();
 {grouped ? <div>
   {groupMembers(filterInactiveMembers(members)).map((groupMembers, idx) => groupMembers.length > 0 && <div>
     <h2>{formatDevGroupBounds(DEV_GROUP_BOUNDS[idx])}</h2>
-    <table class="table--lr">
+    <table class="table--lrr table--40-30-30">
       <thead>
         <tr>
           <th>Name</th>
-          <th>$/dev in latest report</th>
+          <th><abbr title="Average number of employed FTE developers (in latest report)">Devs</abbr></th>
+          <th><abbr title="USD paid / average number of employed FTE developers (in latest report)">$/dev</abbr></th>
         </tr>
       </thead>
       <tbody>
-        {sortMembersByDollarsPerDev(groupMembers).map((member) =>
+        {sortMembersByDevs(groupMembers).map((member) =>
           <LeaderboardMember member={member}></LeaderboardMember>
         )}
       </tbody>
     </table>
   </div>)}
 </div> : (
-  <table class="table--lr">
+  <table class="table--lrr table--40-30-30">
     <thead>
       <tr>
         <th>Name</th>
-        <th>$/dev in latest report</th>
+        <th><abbr title="Average number of employed FTE developers (in latest report)">Devs</abbr></th>
+        <th><abbr title="USD paid / average number of employed FTE developers (in latest report)">$/dev</abbr></th>
       </tr>
     </thead>
     <tbody>
-      {sortMembersByDollarsPerDev(filterInactiveMembers(members)).map((member) => <tr>
+      {sortMembersByDevs(filterInactiveMembers(members)).map((member) => <tr>
         <LeaderboardMember member={member}></LeaderboardMember>
       </tr>)}
     </tbody>
