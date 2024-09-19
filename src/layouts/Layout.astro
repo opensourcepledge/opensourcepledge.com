@@ -363,6 +363,26 @@ const { title, navless } = Astro.props;
         text-align: right;
       }
     }
+    &.table--lrr {
+      td:nth-child(1), th:nth-child(1) {
+        text-align: left;
+      }
+      td:nth-child(2), th:nth-child(2),
+      td:nth-child(3), th:nth-child(3)
+      {
+        text-align: right;
+      }
+    }
+    &.table--40-30-30 {
+      td:nth-child(1), th:nth-child(1) {
+        width: 40%;
+      }
+      td:nth-child(2), th:nth-child(2),
+      td:nth-child(3), th:nth-child(3)
+      {
+        width: 30%;
+      }
+    }
   }
   ul {
     padding-left: 0;
