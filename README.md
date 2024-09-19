@@ -7,7 +7,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 # Open Source Pledge
 
 <p align="center">
-  <a href="https://osspledge.com">
+  <a href="https://opensourcepledge.com">
     <img src="public/images/piggybank.webp" alt="A hand puts bills into a computer monitor" width="200px">
   </a>
 </p>
@@ -19,7 +19,7 @@ Our goal is to establish a new social norm in the tech industry of companies pay
 of $2000 per year per developer on staff at our companies, to Open Source maintainers of each company’s choosing. This
 is in addition to the code, developer time, and gifts-in-kind that many of our companies also contribute.
 
-* **Want to learn more?** Visit [osspledge.com](https://osspledge.com) and follow our progress on our [launch
+* **Want to learn more?** Visit [opensourcepledge.com][osp] and follow our progress on our [launch
   ticket][launch-ticket].
 * **Want to make the Pledge?** Find out [how to join][join].
 * **Want to participate as a maintainer, foundation or funding platform?** Join an upcoming [ecosystem partners
@@ -27,12 +27,12 @@ is in addition to the code, developer time, and gifts-in-kind that many of our c
 * **Want to help?** Read [CONTRIBUTING.md](CONTRIBUTING.md), [dive into our issues][issues], and feel free to reach out
   to the working group leads either in issues or [on Discord][discord].
 
-[contributors]: (https://github.com/opensourcepledge/osspledge.com/graphs/contributors).
+[contributors]: https://github.com/opensourcepledge/opensourcepledge.com/graphs/contributors
 [discord]: https://discord.gg/svH5XzDsBd
 [ecosystem-call]: https://cal.com/osspledge/ecosystem-call
-[issues]: https://github.com/opensourcepledge/osspledge.com/issues
-[join]: https://osspledge.com/join/
-[launch-ticket]: https://github.com/opensourcepledge/osspledge.com/issues/4
-[osp]: https://osspledge.com/
+[issues]: https://github.com/opensourcepledge/opensourcepledge.com/issues
+[join]: https://opensourcepledge.com/join/
+[launch-ticket]: https://github.com/opensourcepledge/opensourcepledge.com/issues/4
+[osp]: https://opensourcepledge.com
 [restaurant]: https://openpath.chadwhitacre.com/2024/open-source-is-a-restaurant/
 [sentry]: https://sentry.io/welcome/
