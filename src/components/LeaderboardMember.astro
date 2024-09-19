@@ -20,6 +20,9 @@ import type { MemberWithId } from "../content/config.ts";
     </a>
   </td>
   <td>
+    {member.data.annualReports[0].averageNumberOfDevs}
+  </td>
+  <td>
     {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))}
   </td>
 </tr>
