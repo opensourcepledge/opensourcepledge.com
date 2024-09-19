@@ -8,7 +8,7 @@
 
 if [[ $(git status --porcelain src/content/members) ]]; then
   git config user.name 'Open Source Pledge GitHub Action Runner'
-  git config user.email 'bot@osspledge.com'
+  git config user.email 'bot@opensourcepledge.com'
   git add src/content/members
   git commit -m 'Add changes to src/content/members (automated commit)'
   git push

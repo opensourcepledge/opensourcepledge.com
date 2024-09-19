@@ -4,13 +4,14 @@
 
 import { z, defineCollection } from "astro:content";
 
-/* Welcome to the schema for OSS Pledge.
+/* Welcome to the schema for the Open Source Pledge.
  *
- * If you are implementing an OSS Pledge report for a member organization, and
- * need to understand how to format it, you've found the source of truth. If
- * you have questions or run into limitations, please open an issue:
+ * If you are implementing an Open Source Pledge report for a member
+ * organization, and need to understand how to format it, you've found the
+ * source of truth. If you have questions or run into limitations, please open
+ * an issue:
  *
- *    https://github.com/opensourcepledge/osspledge.com/issues/new
+ *    https://github.com/opensourcepledge/opensourcepledge.com/issues/new
  *
  */
 

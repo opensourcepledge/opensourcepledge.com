@@ -28,6 +28,7 @@ path = [
     "public/favicon.svg",
     "public/favicon.png",
     "public/osspledge.pdf",
+    "public/opensourcepledge.pdf",
     "public/images/*",
     "public/logos/*",
 ]
