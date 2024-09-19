@@ -1,0 +1,16 @@
+{
+  "name": "StackBlitz",
+  "description": "StackBlitz lets you create instant dev environments locally in your browser powered by WebContainers. We depend on Open Source to build our products. We also have a close relationship with Open Source teams. They are avid users of our tools and help us improve them in a close feedback loop. We have been involved in key projects, hiring maintainers of infrastructure projects like Vite and Vitest and organizing ViteConf, a free online event for the Web community. We're happy to continue giving back to the Open Source community by joining the Open Source Pledge.",
+  "urlLearnMore": "https://blog.stackblitz.com/posts/stackblitz-joins-osspledge/",
+  "urlSquareLogoWithBackground": "https://blog.stackblitz.com/stackblitz-avatar.jpg",
+  "annualReports": [
+    {
+      "url": "https://blog.stackblitz.com/posts/stackblitz-joins-osspledge/",
+      "dateYearEnding": "2024-12-31",
+      "averageNumberOfDevs": 18,
+      "payments": 95000,
+      "monetaryValueOfTime": 0,
+      "monetaryValueOfMaterials": 0
+    }
+  ]
+}
