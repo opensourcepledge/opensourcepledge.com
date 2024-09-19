@@ -2,8 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { getCollection } from 'astro:content';
-import type { Member, MemberWithId, MemberReport } from "./content/config.ts";
-import exampleMember from '../contrib/example-schema.json';
+import type { MemberWithId, MemberReport } from "./content/config.ts";
 
 export async function getMembers(): Promise<MemberWithId[]> {
   const members = await getCollection('members');
