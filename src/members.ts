@@ -83,7 +83,13 @@ export function sortMembersByDevs(members: MemberWithId[]): MemberWithId[] {
     }
     const devs1 = m1.data.annualReports[0].averageNumberOfDevs;
     const devs2 = m2.data.annualReports[0].averageNumberOfDevs;
-    return devs2 - devs1;
+    if (devs1 == devs2) {
+      const dpd1 = getDollarsPerDev(m1.data.annualReports[0]);
+      const dpd2 = getDollarsPerDev(m2.data.annualReports[0]);
+      return dpd2 - dpd1;
+    } else {
+      return devs2 - devs1;
+    }
   });
 }
 
