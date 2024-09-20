@@ -10,11 +10,18 @@ const N_TO_CHOOSE = 5;
 const members = sortMembersByDevs(filterInactiveMembers(await getMembers()));
 ---
 
-<table class="mini-leaderboard table--lr">
+<table class="mini-leaderboard table--lrr table--40-30-30">
   <thead>
     <tr>
       <th>Name</th>
-      <th>$/dev in latest report</th>
+      <th>
+        <abbr title="Average number of employed full-time equivalent developers (in latest report)">Devs</abbr>
+      </th>
+      <th>
+        <abbr title="USD paid / average number of employed full-time equivalent developers (in latest report)"
+          >$/dev</abbr
+        >
+      </th>
     </tr>
   </thead>
   <tbody>
@@ -24,6 +31,9 @@ const members = sortMembersByDevs(filterInactiveMembers(await getMembers()));
           <img src={member.data.urlSquareLogoWithBackground} alt={`The ${member.data.name} logo`}>
           {member.data.name}
         </div>
+      </td>
+      <td>
+        {member.data.annualReports[0].averageNumberOfDevs}
       </td>
       <td>
         {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))}
