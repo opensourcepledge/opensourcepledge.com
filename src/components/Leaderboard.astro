@@ -14,11 +14,11 @@ import {
   sortMembersByDevs, DEV_GROUP_BOUNDS
 } from '../members.ts';
 
-const members = await getMembers();
+const members = filterInactiveMembers(await getMembers());
 ---
 
 {grouped ? <div>
-  {groupMembers(filterInactiveMembers(members)).map((groupMembers, idx) => groupMembers.length > 0 && <div>
+  {groupMembers(members).map((groupMembers, idx) => groupMembers.length > 0 && <div>
     <h2>{formatDevGroupBounds(DEV_GROUP_BOUNDS[idx])}</h2>
     <table class="table--lrr table--40-30-30">
       <thead>
@@ -57,7 +57,7 @@ const members = await getMembers();
       </tr>
     </thead>
     <tbody>
-      {sortMembersByDevs(filterInactiveMembers(members)).map((member) => <tr>
+      {sortMembersByDevs(members).map((member) => <tr>
         <LeaderboardMember member={member}></LeaderboardMember>
       </tr>)}
     </tbody>
