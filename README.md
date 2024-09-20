@@ -19,8 +19,6 @@ Our goal is to establish a new social norm in the tech industry of companies pay
 of $2000 per year per developer on staff at our companies, to Open Source maintainers of each company’s choosing. This
 is in addition to the code, developer time, and gifts-in-kind that many of our companies also contribute.
 
-Open Source Pledge is brought to you by [Sentry][sentry] and [contributors][contributors].
-
 * **Want to learn more?** Visit [osspledge.com](https://osspledge.com) and follow our progress on our [launch
   ticket][launch-ticket].
 * **Want to make the Pledge?** Find out [how to join][join].
