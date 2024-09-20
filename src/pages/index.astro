@@ -9,6 +9,11 @@ import Button from "../components/Button.astro";
 import Layout from "../layouts/Layout.astro";
 import MiniLeaderboard from "../components/MiniLeaderboard.astro";
 import TextButton from "../components/TextButton.astro";
+import {
+  getMembers, filterInactiveMembers,
+} from '../members.ts';
+
+const members = filterInactiveMembers(await getMembers());
 ---
 
 <Layout>
@@ -36,11 +41,10 @@ import TextButton from "../components/TextButton.astro";
             </div>
           </div>
           <p
-            >Whether you're a CEO, CFO, CTO, or just a dev, your company surely depends on Open Source software. It's time to pay the maintainers.</p
+            >Whether you're a CEO, CFO, CTO, or just a dev, your company surely depends on Open Source software. It's
+            time to pay the maintainers.</p
           >
-          <Button href="/join"
-            >Join the Pledge</Button
-          >
+          <Button href="/join">Join the Pledge</Button>
         </div>
       </section>
 
@@ -54,9 +58,7 @@ import TextButton from "../components/TextButton.astro";
 
         <div class="highlight-box highlight-box--circled">
           <h3><div><span class="circled">2</span></div><span>Self-report annually</span></h3>
-          <p
-            >Each year, publish a blog post outlining your payments to maintainers.</p
-          >
+          <p>Each year, publish a blog post outlining your payments to maintainers.</p>
         </div>
       </section>
 
@@ -69,9 +71,7 @@ import TextButton from "../components/TextButton.astro";
           <MiniLeaderboard></MiniLeaderboard>
 
           <div class="text-center">
-            <TextButton href="/members"
-              >Explore all members</TextButton
-            >
+            <TextButton href="/members">Explore all {members.length} members</TextButton>
           </div>
         </div>
       </section>
@@ -83,9 +83,7 @@ import TextButton from "../components/TextButton.astro";
           </div>
 
           <div class="text-center">
-            <Button href="/join"
-              >Join the Pledge</TextButton
-            >
+            <Button href="/join">Join the Pledge</TextButton>
           </div>
         </div>
       </section>
