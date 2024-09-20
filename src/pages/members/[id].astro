@@ -55,7 +55,8 @@ export async function getStaticPaths() {
         {member.annualReports.map(report => <section class="annual-report">
           <div>
             <h2>Year Ending {report.dateYearEnding}</h2>
-            {fmtCurrency(getDollarsPerDev(report))} / dev
+            {report.averageNumberOfDevs}
+            <abbr title="Average number of employed full-time equivalent developers">devs</abbr>
           </div>
 
           <table class="table--bordered table--lr">
