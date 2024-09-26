@@ -19,8 +19,8 @@ export function getDollarsPerDev(report: MemberReport) {
 
 export function fmtCurrency(num: number) {
   return '$' + num.toLocaleString(undefined, {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
   });
 }
 
