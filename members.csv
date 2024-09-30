@@ -13,3 +13,4 @@ browserbase,https://www.browserbase.com/osspledge.json
 frontend-masters,https://static.frontendmasters.com/assets/brand/osspledge/osspledge.json
 chieftools,https://chief.app/.well-known/osspledge.json
 stackblitz,https://blog.stackblitz.com/osspledge.json
+prefect,https://raw.githubusercontent.com/prefecthq/oss-pledge/refs/heads/main/oss-pledge.json
