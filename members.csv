@@ -13,3 +13,4 @@ browserbase,https://www.browserbase.com/osspledge.json
 frontend-masters,https://static.frontendmasters.com/assets/brand/osspledge/osspledge.json
 chieftools,https://chief.app/.well-known/osspledge.json
 stackblitz,https://blog.stackblitz.com/osspledge.json
+pixee,https://raw.githubusercontent.com/pixee/docs/refs/heads/main/pixee-oss-pledge.json
