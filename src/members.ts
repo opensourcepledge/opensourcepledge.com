@@ -9,10 +9,6 @@ export async function getMembers(): Promise<MemberWithId[]> {
   return members.map(sortReportsForMember);
 }
 
-export function getReportFullTotal(report: MemberReport) {
-  return report.payments + report.monetaryValueOfTime + report.monetaryValueOfMaterials;
-}
-
 export function getDollarsPerDev(report: MemberReport) {
   return report.payments / report.averageNumberOfDevs;
 }

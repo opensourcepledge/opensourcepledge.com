@@ -9,7 +9,7 @@ import Layout from "../../layouts/Layout.astro";
 import TextButton from "../../components/TextButton.astro";
 
 import {
-  getMembers, getReportFullTotal, getDollarsPerDev, fmtCurrency
+  getMembers, getDollarsPerDev, fmtCurrency
 } from '../../members.ts';
 import type { Member } from "../../content/config.ts";
 
@@ -55,37 +55,25 @@ export async function getStaticPaths() {
         {member.annualReports.map(report => <section class="annual-report">
           <div>
             <h2>Year Ending {report.dateYearEnding}</h2>
-            {report.averageNumberOfDevs}
-            <abbr title="Average number of employed full-time equivalent developers">devs</abbr>
           </div>
 
           <table class="table--bordered table--lr">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Amount ($)</th>
-              </tr>
-            </thead>
             <tbody>
               <tr>
-                <td>Payments to Projects</td>
+                <td
+                  >Average number of <abbr
+                    title="Average number of employed full-time equivalent developers"
+                  >devs</abbr
+                ></td>
+                <td>{report.averageNumberOfDevs}</td>
+              </tr>
+              <tr>
+                <td>Payments</td>
                 <td>{fmtCurrency(report.payments)}</td>
               </tr>
               <tr>
-                <td></td>
-                <td>= {fmtCurrency(getDollarsPerDev(report))} / dev</td>
-              </tr>
-              <tr>
-                <td>Value of Time</td>
-                <td>{fmtCurrency(report.monetaryValueOfTime)}</td>
-              </tr>
-              <tr>
-                <td>Value of Materials</td>
-                <td>{fmtCurrency(report.monetaryValueOfMaterials)}</td>
-              </tr>
-              <tr>
-                <td>Total</td>
-                <td>{fmtCurrency(getReportFullTotal(report))}</td>
+                <td>Dollars per dev</td>
+                <td>{fmtCurrency(getDollarsPerDev(report))} / dev</td>
               </tr>
             </tbody>
           </table>
