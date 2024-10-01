@@ -37,12 +37,12 @@ import Layout from "../layouts/Layout.astro";
           </div>
           <div class="step">
             <h3><span class="inline-number">1. </span>Pay $2,000 per full-time equivalent developer on staff</h3>
-            to any Open Source maintainers or
+            directly to any Open Source maintainers or
             <a href="https://fossfoundation.info/">foundations</a>
-            of your choice, and commit to doing so in future years. The projects you're donating to should meet the
+            of your choice, and commit to doing so in future years. The projects you're paying should meet the
             <a href="https://opensource.org/osd">Open Source Definition</a>.
-            Of course, this includes any existing donations you've made this year. If you need help figuring out which
-            projects you depend on, you can use a tool like <a href="https://thanks.dev">Thanks.dev</a>.
+            Of course, this includes any existing payments you've made this year. If you need help figuring out which
+            projects you depend on, you can use a tool like <a href="https://thanks.dev">thanks.dev</a>.
           </div>
         </div>
         <div class="highlight-box">
@@ -50,10 +50,9 @@ import Layout from "../layouts/Layout.astro";
             <span class="circled">2</span>
           </div>
           <div class="step">
-            <h3><span class="inline-number">2. </span>Publish a blog post</h3>
-            or equivalent on your company website, detailing the contributions your company has made to the Open Source
-            ecosystem the past year. This post does not need to be long or exhaustive. If in doubt, check out sample posts
-            by
+            <h3><span class="inline-number">2. </span>Publish a blog post</h3> or equivalent on your company website,
+            detailing the payments your company has made to the Open Source ecosystem the past year. This post does not
+            need to be long or exhaustive. If in doubt, check out sample posts by
             <a
               href="https://blog.sentry.io/we-just-gave-500-000-dollars-to-open-source-maintainers/"
               >Sentry</a
@@ -61,12 +60,21 @@ import Layout from "../layouts/Layout.astro";
             or
             <a href="https://astral.sh/blog/astral-oss-fund">Astral</a>.
 
-            Ideally, this post would include an itemized list of how much was paid to each maintainer/foundation. When
-            this is undesirable or unrealistic, we ask that you make a best effort. To more conveniently get an
-            itemized list, consider using the
-            <a href="https://github.com/opensourcepledge/osp-github-reporter">Open Source Pledge GitHub Reporter</a>,
-            or
-            <a href="https://thanks.dev">Thanks.dev</a>.
+            <p
+              >Note that only cash payments to maintainers of Open Source projects, or to Open Source
+              <a href="https://fossfoundation.info/">foundations</a>, count towards the pledge. We understand that
+              companies contribute to the Open Source ecosystem in other ways than cash payments. These contributions
+              are important, and the blog post is the best place to show them off.</p
+            >
+
+            <p
+              >Ideally, this post would include an itemized list of how much was paid to each maintainer/foundation.
+              When this is undesirable or unrealistic, we ask that you make a best effort. To more conveniently get an
+              itemized list, consider using the
+              <a href="https://github.com/opensourcepledge/osp-github-reporter">Open Source Pledge GitHub Reporter</a>,
+              or
+              <a href="https://thanks.dev">thanks.dev</a>.</p
+            >
           </div>
         </div>
         <div class="highlight-box">
@@ -74,19 +82,19 @@ import Layout from "../layouts/Layout.astro";
             <span class="circled">3</span>
           </div>
           <div class="step">
-            <h3><span class="inline-number">3. </span>Create a short JSON file with your company and donation info,</h3>
+            <h3><span class="inline-number">3. </span>Create a short JSON file with your company and payment info,</h3>
             and host it at any URL you wish. Update it at least once per calendar year — we'll fetch it regularly.
 
             <p>
               Want to do things by hand?
               Check out an
               <a
-                href="https://github.com/opensourcepledge/osspledge.com/blob/main/contrib/example-schema.json"
+                href="https://github.com/opensourcepledge/opensourcepledge.com/blob/main/contrib/example-schema.json"
                 >example JSON report</a
               >
               or the
               <a
-                href="https://github.com/opensourcepledge/osspledge.com/blob/main/src/content/config.ts"
+                href="https://github.com/opensourcepledge/opensourcepledge.com/blob/main/src/content/config.ts"
                 >full schema</a
               >.
             </p>
@@ -114,7 +122,7 @@ import Layout from "../layouts/Layout.astro";
               <div class="control">
                 <label>
                   Link to info about your company's Open Source commitments
-                  <small>Don't have such a page? Link to an annual report blog post!</small>
+                  <small>Don't have such a page? Don't use your homepage — link to an annual report blog post.</small>
                 </label>
                 <input type="url" x-model="details.urlLearnMore" placeholder="https://foocorp.com/open-source">
                 <div class="hint">Please make sure this is a valid URL.</div>
@@ -122,7 +130,7 @@ import Layout from "../layouts/Layout.astro";
               <div class="control">
                 <label>
                    Link to logo
-                   <small>400px to 800px, non-transparent background — try using your GitHub avatar!</small>
+                   <small>Square, 400px to 800px, non-transparent background — try using your GitHub avatar!</small>
                 </label>
                 <input
                   type="url"
@@ -168,30 +176,6 @@ import Layout from "../layouts/Layout.astro";
                       <input type="number" x-model.number="annualReport.payments" placeholder="150000">
                     </div>
                   </div>
-                  <div class="control">
-                    <label>
-                      Monetary value of time (optional)
-                      <small>
-                        Value of employee time spent contributing to Open Source. Doesn't count towards pledge amount.
-                      </small>
-                    </label>
-                    <div class="input-wrapper">
-                      <span class="prefix">US $</span>
-                      <input type="number" x-model.number="annualReport.monetaryValueOfTime" placeholder="0">
-                    </div>
-                  </div>
-                  <div class="control">
-                    <label>
-                      Monetary value of material (optional)
-                      <small>
-                        Value of gifts in kind, e.g. cloud service credits. Doesn't count towards pledge amount.
-                      </small>
-                    </label>
-                    <div class="input-wrapper">
-                      <span class="prefix">US $</span>
-                      <input type="number" x-model.number="annualReport.monetaryValueOfMaterials" placeholder="0">
-                    </div>
-                  </div>
                 </div>
               </template>
               <div class="buttons">
@@ -213,7 +197,7 @@ import Layout from "../layouts/Layout.astro";
             <h3><span class="inline-number">4. </span>Create a pull request to add yourself to the member list</h3>
             by changing
             <a
-              href="https://github.com/opensourcepledge/osspledge.com/blob/main/members.csv"
+              href="https://github.com/opensourcepledge/opensourcepledge.com/blob/main/members.csv"
               >members.csv</a
             >. The format is <code>company-slug,json-url</code>. Please note that there should be no space in the company
             slug.
@@ -224,19 +208,38 @@ import Layout from "../layouts/Layout.astro";
             <span class="circled">5</span>
           </div>
           <div class="step">
-            <h3><span class="inline-number">5. </span>Include links to your high-resolution logo,</h3>
-            and optionally any other branding materials, in the pull request so that we can promote you! For those
-            pledging before September 24, this means you'll have a chance to be included in our major outdoor advertising
-            campaign, subject to available space and depending on how many pledges we get.
+            <h3><span class="inline-number">5. </span>Include your branding materials in the PR.</h3>
+
+            <p
+              >We need at least:
+
+              <ol>
+                <li>a glyph/icon in a square area, and</li>
+                <li>a full name/wordmark in a wide rectangle,</li>
+              </ol>
+
+              or your nearest equivalents. For both versions, you should either include a high-resolution (&gt; 800px
+              wide) raster file with a transparent background (e.g. PNG), or preferably a vector file (e.g. SVG).</p
+            >
+
+            <p
+              >Expect the logos to be on a dark background, so include a light version for your logo, or expect us to
+              make it all white.</p
+            >
+
+            <p
+              >For those pledging before October 8, you'll still have a chance to be included in our major outdoor
+              advertising campaign, subject to available space and depending on how many pledges we get.</p
+            >
           </div>
         </div>
 
         <p>
           Once that's all done, you'll officially be a member. This means that your company and reports will show up on
-          <a href="https://osspledge.com/members">our website</a>,
+          <a href="/members">our website</a>,
           and you'll be entitled to use the
           <a
-            href="https://github.com/opensourcepledge/osspledge.com/tree/main/public/logos"
+            href="https://github.com/opensourcepledge/opensourcepledge.com/tree/main/public/logos"
             >Open Source Pledge Member logo</a
           >
           on your website and marketing materials if you wish. Thank you so much for joining us in contributing to a
@@ -244,7 +247,7 @@ import Layout from "../layouts/Layout.astro";
         </p>
         <p>
           If you have any questions, feel free to
-          <a href="https://github.com/opensourcepledge/osspledge.com/issues/new"
+          <a href="https://github.com/opensourcepledge/opensourcepledge.com/issues/new"
             >open an issue</a
           >, and the relevant member of our team will get back to you.
         </p>
@@ -306,8 +309,6 @@ import Layout from "../layouts/Layout.astro";
       dateYearEnding: '',
       averageNumberOfDevs: null,
       payments: null,
-      monetaryValueOfTime: null,
-      monetaryValueOfMaterials: null,
     };
     Alpine.data('jsonBuilder', () => ({
         details: {
@@ -322,8 +323,6 @@ import Layout from "../layouts/Layout.astro";
           details.annualReports.forEach((report: MemberReport) => {
             report.averageNumberOfDevs ||= 0;
             report.payments ||= 0;
-            report.monetaryValueOfTime ||= 0;
-            report.monetaryValueOfMaterials ||= 0;
           });
           return JSON.stringify(details, undefined, 2);
         },
