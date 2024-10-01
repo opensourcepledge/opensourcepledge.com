@@ -14,4 +14,6 @@ frontend-masters,https://static.frontendmasters.com/assets/brand/osspledge/osspl
 chieftools,https://chief.app/.well-known/osspledge.json
 stackblitz,https://blog.stackblitz.com/osspledge.json
 prefect,https://raw.githubusercontent.com/prefecthq/oss-pledge/refs/heads/main/oss-pledge.json
+herodevs,https://raw.githubusercontent.com/herodevs/.github/refs/heads/main/osspledge.json
+pixee,https://raw.githubusercontent.com/pixee/docs/refs/heads/main/pixee-oss-pledge.json
 tideways,https://raw.githubusercontent.com/tideways/oss-pledge/main/osspledge.json
