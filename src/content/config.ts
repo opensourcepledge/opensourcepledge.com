@@ -20,8 +20,10 @@ const memberReport = z.object({
   dateYearEnding: z.string().date(),
   averageNumberOfDevs: z.number().nonnegative(),
   payments: z.number().nonnegative(),
-  monetaryValueOfTime: z.number().nonnegative().default(0),
-  monetaryValueOfMaterials: z.number().nonnegative().default(0),
+  // NOTE: Deprecated.
+  monetaryValueOfTime: z.number().optional(),
+  // NOTE: Deprecated.
+  monetaryValueOfMaterials: z.number().optional(),
 });
 
 const member = z.object({
