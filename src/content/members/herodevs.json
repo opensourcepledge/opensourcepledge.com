@@ -1,0 +1,16 @@
+{
+  "name": "HeroDevs, Inc.",
+  "description": "Drop-in replacements for deprecated open source Software that keep you secure, compliant, and compatible.",
+  "urlLearnMore": "https://www.herodevs.com/blog-posts/herodevs-joins-the-oss-pledge-supporting-the-future-of-openjs-and-beyond",
+  "urlSquareLogoWithBackground": "https://cdn.prod.website-files.com/62876589ec366575fa309b1e/667d34cdc5ba5c764c7a18c6_HeroDevs-Gradient-Light%20Mode.svg",
+  "annualReports": [
+    {
+      "url": "https://www.herodevs.com/blog-posts/herodevs-joins-the-oss-pledge-supporting-the-future-of-openjs-and-beyond",
+      "dateYearEnding": "2024-12-31",
+      "averageNumberOfDevs": 50,
+      "payments": 144000,
+      "monetaryValueOfTime": 0,
+      "monetaryValueOfMaterials": 0
+    }
+  ]
+}
