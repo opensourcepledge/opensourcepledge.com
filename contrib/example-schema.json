@@ -8,17 +8,13 @@
       "url": "https://example.com/blog/2",
       "dateYearEnding": "2023-12-31",
       "averageNumberOfDevs": 135,
-      "payments": 500000,
-      "monetaryValueOfTime": 100000,
-      "monetaryValueOfMaterials": 500000
+      "payments": 500000
     },
     {
       "url": "https://example.com/blog/1",
       "dateYearEnding": "2022-12-31",
       "averageNumberOfDevs": 100,
-      "payments": 400000,
-      "monetaryValueOfTime": 10000,
-      "monetaryValueOfMaterials": 50000
+      "payments": 400000
     }
   ]
 }

@@ -37,7 +37,7 @@ import Layout from "../layouts/Layout.astro";
           </div>
           <div class="step">
             <h3><span class="inline-number">1. </span>Pay $2,000 per full-time equivalent developer on staff</h3>
-            to any Open Source maintainers or
+            directly to any Open Source maintainers or
             <a href="https://fossfoundation.info/">foundations</a>
             of your choice, and commit to doing so in future years. The projects you're paying should meet the
             <a href="https://opensource.org/osd">Open Source Definition</a>.
@@ -50,10 +50,9 @@ import Layout from "../layouts/Layout.astro";
             <span class="circled">2</span>
           </div>
           <div class="step">
-            <h3><span class="inline-number">2. </span>Publish a blog post</h3>
-            or equivalent on your company website, detailing the contributions your company has made to the Open Source
-            ecosystem the past year. This post does not need to be long or exhaustive. If in doubt, check out sample posts
-            by
+            <h3><span class="inline-number">2. </span>Publish a blog post</h3> or equivalent on your company website,
+            detailing the payments your company has made to the Open Source ecosystem the past year. This post does not
+            need to be long or exhaustive. If in doubt, check out sample posts by
             <a
               href="https://blog.sentry.io/we-just-gave-500-000-dollars-to-open-source-maintainers/"
               >Sentry</a
@@ -61,12 +60,21 @@ import Layout from "../layouts/Layout.astro";
             or
             <a href="https://astral.sh/blog/astral-oss-fund">Astral</a>.
 
-            Ideally, this post would include an itemized list of how much was paid to each maintainer/foundation. When
-            this is undesirable or unrealistic, we ask that you make a best effort. To more conveniently get an
-            itemized list, consider using the
-            <a href="https://github.com/opensourcepledge/osp-github-reporter">Open Source Pledge GitHub Reporter</a>,
-            or
-            <a href="https://thanks.dev">thanks.dev</a>.
+            <p
+              >Note that only cash payments to maintainers of Open Source projects, or to Open Source
+              <a href="https://fossfoundation.info/">foundations</a>, count towards the pledge. We understand that
+              companies contribute to the Open Source ecosystem in other ways than cash payments. These contributions
+              are important, and the blog post is the best place to show them off.</p
+            >
+
+            <p
+              >Ideally, this post would include an itemized list of how much was paid to each maintainer/foundation.
+              When this is undesirable or unrealistic, we ask that you make a best effort. To more conveniently get an
+              itemized list, consider using the
+              <a href="https://github.com/opensourcepledge/osp-github-reporter">Open Source Pledge GitHub Reporter</a>,
+              or
+              <a href="https://thanks.dev">thanks.dev</a>.</p
+            >
           </div>
         </div>
         <div class="highlight-box">
@@ -114,7 +122,7 @@ import Layout from "../layouts/Layout.astro";
               <div class="control">
                 <label>
                   Link to info about your company's Open Source commitments
-                  <small>Don't have such a page? Link to an annual report blog post!</small>
+                  <small>Don't have such a page? Don't use your homepage — link to an annual report blog post.</small>
                 </label>
                 <input type="url" x-model="details.urlLearnMore" placeholder="https://foocorp.com/open-source">
                 <div class="hint">Please make sure this is a valid URL.</div>
@@ -166,30 +174,6 @@ import Layout from "../layouts/Layout.astro";
                     <div class="input-wrapper">
                       <span class="prefix">US $</span>
                       <input type="number" x-model.number="annualReport.payments" placeholder="150000">
-                    </div>
-                  </div>
-                  <div class="control">
-                    <label>
-                      Monetary value of time (optional)
-                      <small>
-                        Value of employee time spent contributing to Open Source. Doesn't count towards pledge amount.
-                      </small>
-                    </label>
-                    <div class="input-wrapper">
-                      <span class="prefix">US $</span>
-                      <input type="number" x-model.number="annualReport.monetaryValueOfTime" placeholder="0">
-                    </div>
-                  </div>
-                  <div class="control">
-                    <label>
-                      Monetary value of material (optional)
-                      <small>
-                        Value of gifts in kind, e.g. cloud service credits. Doesn't count towards pledge amount.
-                      </small>
-                    </label>
-                    <div class="input-wrapper">
-                      <span class="prefix">US $</span>
-                      <input type="number" x-model.number="annualReport.monetaryValueOfMaterials" placeholder="0">
                     </div>
                   </div>
                 </div>
@@ -325,8 +309,6 @@ import Layout from "../layouts/Layout.astro";
       dateYearEnding: '',
       averageNumberOfDevs: null,
       payments: null,
-      monetaryValueOfTime: null,
-      monetaryValueOfMaterials: null,
     };
     Alpine.data('jsonBuilder', () => ({
         details: {
@@ -341,8 +323,6 @@ import Layout from "../layouts/Layout.astro";
           details.annualReports.forEach((report: MemberReport) => {
             report.averageNumberOfDevs ||= 0;
             report.payments ||= 0;
-            report.monetaryValueOfTime ||= 0;
-            report.monetaryValueOfMaterials ||= 0;
           });
           return JSON.stringify(details, undefined, 2);
         },
