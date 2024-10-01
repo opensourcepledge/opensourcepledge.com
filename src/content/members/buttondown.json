@@ -1,0 +1,16 @@
+{
+  "name": "Buttondown",
+  "description": "Buttondown is the easiest way to send emails and grow your audience.",
+  "urlLearnMore": "https://buttondown.com/open-source",
+  "urlSquareLogoWithBackground": "https://avatars.githubusercontent.com/u/48390753?s=400&u=077c6eec9f0eb2a32cf441307ac6d473826d2541&v=4",
+  "annualReports": [
+    {
+      "url": "https://buttondown.com/blog/oss-pledge",
+      "dateYearEnding": "2024-12-31",
+      "averageNumberOfDevs": 1,
+      "payments": 5000,
+      "monetaryValueOfTime": 0,
+      "monetaryValueOfMaterials": 0
+    }
+  ]
+}
