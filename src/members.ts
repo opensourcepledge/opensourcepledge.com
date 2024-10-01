@@ -9,18 +9,14 @@ export async function getMembers(): Promise<MemberWithId[]> {
   return members.map(sortReportsForMember);
 }
 
-export function getReportFullTotal(report: MemberReport) {
-  return report.payments + report.monetaryValueOfTime + report.monetaryValueOfMaterials;
-}
-
 export function getDollarsPerDev(report: MemberReport) {
   return report.payments / report.averageNumberOfDevs;
 }
 
 export function fmtCurrency(num: number) {
   return '$' + num.toLocaleString(undefined, {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
   });
 }
 
@@ -52,7 +48,7 @@ export function filterInactiveMembers(members: MemberWithId[]): MemberWithId[] {
 }
 
 /**
- * Puts members into groups based on the dollars per dev donated in their latest
+ * Puts members into groups based on the dollars per dev in their latest
  * annual report, where the groups are set out by `DEV_GROUP_BOUNDS`.
  */
 export function groupMembers(members: MemberWithId[]): MemberWithId[][] {
@@ -94,7 +90,7 @@ export function sortMembersByDevs(members: MemberWithId[]): MemberWithId[] {
 }
 
 /**
- * Sorts members by the dollars per dev donated in their latest annual report.
+ * Sorts members by the dollars per dev in their latest annual report.
  */
 export function sortMembersByDollarsPerDev(members: MemberWithId[]): MemberWithId[] {
   return members.toSorted((m1, m2) => {

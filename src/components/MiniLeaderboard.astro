@@ -10,20 +10,7 @@ const N_TO_CHOOSE = 5;
 const members = sortMembersByDevs(filterInactiveMembers(await getMembers()));
 ---
 
-<table class="mini-leaderboard table--lrr table--40-30-30">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>
-        <abbr title="Average number of employed full-time equivalent developers (in latest report)">Devs</abbr>
-      </th>
-      <th>
-        <abbr title="USD paid / average number of employed full-time equivalent developers (in latest report)"
-          >$/dev</abbr
-        >
-      </th>
-    </tr>
-  </thead>
+<table class="mini-leaderboard">
   <tbody>
     {members.map((member, idx) => <tr hidden={idx >= N_TO_CHOOSE}>
       <td>
@@ -32,17 +19,15 @@ const members = sortMembersByDevs(filterInactiveMembers(await getMembers()));
           {member.data.name}
         </div>
       </td>
-      <td>
-        {member.data.annualReports[0].averageNumberOfDevs}
-      </td>
-      <td>
-        {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))}
-      </td>
     </tr>)}
   </tbody>
 </table>
 
 <style>
+  table {
+    width: 1%;
+    margin: 0 auto;
+  }
   tr {
     th {
       font-weight: normal;
@@ -58,7 +43,8 @@ const members = sortMembersByDevs(filterInactiveMembers(await getMembers()));
     display: flex;
     align-items: center;
     font-weight: bold;
-    padding: 0.25rem 0
+    padding: 0.25rem 0;
+    white-space: nowrap;
   }
 </style>
 
