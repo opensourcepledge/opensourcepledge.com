@@ -12,14 +12,14 @@ Must be run in the repo's root.`;
 
 
 async function updateMember(name, url) {
-  // NOTE: Temporary hack
-  if (name == 'pixee') {
-    return;
-  }
   const localPath = `./src/content/members/${name}.json`;
   console.log(`Fetching member: ${name}`);
   console.log(`\t* Remote URL: ${url}`);
   console.log(`\t* Local path: ${localPath}`);
+
+  if (fs.existsSync(localPath + '.lock')) {
+    return;
+  }
 
   let localMemberData = undefined;
   if (fs.existsSync(localPath)) {

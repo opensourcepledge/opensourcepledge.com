@@ -26,6 +26,18 @@ npx astro check
 When a new member joins, workflows are run to update `src/content/members`. The workflow can be found in
 `.github/workflows/deploy.yml`, and the code that updates member data can be found in `bin/`.
 
+If you'd like to update all members manually, for example to fetch new data from a JSON file, run
+`./bin/update-all-members`.
+
+By default, all new members have the “Member” role. If you'd like to set a custom role for a certain member, create a
+corresponding entry in `src/memberCustomRoles.json`.
+
+If you'd like to make custom temporary changes to a member's JSON file, edit that file in `src/content/members`. To
+prevent workflows from overwriting this data, you should then create a corresponding `.lock` file. For example, if
+you're updating `src/content/members/foocorp.json`, you should also create a file called
+`src/content/members/foocorp.json.lock`. This will result in the JSON file not being automatically updated until the
+`.lock` file is deleted. Remember to delete the `.lock` file when you'd like the member to be updated again.
+
 ## Copyright Headers
 
 We maintain copyright headers at the top of every file to establish authorship. Once you make substantive changes to any
