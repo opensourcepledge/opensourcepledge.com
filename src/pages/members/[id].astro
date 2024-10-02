@@ -18,9 +18,13 @@ interface Props {
   member: Member;
 }
 
+interface Map {
+  [key: string]: string | undefined
+}
+
 const { member } = Astro.props;
 const memberRole = Astro.params.id in memberCustomRoles
-  ? memberCustomRoles[Astro.params.id]
+  ? (memberCustomRoles as Map)[Astro.params.id]
   : "Member";
 
 export async function getStaticPaths() {
