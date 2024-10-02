@@ -11,6 +11,7 @@ import TextButton from "../../components/TextButton.astro";
 import {
   getMembers, getDollarsPerDev, fmtCurrency
 } from '../../members.ts';
+import memberCustomRoles from "../../memberCustomRoles.json"
 import type { Member } from "../../content/config.ts";
 
 interface Props {
@@ -18,6 +19,9 @@ interface Props {
 }
 
 const { member } = Astro.props;
+const memberRole = Astro.params.id in memberCustomRoles
+  ? memberCustomRoles[Astro.params.id]
+  : "Member";
 
 export async function getStaticPaths() {
   const memberItems = await getMembers();
@@ -43,8 +47,8 @@ export async function getStaticPaths() {
         <div class="company-intro">
           <img src={member.urlSquareLogoWithBackground} alt={`The ${member.name} logo`}>
           <h1>
-            {member.name}
-            <small>Open Source Pledge Member</small>
+            <div>{member.name}</div>
+            <small>{memberRole}</small>
           </h1>
         </div>
 
@@ -111,11 +115,18 @@ export async function getStaticPaths() {
     h1 {
       margin: 0;
       font-size: 2rem;
+      line-height: 1;
       small {
-        display: block;
-        margin-top: 0.5rem;
-        font-size: 1rem;
+        display: inline-block;
+        margin-top: 1.0rem;
+        padding: 0 0.5rem;
+        padding-top: 0.3rem;
+        padding-bottom: 0.4rem;
+        font-size: 0.9rem;
         font-weight: normal;
+        border-radius: 0.2rem;
+        color: black;
+        background: #85c1e4;
       }
       @media (max-width: 800px) {
         text-align: center;
