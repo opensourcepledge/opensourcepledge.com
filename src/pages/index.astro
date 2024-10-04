@@ -6,7 +6,7 @@
 
 import Blob from "../components/Blob.astro";
 import Button from "../components/Button.astro";
-import Endorsements from "../components/Endorsements.astro";
+import EndorsementList from "../components/EndorsementList.astro";
 import Layout from "../layouts/Layout.astro";
 import MiniLeaderboard from "../components/MiniLeaderboard.astro";
 import TextButton from "../components/TextButton.astro";
@@ -59,7 +59,11 @@ import TextButton from "../components/TextButton.astro";
       </section>
 
       <section>
-        <Endorsements></Endorsements>
+        <EndorsementList></EndorsementList>
+
+        <div class="text-center">
+          <TextButton href="/endorsements/">See all endorsements</TextButton>
+        </div>
       </section>
 
       <section class="flex-center">
