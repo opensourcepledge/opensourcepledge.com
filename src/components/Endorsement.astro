@@ -1,0 +1,73 @@
+---
+// © 2024 Vlad-Stefan Harbuz <vlad@vladh.net>
+// SPDX-License-Identifier: Apache-2.0
+
+interface Props {
+  name: string;
+  handle: string;
+  imageUrl: string;
+  sourceUrl: string;
+  hidden?: boolean;
+}
+
+const { name, handle, imageUrl, sourceUrl, hidden } = Astro.props;
+---
+
+<figure class="endorsement" hidden={hidden}>
+  <blockquote>
+    <slot></slot>
+  </blockquote>
+  <figcaption>
+    <img src={imageUrl}>
+    <div>
+      <div>{name}</div>
+      <a href={sourceUrl}
+        ><small>{handle}</small></a
+      >
+    </div>
+  </figcaption>
+  <hr>
+</figure>
+
+<style>
+  .endorsement {
+    position: relative;
+    margin: 0;
+    padding-top: 1rem;
+    &:before {
+      content: '“';
+      position: absolute;
+      top: -0.5rem;
+      left: 0;
+      font-size: 5rem;
+      line-height: 1;
+      font-style: italic;
+      color: var(--color-primary);
+    }
+    hr {
+      margin: 1.5rem auto;
+      max-width: 10rem;
+      border-color: var(--color-primary);
+      border-width: 1px;
+    }
+    &:last-child hr {
+      display: none;
+    }
+    blockquote {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    figcaption {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.7rem;
+      line-height: 1.3;
+      img {
+        border-radius: 100%;
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+</style>
