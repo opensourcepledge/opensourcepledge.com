@@ -6,6 +6,7 @@
 
 import Blob from "../components/Blob.astro";
 import Button from "../components/Button.astro";
+import EndorsementList from "../components/EndorsementList.astro";
 import Layout from "../layouts/Layout.astro";
 import MiniLeaderboard from "../components/MiniLeaderboard.astro";
 import TextButton from "../components/TextButton.astro";
@@ -54,6 +55,14 @@ import TextButton from "../components/TextButton.astro";
         <div class="highlight-box highlight-box--circled">
           <h3><div><span class="circled">2</span></div><span>Self-report annually</span></h3>
           <p>Each year, publish a blog post outlining your payments to maintainers.</p>
+        </div>
+      </section>
+
+      <section>
+        <EndorsementList></EndorsementList>
+
+        <div class="text-center">
+          <TextButton href="/endorsements/">See all endorsements</TextButton>
         </div>
       </section>
 
