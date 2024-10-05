@@ -1,0 +1,69 @@
+---
+// © 2024 Vlad-Stefan Harbuz <vlad@vladh.net>
+// SPDX-License-Identifier: Apache-2.0
+
+import Endorsement from "./Endorsement.astro";
+
+interface Props {
+  full?: boolean;
+}
+
+const { full } = Astro.props;
+---
+
+<div class="endorsement-list" data-full={full}>
+  <Endorsement
+    name="Raymmar"
+    handle="@raymmar_"
+    imageUrl="/images/endorsers/raymmar.webp"
+    sourceUrl="https://x.com/raymmar_/status/1832464000996548806"
+    hidden={!full}
+  >
+    <p>Great initiative. Much needed and vital for the next step of internet growth. 💪</p>
+  </Endorsement>
+  <Endorsement
+    name="Xavier Damman"
+    handle="@xdamman"
+    imageUrl="/images/endorsers/xdamman.webp"
+    sourceUrl="https://x.com/xdamman/status/1837021472499343492"
+    hidden={!full}
+  >
+    <p
+      >Great initiative to get companies who wouldn’t exist without the digital public good of open source software to
+      give back.</p
+    >
+  </Endorsement>
+  <Endorsement
+    name="Johannes Schickling"
+    handle="@schickling"
+    imageUrl="/images/endorsers/schickling.webp"
+    sourceUrl="https://x.com/schickling/status/1832361798130954335"
+  >
+    <p>I can't overstate how excited I am about this. ❤️</p>
+  </Endorsement>
+</div>
+
+<style>
+</style>
+
+<script>
+  import { shuffle, range } from "../util.ts";
+
+  const N_TO_CHOOSE = 1;
+
+  const $lists = document.querySelectorAll<HTMLElement>('.endorsement-list');
+  $lists.forEach(($list) => {
+    if ($list.hasAttribute('data-full')) {
+      return;
+    }
+    const $items = $list.querySelectorAll<HTMLElement>('.endorsement');
+    const chosen = shuffle(range($items.length)).slice(0, N_TO_CHOOSE);
+    $items.forEach(($item, idx) => {
+      if (chosen.includes(idx)) {
+        $item.hidden = false;
+      } else {
+        $item.remove();
+      }
+    });
+  });
+</script>
