@@ -8,7 +8,7 @@ import Blob from "../components/Blob.astro";
 import Button from "../components/Button.astro";
 import EndorsementList from "../components/EndorsementList.astro";
 import Layout from "../layouts/Layout.astro";
-import MiniLeaderboard from "../components/MiniLeaderboard.astro";
+import MemberLogoBoard from "../components/MemberLogoBoard.astro";
 import TextButton from "../components/TextButton.astro";
 ---
 
@@ -66,13 +66,13 @@ import TextButton from "../components/TextButton.astro";
         </div>
       </section>
 
-      <section class="flex-center">
+      <section>
         <div>
           <div class="text-center">
             <h2>Some Member Companies</h2>
           </div>
 
-          <MiniLeaderboard></MiniLeaderboard>
+          <MemberLogoBoard nRows={3}></MemberLogoBoard>
 
           <div class="text-center">
             <TextButton href="/members/">Explore all member companies</TextButton>
