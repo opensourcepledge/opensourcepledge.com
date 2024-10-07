@@ -8,26 +8,30 @@ interface Props {
   maxHeight?: string;
 }
 
-const { slug, name, maxHeight } = Astro.props;
+let { slug, name, maxHeight } = Astro.props;
+
+if (!maxHeight) {
+  maxHeight = '2rem';
+}
+
+const { default: svg } = await import (`../assets/images/members-bw/logo-${slug}.svg?raw`);
 ---
 
-<div class="member-logo-board-item">
-  <img
-    src=`/images/members-bw/logo-${slug}.svg`
-    alt=`The ${name} logo`
-    style={maxHeight ? `max-height: ${maxHeight}` : ''}
-  >
+<div class="member-logo-board-item" role="img" aria-label=`The ${name} logo`>
+  <Fragment set:html={svg} />
 </div>
 
-<style>
+<style define:vars={{ maxHeight }}>
   .member-logo-board-item {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0.5rem;
-    img {
+    svg {
       flex: 1;
-      max-height: 2rem;
+      width: auto;
+      height: auto;
+      max-height: var(--maxHeight);
     }
   }
 </style>
