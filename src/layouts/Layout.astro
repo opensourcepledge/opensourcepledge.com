@@ -56,10 +56,20 @@ const { title, navless } = Astro.props;
     ) }
     <slot></slot>
     <footer class="container">
-      <span><a class="sneaky" href="/join">Join</a></span>
-      <span><a class="sneaky" href="/about">About</a></span>
-      <span><a class="sneaky" href="/members">Members</a></span>
-      <span><a class="sneaky" href="/endorsements">Endorsements</a></span>
+      <div class="footer-nav">
+        <span><a class="sneaky" href="/join">Join</a></span>
+        <span><a class="sneaky" href="/about">About</a></span>
+        <span><a class="sneaky" href="/members">Members</a></span>
+        <span><a class="sneaky" href="/endorsements">Endorsements</a></span>
+      </div>
+      <div class="footer-socials">
+        <a href="https://x.com/ThePledge">
+          <svg role="img" aria-label="The X (Twitter) logo" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 300 300.251"><path fill="#fff" d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.4-116.59 81.8 116.59H300M36.01 19.54h40.65l187.13 262.13h-40.66"/></svg>
+        </a>
+        <a href="https://github.com/opensourcepledge/opensourcepledge.com">
+          <svg role="img" aria-label="The GitHub logo" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 33 32"><path fill="#fff" fill-rule="evenodd" d="M16.288 0C7.294 0 0 7.293 0 16.29c0 7.197 4.667 13.302 11.14 15.456.815.15 1.112-.353 1.112-.785 0-.386-.014-1.411-.022-2.77-4.531.984-5.487-2.184-5.487-2.184-.741-1.882-1.809-2.383-1.809-2.383-1.479-1.01.112-.99.112-.99 1.635.115 2.495 1.679 2.495 1.679 1.453 2.489 3.813 1.77 4.741 1.353.148-1.052.569-1.77 1.034-2.177-3.617-.411-7.42-1.809-7.42-8.051 0-1.778.635-3.233 1.677-4.371-.168-.412-.727-2.069.16-4.311 0 0 1.367-.438 4.479 1.67a15.6 15.6 0 0 1 4.078-.549 15.6 15.6 0 0 1 4.078.549c3.11-2.108 4.475-1.67 4.475-1.67.889 2.242.33 3.899.163 4.311 1.044 1.138 1.674 2.593 1.674 4.371 0 6.258-3.809 7.635-7.437 8.038.584.503 1.105 1.497 1.105 3.017 0 2.177-.02 3.934-.02 4.468 0 .436.294.943 1.12.784 6.468-2.159 11.131-8.26 11.131-15.455C32.579 7.293 25.285 0 16.288 0"/></svg>
+        </a>
+      </div>
     </footer>
   </body>
 </html>
@@ -445,11 +455,26 @@ const { title, navless } = Astro.props;
     max-width: 100%;
   }
   footer {
-    padding: 2rem 0;
+    margin: 4rem 0;
     text-align: center;
     span {
       display: inline-block;
       margin: 0 1rem;
+    }
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      a {
+        text-decoration: none;
+        &:hover {
+          svg path {
+            fill: var(--color-primary);
+          }
+        }
+      }
     }
   }
   .flex-center {
