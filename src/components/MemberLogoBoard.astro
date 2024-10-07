@@ -1,0 +1,69 @@
+---
+// © 2024 Vlad-Stefan Harbuz <vlad@vladh.net>
+// SPDX-License-Identifier: Apache-2.0
+
+import MemberLogoBoardItem from "../components/MemberLogoBoardItem.astro";
+
+interface Props {
+  nRows?: number;
+}
+
+let { nRows } = Astro.props;
+
+if (!nRows) {
+  nRows = 2;
+}
+---
+
+<div class="member-logo-board">
+  { nRows >= 1 && (
+    <MemberLogoBoardItem slug="gitbutler" name="GitButler" maxHeight="1.6rem" />
+    <MemberLogoBoardItem slug="antithesis" name="Antithesis" />
+    <MemberLogoBoardItem slug="sentry" name="Sentry" maxHeight="1.8rem"/>
+    <MemberLogoBoardItem slug="astral" name="Astral" maxHeight="1.5rem" />
+  )}
+
+  { nRows >= 2 && (
+    <MemberLogoBoardItem slug="laravel" name="Laravel" />
+    <MemberLogoBoardItem slug="browserbase" name="Browserbase" />
+    <MemberLogoBoardItem slug="valtown" name="Val Town" />
+    <MemberLogoBoardItem slug="prefect" name="Prefect" />
+  )}
+
+  { nRows >= 3 && (
+    <MemberLogoBoardItem slug="pydantic-logfire" name="Pydantic Logfire" maxHeight="1.8rem" />
+    <MemberLogoBoardItem slug="emergetools" name="Emerge Tools" maxHeight="1.7rem" />
+    <MemberLogoBoardItem slug="frontendmasters" name="Frontend Masters" />
+    <MemberLogoBoardItem slug="scalar" name="Scalar" maxHeight="1.8rem" />
+  )}
+
+  { nRows >= 4 && (
+    <MemberLogoBoardItem slug="buttondown" name="Buttondown" maxHeight="1.8rem" />
+    <MemberLogoBoardItem slug="httptoolkit" name="HTTP Toolkit" />
+    <MemberLogoBoardItem slug="herodevs" name="HeroDevs" />
+    <MemberLogoBoardItem slug="keygen" name="Keygen" />
+  )}
+
+  { nRows >= 5 && (
+    <MemberLogoBoardItem slug="stackblitz" name="StackBlitz" maxHeight="1.4rem" />
+    <MemberLogoBoardItem slug="privatepackagist" name="Private Packagist" />
+    <MemberLogoBoardItem slug="chieftools" name="Chief Tools" />
+    <MemberLogoBoardItem slug="speakeasy" name="Speakeasy" />
+  )}
+</div>
+
+<style>
+  .member-logo-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+    gap: 0.5rem 1.0rem;
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+      gap: 0.0rem 0.5rem;
+    }
+    @media (max-width: 550px) {
+      grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
+      gap: 0.0rem 0.5rem;
+    }
+  }
+</style>
