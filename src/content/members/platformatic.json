@@ -1,0 +1,14 @@
+{
+  "name": "Platformatic",
+  "description": "Platformatic is the application platform for building, managing, and scaling Node.js applications. Platformatic eliminates the need for manual scaling, reduces the risk of unpredictable downtimes, and provides detailed, real-time Node-specific insights, providing engineering teams with the visibility, control, and best-practices needed to operate effortlessly.\n",
+  "urlLearnMore": "https://blog.platformatic.dev/platformatic-joins-the-open-source-pledge",
+  "urlSquareLogoWithBackground": "https://raw.githubusercontent.com/platformatic/.github/refs/heads/main/logo.png",
+  "annualReports": [
+    {
+      "url": "https://blog.platformatic.dev/platformatic-joins-the-open-source-pledge",
+      "dateYearEnding": "2024-12-31",
+      "averageNumberOfDevs": 8,
+      "payments": 18000
+    }
+  ]
+}
