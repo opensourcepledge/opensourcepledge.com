@@ -13,6 +13,18 @@ const { full } = Astro.props;
 
 <div class="endorsement-list" data-full={full}>
   <Endorsement
+    name="The Open Source Initiative"
+    handle="@OpenSourceOrg"
+    imageUrl="/images/endorsers/osi.svg"
+    sourceUrl="https://opensource.org/blog/the-open-source-initiative-supports-the-open-source-pledge"
+  >
+    <p
+      >The Open Source Initiative supports the Open Source Pledge. By taking the Pledge, companies have one more
+      instrument to commit to supporting an ecosystem of maintainers and organizations, ensuring the long-term health of
+      the Open Source projects they rely on.</p
+    >
+  </Endorsement>
+  <Endorsement
     name="The PHP Foundation"
     handle="@ThePHPF"
     imageUrl="/images/endorsers/php_foundation.svg"
@@ -65,6 +77,7 @@ const { full } = Astro.props;
     handle="@schickling"
     imageUrl="/images/endorsers/schickling.webp"
     sourceUrl="https://x.com/schickling/status/1832361798130954335"
+    hidden={!full}
   >
     <p>I can't overstate how excited I am about this. ❤️</p>
   </Endorsement>
