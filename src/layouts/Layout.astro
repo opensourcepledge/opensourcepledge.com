@@ -361,8 +361,10 @@ const { title, navless } = Astro.props;
       text-align: left;
     }
     td, th {
-      padding-left: 0.3rem;
-      padding-right: 0.3rem;
+      @media (min-width: 451px) {
+        padding-left: 0.3rem;
+        padding-right: 0.3rem;
+      }
     }
     &.table--bordered {
       border-top: 2px solid var(--color-muted);
@@ -392,13 +394,15 @@ const { title, navless } = Astro.props;
       }
     }
     &.table--40-30-30 {
-      td:nth-child(1), th:nth-child(1) {
-        width: 40%;
-      }
-      td:nth-child(2), th:nth-child(2),
-      td:nth-child(3), th:nth-child(3)
-      {
-        width: 30%;
+      @media (min-width: 451px) {
+        td:nth-child(1), th:nth-child(1) {
+          width: 40%;
+        }
+        td:nth-child(2), th:nth-child(2),
+        td:nth-child(3), th:nth-child(3)
+        {
+          width: 30%;
+        }
       }
     }
   }

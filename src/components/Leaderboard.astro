@@ -46,7 +46,7 @@ const members = filterInactiveMembers(await getMembers());
     <thead>
       <tr>
         <th>Name</th>
-        <th>
+        <th class="ndevs">
           <abbr title="Average number of employed full-time equivalent developers (in latest report)">Devs</abbr>
         </th>
         <th>
@@ -57,9 +57,9 @@ const members = filterInactiveMembers(await getMembers());
       </tr>
     </thead>
     <tbody>
-      {sortMembersByDevs(members).map((member) => <tr>
+      {sortMembersByDevs(members).map((member) =>
         <LeaderboardMember member={member}></LeaderboardMember>
-      </tr>)}
+      )}
     </tbody>
   </table>
 )}
@@ -67,12 +67,17 @@ const members = filterInactiveMembers(await getMembers());
 <style>
   h2 {
     margin-top: 2rem;
-    padding: 0.2rem 0.5rem;
+    padding: 0.3rem 0.5rem;
     background: var(--color-light-bg);
     font-size: 1rem;
     font-weight: normal;
   }
   th {
     font-weight: normal;
+  }
+  th.ndevs, td.ndevs {
+    @media (max-width: 400px) {
+      display: none;
+    }
   }
 </style>
