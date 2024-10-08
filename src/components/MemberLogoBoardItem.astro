@@ -1,0 +1,37 @@
+---
+// © 2024 Vlad-Stefan Harbuz <vlad@vladh.net>
+// SPDX-License-Identifier: Apache-2.0
+
+interface Props {
+  slug: string;
+  name: string;
+  maxHeight?: string;
+}
+
+let { slug, name, maxHeight } = Astro.props;
+
+if (!maxHeight) {
+  maxHeight = '2rem';
+}
+
+const { default: svg } = await import (`../assets/images/members-bw/logo-${slug}.svg?raw`);
+---
+
+<div class="member-logo-board-item" role="img" aria-label=`The ${name} logo`>
+  <Fragment set:html={svg} />
+</div>
+
+<style define:vars={{ maxHeight }}>
+  .member-logo-board-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    svg {
+      flex: 1;
+      width: auto;
+      height: auto;
+      max-height: var(--maxHeight);
+    }
+  }
+</style>
