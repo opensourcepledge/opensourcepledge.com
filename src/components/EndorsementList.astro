@@ -13,6 +13,15 @@ const { full } = Astro.props;
 
 <div class="endorsement-list" data-full={full}>
   <Endorsement
+    name="The PHP Foundation"
+    handle="@ThePHPF"
+    imageUrl="/images/endorsers/php_foundation.svg"
+    sourceUrl="https://x.com/ThePHPF/status/1843638789681615096"
+    hidden={!full}
+  >
+  <p>Every modern business—whether they know it or not—relies on Open Source software, yet few give back. The PHP Foundation celebrates the #OpenSourcePledge, whose members have committed to correcting this imbalance. Together, we can build a stronger, more resilient OSS ecosystem. 🌱</p>
+  </Endorsement>
+  <Endorsement
     name="Raymmar"
     handle="@raymmar_"
     imageUrl="/images/endorsers/raymmar.webp"
