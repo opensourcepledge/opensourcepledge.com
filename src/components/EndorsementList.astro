@@ -14,7 +14,7 @@ const { full } = Astro.props;
 <div class="endorsement-list" data-full={full}>
   <Endorsement
     name="The Open Source Initiative"
-    handle="@OpenSourceOrg"
+    handle="opensource.org/blog"
     imageUrl="/images/endorsers/osi.svg"
     sourceUrl="https://opensource.org/blog/the-open-source-initiative-supports-the-open-source-pledge"
   >
@@ -26,16 +26,16 @@ const { full } = Astro.props;
   </Endorsement>
   <Endorsement
     name="The PHP Foundation"
-    handle="@ThePHPF"
+    handle="thephp.foundation/blog"
     imageUrl="/images/endorsers/php_foundation.svg"
-    sourceUrl="https://x.com/ThePHPF/status/1843638789681615096"
+    sourceUrl="https://thephp.foundation/blog/2024/10/08/open-source-pledge/"
     hidden={!full}
   >
-    <p>Every modern business—whether they know it or not—relies on Open Source software, yet few give back. The PHP Foundation celebrates the #OpenSourcePledge, whose members have committed to correcting this imbalance. Together, we can build a stronger, more resilient OSS ecosystem. 🌱</p>
+    <p>The Open Source Pledge aims to prevent maintainer burnout and reduce the risk of high-profile security incidents that can impact the broader tech ecosystem. We urge PHP-based companies, developers, and organizations to join.</p>
   </Endorsement>
   <Endorsement
     name="Open Source Collective"
-    handle="@opensourcecoll"
+    handle="blog.opencollective.com"
     imageUrl="/images/endorsers/opensourcecollective.png"
     sourceUrl="https://blog.opencollective.com/why-the-open-source-pledge-is-both-relevant-and-timely/"
     hidden={!full}
@@ -44,12 +44,21 @@ const { full } = Astro.props;
   </Endorsement>
   <Endorsement
     name="The Perl and Raku Foundation"
-    handle="@perlfoundation"
+    handle="news.perlfoundation.org"
     imageUrl="/images/endorsers/perl.png"
     sourceUrl="https://news.perlfoundation.org/post/-open-source-pledge"
     hidden={!full}
   >
     <p>We encourage other organizations to join us in supporting the Open Source Pledge. By doing so, you’ll help ensure that the OSS ecosystem remains healthy and sustainable, and that developers are recognized for the critical work they do.</p>
+  </Endorsement>
+  <Endorsement
+    name="Play Framework"
+    handle="playframework.com/blog"
+    imageUrl="/images/endorsers/playframework.png"
+    sourceUrl="https://www.playframework.com/blog/open-source-pledge-launched"
+    hidden={!full}
+  >
+    <p>The Open Source Pledge is taking a step toward making open-source sustainability a mainstream issue that can no longer be ignored.</p>
   </Endorsement>
   <Endorsement
     name="Raymmar"
