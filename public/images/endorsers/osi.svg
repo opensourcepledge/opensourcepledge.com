@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="logo_OSI"
+   width="500pt"
+   height="500pt"
+   version="1.2"
+   viewBox="0 0 500.00002 500"
+   sodipodi:docname="osi.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     showgrid="false"
+     inkscape:zoom="1.4816469"
+     inkscape:cx="311.81519"
+     inkscape:cy="409.3418"
+     inkscape:window-width="2560"
+     inkscape:window-height="1410"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="logo_OSI" />
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="g1"
+     transform="translate(14.96671,25.530011)">
+    <path
+       id="shape"
+       d="m 262.006,307.1224 c 32.25781,-11.98047 49.09765,-35.05078 49.09765,-74.75781 0,-39.70703 -33.46093,-74.69531 -75.26953,-74.76563 -44.12109,-0.0703 -77.40234,34.91407 -76.87109,74.76563 0.53125,39.85156 19.53906,66.36328 49.95703,75.94922 l -53.88672,132.5703 C 82.91225,422.21224 9.56064,337.13021 9.56064,232.36461 c 0,-124.0859 99.70313,-224.6797 224.6719,-224.6797 124.96877,0 226.2734,100.5937 226.2734,224.6797 0,106.3945 -72.65625,190.293 -146.3164,208.8906 z m 0,0"
+       style="fill:#3da638;stroke:#1c511c;stroke-width:15.3697;stroke-linecap:round;stroke-linejoin:round" />
+  </g>
+</svg>
