@@ -12,6 +12,8 @@ const { full } = Astro.props;
 ---
 
 <div class="endorsement-list" data-full={full}>
+
+  <!-- OSI -->
   <Endorsement
     name="The Open Source Initiative"
     handle="opensource.org/blog"
@@ -24,24 +26,8 @@ const { full } = Astro.props;
       the Open Source projects they rely on.</p
     >
   </Endorsement>
-  <Endorsement
-    name="The PHP Foundation"
-    handle="thephp.foundation/blog"
-    imageUrl="/images/endorsers/php_foundation.svg"
-    sourceUrl="https://thephp.foundation/blog/2024/10/08/open-source-pledge/"
-    hidden={!full}
-  >
-    <p>The Open Source Pledge aims to prevent maintainer burnout and reduce the risk of high-profile security incidents that can impact the broader tech ecosystem. We urge PHP-based companies, developers, and organizations to join.</p>
-  </Endorsement>
-  <Endorsement
-    name="Accel"
-    handle="accel.com/noteworthy"
-    imageUrl="/images/endorsers/accel.svg"
-    sourceUrl="https://www.accel.com/noteworthy/why-accel-is-supporting-the-open-source-pledge"
-    hidden={!full}
-  >
-    <p>The Open Source Pledge addresses a critical challenge facing the sustainability of the foundation upon which much of modern technology is built. We enthusiastically support it.</p>
-  </Endorsement>
+
+  <!-- FOSS Foundations -->
   <Endorsement
     name="Open Source Collective"
     handle="blog.opencollective.com"
@@ -50,6 +36,15 @@ const { full } = Astro.props;
     hidden={!full}
   >
     <p>The Open Source Pledge's simple message is incredibly important. Companies: pay your share.</p>
+  </Endorsement>
+  <Endorsement
+    name="The PHP Foundation"
+    handle="thephp.foundation/blog"
+    imageUrl="/images/endorsers/php_foundation.svg"
+    sourceUrl="https://thephp.foundation/blog/2024/10/08/open-source-pledge/"
+    hidden={!full}
+  >
+    <p>The Open Source Pledge aims to prevent maintainer burnout and reduce the risk of high-profile security incidents that can impact the broader tech ecosystem. We urge PHP-based companies, developers, and organizations to join.</p>
   </Endorsement>
   <Endorsement
     name="The Perl and Raku Foundation"
@@ -77,6 +72,19 @@ const { full } = Astro.props;
   >
     <p>The Open Source Pledge is taking a step toward making open-source sustainability a mainstream issue that can no longer be ignored.</p>
   </Endorsement>
+
+  <!-- VCs -->
+  <Endorsement
+    name="Accel"
+    handle="accel.com/noteworthy"
+    imageUrl="/images/endorsers/accel.svg"
+    sourceUrl="https://www.accel.com/noteworthy/why-accel-is-supporting-the-open-source-pledge"
+    hidden={!full}
+  >
+    <p>The Open Source Pledge addresses a critical challenge facing the sustainability of the foundation upon which much of modern technology is built. We enthusiastically support it.</p>
+  </Endorsement>
+
+  <!-- Individuals -->
   <Endorsement
     name="Raymmar"
     handle="@raymmar_"
