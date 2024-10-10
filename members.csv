@@ -23,3 +23,4 @@ pydantic,https://pydantic.dev/assets/for-external/oss-pledge.json
 vlt,https://vlt.sh/osspledge.json
 platformatic,https://raw.githubusercontent.com/platformatic/.github/refs/heads/main/osspledge.json
 laravel,https://laravel.com/assets/files/opensourcepledge.json
+dev.to,https://dev.to/open-source-pledge
