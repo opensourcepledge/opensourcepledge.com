@@ -46,7 +46,15 @@ file, add yourself to the copyright headers.
 Remember that copyright statements such as “(C) John Smith 2020” contain the year copyright _started_, i.e. 2020 is the
 year the work was first created, not the current year.
 
+## Uptime
+
+We track uptime using [updown.io][updown]: [Open Source Pledge Status Page][status].
+
 ## Browser Support
 
 The least-supported clientside feature we're using is CSS Nesting. This means that our supported browser are described
-by the [CSS Nesting Can I Use page](https://caniuse.com/css-nesting).
+by the [CSS Nesting Can I Use page][css-nesting].
+
+[css-nesting]: https://caniuse.com/css-nesting
+[status]: https://updown.io/p/3c87h
+[updown]: https://updown.io
