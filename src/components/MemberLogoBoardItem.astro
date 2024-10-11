@@ -6,18 +6,23 @@ interface Props {
   slug: string;
   name: string;
   maxHeight?: string;
+  hidden?: boolean;
 }
 
-let { slug, name, maxHeight } = Astro.props;
+let { slug, name, maxHeight, hidden } = Astro.props;
 
 if (!maxHeight) {
   maxHeight = '2rem';
 }
 
+if (!hidden) {
+  hidden = false;
+}
+
 const { default: svg } = await import (`../assets/images/members-bw/logo-${slug}.svg?raw`);
 ---
 
-<div class="member-logo-board-item" role="img" aria-label=`The ${name} logo`>
+<div hidden={hidden} class="member-logo-board-item" role="img" aria-label=`The ${name} logo`>
   <Fragment set:html={svg} />
 </div>
 
