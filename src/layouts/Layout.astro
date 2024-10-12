@@ -202,6 +202,10 @@ const { title, navless } = Astro.props;
     --color-pink: #ff70bc;
     --color-text: white;
   }
+  /* We never want anything to have higher specificity than `[hidden]`. */
+  [hidden] {
+    display: none !important;
+  }
   html {
     font-family: Libre Franklin, sans-serif;
     font-size: 20px;
