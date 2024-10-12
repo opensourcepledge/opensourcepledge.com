@@ -50,7 +50,7 @@ const members = sortMembersByDevs(filterInactiveMembers(await getMembers()));
 
 <script>
   const N_TO_CHOOSE = 5;
-  const PROBABILITY_TO_SKIP = 0.5;
+  const PROBABILITY_TO_CHOOSE = 0.5;
 
   const $miniLeaderboards = document.querySelectorAll<HTMLElement>('.mini-leaderboard');
   $miniLeaderboards.forEach(($miniLeaderboard) => {
@@ -62,7 +62,7 @@ const members = sortMembersByDevs(filterInactiveMembers(await getMembers()));
       const mustNotChoose = nChosen == N_TO_CHOOSE;
       if (mustNotChoose) {
         $row.hidden = true;
-      } else if (mustChoose || Math.random() < PROBABILITY_TO_SKIP) {
+      } else if (mustChoose || Math.random() < PROBABILITY_TO_CHOOSE) {
         $row.hidden = false;
         nChosen++;
       } else {

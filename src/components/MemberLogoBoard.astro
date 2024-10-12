@@ -15,41 +15,31 @@ if (!nRows) {
 }
 ---
 
-<div class="member-logo-board">
-  { nRows >= 1 && (
-    <MemberLogoBoardItem slug="gitbutler" name="GitButler" maxHeight="1.6rem" />
-    <MemberLogoBoardItem slug="antithesis" name="Antithesis" />
-    <MemberLogoBoardItem slug="sentry" name="Sentry" maxHeight="1.8rem"/>
-    <MemberLogoBoardItem slug="astral" name="Astral" maxHeight="1.5rem" />
-  )}
+<div class="member-logo-board" data-nrows={nRows}>
+  <MemberLogoBoardItem hidden={nRows < 1} slug="gitbutler" name="GitButler" maxHeight="1.6rem" />
+  <MemberLogoBoardItem hidden={nRows < 1} slug="antithesis" name="Antithesis" />
+  <MemberLogoBoardItem hidden={nRows < 1} slug="sentry" name="Sentry" maxHeight="1.8rem"/>
+  <MemberLogoBoardItem hidden={nRows < 1} slug="astral" name="Astral" maxHeight="1.5rem" />
 
-  { nRows >= 2 && (
-    <MemberLogoBoardItem slug="laravel" name="Laravel" />
-    <MemberLogoBoardItem slug="browserbase" name="Browserbase" />
-    <MemberLogoBoardItem slug="valtown" name="Val Town" />
-    <MemberLogoBoardItem slug="prefect" name="Prefect" />
-  )}
+  <MemberLogoBoardItem hidden={nRows < 2} slug="laravel" name="Laravel" />
+  <MemberLogoBoardItem hidden={nRows < 2} slug="browserbase" name="Browserbase" />
+  <MemberLogoBoardItem hidden={nRows < 2} slug="valtown" name="Val Town" />
+  <MemberLogoBoardItem hidden={nRows < 2} slug="prefect" name="Prefect" />
 
-  { nRows >= 3 && (
-    <MemberLogoBoardItem slug="pydantic-logfire" name="Pydantic Logfire" maxHeight="1.8rem" />
-    <MemberLogoBoardItem slug="emergetools" name="Emerge Tools" maxHeight="1.7rem" />
-    <MemberLogoBoardItem slug="frontendmasters" name="Frontend Masters" />
-    <MemberLogoBoardItem slug="scalar" name="Scalar" maxHeight="1.8rem" />
-  )}
+  <MemberLogoBoardItem hidden={nRows < 3} slug="pydantic-logfire" name="Pydantic Logfire" maxHeight="1.8rem" />
+  <MemberLogoBoardItem hidden={nRows < 3} slug="emergetools" name="Emerge Tools" maxHeight="1.7rem" />
+  <MemberLogoBoardItem hidden={nRows < 3} slug="frontendmasters" name="Frontend Masters" />
+  <MemberLogoBoardItem hidden={nRows < 3} slug="scalar" name="Scalar" maxHeight="1.8rem" />
 
-  { nRows >= 4 && (
-    <MemberLogoBoardItem slug="buttondown" name="Buttondown" maxHeight="1.8rem" />
-    <MemberLogoBoardItem slug="httptoolkit" name="HTTP Toolkit" />
-    <MemberLogoBoardItem slug="herodevs" name="HeroDevs" />
-    <MemberLogoBoardItem slug="keygen" name="Keygen" />
-  )}
+  <MemberLogoBoardItem hidden={nRows < 4} slug="buttondown" name="Buttondown" maxHeight="1.8rem" />
+  <MemberLogoBoardItem hidden={nRows < 4} slug="httptoolkit" name="HTTP Toolkit" />
+  <MemberLogoBoardItem hidden={nRows < 4} slug="herodevs" name="HeroDevs" />
+  <MemberLogoBoardItem hidden={nRows < 4} slug="keygen" name="Keygen" />
 
-  { nRows >= 5 && (
-    <MemberLogoBoardItem slug="stackblitz" name="StackBlitz" maxHeight="1.4rem" />
-    <MemberLogoBoardItem slug="privatepackagist" name="Private Packagist" />
-    <MemberLogoBoardItem slug="chieftools" name="Chief Tools" />
-    <MemberLogoBoardItem slug="speakeasy" name="Speakeasy" />
-  )}
+  <MemberLogoBoardItem hidden={nRows < 5} slug="stackblitz" name="StackBlitz" maxHeight="1.4rem" />
+  <MemberLogoBoardItem hidden={nRows < 5} slug="privatepackagist" name="Private Packagist" />
+  <MemberLogoBoardItem hidden={nRows < 5} slug="chieftools" name="Chief Tools" />
+  <MemberLogoBoardItem hidden={nRows < 5} slug="speakeasy" name="Speakeasy" />
 </div>
 
 <style>
@@ -67,3 +57,32 @@ if (!nRows) {
     }
   }
 </style>
+
+<script>
+  const ITEMS_PER_ROW = 4;
+  const PROBABILITY_TO_CHOOSE = 0.7;
+
+  const $boards = document.querySelectorAll<HTMLElement>('.member-logo-board');
+  $boards.forEach(($board) => {
+    const nRows = $board.getAttribute('data-nrows');
+    if (!nRows) {
+      return;
+    }
+    const nToChoose = +nRows * ITEMS_PER_ROW;
+    const $items = $board.querySelectorAll<HTMLElement>('.member-logo-board-item');
+    let nChosen = 0;
+    const nTotal = $items.length;
+    $items.forEach(($item, idx) => {
+      const mustChoose = (nToChoose - nChosen == nTotal - idx);
+      const mustNotChoose = nChosen == nToChoose;
+      if (mustNotChoose) {
+        $item.hidden = true;
+      } else if (mustChoose || Math.random() < PROBABILITY_TO_CHOOSE) {
+        $item.hidden = false;
+        nChosen++;
+      } else {
+        $item.hidden = true;
+      }
+    });
+  });
+</script>
