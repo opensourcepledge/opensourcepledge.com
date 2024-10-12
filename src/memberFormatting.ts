@@ -21,22 +21,9 @@ export async function getGrandTotalRaised() {
   const members = filterInactiveMembers(await getMembers());
   let grandTotal = 0;
   members.forEach((member) => {
-    const sortedAnnualReports = member.data.annualReports.sort((a, b) => {
-      if (a.dateYearEnding > b.dateYearEnding) {
-        return -1;
-      } else if (a.dateYearEnding < b.dateYearEnding) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
-    const report = sortedAnnualReports[0];
-    const reportDate = Date.parse(report.dateYearEnding);
-    const currentYear = (new Date()).getFullYear();
-    const oneYearAgo = (new Date()).setFullYear(currentYear - 1);
-    if (reportDate > oneYearAgo) {
+    member.data.annualReports.forEach((report) => {
       grandTotal += report.payments;
-    }
+    });
   });
   return grandTotal;
 }
