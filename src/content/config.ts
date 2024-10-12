@@ -28,7 +28,8 @@ const memberReport = z.object({
 
 const member = z.object({
   name: z.string(),
-  urlSquareLogoWithBackground: z.string().url(),
+  // NOTE: Deprecated.
+  urlSquareLogoWithBackground: z.string().url().optional(),
   urlLearnMore: z.string().url(),
   description: z.string().optional(),
   annualReports: memberReport.array().nonempty(),
