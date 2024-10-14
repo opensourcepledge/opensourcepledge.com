@@ -24,6 +24,6 @@ new_member_lines=$(
 while IFS= read -r line; do
   line_parts=(${line//,/ })
   if [ ${#line_parts[@]} -ne 0 ]; then
-    ./bin/update-member ${line_parts[0]} ${line_parts[1]}
+    ./src/memberData/bin/updateMember.ts ${line_parts[0]} ${line_parts[1]}
   fi
 done <<< "$new_member_lines"

@@ -1,15 +1,16 @@
 // © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
 // SPDX-License-Identifier: Apache-2.0
 
-import { getCollection } from 'astro:content';
-import type { MemberWithId, MemberReport } from "./content/config.ts";
 import memberRoles from "./memberRoles.json"
 import type { Map } from './util.ts';
+import type { MemberWithId, MemberReport } from "./content/config.ts";
+import { getCollection } from 'astro:content';
+import { sortReportsForMemberWithId } from "./memberData/common.ts";
 
 export async function getMembers(): Promise<MemberWithId[]> {
   return (await getCollection('members'))
     .filter((member) => member.id in (memberRoles as Map))
-    .map(sortReportsForMember);
+    .map(sortReportsForMemberWithId);
 }
 
 export function getDollarsPerDev(report: MemberReport) {
@@ -109,19 +110,3 @@ export function sortMembersByDollarsPerDev(members: MemberWithId[]): MemberWithI
   });
 }
 
-function sortReportsForMember(member: MemberWithId): MemberWithId {
-  const sortedReports = member.data.annualReports.toSorted((a, b) =>
-    new Date(a.dateYearEnding) < new Date(b.dateYearEnding) ? 1 : -1
-  );
-
-  return {
-    ...member,
-    data: {
-      ...member.data,
-      annualReports: sortedReports as [
-        MemberReport,
-        ...MemberReport[],
-      ],
-    },
-  };
-}
