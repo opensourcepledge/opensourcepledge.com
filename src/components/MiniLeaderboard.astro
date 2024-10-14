@@ -4,7 +4,7 @@
 
 import {
   getMembers, filterInactiveMembers, sortMembersByDevs,
-} from '../members.ts';
+} from '../memberFormatting.ts';
 
 const N_TO_CHOOSE = 5;
 const members = sortMembersByDevs(filterInactiveMembers(await getMembers()));

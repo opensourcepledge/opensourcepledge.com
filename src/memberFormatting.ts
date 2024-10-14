@@ -3,10 +3,11 @@
 
 import { getCollection } from 'astro:content';
 import type { MemberWithId, MemberReport } from "./content/config.ts";
+import { sortReportsForMemberWithId } from "./memberData/common.ts";
 
 export async function getMembers(): Promise<MemberWithId[]> {
   const members = await getCollection('members');
-  return members.map(sortReportsForMember);
+  return members.map(sortReportsForMemberWithId);
 }
 
 export function getDollarsPerDev(report: MemberReport) {
@@ -106,19 +107,3 @@ export function sortMembersByDollarsPerDev(members: MemberWithId[]): MemberWithI
   });
 }
 
-function sortReportsForMember(member: MemberWithId): MemberWithId {
-  const sortedReports = member.data.annualReports.toSorted((a, b) =>
-    new Date(a.dateYearEnding) < new Date(b.dateYearEnding) ? 1 : -1
-  );
-
-  return {
-    ...member,
-    data: {
-      ...member.data,
-      annualReports: sortedReports as [
-        MemberReport,
-        ...MemberReport[],
-      ],
-    },
-  };
-}

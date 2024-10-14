@@ -6,7 +6,9 @@
 # This script fetches the JSON files specified in `members.csv` for all
 # members. Must be run in the repo's root.
 
-while IFS= read -r line; do
+members=$(cat members.csv)
+
+while IFS= read -r line || [[ -n $line ]]; do
     line_parts=(${line//,/ })
-    ./bin/update-member ${line_parts[0]} ${line_parts[1]}
-done < members.csv
+    ./src/memberData/bin/updateMember.ts ${line_parts[0]} ${line_parts[1]}
+done < <(printf '%s' "$members")
