@@ -31,7 +31,7 @@ is in addition to the code, developer time, and gifts-in-kind that many of our c
     contact details via [email][mailto] or [on Discord][discord].
   * To help with building [opensourcepledge.com][osp], read [CONTRIBUTING.md](CONTRIBUTING.md) and [dive into our
     issues][issues].
-* Just want to keep up to date? Follow us on [Mastodon][mastodon] or [Twitter][twitter].
+* **Just want to keep up to date?** Follow us on [Mastodon][mastodon] or [Twitter][twitter].
 
 [contributors]: https://github.com/opensourcepledge/opensourcepledge.com/graphs/contributors
 [cramer-author]: https://blog.sentry.io/authors/david-cramer/
