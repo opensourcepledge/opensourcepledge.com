@@ -9,7 +9,7 @@ import MiniLeaderboard from "../components/MiniLeaderboard.astro";
 import TextButton from "../components/TextButton.astro";
 import {
   getMembers, filterInactiveMembers,
-} from '../members.ts';
+} from '../memberFormatting.ts';
 
 const members = filterInactiveMembers(await getMembers());
 ---
