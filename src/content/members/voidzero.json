@@ -1,0 +1,14 @@
+{
+  "name": "VoidZero",
+  "description": "We are an open-source first company and we maintain Vite, Vitest, Rolldown, and Oxc. We also rely on many important dependencies and we'd love to give back.",
+  "urlLearnMore": "https://voidzero.dev/posts/oss-pledge",
+  "urlSquareLogoWithBackground": "https://avatars.githubusercontent.com/u/149750581?s=400&v=4",
+  "annualReports": [
+    {
+      "url": "https://voidzero.dev/posts/oss-pledge",
+      "dateYearEnding": "2024-12-31",
+      "averageNumberOfDevs": 10,
+      "payments": 31488
+    }
+  ]
+}
