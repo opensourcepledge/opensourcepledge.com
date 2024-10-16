@@ -1,0 +1,94 @@
+---
+
+---
+
+<div class="toc-container" id="table-of-contents">
+  <button class="toc-toggle" aria-expanded="false">
+    <span>Table of Contents</span>
+  </button>
+  <div class="toc">
+    <ol>
+      <!-- <li> elements will be added by a script on the page using this component -->
+    </ol>
+  </div>
+</div>
+
+<style>
+  .toc-container {
+    position: fixed;
+    right: 0.3rem;
+    width: 350px;
+    height: fit-content;
+    background-color: var(--color-bg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-light-bg);
+    border-radius: 8px;
+    padding: 1rem;
+    z-index: 1000;
+    order: 2;
+  }
+
+  .toc-toggle {
+    display: none;
+    width: 100%;
+    padding: 0.5rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-light-bg);
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .toc-toggle span {
+    display: block;
+    text-align: center;
+    color: var(--color-text);
+  }
+
+  .toc {
+    padding: 0;
+  }
+
+  .toc ol {
+    display: flex;
+    flex: auto;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .toc li {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 1536px) {
+    .toc-container {
+      position: static;
+      width: 100%;
+      margin-bottom: 1rem;
+      order: 1;
+    }
+
+    .toc-toggle {
+      display: block;
+    }
+
+    .toc {
+      display: none;
+    }
+
+    .toc-toggle[aria-expanded="true"] + .toc {
+      display: block;
+      animation: fadeIn 0.3s;
+    }
+  }
+</style>
+
+<script>
+  const tocToggle = document.querySelector('.toc-toggle');
+  if (tocToggle) {
+    tocToggle.addEventListener('click', () => {
+        const expanded = tocToggle.getAttribute('aria-expanded') === 'true' || false;
+        tocToggle.setAttribute('aria-expanded', (!expanded).toString());
+    });
+  }
+</script>
