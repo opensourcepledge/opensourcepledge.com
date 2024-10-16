@@ -3,10 +3,13 @@
 
 import { getCollection } from 'astro:content';
 import type { MemberWithId, MemberReport } from "./content/config.ts";
+import memberRoles from "./memberRoles.json"
+import type { Map } from './util.ts';
 
 export async function getMembers(): Promise<MemberWithId[]> {
-  const members = await getCollection('members');
-  return members.map(sortReportsForMember);
+  return (await getCollection('members'))
+    .filter((member) => member.id in (memberRoles as Map))
+    .map(sortReportsForMember);
 }
 
 export function getDollarsPerDev(report: MemberReport) {
