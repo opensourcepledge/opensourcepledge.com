@@ -20,7 +20,7 @@ is in addition to the code, developer time, and gifts-in-kind that many of our c
 
 * **Want to learn more?** Visit [opensourcepledge.com][osp].
 * **Want to join the Pledge?** [Find out how][join].
-* **Want to participate as a maintainer, foundation or funding platform?** [Let us know!][newissue]
+* **Want to participate as a maintainer, foundation or funding platform?** [Let us know][newissue]!
 * **Want to learn about the Pledge's background?** Read:
   * [“The Open Source Sustainability Crisis”][crisis] by [Chad][openpath]
   * [“Join the Pledge”][sentry-blog-post] by [David Cramer][cramer-author]
