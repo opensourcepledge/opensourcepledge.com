@@ -1,4 +1,5 @@
 // © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
+// © 2024 Safwan Yaseen Parkar <safwanparkar6@gmail.com>
 // SPDX-License-Identifier: Apache-2.0
 
 export interface Map {
@@ -33,7 +34,7 @@ export function generateTableOfContentItems() {
     if (tocElement) {
       tocElement.innerHTML = sections
         .map(
-          (section) => `<li><a href="#${section.id}">${section.title}</a></li>`,
+          (section) => `<li><a href="#${section.id}">${section.title}</a></li>`
         )
         .join("");
     }
