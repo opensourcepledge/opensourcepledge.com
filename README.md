@@ -18,21 +18,35 @@ Our goal is to establish a new social norm in the tech industry of companies pay
 of $2000 per year per developer on staff at our companies, to Open Source maintainers of each company’s choosing. This
 is in addition to the code, developer time, and gifts-in-kind that many of our companies also contribute.
 
-* **Want to learn more?** Visit [opensourcepledge.com][osp] and follow our progress on our [launch
-  ticket][launch-ticket].
+* **Want to learn more?** Visit [opensourcepledge.com][osp].
 * **Want to join the Pledge?** [Find out how][join].
 * **Want to participate as a maintainer, foundation or funding platform?** [Let us know!][newissue]
-* **Want to help?** Read [CONTRIBUTING.md](CONTRIBUTING.md), [dive into our issues][issues], and feel free to reach out
-  to the working group leads either in issues or [on Discord][discord].
+* **Want to learn about the Pledge's background?** Read:
+  * [“The Open Source Sustainability Crisis”][crisis] by [Chad][openpath]
+  * [“Join the Pledge”][sentry-blog-post] by [David Cramer][cramer-author]
+  * [“The Philosophy of the Open Source Pledge”][pledgephil] by [Vlad][vladh.net]
+* **Want to help?** Feel free to reach out to the working group leads in issues, via [email][mailto] or
+  [on Discord][discord].
+  * Know a company that might be interested in joining the Pledge? Introduce us via [email][mailto], or drop us their
+    contact details via [email][mailto] or [on Discord][discord].
+  * To help with building [opensourcepledge.com][osp], read [CONTRIBUTING.md](CONTRIBUTING.md) and [dive into our
+    issues][issues].
 * Just want to keep up to date? Follow us on [Mastodon][mastodon] or [Twitter][twitter].
 
 [contributors]: https://github.com/opensourcepledge/opensourcepledge.com/graphs/contributors
+[cramer-author]: https://blog.sentry.io/authors/david-cramer/
+[crisis]: https://openpath.quest/2024/the-open-source-sustainability-crisis/
 [discord]: https://discord.gg/svH5XzDsBd
 [issues]: https://github.com/opensourcepledge/opensourcepledge.com/issues
 [join]: https://opensourcepledge.com/join/
 [launch-ticket]: https://github.com/opensourcepledge/opensourcepledge.com/issues/4
+[mailto]: mailto:chadwhitacre@sentry.io?&cc=vlad@vladh.net;michael.selvidge@sentry.io;ethan@arrowood.dev
 [mastodon]: https://fosstodon.org/@opensourcepledge
 [newissue]: https://github.com/opensourcepledge/opensourcepledge.com/issues/new
+[openpath]: https://openpath.quest/
 [osp]: https://opensourcepledge.com
+[pledgephil]: https://vladh.net/the-philosophy-of-the-open-source-pledge/
+[sentry-blog-post]: https://blog.sentry.io/join-the-pledge/
 [sentry]: https://sentry.io/welcome/
 [twitter]: https://x.com/ThePledge
+[vladh.net]: https://vladh.net/
