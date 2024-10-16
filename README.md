@@ -25,10 +25,10 @@ is in addition to the code, developer time, and gifts-in-kind that many of our c
   * [“The Open Source Sustainability Crisis”][crisis] by [Chad][openpath]
   * [“Join the Pledge”][sentry-blog-post] by [David Cramer][cramer-author]
   * [“The Philosophy of the Open Source Pledge”][pledgephil] by [Vlad][vladh.net]
-* **Want to help?** Feel free to reach out to the working group leads in issues, via [email][mailto] or
+* **Want to help?** Feel free to reach out to the working group leads in issues, [via email][mailto] or
   [on Discord][discord].
-  * Know a company that might be interested in joining the Pledge? Introduce us via [email][mailto], or drop us their
-    contact details via [email][mailto] or [on Discord][discord].
+  * Know a company that might be interested in joining the Pledge? Introduce us [via email][mailto], or drop us their
+    contact details [via email][mailto] or [on Discord][discord].
   * To help with building [opensourcepledge.com][osp], read [CONTRIBUTING.md](CONTRIBUTING.md) and [dive into our
     issues][issues].
 * **Just want to keep up to date?** Follow us on [Mastodon][mastodon] or [Twitter][twitter].
