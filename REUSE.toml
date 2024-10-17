@@ -32,6 +32,7 @@ path = [
     "public/opensourcepledge.pdf",
     "public/images/*",
     "public/logos/*",
+    "public/resources/*",
 ]
 SPDX-FileCopyrightText = "© 2024 Functional Software, Inc. d/b/a Sentry"
 SPDX-License-Identifier = "LicenseRef-Restricted"
