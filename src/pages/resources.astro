@@ -1,0 +1,40 @@
+---
+// © 2024 Vlad-Stefan Harbuz <vlad@vladh.net>
+// SPDX-License-Identifier: Apache-2.0
+
+import Blob from "../components/Blob.astro";
+import Button from "../components/Button.astro";
+import Layout from "../layouts/Layout.astro";
+
+---
+
+<Layout>
+  <div class="edge-blobs">
+    <Blob kind="solid-fill-03" top="42%" left="-13rem"></Blob>
+    <Blob kind="grad-dots-06" top="37%" right="-5rem"></Blob>
+  </div>
+  <div class="container">
+    <Blob kind="solid-fill-05" top="20%" right="-16rem"></Blob>
+    <Blob kind="solid-fill-04" top="90%" left="-20rem"></Blob>
+    <Blob kind="grad-dots-03" top="10%" left="-15rem"></Blob>
+
+    <main id="main-content">
+      <h1>Resources</h1>
+
+      <p>Go make stickers:</p>
+
+      <ul>
+        <li>logo - 
+          <a href="/public/resources/stickers/open-source-pledge-logo-sticker.png">PNG</a>,
+          <a href="/public/resources/stickers/open-source-pledge-logo-sticker.svg">SVG</a>
+        </li>
+        <li>money machine -
+          <a href="/public/resources/stickers/open-source-pledge-money-machine.png">PNG</a>
+        </li>
+      </ul>
+    </main>
+  </div>
+</Layout>
+
+<style>
+</style>
