@@ -1,0 +1,41 @@
+---
+// © 2024 Vlad-Stefan Harbuz <vlad@vladh.net>
+// SPDX-License-Identifier: Apache-2.0
+
+import LeaderboardMember from "./LeaderboardMember.astro";
+import {
+  getGrandTotalRaised, fmtCurrency,
+} from '../members.ts';
+---
+
+<div class="total-tally">
+  <p>Our members have paid maintainers</p>
+  <h2>{fmtCurrency(await getGrandTotalRaised())}</h2>
+</div>
+
+<style>
+  .total-tally {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    p {
+      margin: 0;
+    }
+    h2 + p {
+      margin-top: 0.5rem;
+    }
+    h2 {
+      max-width: 100%;
+      margin: 0;
+      font-size: min(3rem, 10vw);
+      text-decoration: underline;
+      text-decoration-thickness: 0.5rem;
+      text-decoration-color: var(--color-primary);
+      text-underline-offset: 0.4rem;
+    }
+  }
+</style>
