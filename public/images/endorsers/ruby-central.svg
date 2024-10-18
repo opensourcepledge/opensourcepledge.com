@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="77px"
+   height="75px"
+   viewBox="0 0 77 75"
+   version="1.1"
+   id="svg5"
+   sodipodi:docname="ruby-central.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview5"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="8.0533333"
+     inkscape:cx="25.951987"
+     inkscape:cy="35.699503"
+     inkscape:window-width="2560"
+     inkscape:window-height="1387"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg5" />
+  <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+  <title
+     id="title1">Rectangle Copy 29</title>
+  <desc
+     id="desc1">Created with Sketch.</desc>
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient5"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#df3434;stop-opacity:1;"
+         offset="0"
+         id="stop5" />
+      <stop
+         style="stop-color:#fb5e55;stop-opacity:1;"
+         offset="1"
+         id="stop6" />
+    </linearGradient>
+    <linearGradient
+       x1="58.232026"
+       y1="86.444243"
+       x2="58.232026"
+       y2="39.153712"
+       id="linearGradient-1"
+       gradientTransform="scale(1.0303608,0.97053377)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="#FCE0E0"
+         offset="0%"
+         id="stop1" />
+      <stop
+         stop-color="#FFFFFF"
+         offset="100%"
+         id="stop2" />
+    </linearGradient>
+    <path
+       d="M52.9120419,38 L67.0879581,38 C69.6411642,38 72.0742148,39.084439 73.7811133,40.9832173 L82.0563019,50.1886555 C85.0307124,53.4974324 85.1410544,58.4830778 82.315944,61.9202094 L66.9527973,80.6115694 C63.7966164,84.4514933 58.1251528,85.0057765 54.2852288,81.8495955 C53.8332985,81.4781366 53.4186616,81.0634997 53.0472027,80.6115694 L37.684056,61.9202094 C34.8589456,58.4830778 34.9692876,53.4974324 37.9436981,50.1886555 L46.2188867,40.9832173 C47.9257852,39.084439 50.3588358,38 52.9120419,38 Z M52.9120419,45 C52.3446627,45 51.8039848,45.2409864 51.4246741,45.6629372 L43.1494855,54.8683754 C42.4885054,55.6036591 42.4639849,56.7115804 43.0917872,57.4753874 L58.4549339,76.1667473 C58.5374804,76.2671763 58.6296219,76.3593178 58.7300509,76.4418643 C59.5833673,77.1432378 60.8436925,77.0200638 61.5450661,76.1667473 L76.9082128,57.4753874 C77.5360151,56.7115804 77.5114946,55.6036591 76.8505145,54.8683754 L68.5753259,45.6629372 C68.1960152,45.2409864 67.6553373,45 67.0879581,45 L52.9120419,45 Z"
+       id="path-2" />
+    <filter
+       x="-0.49254703"
+       y="-0.52290934"
+       width="1.9850941"
+       height="2.2419097"
+       filterUnits="objectBoundingBox"
+       id="filter-3">
+      <feOffset
+         dx="0"
+         dy="2"
+         in="SourceAlpha"
+         result="shadowOffsetOuter1"
+         id="feOffset2" />
+      <feGaussianBlur
+         stdDeviation="2.5"
+         in="shadowOffsetOuter1"
+         result="shadowBlurOuter1"
+         id="feGaussianBlur2" />
+      <feColorMatrix
+         values="0 0 0 0 0.606629303   0 0 0 0 0.241241493   0 0 0 0 0.241241493  0 0 0 0.3 0"
+         type="matrix"
+         in="shadowBlurOuter1"
+         result="shadowMatrixOuter1"
+         id="feColorMatrix2" />
+      <feOffset
+         dx="0"
+         dy="7"
+         in="SourceAlpha"
+         result="shadowOffsetOuter2"
+         id="feOffset3" />
+      <feGaussianBlur
+         stdDeviation="7.5"
+         in="shadowOffsetOuter2"
+         result="shadowBlurOuter2"
+         id="feGaussianBlur3" />
+      <feColorMatrix
+         values="0 0 0 0 0.62279212   0 0 0 0 0.0528803675   0 0 0 0 0.0528803675  0 0 0 0.7 0"
+         type="matrix"
+         in="shadowBlurOuter2"
+         result="shadowMatrixOuter2"
+         id="feColorMatrix3" />
+      <feMerge
+         id="feMerge4">
+        <feMergeNode
+           in="shadowMatrixOuter1"
+           id="feMergeNode3" />
+        <feMergeNode
+           in="shadowMatrixOuter2"
+           id="feMergeNode4" />
+      </feMerge>
+    </filter>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient5"
+       id="linearGradient6"
+       x1="38.500008"
+       y1="75.999985"
+       x2="38.500008"
+       y2="-1.0000031"
+       gradientUnits="userSpaceOnUse" />
+    <filter
+       x="-0.49254703"
+       y="-0.52290934"
+       width="1.9850941"
+       height="2.2419097"
+       filterUnits="objectBoundingBox"
+       id="filter-3-3">
+      <feOffset
+         dx="0"
+         dy="2"
+         in="SourceAlpha"
+         result="shadowOffsetOuter1"
+         id="feOffset2-6" />
+      <feGaussianBlur
+         stdDeviation="2.5"
+         in="shadowOffsetOuter1"
+         result="shadowBlurOuter1"
+         id="feGaussianBlur2-7" />
+      <feColorMatrix
+         values="0 0 0 0 0.606629303   0 0 0 0 0.241241493   0 0 0 0 0.241241493  0 0 0 0.3 0"
+         type="matrix"
+         in="shadowBlurOuter1"
+         result="shadowMatrixOuter1"
+         id="feColorMatrix2-5" />
+      <feOffset
+         dx="0"
+         dy="7"
+         in="SourceAlpha"
+         result="shadowOffsetOuter2"
+         id="feOffset3-3" />
+      <feGaussianBlur
+         stdDeviation="7.5"
+         in="shadowOffsetOuter2"
+         result="shadowBlurOuter2"
+         id="feGaussianBlur3-5" />
+      <feColorMatrix
+         values="0 0 0 0 0.62279212   0 0 0 0 0.0528803675   0 0 0 0 0.0528803675  0 0 0 0.7 0"
+         type="matrix"
+         in="shadowBlurOuter2"
+         result="shadowMatrixOuter2"
+         id="feColorMatrix3-6" />
+      <feMerge
+         id="feMerge4-2">
+        <feMergeNode
+           in="shadowMatrixOuter1"
+           id="feMergeNode3-9" />
+        <feMergeNode
+           in="shadowMatrixOuter2"
+           id="feMergeNode4-1" />
+      </feMerge>
+    </filter>
+  </defs>
+  <rect
+     style="fill:url(#linearGradient6);-inkscape-stroke:none;paint-order:stroke fill markers"
+     id="rect5"
+     width="77"
+     height="75"
+     x="0"
+     y="0" />
+  <g
+     id="Site-0"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd"
+     transform="translate(-0.5,6.5216686)">
+    <g
+       id="Desktop-HD-Copy-5-9"
+       transform="translate(-681,-235)">
+      <g
+         id="Group-2-3"
+         transform="translate(660,205)">
+        <g
+           id="Rectangle-Copy-29-6">
+          <use
+             fill="#000000"
+             fill-opacity="1"
+             filter="url(#filter-3)"
+             xlink:href="#path-2"
+             id="use4"
+             style="filter:url(#filter-3-3)" />
+          <use
+             fill="url(#linearGradient-1)"
+             fill-rule="evenodd"
+             xlink:href="#path-2"
+             id="use5-0"
+             style="fill:url(#linearGradient-1)" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <metadata
+     id="metadata6">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Rectangle Copy 29</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
