@@ -5,7 +5,6 @@
 import Blob from "../components/Blob.astro";
 import Button from "../components/Button.astro";
 import Layout from "../layouts/Layout.astro";
-
 ---
 
 <Layout>
@@ -19,22 +18,31 @@ import Layout from "../layouts/Layout.astro";
     <Blob kind="grad-dots-03" top="10%" left="-15rem"></Blob>
 
     <main id="main-content">
-      <h1>Resources</h1>
-
-      <p>Go make stickers:</p>
-
-      <ul>
-        <li>logo - 
-          <a href="/resources/stickers/open-source-pledge-logo-sticker.png">PNG</a>,
-          <a href="/resources/stickers/open-source-pledge-logo-sticker.svg">SVG</a>
-        </li>
-        <li>money machine -
-          <a href="/resources/stickers/open-source-pledge-money-machine.png">PNG</a>
-        </li>
-      </ul>
-    </main>
+      <section>
+        <h1>Resources</h1>
+        <p>Go make stickers!</p>
+      </section>
+      <section class="resource">
+        <h2>Logo</h2>
+        <img src="/resources/stickers/open-source-pledge-logo-sticker.svg">
+        <Button href="/resources/stickers/open-source-pledge-logo-sticker.png">PNG</Button>
+        <Button href="/resources/stickers/open-source-pledge-logo-sticker.svg">SVG</Button>
+      </section>
+      <section class="resource">
+        <h2>Money Machine</h2>
+        <img src="/resources/stickers/open-source-pledge-money-machine.png">
+        <Button href="/resources/stickers/open-source-pledge-money-machine.png">PNG</Button>
+      </div>
+    </section>
   </div>
 </Layout>
 
 <style>
+  .resource {
+    img {
+      display: block;
+      max-width: 20rem;
+      margin: 2rem 0;
+    }
+  }
 </style>
