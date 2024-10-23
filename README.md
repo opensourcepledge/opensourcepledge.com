@@ -1,6 +1,6 @@
 <!--
 © 2024 Chad Whitacre <chadwhitacre@sentry.io>
-© 2024 Vlad-Stefan Harbuz <vlad@vladh.net>
+© 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
@@ -24,7 +24,7 @@ is in addition to the code, developer time, and gifts-in-kind that many of our c
 * **Want to learn about the Pledge's background?** Read:
   * [“The Open Source Sustainability Crisis”][crisis] by [Chad][openpath]
   * [“Join the Pledge”][sentry-blog-post] by [David Cramer][cramer-author]
-  * [“The Philosophy of the Open Source Pledge”][pledgephil] by [Vlad][vladh.net]
+  * [“The Philosophy of the Open Source Pledge”][pledgephil] by [Vlad][vlad.website]
 * **Want to help?** Feel free to reach out to the working group leads in issues, [via email][mailto] or
   [on Discord][discord].
   * Know a company that might be interested in joining the Pledge? Introduce us [via email][mailto], or drop us their
@@ -40,13 +40,13 @@ is in addition to the code, developer time, and gifts-in-kind that many of our c
 [issues]: https://github.com/opensourcepledge/opensourcepledge.com/issues
 [join]: https://opensourcepledge.com/join/
 [launch-ticket]: https://github.com/opensourcepledge/opensourcepledge.com/issues/4
-[mailto]: mailto:chadwhitacre@sentry.io?&cc=vlad@vladh.net;michael.selvidge@sentry.io;ethan@arrowood.dev
+[mailto]: mailto:chadwhitacre@sentry.io?&cc=vlad@vlad.website;michael.selvidge@sentry.io;ethan@arrowood.dev
 [mastodon]: https://fosstodon.org/@opensourcepledge
 [newissue]: https://github.com/opensourcepledge/opensourcepledge.com/issues/new
 [openpath]: https://openpath.quest/
 [osp]: https://opensourcepledge.com
-[pledgephil]: https://vladh.net/the-philosophy-of-the-open-source-pledge/
+[pledgephil]: https://vlad.website/the-philosophy-of-the-open-source-pledge/
 [sentry-blog-post]: https://blog.sentry.io/join-the-pledge/
 [sentry]: https://sentry.io/welcome/
 [twitter]: https://x.com/ThePledge
-[vladh.net]: https://vladh.net/
+[vlad.website]: https://vlad.website/
