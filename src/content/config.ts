@@ -1,5 +1,5 @@
 // © 2024 Chad Whitacre <chadwhitacre@sentry.io>
-// © 2024 Vlad-Stefan Harbuz <vlad@vladh.net>
+// © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
 // SPDX-License-Identifier: Apache-2.0
 
 import { z, defineCollection } from "astro:content";
