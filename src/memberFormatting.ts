@@ -74,7 +74,7 @@ export function groupMembers(members: MemberWithId[]): MemberWithId[][] {
  * Sorts members by the average number of devs in their latest annual report.
  */
 export function sortMembersByDevs(members: MemberWithId[]): MemberWithId[] {
-  return members.toSorted((m1, m2) => {
+  return [...members].sort((m1, m2) => {
     if (m1.data.annualReports.length == 0) {
       return 1;
     }
@@ -97,7 +97,7 @@ export function sortMembersByDevs(members: MemberWithId[]): MemberWithId[] {
  * Sorts members by the dollars per dev in their latest annual report.
  */
 export function sortMembersByDollarsPerDev(members: MemberWithId[]): MemberWithId[] {
-  return members.toSorted((m1, m2) => {
+  return [...members].sort((m1, m2) => {
     if (m1.data.annualReports.length == 0) {
       return 1;
     }

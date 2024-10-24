@@ -16,7 +16,7 @@ const REPO_NAME = 'opensourcepledge.com';
 const EXCEPTION_LABEL = 'member-exception';
 
 export function sortReportsForMember(member: Member): Member {
-  const sortedReports = member.annualReports.toSorted((a, b) =>
+  const sortedReports = [...member.annualReports].sort((a, b) =>
     new Date(a.dateYearEnding) < new Date(b.dateYearEnding) ? 1 : -1
   );
 
