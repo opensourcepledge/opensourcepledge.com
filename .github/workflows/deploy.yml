@@ -20,6 +20,8 @@ jobs:
         run: npm install
       - name: Update new member files
         run: bash ./bin/update-new-members ${{ github.event.before }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit member changes, if any
         run: bash ./bin/commit-member-changes
       - name: Build website files
