@@ -17,7 +17,7 @@ path = [
     "public/images/example-members/*",
     "src/content/members/*",
     "src/env.d.ts",
-    "src/memberCustomRoles.json",
+    "src/memberRoles.json",
     "tsconfig.json",
 ]
 SPDX-FileCopyrightText = "NONE"
