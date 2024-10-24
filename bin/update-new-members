@@ -13,6 +13,8 @@ if [ $# -eq 0 ]; then
   exit 0
 fi
 
+git show $1
+
 new_member_lines=$(
   diff \
     --changed-group-format='%>' \
