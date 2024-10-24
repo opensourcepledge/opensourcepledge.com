@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
   id-token: write
+  issues: write
 
 jobs:
   build:
@@ -19,5 +20,7 @@ jobs:
         run: npm install
       - name: Update all changed member files
         run: bash ./bin/update-all-members
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit member changes, if any
         run: bash ./bin/commit-member-changes
