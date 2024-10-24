@@ -12,7 +12,7 @@ import LeaderboardMember from "./LeaderboardMember.astro";
 import {
   getMembers, formatDevGroupBounds, filterInactiveMembers, groupMembers,
   sortMembersByDevs, DEV_GROUP_BOUNDS
-} from '../members.ts';
+} from '../memberFormatting.ts';
 
 const members = filterInactiveMembers(await getMembers());
 ---
