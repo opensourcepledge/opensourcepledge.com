@@ -131,18 +131,6 @@ import Layout from "../layouts/Layout.astro";
                 <input type="url" x-model="details.urlLearnMore" placeholder="https://foocorp.com/open-source">
                 <div class="hint">Please make sure this is a valid URL.</div>
               </div>
-              <div class="control">
-                <label>
-                   Link to logo
-                   <small>Square, 400px to 800px, non-transparent background — try using your GitHub avatar!</small>
-                </label>
-                <input
-                  type="url"
-                  x-model="details.urlSquareLogoWithBackground"
-                  placeholder="https://foocorp.com/static/logo.png"
-                >
-                <div class="hint">Please make sure this is a valid URL.</div>
-              </div>
               <template x-for="(annualReport, index) in details.annualReports">
                 <div class="annual-report">
                   <h5>Yearly report <span x-text="index + 1"></span></h5>
@@ -212,18 +200,22 @@ import Layout from "../layouts/Layout.astro";
           </div>
           <div class="step">
             <h3><span class="inline-number">5. </span>Include your branding materials in the PR,</h3>
-            so that we can promote you in future campaigns.
+            so that we can add your logo to the website, and promote you in future campaigns.
 
             <p
               >We need at least:
 
               <ol>
-                <li>a glyph/icon in a square area, and</li>
-                <li>a full name/wordmark in a wide rectangle,</li>
+                <li
+                    >a glyph/icon in a square area with a non-transparent background
+                    (see <a href="/members">examples</a>),</li
+                >
+                <li>a glyph/icon in a square area with a transparent background, and</li>
+                <li>a full name/wordmark in a wide rectangle with a transparent background,</li>
               </ol>
 
-              or your nearest equivalents. For both versions, you should either include a high-resolution (&gt; 800px
-              wide) raster file with a transparent background (e.g. PNG), or preferably a vector file (e.g. SVG).</p
+              or your nearest equivalents. Try to include vector files (e.g. SVG), or at least high-resolution (&gt;
+              800px wide) raster files.</p
             >
           </div>
         </div>
@@ -326,7 +318,6 @@ import Layout from "../layouts/Layout.astro";
           name: '',
           description: '',
           urlLearnMore: '',
-          urlSquareLogoWithBackground: '',
           annualReports: [{ ...DEFAULT_ANNUAL_REPORT }],
         },
 
