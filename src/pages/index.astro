@@ -9,6 +9,7 @@ import Button from "../components/Button.astro";
 import EndorsementList from "../components/EndorsementList.astro";
 import Layout from "../layouts/Layout.astro";
 import MemberLogoBoard from "../components/MemberLogoBoard.astro";
+import PressItemList from "../components/PressItemList.astro";
 import TextButton from "../components/TextButton.astro";
 ---
 
@@ -59,14 +60,6 @@ import TextButton from "../components/TextButton.astro";
       </section>
 
       <section>
-        <EndorsementList></EndorsementList>
-
-        <div class="text-center">
-          <TextButton href="/endorsements/">See all endorsements</TextButton>
-        </div>
-      </section>
-
-      <section>
         <div>
           <div class="text-center">
             <h2>Some Member Companies</h2>
@@ -77,6 +70,22 @@ import TextButton from "../components/TextButton.astro";
           <div class="text-center">
             <TextButton href="/members/">Explore all member companies</TextButton>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <EndorsementList></EndorsementList>
+
+        <div class="text-center">
+          <TextButton href="/endorsements/">See all endorsements</TextButton>
+        </div>
+      </section>
+
+      <section>
+        <PressItemList></PressItemList>
+
+        <div class="text-center">
+          <TextButton href="/press/">See all press coverage</TextButton>
         </div>
       </section>
 
