@@ -1,12 +1,35 @@
 ---
 // © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
-// © 2024 Safwan Yaseen Parkar <safwanparkar6@gmail.com>
 // SPDX-License-Identifier: Apache-2.0
+
+// This component must be included as follows:
+// ```
+// <TableOfContents filepath={Astro.self.moduleId} />
+// ```
+
+interface Props {
+  filepath: string;
+}
+
+const { filepath } = Astro.props;
+
+import * as cheerio from 'cheerio';
+import fs from 'node:fs';
+
+const file = fs.readFileSync(filepath, 'utf8');
+const $ = cheerio.load(file);
+const sections = $('section').toArray().map(($section) => {
+  const id = $($section).attr('id');
+  const title = $($section).find('h2').first().text();
+  return {id, title};
+});
 ---
 
-<div id="table-of-contents">
+<div>
   <h2>Table of Contents</h2>
   <ol>
-    <!-- <li> elements will be added by a script on the page using this component -->
+    {sections.map(({id, title}) => <li>
+      <a href=`#${id}`>{title}</a>
+    </li>)}
   </ol>
 </div>
