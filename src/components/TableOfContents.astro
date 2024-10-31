@@ -25,7 +25,7 @@ try {
     const id = $($section).attr('id');
     const title = $($section).find('h2').first().text();
     return {id, title};
-  });
+  }).filter((s) => s.id && s.title.length > 0);
 } catch (err) {
   // Do nothing.
 }
