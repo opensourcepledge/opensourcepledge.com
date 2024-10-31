@@ -1,0 +1,108 @@
+---
+// © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
+// SPDX-License-Identifier: Apache-2.0
+
+import Blob from "../../components/Blob.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import { getCollection } from 'astro:content';
+
+import type { Article } from "../../schemas/articles.ts";
+
+interface ArticleWithMeta {
+  id: string;
+  slug: string;
+  body: string;
+  collection: string;
+  render: any;
+  data: Article;
+}
+
+interface Props {
+  article: ArticleWithMeta;
+}
+
+const { article } = Astro.props;
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map((article: ArticleWithMeta) => {
+    return { params: { id: article.slug }, props: { article } };
+  });
+}
+
+const { Content } = await article.render();
+---
+
+<Layout title={article.data.title}>
+  <div class="edge-blobs">
+    <Blob kind="grad-dots-04" top="12%" right="-2rem"></Blob>
+    <Blob kind="grad-dots-05" top="45%" left="-2rem"></Blob>
+  </div>
+  <div class="container">
+    <Blob kind="solid-fill-04" top="2%" right="-24rem"></Blob>
+    <Blob kind="solid-fill-03" top="30%" left="-30rem"></Blob>
+    <Blob kind="grad-dots-03" top="65%" right="-20rem"></Blob>
+    <Blob kind="solid-fill-02" top="60%" right="-24rem"></Blob>
+
+    <main id="main-content">
+      <section>
+        <h1>{article.data.title}</h1>
+        <div class="meta">
+          {article.data.authorImageSrc &&
+            <img src={article.data.authorImageSrc}>
+          }
+          <div>
+            <em>{article.data.author}</em>
+            <time>{article.data.publishDate.toISOString().split('T')[0]}</time>
+          </div>
+        </div>
+        <div class="article">
+          <Content />
+        </div>
+      </section>
+    </main>
+  </div>
+</Layout>
+
+<style>
+  h1 {
+    font-size: 2rem;
+  }
+  .meta {
+    display: flex;
+    align-items: center;
+    img {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-right: 1rem;
+      border-radius: 100%;
+    }
+    em {
+      display: block;
+    }
+    time {
+      display: block;
+      font-size: 0.8rem;
+    }
+  }
+  .article {
+    figure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      figcaption {
+        margin-top: 1rem;
+      }
+    }
+    blockquote {
+      margin: 1rem 0;
+      padding-left: 1rem;
+      border-left: 10px solid var(--color-light-bg);
+    }
+    .highlight-box blockquote {
+      border-color: var(--color-bg);
+    }
+  }
+</style>

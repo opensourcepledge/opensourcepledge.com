@@ -3,7 +3,7 @@
 
 import memberRoles from "./memberRoles.json"
 import type { Map } from './util.ts';
-import type { MemberWithId, MemberReport } from "./content/config.ts";
+import type { MemberWithId, MemberReport } from "./schemas/members.ts";
 import { getCollection } from 'astro:content';
 import { sortReportsForMemberWithId } from "./memberData/common.ts";
 

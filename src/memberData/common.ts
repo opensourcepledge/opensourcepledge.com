@@ -4,7 +4,7 @@
 import dayjs from 'dayjs';
 import fetch from "node-fetch";
 
-import type { Member, MemberWithId, MemberReport } from "../content/config.ts";
+import type { Member, MemberWithId, MemberReport } from "../schemas/members.ts";
 
 export enum MemberException {
   JsonFileNotAccessible,
