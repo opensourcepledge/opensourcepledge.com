@@ -30,7 +30,7 @@ const members = filterInactiveMembers(await getMembers());
     <main id="main-content">
         <h1>About the Pledge</h1>
 
-        <TableOfContents />
+        <TableOfContents filepath={Astro.self.moduleId} />
 
         <section id="what-is-the-open-source-pledge">
           <h2>What is the Open Source Pledge?</h2>
@@ -295,9 +295,3 @@ const members = filterInactiveMembers(await getMembers());
     font-size: 1rem;
   }
 </style>
-
-<script>
-  import { generateTableOfContentItems } from "../util";
-
-  generateTableOfContentItems();
-</script>
