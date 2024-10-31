@@ -30,7 +30,7 @@ export function extractSections() {
 export function generateTableOfContentItems() {
   document.addEventListener("DOMContentLoaded", () => {
     const sections = extractSections();
-    const tocElement = document.querySelector("div.toc ol");
+    const tocElement = document.querySelector("#table-of-contents ol");
     if (tocElement) {
       tocElement.innerHTML = sections
         .map(
