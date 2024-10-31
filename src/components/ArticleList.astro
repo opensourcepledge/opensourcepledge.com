@@ -1,0 +1,66 @@
+---
+// © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
+// SPDX-License-Identifier: Apache-2.0
+
+import { getCollection } from 'astro:content';
+
+const articles = (await getCollection('articles'))
+  .sort((a, b) => +b.data.publishDate - +a.data.publishDate);
+---
+
+<div>
+  {articles.map((article) => <div class="article-listing">
+    <a href=`/articles/${article.slug}`>
+      <h2>{article.data.title}</h2>
+    </a>
+    <div class="meta">
+      {article.data.authorImageSrc &&
+        <img src={article.data.authorImageSrc}>
+      }
+      <div>
+        <em>{article.data.author}</em>
+        <time>{article.data.publishDate.toISOString().split('T')[0]}</time>
+      </div>
+    </div>
+    <hr>
+  </div>)}
+</div>
+
+<style>
+  .article-listing {
+    position: relative;
+    margin: 0;
+    padding-top: 1rem;
+    hr {
+      margin: 1.5rem auto;
+      max-width: 10rem;
+      border-color: var(--color-primary);
+      border-width: 1px;
+    }
+    &:last-child hr {
+      display: none;
+    }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: normal;
+      font-family: Libre Franklin, sans-serif;
+    }
+    .meta {
+      display: flex;
+      align-items: center;
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-right: 1rem;
+        border-radius: 100%;
+      }
+      em {
+        display: block;
+      }
+      time {
+        display: block;
+        font-size: 0.8rem;
+      }
+    }
+  }
+</style>

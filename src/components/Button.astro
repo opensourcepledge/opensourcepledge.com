@@ -13,25 +13,3 @@ const { href } = Astro.props;
 <a class="button" href={href}>
   <slot></slot>
 </a>
-
-<style>
-  .button {
-    display: inline-block;
-    margin: 1rem 0;
-    padding: 0.8rem 2rem;
-    color: var(--color-bg);
-    background-color: var(--color-primary);
-    border-radius: 0.5rem;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1.2em;
-    &:hover {
-      background: var(--color-secondary);
-    }
-    &:active {
-      background: var(--color-tertiary);
-    }
-  }
-</style>
