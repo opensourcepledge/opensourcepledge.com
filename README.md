@@ -1,5 +1,5 @@
 <!--
-© 2024 Chad Whitacre <chadwhitacre@sentry.io>
+© 2024 Functional Software, Inc. dba Sentry
 © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
