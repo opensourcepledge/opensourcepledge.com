@@ -16,20 +16,26 @@ const { filepath } = Astro.props;
 import * as cheerio from 'cheerio';
 import fs from 'node:fs';
 
-const file = fs.readFileSync(filepath, 'utf8');
-const $ = cheerio.load(file);
-const sections = $('section').toArray().map(($section) => {
-  const id = $($section).attr('id');
-  const title = $($section).find('h2').first().text();
-  return {id, title};
-});
+let sections = undefined;
+
+try {
+  const file = fs.readFileSync(filepath, 'utf8');
+  const $ = cheerio.load(file);
+  sections = $('section').toArray().map(($section) => {
+    const id = $($section).attr('id');
+    const title = $($section).find('h2').first().text();
+    return {id, title};
+  });
+} catch (err) {
+  // Do nothing.
+}
 ---
 
-<div>
+{sections && <div>
   <h2>Table of Contents</h2>
   <ol>
     {sections.map(({id, title}) => <li>
       <a href=`#${id}`>{title}</a>
     </li>)}
   </ol>
-</div>
+</div>}
