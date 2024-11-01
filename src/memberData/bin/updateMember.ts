@@ -8,7 +8,7 @@ import fetch from "node-fetch";
 import { Octokit } from "@octokit/rest";
 
 import {
-  isBlogPostNotFound, isReportDueSoon, isReportOverdue, makeIssueIfNotExists,
+  isBlogPostNotFound, isReportDueSoon, isReportOverdue, isUrlLearnMoreNotFound, makeIssueIfNotExists,
 } from "../common.ts";
 import { MemberException } from "../common.ts";
 
@@ -56,6 +56,8 @@ async function main() {
     await makeIssueIfNotExists(octokit, MemberException.ReportOverdue, slug, url, remoteMemberData);
   } else if (isReportDueSoon(remoteMemberData)) {
     await makeIssueIfNotExists(octokit, MemberException.ReportDueSoon, slug, url, remoteMemberData);
+  } else if (await isUrlLearnMoreNotFound(remoteMemberData)) {
+    await makeIssueIfNotExists(octokit, MemberException.UrlLearnMoreNotFound, slug, url, remoteMemberData);
   } else if (await isBlogPostNotFound(remoteMemberData)) {
     await makeIssueIfNotExists(octokit, MemberException.BlogPostNotFound, slug, url, remoteMemberData);
   }
