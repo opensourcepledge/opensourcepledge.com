@@ -52,7 +52,6 @@ export function isReportOverdue(member: Member) {
 
 export async function isBlogPostNotFound(member: Member) {
   for (const report of member.annualReports) {
-    console.log(report.url);
     try {
       const res = await fetch(report.url, { method: 'HEAD' })
       if (res.status != 200) {
