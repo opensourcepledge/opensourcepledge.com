@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import dayjs from 'dayjs';
+import fetch from "node-fetch";
 
 import type { Member, MemberWithId, MemberReport } from "../content/config.ts";
 
@@ -9,6 +10,7 @@ export enum MemberException {
   JsonFileNotAccessible,
   ReportDueSoon,
   ReportOverdue,
+  BlogPostNotFound,
 }
 
 const REPO_OWNER = 'opensourcepledge';
@@ -48,6 +50,21 @@ export function isReportOverdue(member: Member) {
   return latestReportEndDate.isBefore(dayjs().subtract(1, 'year'));
 }
 
+export async function isBlogPostNotFound(member: Member) {
+  for (const report of member.annualReports) {
+    console.log(report.url);
+    try {
+      const res = await fetch(report.url, { method: 'HEAD' })
+      if (res.status != 200) {
+        return true;
+      }
+    } catch (e) {
+      return true;
+    }
+  }
+  return false;
+}
+
 function makeExceptionName(exception: MemberException) {
   switch (exception) {
     case MemberException.JsonFileNotAccessible:
@@ -56,6 +73,8 @@ function makeExceptionName(exception: MemberException) {
       return "annual report due soon";
     case MemberException.ReportOverdue:
       return "annual report overdue";
+    case MemberException.BlogPostNotFound:
+      return "blog post not found";
   }
 }
 
@@ -94,11 +113,16 @@ However, this file could not be fetched.`;
     if (exception == MemberException.ReportDueSoon) {
       return `${member.name} last submitted a report for the year ending ${prevReportDate}.
 
-This means an annual report is due soon in the next ${dayDiff} days.`;
+This means an annual report is due in the next ${dayDiff} days.`;
     } else if (exception == MemberException.ReportOverdue) {
       return `${member.name} last submitted a report for the year ending ${prevReportDate}.
 
 An annual report was due for ${formattedTargetReportDate}. This means an annual report is now overdue.`;
+    } else if (exception == MemberException.BlogPostNotFound) {
+      const urls = member.annualReports.map((r) => `* ${r.url}`).join("\n");
+      return `${member.name} is providing a blog post URL that could not be found. Please check the following URLs:
+
+${urls}`;
     }
   }
   return 'Unknown exception occured.'
