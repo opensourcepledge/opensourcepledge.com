@@ -7,11 +7,13 @@ import fs from "fs";
 import fetch from "node-fetch";
 import { Octokit } from "@octokit/rest";
 
-import { makeIssueIfNotExists, isReportOverdue, isReportDueSoon } from "../common.ts";
+import {
+  isBlogPostNotFound, isReportDueSoon, isReportOverdue, isUrlLearnMoreNotFound, makeIssueIfNotExists,
+} from "../common.ts";
 import { MemberException } from "../common.ts";
 
 
-const USAGE = `USAGE: ./bin/update-member foocorp https://foocorp.example.com/foocorp.json
+const USAGE = `USAGE: ./updateMember.ts foocorp https://foocorp.example.com/foocorp.json
 Must be run in the repo's root.`;
 
 
@@ -52,8 +54,15 @@ async function main() {
 
   if (isReportOverdue(remoteMemberData)) {
     await makeIssueIfNotExists(octokit, MemberException.ReportOverdue, slug, url, remoteMemberData);
-  } else if (isReportDueSoon(remoteMemberData)) {
+  }
+  if (isReportDueSoon(remoteMemberData)) {
     await makeIssueIfNotExists(octokit, MemberException.ReportDueSoon, slug, url, remoteMemberData);
+  }
+  if (await isUrlLearnMoreNotFound(remoteMemberData)) {
+    await makeIssueIfNotExists(octokit, MemberException.UrlLearnMoreNotFound, slug, url, remoteMemberData);
+  }
+  if (await isBlogPostNotFound(remoteMemberData)) {
+    await makeIssueIfNotExists(octokit, MemberException.BlogPostNotFound, slug, url, remoteMemberData);
   }
 
   try {
