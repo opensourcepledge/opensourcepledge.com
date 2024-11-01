@@ -10,6 +10,7 @@ export enum MemberException {
   JsonFileNotAccessible,
   ReportDueSoon,
   ReportOverdue,
+  UrlLearnMoreNotFound,
   BlogPostNotFound,
 }
 
@@ -50,6 +51,18 @@ export function isReportOverdue(member: Member) {
   return latestReportEndDate.isBefore(dayjs().subtract(1, 'year'));
 }
 
+export async function isUrlLearnMoreNotFound(member: Member) {
+  try {
+    const res = await fetch(member.urlLearnMore, { method: 'HEAD' })
+    if (res.status != 200) {
+      return true;
+    }
+  } catch (e) {
+    return true;
+  }
+  return false;
+}
+
 export async function isBlogPostNotFound(member: Member) {
   for (const report of member.annualReports) {
     try {
@@ -72,6 +85,8 @@ function makeExceptionName(exception: MemberException) {
       return "annual report due soon";
     case MemberException.ReportOverdue:
       return "annual report overdue";
+    case MemberException.UrlLearnMoreNotFound:
+      return "‘learn more’ URL not found";
     case MemberException.BlogPostNotFound:
       return "blog post not found";
   }
@@ -117,9 +132,11 @@ This means an annual report is due in the next ${dayDiff} days.`;
       return `${member.name} last submitted a report for the year ending ${prevReportDate}.
 
 An annual report was due for ${formattedTargetReportDate}. This means an annual report is now overdue.`;
+    } else if (exception == MemberException.UrlLearnMoreNotFound) {
+      return `${member.name}'s \`urlLearnMore\` could not be retrieved. Please check the following URL: ${member.urlLearnMore}.`;
     } else if (exception == MemberException.BlogPostNotFound) {
       const urls = member.annualReports.map((r) => `* ${r.url}`).join("\n");
-      return `${member.name} is providing a blog post URL that could not be found. Please check the following URLs:
+      return `${member.name} is providing a blog post URL that could not be retrieved. Please check the following URLs:
 
 ${urls}`;
     }
