@@ -54,11 +54,14 @@ async function main() {
 
   if (isReportOverdue(remoteMemberData)) {
     await makeIssueIfNotExists(octokit, MemberException.ReportOverdue, slug, url, remoteMemberData);
-  } else if (isReportDueSoon(remoteMemberData)) {
+  }
+  if (isReportDueSoon(remoteMemberData)) {
     await makeIssueIfNotExists(octokit, MemberException.ReportDueSoon, slug, url, remoteMemberData);
-  } else if (await isUrlLearnMoreNotFound(remoteMemberData)) {
+  }
+  if (await isUrlLearnMoreNotFound(remoteMemberData)) {
     await makeIssueIfNotExists(octokit, MemberException.UrlLearnMoreNotFound, slug, url, remoteMemberData);
-  } else if (await isBlogPostNotFound(remoteMemberData)) {
+  }
+  if (await isBlogPostNotFound(remoteMemberData)) {
     await makeIssueIfNotExists(octokit, MemberException.BlogPostNotFound, slug, url, remoteMemberData);
   }
 
