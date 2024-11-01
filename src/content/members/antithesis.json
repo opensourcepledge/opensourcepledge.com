@@ -1,11 +1,11 @@
 {
   "name": "Antithesis",
   "description": "We build an autonomous testing platform. We rely heavily on the countless hours of work contributed by OSS maintainers worldwide for everything from our internal Nix tooling to core components of our product like our deterministic hypervisor, a fork of FreeBSD.",
-  "urlLearnMore": "https://antithesis.com/blog/oss_pledge/",
+  "urlLearnMore": "/blog/oss_pledge/",
   "urlSquareLogoWithBackground": "https://antithesis.com/images/brand/antithesis_mark_800.png",
   "annualReports": [
     {
-      "url": "https://antithesis.com/blog/oss_pledge/",
+      "url": "/blog/oss_pledge/",
       "dateYearEnding": "2024-09-01",
       "averageNumberOfDevs": 23,
       "payments": 186000
