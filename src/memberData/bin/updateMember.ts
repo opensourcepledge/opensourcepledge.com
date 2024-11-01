@@ -11,7 +11,7 @@ import { makeIssueIfNotExists, isReportOverdue, isReportDueSoon } from "../commo
 import { MemberException } from "../common.ts";
 
 
-const USAGE = `USAGE: ./bin/update-member foocorp https://foocorp.example.com/foocorp.json
+const USAGE = `USAGE: ./updateMember.ts foocorp https://foocorp.example.com/foocorp.json
 Must be run in the repo's root.`;
 
 
