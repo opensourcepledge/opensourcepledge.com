@@ -11,7 +11,7 @@ const articles = (await getCollection('articles'))
 
 <div>
   {articles.map((article) => <div class="article-listing">
-    <a href=`/articles/${article.slug}`>
+    <a href=`/blog/${article.slug}`>
       <h2>{article.data.title}</h2>
     </a>
     <div class="meta">
