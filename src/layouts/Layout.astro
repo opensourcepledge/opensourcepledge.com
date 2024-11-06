@@ -54,6 +54,9 @@ const { title, navless } = Astro.props;
           <li>
             <a class="sneaky" href="/members">Members</a>
           </li>
+          <li>
+            <a class="sneaky" href="/blog">Blog</a>
+          </li>
         </ul>
       </nav>
     ) }
@@ -63,6 +66,7 @@ const { title, navless } = Astro.props;
         <span><a class="sneaky" href="/join">Join</a></span>
         <span><a class="sneaky" href="/about">About</a></span>
         <span><a class="sneaky" href="/members">Members</a></span>
+        <span><a class="sneaky" href="/blog">Blog</a></span>
         <span><a class="sneaky" href="/endorsements">Endorsements</a></span>
         <span><a class="sneaky" href="/press">Press</a></span>
       </div>
@@ -234,7 +238,10 @@ const { title, navless } = Astro.props;
   p {
     margin: 1rem 0;
   }
-  p:last-child {
+  p:first-child, ul:first-child, ol:first-child {
+    margin-top: 0;
+  }
+  p:last-child, ul:last-child, ol:last-child {
     margin-bottom: 0;
   }
   table {
@@ -421,6 +428,43 @@ const { title, navless } = Astro.props;
     padding-left: 0;
     li {
       list-style-position: inside;
+    }
+  }
+  blockquote {
+    position: relative;
+    margin: 2rem;
+    padding-top: 2rem;
+    &:before {
+      content: '“';
+      position: absolute;
+      top: -0.5rem;
+      left: -0.4rem;
+      font-size: 5rem;
+      line-height: 1;
+      font-style: italic;
+      color: var(--color-primary);
+      pointer-events: none;
+    }
+  }
+  .button {
+    display: inline-block;
+    margin: 1rem 0;
+    padding: 0.8rem 2rem;
+    color: var(--color-bg);
+    background-color: var(--color-primary);
+    border-radius: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.2em;
+    &:hover {
+      background: var(--color-secondary);
+      color: var(--color-bg);
+    }
+    &:active {
+      background: var(--color-tertiary);
+      color: var(--color-bg);
     }
   }
   section {

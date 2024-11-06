@@ -15,7 +15,9 @@ const { name, title, date, imageUrl, sourceUrl, hidden } = Astro.props;
 ---
 
 <figure class="press-item" hidden={hidden}>
-  <a href={sourceUrl}>{title}</a>
+  <blockquote>
+    <a href={sourceUrl}>{title}</a>
+  </blockquote>
   <figcaption>
     <img src={imageUrl} alt=`An image for ${name}`>
     <div>
@@ -30,18 +32,6 @@ const { name, title, date, imageUrl, sourceUrl, hidden } = Astro.props;
   .press-item {
     position: relative;
     margin: 0;
-    padding-top: 1rem;
-    &:before {
-      content: '“';
-      position: absolute;
-      top: -0.5rem;
-      left: 0;
-      font-size: 5rem;
-      line-height: 1;
-      font-style: italic;
-      color: var(--color-primary);
-      pointer-events: none;
-    }
     hr {
       margin: 1.5rem auto;
       max-width: 10rem;
@@ -54,13 +44,11 @@ const { name, title, date, imageUrl, sourceUrl, hidden } = Astro.props;
     a {
       display: block;
       margin: 0;
-      margin-top: 1rem;
       padding-bottom: 0.1rem; /* to counterbalance text-decoration */
       font-size: 1.2rem;
     }
     blockquote {
       margin: 0;
-      font-size: 1.2rem;
     }
     figcaption {
       display: flex;

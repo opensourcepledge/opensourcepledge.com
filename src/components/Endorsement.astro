@@ -34,18 +34,6 @@ const { name, title, handle, imageUrl, sourceUrl, hidden } = Astro.props;
   .endorsement {
     position: relative;
     margin: 0;
-    padding-top: 1rem;
-    &:before {
-      content: '“';
-      position: absolute;
-      top: -0.5rem;
-      left: 0;
-      font-size: 5rem;
-      line-height: 1;
-      font-style: italic;
-      color: var(--color-primary);
-      pointer-events: none;
-    }
     hr {
       margin: 1.5rem auto;
       max-width: 10rem;
