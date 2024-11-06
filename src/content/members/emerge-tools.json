@@ -1,15 +1,14 @@
 {
   "name": "Emerge Tools",
   "description": "Emerge Tools helps devs build better mobile apps faster. We try to give back to the open source community as much as we can through our own projects as well as sponsorships.",
-  "urlLearnMore": "https://www.emergetools.com/blog/posts/emerge-joining-open-source-pledge",
-  "urlSquareLogoWithBackground": "https://emergeassets.s3.us-west-1.amazonaws.com/emerge-square.png",
+  "url": "https://www.emergetools.com/blog/posts/emerge-joining-open-source-pledge",
   "annualReports": [
     {
-      "dateYearEnding": "2024-12-31",
       "url": "https://www.emergetools.com/blog/posts/emerge-joining-open-source-pledge",
+      "year": "2024",
+      "reportDate": "2024-09-06",
       "averageNumberOfDevs": 6,
-      "payments": 18063,
-      "monetaryValueofTime": 10000
+      "usdAmountPaid": 18063
     }
   ]
 }

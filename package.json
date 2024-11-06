@@ -10,11 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/alpinejs": "^0.4.0",
     "@astrojs/check": "^0.8.1",
     "@octokit/rest": "^21.0.2",
-    "@types/alpinejs": "^3.13.10",
-    "alpinejs": "^3.14.1",
     "astro": "^4.11.5",
     "cheerio": "^1.0.0",
     "dayjs": "^1.11.13",

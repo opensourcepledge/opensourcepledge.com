@@ -13,6 +13,7 @@ import {
 import type { Map } from '../../util.ts';
 import memberRoles from "../../memberRoles.json"
 import type { Member } from "../../schemas/members.ts";
+import dayjs from 'dayjs';
 
 interface Props {
   member: Member;
@@ -52,11 +53,16 @@ export async function getStaticPaths() {
 
         <p>{member.description}</p>
 
-        <a href={member.urlLearnMore}>Learn more →</a>
+        <a href={member.url}>Learn more →</a>
 
         {member.annualReports.map(report => <section class="annual-report">
           <div>
-            <h2>Year Ending {report.dateYearEnding}</h2>
+            <h2>
+              {report.year} Report, Submitted
+              <abbr title="Members submit once per year, but can submit at any point during the year, to accommodate eg differing international fiscal years.">
+                {dayjs(report.reportDate).format('DD MMM YYYY')}
+              </abbr>
+            </h2>
           </div>
 
           <table class="table--bordered table--lr">
@@ -71,7 +77,7 @@ export async function getStaticPaths() {
               </tr>
               <tr>
                 <td>Payments</td>
-                <td>{fmtCurrency(report.payments)}</td>
+                <td>{fmtCurrency(report.usdAmountPaid)}</td>
               </tr>
               <tr>
                 <td>Dollars per dev</td>

@@ -1,14 +1,14 @@
 {
   "name": "vlt",
   "description": "We’re building the future of JavaScript packages",
-  "urlLearnMore": "https://blog.vlt.sh/blog/making-open-source-more-sustainable",
-  "urlSquareLogoWithBackground": "https://github.com/user-attachments/assets/75967c14-2d41-4b36-bd03-9d92326538e4",
+  "url": "https://blog.vlt.sh/blog/making-open-source-more-sustainable",
   "annualReports": [
     {
       "url": "https://blog.vlt.sh/blog/making-open-source-more-sustainable",
-      "dateYearEnding": "2024-12-31",
+      "year": "2024",
+      "reportDate": "2024-10-08",
       "averageNumberOfDevs": 3,
-      "payments": 7000
+      "usdAmountPaid": 7000
     }
   ]
 }
