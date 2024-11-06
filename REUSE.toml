@@ -33,6 +33,7 @@ path = [
     "public/images/*",
     "public/logos/*",
     "public/resources/*",
+    "public/resources/stickers/*",
 ]
 SPDX-FileCopyrightText = "© 2024 Functional Software, Inc. d/b/a Sentry"
 SPDX-License-Identifier = "LicenseRef-Restricted"
