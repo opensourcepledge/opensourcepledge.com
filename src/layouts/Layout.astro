@@ -238,7 +238,10 @@ const { title, navless } = Astro.props;
   p {
     margin: 1rem 0;
   }
-  p:last-child {
+  p:first-child, ul:first-child, ol:first-child {
+    margin-top: 0;
+  }
+  p:last-child, ul:last-child, ol:last-child {
     margin-bottom: 0;
   }
   table {
@@ -425,6 +428,22 @@ const { title, navless } = Astro.props;
     padding-left: 0;
     li {
       list-style-position: inside;
+    }
+  }
+  blockquote {
+    position: relative;
+    margin: 2rem;
+    padding-top: 2rem;
+    &:before {
+      content: '“';
+      position: absolute;
+      top: -0.5rem;
+      left: -0.4rem;
+      font-size: 5rem;
+      line-height: 1;
+      font-style: italic;
+      color: var(--color-primary);
+      pointer-events: none;
     }
   }
   .button {

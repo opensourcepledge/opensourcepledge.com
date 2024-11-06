@@ -168,8 +168,10 @@ advantage of Marc. We quietly crushed him without ever noticing. [There are
 many such cases](https://blog.tidelift.com/maintainer-burnout-is-real).
 
 <div class="highlight-box">
-  <span>Update</span>
-  <a href="https://twitter.com/1Marc/status/1748422612114362706">From Marc</a>:
+  <em>
+    Update
+    <a href="https://twitter.com/1Marc/status/1748422612114362706">from Marc</a>:
+  </em>
   <blockquote>The thing I'd add to that, is I was able to create a network
   that eventually led to Frontend Masters. My story is not all doom and gloom
   like it is portrayed in the article. But it def wasn't a given I'd be able to
