@@ -1,0 +1,78 @@
+---
+// © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
+// SPDX-License-Identifier: Apache-2.0
+
+interface Props {
+  name: string;
+  title: string;
+  date: string;
+  imageUrl: string;
+  sourceUrl: string;
+  hidden?: boolean;
+}
+
+const { name, title, date, imageUrl, sourceUrl, hidden } = Astro.props;
+---
+
+<figure class="press-item" hidden={hidden}>
+  <a href={sourceUrl}>{title}</a>
+  <figcaption>
+    <img src={imageUrl} alt=`An image for ${name}`>
+    <div>
+      <div>{name}</div>
+      <small>{date}</small>
+    </div>
+  </figcaption>
+  <hr>
+</figure>
+
+<style>
+  .press-item {
+    position: relative;
+    margin: 0;
+    padding-top: 1rem;
+    &:before {
+      content: '“';
+      position: absolute;
+      top: -0.5rem;
+      left: 0;
+      font-size: 5rem;
+      line-height: 1;
+      font-style: italic;
+      color: var(--color-primary);
+      pointer-events: none;
+    }
+    hr {
+      margin: 1.5rem auto;
+      max-width: 10rem;
+      border-color: var(--color-primary);
+      border-width: 1px;
+    }
+    &:last-child hr {
+      display: none;
+    }
+    a {
+      display: block;
+      margin: 0;
+      margin-top: 1rem;
+      padding-bottom: 0.1rem; /* to counterbalance text-decoration */
+      font-size: 1.2rem;
+    }
+    blockquote {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    figcaption {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.7rem;
+      line-height: 1.3;
+      img {
+        border-radius: 100%;
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
+</style>
