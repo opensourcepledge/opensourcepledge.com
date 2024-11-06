@@ -15,7 +15,7 @@ const members = sortMembersByDevs(filterInactiveMembers(await getMembers()));
     {members.map((member, idx) => <tr hidden={idx >= N_TO_CHOOSE}>
       <td>
         <a class="sneaky" href={`/members/${member.id}`}>
-          <img src={member.data.urlSquareLogoWithBackground} alt={`The ${member.data.name} logo`}>
+          <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.data.name} logo`>
           {member.data.name}
         </div>
       </td>

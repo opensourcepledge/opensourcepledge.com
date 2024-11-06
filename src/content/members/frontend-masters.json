@@ -1,16 +1,14 @@
 {
-  "description": "Your path to senior developer and beyond! 🚀 In-depth frontend & fullstack courses.",
   "name": "Frontend Masters",
-  "urlSquareLogoWithBackground": "https://avatars.githubusercontent.com/u/5613852?s=400&v=4",
-  "urlLearnMore": "https://frontendmasters.com/blog/how-were-supporting-open-source-maintainers/",
+  "description": "Your path to senior developer and beyond! 🚀 In-depth frontend & fullstack courses.",
+  "url": "https://frontendmasters.com/blog/how-were-supporting-open-source-maintainers/",
   "annualReports": [
     {
       "url": "https://frontendmasters.com/blog/how-were-supporting-open-source-maintainers/",
-      "dateYearEnding": "2024-12-31",
+      "year": "2024",
+      "reportDate": "2024-09-12",
       "averageNumberOfDevs": 6,
-      "payments": 60000,
-      "monetaryValueOfTime": 0,
-      "monetaryValueOfMaterials": 0
+      "usdAmountPaid": 60000
     }
   ]
 }

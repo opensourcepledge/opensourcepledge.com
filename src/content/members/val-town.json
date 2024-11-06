@@ -1,16 +1,14 @@
 {
   "name": "Val Town",
-  "urlSquareLogoWithBackground": "https://avatars.githubusercontent.com/u/114268765?s=200&v=4",
   "description": "Val Town is a website to build apps, APIs, and scheduled functions.",
-  "urlLearnMore": "https://blog.val.town/blog/oss",
+  "url": "https://blog.val.town/blog/oss",
   "annualReports": [
     {
       "url": "https://blog.val.town/blog/oss",
-      "dateYearEnding": "2024-12-31",
+      "year": "2024",
+      "reportDate": "2024-09-03",
       "averageNumberOfDevs": 4,
-      "payments": 9600,
-      "monetaryValueOfTime": 0,
-      "monetaryValueOfMaterials": 0
+      "usdAmountPaid": 9600
     }
   ]
 }
