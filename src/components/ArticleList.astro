@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { getCollection } from 'astro:content';
+import dayjs from 'dayjs';
 
 const articles = (await getCollection('articles'))
   .sort((a, b) => +b.data.publishDate - +a.data.publishDate);
@@ -19,7 +20,7 @@ const articles = (await getCollection('articles'))
       }
       <div>
         <em>{article.data.author}</em>
-        <time>{article.data.publishDate.toISOString().split('T')[0]}</time>
+        <time>{dayjs(article.data.publishDate).format('DD MMM YYYY')}</time>
       </div>
     </div>
     <hr>

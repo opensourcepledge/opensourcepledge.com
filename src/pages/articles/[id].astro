@@ -6,6 +6,7 @@ import Blob from "../../components/Blob.astro";
 import Layout from "../../layouts/Layout.astro";
 
 import { getCollection } from 'astro:content';
+import dayjs from 'dayjs';
 
 import type { Article } from "../../schemas/articles.ts";
 
@@ -54,7 +55,7 @@ const { Content } = await article.render();
           }
           <div>
             <em>{article.data.author}</em>
-            <time>{article.data.publishDate.toISOString().split('T')[0]}</time>
+            <time>{dayjs(article.data.publishDate).format('DD MMM YYYY')}</time>
           </div>
         </div>
         <div class="article">
