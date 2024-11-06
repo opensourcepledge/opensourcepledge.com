@@ -11,9 +11,11 @@ const articles = (await getCollection('articles'))
 
 <div>
   {articles.map((article) => <div class="article-listing">
-    <a href=`/blog/${article.slug}`>
-      <h2>{article.data.title}</h2>
-    </a>
+    <blockquote>
+      <a href=`/blog/${article.slug}`>
+        <h2>{article.data.title}</h2>
+      </a>
+    </blockquote>
     <div class="meta">
       {article.data.authorImageSrc &&
         <img src={article.data.authorImageSrc}>
@@ -31,7 +33,6 @@ const articles = (await getCollection('articles'))
   .article-listing {
     position: relative;
     margin: 0;
-    padding-top: 1rem;
     hr {
       margin: 1.5rem auto;
       max-width: 10rem;
@@ -45,6 +46,9 @@ const articles = (await getCollection('articles'))
       font-size: 1.2rem;
       font-weight: normal;
       font-family: Libre Franklin, sans-serif;
+    }
+    blockquote {
+      margin: 0;
     }
     .meta {
       display: flex;
