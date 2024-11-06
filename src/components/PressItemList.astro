@@ -1,0 +1,89 @@
+---
+// © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
+// SPDX-License-Identifier: Apache-2.0
+
+import PressItem from "./PressItem.astro";
+
+interface Props {
+  full?: boolean;
+}
+
+const { full } = Astro.props;
+---
+
+<div class="press-item-list" data-full={full}>
+  <PressItem
+    name="The Register"
+    title="San Francisco billboards call out tech firms for not paying for open source"
+    date="25 Oct 2024"
+    imageUrl="/images/press/theregister.svg"
+    sourceUrl="https://www.theregister.com/2024/10/25/open_source_funding_ads/"
+    />
+  <PressItem
+    name="Gazetteer SF"
+    title="Wild billboards around the Bay call attention to tech companies free-loading off open source projects"
+    date="24 Oct 2024"
+    imageUrl="/images/press/gazetteer.webp"
+    sourceUrl="https://sf.gazetteer.co/wild-billboards-around-the-bay-call-attention-to-tech-companies-free-loading-off-open-source-projects"
+    />
+  <PressItem
+    name="Theo - t3․gg"
+    title="It's time to fix open source"
+    date="14 Oct 2024"
+    imageUrl="/images/press/t3.webp"
+    sourceUrl="https://www.youtube.com/watch?v=_3SVKdgpaH8"
+    />
+  <PressItem
+    name="InfoWorld"
+    title="How do we fund open source?"
+    date="14 Oct 2024"
+    imageUrl="/images/press/infoworld.png"
+    sourceUrl="https://www.infoworld.com/article/3557846/how-do-we-fund-open-source.html"
+    />
+  <PressItem
+    name="Technical.ly"
+    title="How open-source software devs got corporations to pledge $1.3M for their tools"
+    date="8 Oct 2024"
+    imageUrl="/images/press/technically.svg"
+    sourceUrl="https://technical.ly/software-development/open-source-pledge-developer-pay/"
+    />
+  <PressItem
+    name="Developer Tech"
+    title="Open Source Pledge aims to fund software maintainers"
+    date="8 Oct 2024"
+    imageUrl="/images/press/developertech.png"
+    sourceUrl="https://www.developer-tech.com/news/open-source-pledge-fund-software-maintainers/"
+    />
+  <PressItem
+    name="Changelog News"
+    title="The Open Source Pledge"
+    date="16 Sep 2024"
+    imageUrl="/images/press/changelog.svg"
+    sourceUrl="https://changelog.com/news/112"
+    />
+</div>
+
+<style>
+</style>
+
+<script>
+  import { shuffle, range } from "../util.ts";
+
+  const N_TO_CHOOSE = 1;
+
+  const $lists = document.querySelectorAll<HTMLElement>('.press-item-list');
+  $lists.forEach(($list) => {
+    if ($list.hasAttribute('data-full')) {
+      return;
+    }
+    const $items = $list.querySelectorAll<HTMLElement>('.press-item');
+    const chosen = shuffle(range($items.length)).slice(0, N_TO_CHOOSE);
+    $items.forEach(($item, idx) => {
+      if (chosen.includes(idx)) {
+        $item.hidden = false;
+      } else {
+        $item.remove();
+      }
+    });
+  });
+</script>
