@@ -1,0 +1,71 @@
+---
+// © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
+// SPDX-License-Identifier: Apache-2.0
+
+import { getCollection } from 'astro:content';
+import dayjs from 'dayjs';
+
+const articles = (await getCollection('articles'))
+  .sort((a, b) => +b.data.publishDate - +a.data.publishDate);
+---
+
+<div>
+  {articles.map((article) => <div class="article-listing">
+    <blockquote>
+      <a href=`/blog/${article.slug}`>
+        <h2>{article.data.title}</h2>
+      </a>
+    </blockquote>
+    <div class="meta">
+      {article.data.authorImageSrc &&
+        <img src={article.data.authorImageSrc}>
+      }
+      <div>
+        <em>{article.data.author}</em>
+        <time>{dayjs(article.data.publishDate).format('DD MMM YYYY')}</time>
+      </div>
+    </div>
+    <hr>
+  </div>)}
+</div>
+
+<style>
+  .article-listing {
+    position: relative;
+    margin: 0;
+    hr {
+      margin: 1.5rem auto;
+      max-width: 10rem;
+      border-color: var(--color-primary);
+      border-width: 1px;
+    }
+    &:last-child hr {
+      display: none;
+    }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: normal;
+      font-family: Libre Franklin, sans-serif;
+    }
+    blockquote {
+      margin: 0;
+    }
+    .meta {
+      display: flex;
+      align-items: center;
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-right: 1rem;
+        border-radius: 100%;
+      }
+      em {
+        display: block;
+      }
+      time {
+        display: block;
+        font-size: 0.8rem;
+      }
+    }
+  }
+</style>

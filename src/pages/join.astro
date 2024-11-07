@@ -98,7 +98,7 @@ import Layout from "../layouts/Layout.astro";
               >
               or the
               <a
-                href="https://github.com/opensourcepledge/opensourcepledge.com/blob/main/src/content/config.ts"
+                href="https://github.com/opensourcepledge/opensourcepledge.com/blob/main/src/schemas/members.ts"
                 >full schema</a
               >.
             </p>
@@ -304,7 +304,7 @@ import Layout from "../layouts/Layout.astro";
 
 <script>
   import Alpine from 'alpinejs'
-  import type { Member, MemberReport } from "../content/config.ts";
+  import type { Member, MemberReport } from "../schemas/members.ts";
 
   document.addEventListener('alpine:init', () => {
     const DEFAULT_ANNUAL_REPORT = {
