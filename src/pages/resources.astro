@@ -20,28 +20,97 @@ import Layout from "../layouts/Layout.astro";
     <main id="main-content">
       <section>
         <h1>Resources</h1>
+        <p>
+          This page is a resource for Open Source Pledge members, ecosystem partners, and advocates.
+        </p>
+        <p>
+          The Pledge aims to upend the status quo in OSS, and establish the norm that companies who derive massive
+          value from free software should also meaningfully support the sustainability of these projects. We can't
+          make this norm materialize out of thin air. We rely on our partners to amplify the message and stand
+          together as examples of the change we wish to see. Without the support of our partners, the Open Source
+          Pledge is just a website.
+        </p>
+        <p>
+          In this partner kit, you'll find tools that will help you recruit new members, share the news about the
+          Pledge and what it stands for with your network, and generally add to the discourse on methods to solve the
+          OSS sustainability crisis. Discourse around the merits of supporting maintainers with cash payments — even,
+          and especially if, many disagree — is the first step in changing the conversation and challenging the status
+          quo that gave us Log4Shell and the XZ backdoor. Feel free to let us know what else we can provide.
+        </p>
+        <br>
+        <div class="highlight-box">
+          <h3>
+            Everyone
+          </h3>
+          <ul>
+            <li><a href="https://docs.google.com/document/d/1xLNPoy0IYUJykUi-ohHqnxjeU-Xt9POX6VDnE2ws_GU" target="_blank">Social Media Kit</a></li>
+            <li><a href="https://docs.google.com/document/d/1vLlYN640Q-pEBSMinRgOpKLtKenTIbi7jTL_PJErS2k" target="_blank">Email Templates</a> — For recruiting</li>
+            <li><a href="#stickers">Stickers</a></li>
+          </ul>
+        </div>
+        <div class="highlight-box">
+          <h3>
+            Members
+          </h3>
+          <ul>
+            <li><a href="https://drive.google.com/drive/folders/1xqA1dRtDncK6XthnBqRGQ7-T0RJXVFOE" target="_blank">Pledge Logos</a> — Use for blog post art, social collateral, co-branding</li>
+            <li><a href="https://drive.google.com/drive/folders/1HGIcmedDWPJkrT398Q88cY61htgkKLd1" target="_blank">Member Badges</a> — Place these prominently on your /careers page and/or website footer</li>
+          </ul>
+        </div>
+        <div class="highlight-box">
+          <h3>
+            Ecosystem Partners
+          </h3>
+          <ul>
+            <li><a href="https://docs.google.com/document/d/1GsicUBC3pTNZmR4AiFGDHDQ7-qgNgyJvR_Y8QZ_3LcU" target="_blank">Press Release/Blog Template</a></li>
+          </ul>
+        </div>
+        <div class="highlight-box">
+          <h3>
+            Advocates
+          </h3>
+          <ul>
+            <li><a href="https://docs.google.com/document/d/1xLNPoy0IYUJykUi-ohHqnxjeU-Xt9POX6VDnE2ws_GU" target="_blank">Social Media Kit</a> - See social promotion guidelines below</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>
+          Social promotion
+        </h2>
+        <p>
+          We invite you to talk about the Pledge IRL, in DMs, and even on public social channels. In the spirit of
+          openness, we've been
+          <a href="https://github.com/opensourcepledge" target="_blank">building the Pledge in public</a>.
+        </p>
+      </section>
+
+      <section id="stickers">
+        <h2>Stickers</h2>
         <p>Go make stickers!</p>
+
+        <div class="sticker">
+          <h3>Logo</h2>
+          <img src="/resources/stickers/open-source-pledge-logo-sticker.svg">
+          <Button href="/resources/stickers/open-source-pledge-logo-sticker.png">PNG</Button>
+          <Button href="/resources/stickers/open-source-pledge-logo-sticker.svg">SVG</Button>
+        </div>
+        <div class="sticker">
+          <h3>Money Machine</h2>
+          <img src="/resources/stickers/open-source-pledge-money-machine.png">
+          <Button href="/resources/stickers/open-source-pledge-money-machine.png">PNG</Button>
+        </div>
       </section>
-      <section class="resource">
-        <h2>Logo</h2>
-        <img src="/resources/stickers/open-source-pledge-logo-sticker.svg">
-        <Button href="/resources/stickers/open-source-pledge-logo-sticker.png">PNG</Button>
-        <Button href="/resources/stickers/open-source-pledge-logo-sticker.svg">SVG</Button>
-      </section>
-      <section class="resource">
-        <h2>Money Machine</h2>
-        <img src="/resources/stickers/open-source-pledge-money-machine.png">
-        <Button href="/resources/stickers/open-source-pledge-money-machine.png">PNG</Button>
-      </div>
-    </section>
+    </main>
   </div>
 </Layout>
 
 <style>
-  .resource {
+  .sticker {
     img {
       display: block;
-      max-width: 20rem;
+      max-width: 12rem;
       margin: 2rem 0;
     }
   }
