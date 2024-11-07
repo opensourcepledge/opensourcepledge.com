@@ -31,7 +31,7 @@ is in addition to the code, developer time, and gifts-in-kind that many of our c
     contact details [via email][mailto] or [on Discord][discord].
   * To help with building [opensourcepledge.com][osp], read [CONTRIBUTING.md](CONTRIBUTING.md) and [dive into our
     issues][issues].
-* **Just want to keep up to date?** Follow us on [Mastodon][mastodon] or [Twitter][twitter].
+* **Just want to keep up to date?** Follow us on [Mastodon][mastodon] or [Bluesky][bsky].
 
 [contributors]: https://github.com/opensourcepledge/opensourcepledge.com/graphs/contributors
 [cramer-author]: https://blog.sentry.io/authors/david-cramer/
@@ -48,5 +48,5 @@ is in addition to the code, developer time, and gifts-in-kind that many of our c
 [pledgephil]: https://vlad.website/the-philosophy-of-the-open-source-pledge/
 [sentry-blog-post]: https://blog.sentry.io/join-the-pledge/
 [sentry]: https://sentry.io/welcome/
-[twitter]: https://x.com/ThePledge
+[bsky]: https://bsky.app/profile/opensourcepledge.com
 [vlad.website]: https://vlad.website/
