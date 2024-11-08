@@ -13,7 +13,7 @@ export enum MemberException {
   ReportUrlNotRetrievable,
 }
 
-const REPO_OWNER = 'vladh';
+const REPO_OWNER = 'opensourcepledge';
 const REPO_NAME = 'opensourcepledge.com';
 const EXCEPTION_LABEL = 'member-exception';
 
