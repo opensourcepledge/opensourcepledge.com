@@ -7,20 +7,19 @@ import fetch from "node-fetch";
 import type { Member, MemberWithId, MemberReport } from "../schemas/members.ts";
 
 export enum MemberException {
-  JsonFileNotAccessible,
   ReportDueSoon,
   ReportOverdue,
-  UrlLearnMoreNotFound,
-  BlogPostNotFound,
+  MemberUrlNotRetrievable,
+  ReportUrlNotRetrievable,
 }
 
-const REPO_OWNER = 'opensourcepledge';
+const REPO_OWNER = 'vladh';
 const REPO_NAME = 'opensourcepledge.com';
 const EXCEPTION_LABEL = 'member-exception';
 
 export function sortReportsForMember(member: Member): Member {
   const sortedReports = [...member.annualReports].sort((a, b) =>
-    new Date(a.dateYearEnding) < new Date(b.dateYearEnding) ? 1 : -1
+    new Date(a.year) < new Date(b.year) ? 1 : -1
   );
 
   return {
@@ -41,19 +40,19 @@ export function sortReportsForMemberWithId(member: MemberWithId): MemberWithId {
 
 export function isReportDueSoon(member: Member) {
   const sortedMember = sortReportsForMember(member);
-  const latestReportEndDate = dayjs(sortedMember.annualReports[0].dateYearEnding);
+  const latestReportEndDate = dayjs(sortedMember.annualReports[0].reportDate);
   return latestReportEndDate.isBefore(dayjs().subtract(1, 'year').add(2, 'months'));
 }
 
 export function isReportOverdue(member: Member) {
   const sortedMember = sortReportsForMember(member);
-  const latestReportEndDate = dayjs(sortedMember.annualReports[0].dateYearEnding);
+  const latestReportEndDate = dayjs(sortedMember.annualReports[0].reportDate);
   return latestReportEndDate.isBefore(dayjs().subtract(1, 'year'));
 }
 
-export async function isUrlLearnMoreNotFound(member: Member) {
+export async function isMemberUrlNotRetrievable(member: Member) {
   try {
-    const res = await fetch(member.urlLearnMore, { method: 'HEAD' })
+    const res = await fetch(member.url, { method: 'HEAD' })
     if (res.status != 200) {
       return true;
     }
@@ -63,7 +62,7 @@ export async function isUrlLearnMoreNotFound(member: Member) {
   return false;
 }
 
-export async function isBlogPostNotFound(member: Member) {
+export async function isReportUrlNotRetrievable(member: Member) {
   for (const report of member.annualReports) {
     try {
       const res = await fetch(report.url, { method: 'HEAD' })
@@ -79,67 +78,50 @@ export async function isBlogPostNotFound(member: Member) {
 
 function makeExceptionName(exception: MemberException) {
   switch (exception) {
-    case MemberException.JsonFileNotAccessible:
-      return "JSON file not accessible";
     case MemberException.ReportDueSoon:
       return "annual report due soon";
     case MemberException.ReportOverdue:
       return "annual report overdue";
-    case MemberException.UrlLearnMoreNotFound:
-      return "‘learn more’ URL not found";
-    case MemberException.BlogPostNotFound:
-      return "blog post not found";
+    case MemberException.MemberUrlNotRetrievable:
+      return "member URL not retrievable";
+    case MemberException.ReportUrlNotRetrievable:
+      return "report URL not retrievable";
   }
 }
 
 function makeIssueTitle(
   exception: MemberException,
-  slug: string,
-  _url: string,
-  member?: Member,
+  member: Member,
 ) {
-  const memberName = member ? member.name : slug;
   const exceptionName = makeExceptionName(exception);
-  return `${memberName}: ${exceptionName}`;
+  return `${member.name}: ${exceptionName}`;
 }
 
 function makeIssueBody(
   exception: MemberException,
-  slug: string,
-  url: string,
-  member?: Member,
+  member: Member,
 ) {
-  if (exception == MemberException.JsonFileNotAccessible) {
-    return `Member ${slug} has specified the following URL for their JSON file: ${url}.
+  const sortedMember = sortReportsForMember(member);
+  const prevReportDate = sortedMember.annualReports[0].reportDate;
+  const targetReportDate = dayjs(prevReportDate).add(1, 'year');
+  const formattedTargetReportDate = targetReportDate.format('YYYY-MM-DD');
+  const dayDiff = targetReportDate.diff(dayjs(), 'day');
 
-However, this file could not be fetched.`;
-  } else {
-    if (!member) {
-      console.error(`Couldn't get member data for ${slug} when it was required.`);
-      process.exit(1);
-    }
-    const sortedMember = sortReportsForMember(member);
-    const prevReportDate = sortedMember.annualReports[0].dateYearEnding;
-    const targetReportDate = dayjs(prevReportDate).add(1, 'year');
-    const formattedTargetReportDate = targetReportDate.format('YYYY-MM-DD');
-    const dayDiff = targetReportDate.diff(dayjs(), 'day');
-
-    if (exception == MemberException.ReportDueSoon) {
-      return `${member.name} last submitted a report for the year ending ${prevReportDate}.
+  if (exception == MemberException.ReportDueSoon) {
+    return `${member.name} last submitted a report for the year ending ${prevReportDate}.
 
 This means an annual report is due in the next ${dayDiff} days.`;
-    } else if (exception == MemberException.ReportOverdue) {
-      return `${member.name} last submitted a report for the year ending ${prevReportDate}.
+  } else if (exception == MemberException.ReportOverdue) {
+    return `${member.name} last submitted a report for the year ending ${prevReportDate}.
 
 An annual report was due for ${formattedTargetReportDate}. This means an annual report is now overdue.`;
-    } else if (exception == MemberException.UrlLearnMoreNotFound) {
-      return `${member.name}'s \`urlLearnMore\` could not be retrieved. Please check the following URL: ${member.urlLearnMore}.`;
-    } else if (exception == MemberException.BlogPostNotFound) {
-      const urls = member.annualReports.map((r) => `* ${r.url}`).join("\n");
-      return `${member.name} is providing a blog post URL that could not be retrieved. Please check the following URLs:
+  } else if (exception == MemberException.MemberUrlNotRetrievable) {
+    return `${member.name}'s \`url\` could not be retrieved. Please check the following URL: ${member.url}.`;
+  } else if (exception == MemberException.ReportUrlNotRetrievable) {
+    const urls = member.annualReports.map((r) => `* ${r.url}`).join("\n");
+    return `${member.name} is providing a report URL that could not be retrieved. Please check the following report URLs:
 
 ${urls}`;
-    }
   }
   return 'Unknown exception occured.'
 }
@@ -182,12 +164,10 @@ async function doesExceptionIssueExist(octokit: any, title: string) {
 export async function makeIssueIfNotExists(
   octokit: any,
   exception: MemberException,
-  slug: string,
-  url: string,
-  member?: Member,
+  member: Member,
 ) {
-  const issueTitle = makeIssueTitle(exception, slug, url, member);
-  const issueBody = makeIssueBody(exception, slug, url, member);
+  const issueTitle = makeIssueTitle(exception, member);
+  const issueBody = makeIssueBody(exception, member);
   const doesIssueExist = await doesExceptionIssueExist(octokit, issueTitle);
   if (doesIssueExist) {
     console.log(`Not creating an exception issue, because it already exists: “${issueTitle}”`);

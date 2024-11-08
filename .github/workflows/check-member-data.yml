@@ -1,4 +1,4 @@
-name: Update all changed member files
+name: Check all member data
 
 on:
   schedule:
@@ -18,9 +18,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Install npm packages
         run: npm install
-      - name: Update all changed member files
-        run: bash ./bin/update-all-members
+      - name: Check all member data
+        run: ./src/memberData/bin/checkMembers.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Commit member changes, if any
-        run: bash ./bin/commit-member-changes

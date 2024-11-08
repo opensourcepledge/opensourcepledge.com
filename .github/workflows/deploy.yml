@@ -21,12 +21,10 @@ jobs:
           fetch-depth: 0
       - name: Run npm install
         run: npm install
-      - name: Update new member files
-        run: bash ./bin/update-new-members ${{ github.event.before }}
+      - name: Check all member data
+        run: ./src/memberData/bin/checkMembers.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Commit member changes, if any
-        run: bash ./bin/commit-member-changes
       - name: Build website files
         uses: withastro/action@v2
   deploy:

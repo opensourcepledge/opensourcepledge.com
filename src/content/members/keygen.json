@@ -1,40 +1,35 @@
 {
   "name": "Keygen",
   "description": "Keygen is a Fair Source software licensing and distribution API. Being built on top of Open Source, we strive to give back to the community whenever possible with our own Open Source projects as well as our funds.",
-  "urlSquareLogoWithBackground": "https://assets.keygen.sh/logos/logomark-square.png",
-  "urlLearnMore": "https://keygen.sh/open-source/",
+  "url": "https://keygen.sh/open-source/",
   "annualReports": [
     {
       "url": "https://keygen.sh/blog/keygen-joins-osspledge/",
-      "dateYearEnding": "2021-12-31",
+      "year": "2021",
+      "reportDate": "2021-12-31",
       "averageNumberOfDevs": 1,
-      "payments": 5452,
-      "monetaryValueOfTime": 0,
-      "monetaryValueOfMaterials": 0
+      "usdAmountPaid": 5452
     },
     {
       "url": "https://keygen.sh/blog/keygen-joins-osspledge/",
-      "dateYearEnding": "2022-12-31",
+      "year": "2022",
+      "reportDate": "2022-12-31",
       "averageNumberOfDevs": 1,
-      "payments": 10599,
-      "monetaryValueOfTime": 0,
-      "monetaryValueOfMaterials": 291
+      "usdAmountPaid": 10599
     },
     {
       "url": "https://keygen.sh/blog/keygen-joins-osspledge/",
-      "dateYearEnding": "2023-12-31",
+      "year": "2023",
+      "reportDate": "2023-12-31",
       "averageNumberOfDevs": 1,
-      "payments": 5058,
-      "monetaryValueOfTime": 0,
-      "monetaryValueOfMaterials": 387
+      "usdAmountPaid": 5058
     },
     {
       "url": "https://keygen.sh/blog/keygen-joins-osspledge/",
-      "dateYearEnding": "2024-12-31",
+      "year": "2024",
+      "reportDate": "2024-09-09",
       "averageNumberOfDevs": 1,
-      "payments": 5428,
-      "monetaryValueOfTime": 0,
-      "monetaryValueOfMaterials": 642
+      "usdAmountPaid": 5428
     }
   ]
 }
