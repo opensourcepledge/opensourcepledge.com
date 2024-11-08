@@ -25,22 +25,20 @@ npx astro check
 
 Here's what the workflow for a new member looks like:
 
-### 1. PR for `members.csv` submitted
+### 1. Prospective member creates issue
 
-For a new member to join, they must submit a PR adding themselves to `members.csv`.
+For a new member to join, they must create an issue asking to join and providing the information requested in our
+[Join][join] page.
 
-### 2. PR merged -> `src/content/members` updated
+### 2. Create `src/content/members/<member-slug>.json`
 
-When a new member's PR has been merged, a workflow is run to update `src/content/members`. The workflow can be found in
-`.github/workflows/deploy.yml`, and the code that updates member data can be found in `bin/`.
+After verifying that the prospective member's submitted data is correct, create a JSON file in
+`src/content/members/<member-slug>.json` with this data. The member slug should contain no spaces.
 
-If you'd like to update all members manually, for example to fetch new data from a JSON file, run
-`./bin/update-all-members`.
+### 3. Add logo to `public/images/members`
 
-### 3. Logo added to `public/images/members`
-
-When a member joins, the logo to be shown on the website must be added as `public/images/members/<slug>/logo.webp`.
-These files should be square, kept at or below 800x800px, and compressed as much as possible without giving up fidelity.
+The member logo to be shown on the website must be added as `public/images/members/<slug>/logo.webp`. These files should
+be square, kept at or below 800x800px, and compressed as much as possible without giving up fidelity.
 
 Here are some tips. For logos that are shape-based illustrations:
 
@@ -56,10 +54,11 @@ magick logo.jpg -resize '>800x' -quality 99 -define webp:lossless=false -define 
 
 Remember that a corresponding `logo.webp.license` file must also be added.
 
-### 4. Role added to `src/memberRoles.json`
+### 4. Add role to `src/memberRoles.json`
 
-The step which actually causes a member to show up on the website is adding them to `src/memberRoles.json`. Members
-should have a “Member” role by default, though members can also have custom roles.
+The step which actually causes a member to show up on the website is adding them to `src/memberRoles.json`. For an
+entry's key, use the same member slug you used in the JSON filename. Members should have a “Member” role by default,
+though members can also have custom roles.
 
 At this point, the member will show up on the website.
 
@@ -72,12 +71,6 @@ that this must be an SVG file. If a vector logo is somehow not available, raster
 Remember that a corresponding `minimal.svg.license` file must also be added.
 
 ### Additional Information
-
-If you'd like to make custom temporary changes to a member's JSON file, edit that file in `src/content/members`. To
-prevent workflows from overwriting this data, you should then create a corresponding `.lock` file. For example, if
-you're updating `src/content/members/foocorp.json`, you should also create a file called
-`src/content/members/foocorp.json.lock`. This will result in the JSON file not being automatically updated until the
-`.lock` file is deleted. Remember to delete the `.lock` file when you'd like the member to be updated again.
 
 When onboarding members, we will receive logo files for those members. Make sure to contribute these logo files, and any
 modified logo files you create, back to our [“Member Logos”][member-logos] Google Drive folder. If you don't have
@@ -122,5 +115,6 @@ The least-supported clientside feature we're using is CSS Nesting. This means th
 by the [CSS Nesting Can I Use page][css-nesting].
 
 [css-nesting]: https://caniuse.com/css-nesting
+[join]: https://opensourcepledge.com/join
 [status]: https://updown.io/p/3c87h
 [updown]: https://updown.io
