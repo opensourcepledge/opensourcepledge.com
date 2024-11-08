@@ -1,26 +1,28 @@
 {
-  "description": "Sentry started life as an Open Source side project in 2008. We grew that way for years before commercializing. We've always given back to the community and now we're happy to help other companies do the same through the Open Source Pledge.",
   "name": "Sentry",
-  "urlSquareLogoWithBackground": "https://avatars.githubusercontent.com/u/1396951?s=200&v=4",
-  "urlLearnMore": "https://open.sentry.io/",
+  "description": "Sentry started life as an Open Source side project in 2008. We grew that way for years before commercializing. We've always given back to the community and now we're happy to help other companies do the same through the Open Source Pledge.",
+  "url": "https://open.sentry.io/",
   "annualReports": [
     {
       "url": "https://blog.sentry.io/we-just-gave-500-000-dollars-to-open-source-maintainers/",
-      "dateYearEnding": "2024-01-31",
+      "year": "2024",
+      "reportDate": "2024-01-31",
       "averageNumberOfDevs": 135,
-      "payments": 500000
+      "usdAmountPaid": 500000
     },
     {
       "url": "https://blog.sentry.io/we-just-gave-260-028-dollars-to-open-source-maintainers/",
-      "dateYearEnding": "2023-01-31",
+      "year": "2023",
+      "reportDate": "2023-01-31",
       "averageNumberOfDevs": 130,
-      "payments": 260280
+      "usdAmountPaid": 260280
     },
     {
       "url": "https://blog.sentry.io/we-just-gave-154-999-dollars-and-89-cents-to-open-source-maintainers/",
-      "dateYearEnding": "2022-01-31",
+      "year": "2022",
+      "reportDate": "2022-01-31",
       "averageNumberOfDevs": 75,
-      "payments": 155000
+      "usdAmountPaid": 155000
     }
   ]
 }

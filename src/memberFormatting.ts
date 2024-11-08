@@ -14,7 +14,7 @@ export async function getMembers(): Promise<MemberWithId[]> {
 }
 
 export function getDollarsPerDev(report: MemberReport) {
-  return report.payments / report.averageNumberOfDevs;
+  return report.usdAmountPaid / report.averageNumberOfDevs;
 }
 
 export function fmtCurrency(num: number) {

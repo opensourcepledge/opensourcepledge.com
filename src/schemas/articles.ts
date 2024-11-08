@@ -1,3 +1,6 @@
+// © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
+// SPDX-License-Identifier: Apache-2.0
+
 import { z } from "astro:content";
 
 export const articleSchema = z.object({
