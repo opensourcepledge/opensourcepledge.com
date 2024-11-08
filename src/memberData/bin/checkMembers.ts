@@ -41,8 +41,7 @@ async function main() {
 
     if (isReportOverdue(memberData)) {
       await makeIssueIfNotExists(octokit, MemberException.ReportOverdue, memberData);
-    }
-    if (isReportDueSoon(memberData)) {
+    } else if (isReportDueSoon(memberData)) {
       await makeIssueIfNotExists(octokit, MemberException.ReportDueSoon, memberData);
     }
     if (await isMemberUrlNotRetrievable(memberData)) {
