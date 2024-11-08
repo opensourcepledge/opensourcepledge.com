@@ -78,6 +78,48 @@ access, contact @selviano.
 
 [member-logos]: https://drive.google.com/drive/folders/1HxYaaY1wy1hZT6O0ZY58s7Y8N4aV0fcn
 
+## Archiving Member Reports
+
+We archive member reports so that, in case they become inaccessible, we can (1) refer to the reports, and (2) have a
+fallback way to display the reports to visitors.
+
+Currently, these reports must be archived manually.
+
+Before archiving reports, make sure you install [`monolith`][monolith] from your package manager. `monolith` is used so
+that we can compactly archive a report into a single file.
+
+[monolith]: https://github.com/Y2Z/monolith
+
+To archive all reports, run this from the repository root:
+
+```
+$ ./src/memberData/bin/archiveMembers.ts
+```
+
+This will archive reports using the following directory structure:
+
+```
+archives/
+└── reports
+    └── sentry
+        ├── 2022
+        │   ├── 2024-11-08T18:11:29.792Z.html
+        │   └── latest.html -> 2024-11-08T18:11:29.792Z.html
+        ├── 2023
+        │   ├── 2024-11-08T18:11:27.057Z.html
+        │   └── latest.html -> 2024-11-08T18:11:27.057Z.html
+        └── 2024
+            ├── 2024-11-08T18:11:24.601Z.html
+            └── latest.html -> 2024-11-08T18:11:24.601Z.html
+```
+
+When a report is archived, the `latest.html` symlink is updated to point to the latest archived HTML file.
+
+Archives are not currently automatically provided to users eg in case the original URL is inaccessible.
+
+If you want to browse the archives locally, it's best to `cd archives`, `python -m http.server`, then visit
+`localhost:8000`. This avoids issues with `file://` URLs.
+
 ## Authorship Information
 
 We maintain copyright headers at the top of every file to establish authorship. Once you make substantive changes to any
