@@ -40,6 +40,11 @@ if (!nRows) {
   <MemberLogoBoardItem hidden={nRows < 5} slug="private-packagist" name="Private Packagist" />
   <MemberLogoBoardItem hidden={nRows < 5} slug="chieftools" name="Chief Tools" />
   <MemberLogoBoardItem hidden={nRows < 5} slug="speakeasy" name="Speakeasy" />
+
+  <MemberLogoBoardItem hidden={nRows < 6} slug="tideways" name="Tideways" maxHeight="1.7rem" />
+  <MemberLogoBoardItem hidden={nRows < 6} slug="vlt" name="vlt" maxHeight="1.7rem" />
+  <MemberLogoBoardItem hidden={nRows < 6} slug="pixee" name="Pixee" maxHeight="1.8rem" />
+  <MemberLogoBoardItem hidden={nRows < 6} slug="voidzero" name="VoidZero" maxHeight="1.6rem" />
 </div>
 
 <style>
@@ -73,7 +78,7 @@ if (!nRows) {
     let nChosen = 0;
     const nTotal = $items.length;
     $items.forEach(($item, idx) => {
-      const mustChoose = (nToChoose - nChosen == nTotal - idx);
+      const mustChoose = (nToChoose - nChosen >= nTotal - idx);
       const mustNotChoose = nChosen == nToChoose;
       if (mustNotChoose) {
         $item.hidden = true;
