@@ -442,6 +442,9 @@ const { title, canonicalUrl, navless } = Astro.props;
     li {
       list-style-position: inside;
     }
+    li > ul, li > ol {
+      padding-left: 2rem;
+    }
   }
   blockquote {
     position: relative;
