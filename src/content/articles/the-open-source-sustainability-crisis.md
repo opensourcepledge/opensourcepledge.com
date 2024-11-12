@@ -3,6 +3,7 @@ title: 'The Open Source Sustainability Crisis'
 excerpt: "What is Open Source sustainability? Fair pay, no hoops. Why is it in crisis? Burnout."
 author: 'Chad Whitacre'
 authorImageSrc: '/images/authors/chad.webp'
+canonicalUrl: 'https://openpath.quest/2024/the-open-source-sustainability-crisis/'
 isDraft: false
 publishDate: '2024-01-19'
 ---

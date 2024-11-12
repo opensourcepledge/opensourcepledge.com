@@ -35,7 +35,7 @@ export async function getStaticPaths() {
 const { Content } = await article.render();
 ---
 
-<Layout title={article.data.title}>
+<Layout title={article.data.title} canonicalUrl={article.data.canonicalUrl}>
   <div class="edge-blobs">
     <Blob kind="grad-dots-04" top="12%" right="-2rem"></Blob>
     <Blob kind="grad-dots-05" top="45%" left="-2rem"></Blob>
