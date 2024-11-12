@@ -8,6 +8,11 @@ isDraft: false
 publishDate: '2024-10-08'
 ---
 
+<!--
+© 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
+SPDX-License-Identifier: CC-BY-NC-SA-4.0
+-->
+
 <div class="highlight-box">
   This post originally appeared
   <a
