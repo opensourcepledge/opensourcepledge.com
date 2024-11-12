@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 16.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   width="250"
+   height="250"
+   viewBox="0 0 250 250"
+   enable-background="new 0 0 180 90"
+   xml:space="preserve"
+   sodipodi:docname="techcrunch.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs2" /><sodipodi:namedview
+   id="namedview2"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   showgrid="false"
+   inkscape:zoom="1.4142136"
+   inkscape:cx="127.98633"
+   inkscape:cy="120.20815"
+   inkscape:window-width="3840"
+   inkscape:window-height="2160"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="0"
+   inkscape:current-layer="Layer_1" />
+
+
+
+<rect
+   style="fill:#ffffff;stroke-width:100"
+   id="rect2"
+   width="250"
+   height="250"
+   x="0"
+   y="0" /><g
+   id="g2"
+   transform="translate(35,80)"><polygon
+     fill="#0a9e01"
+     points="90,0 90,30 60,30 60,90 30,90 30,30 0,30 0,0 "
+     id="polygon1" /><rect
+     x="120"
+     fill="#0a9e01"
+     width="60"
+     height="30"
+     id="rect1"
+     y="0" /><polygon
+     fill="#0a9e01"
+     points="90,90 90,30 120,30 120,60 180,60 180,90 "
+     id="polygon2" /></g></svg>
