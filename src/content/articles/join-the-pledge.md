@@ -3,9 +3,15 @@ title: 'Join the Pledge'
 excerpt: "Today we officially launch the Open Source Pledge."
 author: 'David Cramer'
 authorImageSrc: '/images/authors/cramer.webp'
+canonicalUrl: 'https://blog.sentry.io/join-the-pledge/'
 isDraft: false
 publishDate: '2024-10-08'
 ---
+
+<!--
+© 2024 Functional Software, Inc. dba Sentry
+SPDX-License-Identifier: LicenseRef-Restricted
+-->
 
 <div class="highlight-box">
   This post originally appeared
