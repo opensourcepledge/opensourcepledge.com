@@ -14,6 +14,7 @@ path = [
     "members.csv",
     "package-lock.json",
     "package.json",
+    "public/.well-known/atproto-did",
     "public/images/example-members/*",
     "src/content/members/*",
     "src/env.d.ts",
@@ -25,15 +26,17 @@ SPDX-License-Identifier = "CC0-1.0"
 
 [[annotations]]
 path = [
-    "src/assets/images/blobs/*",
-    "public/favicon.svg",
     "public/favicon.png",
-    "public/osspledge.pdf",
-    "public/opensourcepledge.pdf",
+    "public/favicon.svg",
     "public/images/*",
     "public/logos/*",
+    "public/open-source-pledge-one-pager.pdf",
+    "public/open-source-pledge-pitch-deck.pdf",
+    "public/opensourcepledge.pdf",
+    "public/osspledge.pdf",
     "public/resources/*",
     "public/resources/stickers/*",
+    "src/assets/images/blobs/*",
 ]
 SPDX-FileCopyrightText = "© 2024 Functional Software, Inc. d/b/a Sentry"
 SPDX-License-Identifier = "LicenseRef-Restricted"

@@ -8,6 +8,11 @@ isDraft: false
 publishDate: '2024-01-19'
 ---
 
+<!--
+© 2024 Chad Whitacre <chadwhitacre@sentry.io>
+SPDX-License-Identifier: LicenseRef-Restricted
+-->
+
 <div class="highlight-box">
   This post originally appeared
   <a

@@ -8,6 +8,11 @@ isDraft: false
 publishDate: '2024-10-08'
 ---
 
+<!--
+© 2024 Functional Software, Inc. dba Sentry
+SPDX-License-Identifier: LicenseRef-Restricted
+-->
+
 <div class="highlight-box">
   This post originally appeared
   <a
