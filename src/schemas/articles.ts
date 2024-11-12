@@ -7,6 +7,7 @@ export const articleSchema = z.object({
   title: z.string(),
   author: z.string(),
   authorImageSrc: z.string(),
+  canonicalUrl: z.string().optional(),
   isDraft: z.boolean(),
   imageSrc: z.string().optional(),
   imageAlt: z.string().optional(),

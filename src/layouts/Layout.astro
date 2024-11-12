@@ -5,10 +5,11 @@
 
 interface Props {
   title?: string;
+  canonicalUrl?: string;
   navless?: boolean;
 }
 
-const { title, navless } = Astro.props;
+const { title, canonicalUrl, navless } = Astro.props;
 ---
 
 <!doctype html>
@@ -30,6 +31,7 @@ const { title, navless } = Astro.props;
     <meta property="og:url" content={Astro.url}>
     <meta property="article:published_time" content="2024-10-08">
     <link rel="me" href="https://fosstodon.org/@opensourcepledge">
+    <link rel="canonical" href={canonicalUrl || Astro.url}>
 
     <script
       is:inline

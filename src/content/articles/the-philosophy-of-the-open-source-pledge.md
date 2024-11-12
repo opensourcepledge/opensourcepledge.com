@@ -3,9 +3,15 @@ title: 'The Philosophy of the Open Source Pledge'
 excerpt: "We launched the Open Source Pledge today to make companies pay their fair share to Open Source maintainers they depend on. I wrote this post about why doing so is fair and smart."
 author: 'Vlad-Stefan Harbuz'
 authorImageSrc: '/images/authors/vlad.webp'
+canonicalUrl: 'https://vlad.website/the-philosophy-of-the-open-source-pledge/'
 isDraft: false
 publishDate: '2024-10-08'
 ---
+
+<!--
+© 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
+SPDX-License-Identifier: CC-BY-NC-SA-4.0
+-->
 
 <div class="highlight-box">
   This post originally appeared
