@@ -21,9 +21,7 @@ export async function getGrandTotalRaised() {
   const members = filterInactiveMembers(await getMembers());
   let grandTotal = 0;
   members.forEach((member) => {
-    member.data.annualReports.forEach((report) => {
-      grandTotal += report.payments;
-    });
+    grandTotal += member.data.annualReports[0].usdAmountPaid;
   });
   return grandTotal;
 }

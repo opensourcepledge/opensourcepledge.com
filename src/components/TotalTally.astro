@@ -2,15 +2,15 @@
 // © 2024 Vlad-Stefan Harbuz <vlad@vladh.net>
 // SPDX-License-Identifier: Apache-2.0
 
-import LeaderboardMember from "./LeaderboardMember.astro";
 import {
   getGrandTotalRaised, fmtCurrency,
-} from '../members.ts';
+} from '../memberFormatting.ts';
 ---
 
 <div class="total-tally">
   <p>Our members have paid maintainers</p>
   <h2>{fmtCurrency(await getGrandTotalRaised())}</h2>
+  <p>over the last year.</p>
 </div>
 
 <style>
