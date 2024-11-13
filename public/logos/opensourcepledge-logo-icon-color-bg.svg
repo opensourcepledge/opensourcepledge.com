@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="500"
+   height="500"
+   viewBox="0 0 500 500"
+   fill="none"
+   version="1.1"
+   id="svg6"
+   sodipodi:docname="opensourcepledge-logo-icon-color-bg.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   inkscape:export-filename="opensourcepledge-logo-horiz-color-opengraph.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="2.1766667"
+     inkscape:cx="273.81317"
+     inkscape:cy="226.95253"
+     inkscape:window-width="3840"
+     inkscape:window-height="2160"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg6" />
+  <defs
+     id="defs6" />
+  <rect
+     style="fill:#080e17;fill-opacity:1;stroke:none;stroke-width:170.079;paint-order:stroke fill markers"
+     id="rect7"
+     width="500"
+     height="500"
+     x="0"
+     y="0" />
+  <g
+     id="g1"
+     transform="translate(-91.442393,-65.53413)">
+    <path
+       fill-rule="evenodd"
+       clip-rule="evenodd"
+       d="m 208.9877,129.42781 c -22.50482,0 -41.03469,17.69028 -42.07759,40.17087 l -13.35873,287.96735 c -1.11355,24.0042 18.04756,44.07442 42.07763,44.07442 h 291.62685 c 24.02995,0 43.19071,-20.07022 42.07758,-44.07442 L 515.97475,169.59868 c -1.04289,-22.4807 -19.57276,-40.17087 -42.07758,-40.17087 z m 30.59716,12.25352 c -27.91653,0 -50.54741,22.63076 -50.54741,50.5473 v 203.72099 c 0,27.91712 22.63088,50.54835 50.54741,50.54835 h 203.72181 c 27.91595,0 50.54718,-22.63123 50.54718,-50.54835 V 192.22874 c 0,-27.91665 -22.63123,-50.54741 -50.54718,-50.54741 z"
+       fill="#ffffff"
+       id="path1"
+       style="stroke-width:1.17048" />
+    <path
+       fill-rule="evenodd"
+       clip-rule="evenodd"
+       d="m 304.8623,196.26971 125.15123,70.74217 H 327.11195 252.33549 v -29.38513 h 65.53435 z"
+       fill="#ffffff"
+       id="path2"
+       style="stroke-width:1.17048" />
+    <path
+       fill-rule="evenodd"
+       clip-rule="evenodd"
+       d="M 377.48707,378.8372 252.33549,308.09456 h 102.90193 74.77611 v 29.3849 h -65.534 z"
+       fill="#2dde74"
+       id="path3"
+       style="stroke-width:1.17048" />
+  </g>
+</svg>
