@@ -6,8 +6,31 @@
    fill="none"
    version="1.1"
    id="svg6"
+   sodipodi:docname="opensourcepledge-logo-horiz-color-opengraph.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="2.1766667"
+     inkscape:cx="600"
+     inkscape:cy="315.1608"
+     inkscape:window-width="3840"
+     inkscape:window-height="2160"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg6" />
   <defs
      id="defs6">
     <clipPath
@@ -22,7 +45,7 @@
     </clipPath>
   </defs>
   <rect
-     style="fill:#181225;fill-opacity:1;stroke:none;stroke-width:170.079;paint-order:stroke fill markers"
+     style="fill:#080e17;fill-opacity:1;stroke:none;stroke-width:170.079;paint-order:stroke fill markers"
      id="rect7"
      width="1200"
      height="630"
