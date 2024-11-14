@@ -4,23 +4,30 @@
   "url": "https://open.sentry.io/",
   "annualReports": [
     {
+      "url": "https://blog.sentry.io/we-just-gave-750-000-dollars-to-open-source-maintainers/",
+      "year": "2025",
+      "reportDate": "2024-11-12",
+      "averageNumberOfDevs": 129,
+      "usdAmountPaid": 750000
+    },
+    {
       "url": "https://blog.sentry.io/we-just-gave-500-000-dollars-to-open-source-maintainers/",
       "year": "2024",
-      "reportDate": "2024-01-31",
+      "reportDate": "2023-10-24",
       "averageNumberOfDevs": 135,
       "usdAmountPaid": 500000
     },
     {
       "url": "https://blog.sentry.io/we-just-gave-260-028-dollars-to-open-source-maintainers/",
       "year": "2023",
-      "reportDate": "2023-01-31",
+      "reportDate": "2022-10-27",
       "averageNumberOfDevs": 130,
       "usdAmountPaid": 260280
     },
     {
       "url": "https://blog.sentry.io/we-just-gave-154-999-dollars-and-89-cents-to-open-source-maintainers/",
       "year": "2022",
-      "reportDate": "2022-01-31",
+      "reportDate": "2021-10-21",
       "averageNumberOfDevs": 75,
       "usdAmountPaid": 155000
     }
