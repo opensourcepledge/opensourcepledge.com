@@ -17,6 +17,15 @@ export function getDollarsPerDev(report: MemberReport) {
   return report.usdAmountPaid / report.averageNumberOfDevs;
 }
 
+export async function getGrandTotalRaised() {
+  const members = filterInactiveMembers(await getMembers());
+  let grandTotal = 0;
+  members.forEach((member) => {
+    grandTotal += member.data.annualReports[0].usdAmountPaid;
+  });
+  return grandTotal;
+}
+
 export function fmtCurrency(num: number) {
   return '$' + num.toLocaleString(undefined, {
     minimumFractionDigits: 0,
