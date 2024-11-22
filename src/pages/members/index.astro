@@ -7,6 +7,7 @@ import Blob from "../../components/Blob.astro";
 import Button from "../../components/Button.astro";
 import Layout from "../../layouts/Layout.astro";
 import Leaderboard from "../../components/Leaderboard.astro";
+import TotalTally from "../../components/TotalTally.astro";
 ---
 
 <Layout title="Members">
@@ -25,6 +26,7 @@ import Leaderboard from "../../components/Leaderboard.astro";
         <div class="text-center">
           <h1>Member<br>Companies</h1>
         </div>
+        <TotalTally />
         <Leaderboard grouped={false}></Leaderboard>
       </section>
 
