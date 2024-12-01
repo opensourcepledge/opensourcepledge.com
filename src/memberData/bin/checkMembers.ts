@@ -3,6 +3,8 @@
 // © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
 // SPDX-License-Identifier: Apache-2.0
 
+// Must be run in repository root.
+
 import fs from "fs";
 import { Octokit } from "@octokit/rest";
 
@@ -31,24 +33,24 @@ async function main() {
     const localPath = `./src/content/members/${slug}.json`;
     console.log(`Checking member ${slug} at ${localPath}`);
 
-    let memberData = undefined;
+    let member = undefined;
     try {
-      memberData = JSON.parse(fs.readFileSync(localPath).toString());
+      member = JSON.parse(fs.readFileSync(localPath).toString());
     } catch (e) {
       console.error(`ERROR: could not load member data at ${localPath}`);
       process.exit(1);
     }
 
-    if (isReportOverdue(memberData)) {
-      await makeIssueIfNotExists(octokit, MemberException.ReportOverdue, memberData);
-    } else if (isReportDueSoon(memberData)) {
-      await makeIssueIfNotExists(octokit, MemberException.ReportDueSoon, memberData);
+    if (isReportOverdue(member)) {
+      await makeIssueIfNotExists(octokit, MemberException.ReportOverdue, member);
+    } else if (isReportDueSoon(member)) {
+      await makeIssueIfNotExists(octokit, MemberException.ReportDueSoon, member);
     }
-    if (await isMemberUrlNotRetrievable(memberData)) {
-      await makeIssueIfNotExists(octokit, MemberException.MemberUrlNotRetrievable, memberData);
+    if (await isMemberUrlNotRetrievable(member)) {
+      await makeIssueIfNotExists(octokit, MemberException.MemberUrlNotRetrievable, member);
     }
-    if (await isReportUrlNotRetrievable(memberData)) {
-      await makeIssueIfNotExists(octokit, MemberException.ReportUrlNotRetrievable, memberData);
+    if (await isReportUrlNotRetrievable(member)) {
+      await makeIssueIfNotExists(octokit, MemberException.ReportUrlNotRetrievable, member);
     }
   }
 }
