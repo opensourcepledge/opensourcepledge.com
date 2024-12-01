@@ -20,12 +20,12 @@ SPDX-License-Identifier: CC-BY-NC-SA-4.0
   >on vlad.website</a>.
 </div>
 
-Today, we launched the [Open Source Pledge][osp]. Virtually all companies use Open Source
-software, making the Open Source ecosystem crucial to virtually all of the technology we use. That Open Source software
-is created and supported by maintainers. But the companies that use Open Source software almost never pay the
-maintainers anything. This means that the maintainers end up doing a huge amount of work for free, often as a second
-shift after their dayjob so that they can pay the bills, leaving them burned out and overworked, and leaving the
-projects they maintain at risk of serious security issues.
+Today, we launched the [Open Source Pledge][osp]. Virtually all companies use Open Source software [^oss-value], making
+the Open Source ecosystem crucial to virtually all of the technology we use. That Open Source software is created and
+supported by maintainers. But the companies that use Open Source software almost never pay the maintainers anything.
+This means that the maintainers end up doing a huge amount of work for free, often as a second shift after their dayjob
+so that they can pay the bills, leaving them burned out and overworked, and leaving the projects they maintain at risk
+of serious security issues.
 
 The Open Source Pledge aims to change that, by getting companies to pay the maintainers of the software they rely
 on. We launched the Pledge today with the support of [25 wonderful companies](https://opensourcepledge.com/members/) and
@@ -199,6 +199,8 @@ live and work in.
 [stf]: https://www.sovereigntechfund.de/
 [thanksd]: https://thanks.dev/home
 [xz]: https://en.wikipedia.org/wiki/XZ_Utils_backdoor
+
+[^oss-value]: https://gratipay.news/open-source-captures-almost-none-of-the-value-it-creates-9015eb7e293e
 
 [^adobe]: https://thanks.dev/d/gh/adobe/dependencies
 [^apple]: https://thanks.dev/d/gh/apple/dependencies
