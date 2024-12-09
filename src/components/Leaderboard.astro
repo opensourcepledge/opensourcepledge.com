@@ -2,67 +2,34 @@
 // © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
 // SPDX-License-Identifier: Apache-2.0
 
-interface Props {
-  grouped: boolean;
-}
-
-const { grouped } = Astro.props;
-
 import LeaderboardMember from "./LeaderboardMember.astro";
 import {
-  getMembers, formatDevGroupBounds, filterInactiveMembers, groupMembers,
-  sortMembersByDevs, DEV_GROUP_BOUNDS
+  getMembers, filterInactiveMembers, sortMembersByDevs,
 } from '../memberFormatting.ts';
 
 const members = filterInactiveMembers(await getMembers());
 ---
 
-{grouped ? <div>
-  {groupMembers(members).map((groupMembers, idx) => groupMembers.length > 0 && <div>
-    <h2>{formatDevGroupBounds(DEV_GROUP_BOUNDS[idx])}</h2>
-    <table class="table--lrr table--40-30-30">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>
-            <abbr title="Average number of employed full-time equivalent developers (in latest report)">Devs</abbr>
-          </th>
-          <th>
-            <abbr title="USD paid / average number of employed full-time equivalent developers (in latest report)"
-              >$/dev</abbr
-            >
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {sortMembersByDevs(groupMembers).map((member) =>
-          <LeaderboardMember member={member}></LeaderboardMember>
-        )}
-      </tbody>
-    </table>
-  </div>)}
-</div> : (
-  <table class="table--lrr table--40-30-30">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th class="ndevs">
-          <abbr title="Average number of employed full-time equivalent developers (in latest report)">Devs</abbr>
-        </th>
-        <th>
-          <abbr title="USD paid / average number of employed full-time equivalent developers (in latest report)"
-            >$/dev</abbr
-          >
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      {sortMembersByDevs(members).map((member) =>
-        <LeaderboardMember member={member}></LeaderboardMember>
-      )}
-    </tbody>
-  </table>
-)}
+<table class="table--lrr table--40-30-30">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th class="ndevs">
+        <abbr title="Average number of employed full-time equivalent developers (in latest report)">Devs</abbr>
+      </th>
+      <th>
+        <abbr title="USD paid / average number of employed full-time equivalent developers (in latest report)"
+          >$/dev</abbr
+        >
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {sortMembersByDevs(members).map((member) =>
+      <LeaderboardMember member={member}></LeaderboardMember>
+    )}
+  </tbody>
+</table>
 
 <style>
   h2 {
