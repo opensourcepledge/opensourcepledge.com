@@ -12,42 +12,46 @@ import { getDollarsPerDev, fmtCurrency } from '../memberFormatting.ts';
 import type { MemberWithId } from "../schemas/members.ts";
 ---
 
-<tr>
-  <td>
-    <a class="sneaky" href={`/members/${member.id}`}>
-      <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.data.name} logo`>
-      {member.data.name}
-    </a>
-  </td>
-  <td class="ndevs">
-    {member.data.annualReports[0].averageNumberOfDevs}
-  </td>
-  <td>
-    {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))}
-  </td>
-</tr>
+<a class="member sneaky" href={`/members/${member.id}`}>
+  <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.data.name} logo`>
+  <div class="details">
+    <h2>{member.data.name}</h2>
+    <span>{member.data.annualReports[0].averageNumberOfDevs} devs</span>
+    <span>{fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))} / dev</span>
+  </div>
+</a>
 
 <style>
-  img {
-    max-width: 3.5rem;
-    max-height: 100%;
-    margin-right: 1rem;
-    @media (max-width: 450px) {
-      max-width: 2.5rem;
-    }
-    @media (max-width: 400px) {
-      max-width: 2.0rem;
-    }
-  }
-  a {
+  a.member {
     display: flex;
-    align-items: center;
-    font-weight: bold;
-    padding: 0.25rem 0
-  }
-  td.ndevs {
-    @media (max-width: 400px) {
-      display: none;
+    margin: 0;
+    padding: 1rem;
+    gap: 1.5rem;
+    background-color: var(--color-light-bg);
+    border: 3px solid transparent;
+    @media (max-width: 450px) {
+      padding: 0.5rem;
+    }
+    &:hover {
+      border: 3px solid var(--color-secondary);
+      text-decoration: none;
+    }
+    & > img {
+      align-self: center;
+      max-width: 4.5rem;
+      @media (max-width: 450px) {
+        max-width: 3.0rem;
+      }
+    }
+    .details {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.2rem;
+      h2 {
+        margin: 0;
+        font-size: 1rem;
+      }
     }
   }
 </style>
