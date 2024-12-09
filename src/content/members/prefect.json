@@ -1,7 +1,9 @@
 {
   "name": "Prefect",
   "description": "Prefect is an open source workflow orchestration framework, supporting a wide range of workflow architectures including batch, event-driven, fully dynamic, and hybrid architecture.",
+  "shortDescription": "By supporting these projects, we're not just giving back—we're investing in the future of open source.",
   "url": "https://www.prefect.io/blog/prefect-s-commitment-to-open-source-launching-our-sponsorship-initiative",
+  "joinDate": "2024-09-30",
   "annualReports": [
     {
       "url": "https://www.prefect.io/blog/prefect-s-commitment-to-open-source-launching-our-sponsorship-initiative",
