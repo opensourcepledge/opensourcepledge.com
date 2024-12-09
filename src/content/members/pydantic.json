@@ -2,6 +2,7 @@
   "name": "Pydantic Logfire",
   "description": "Pydantic Logfire is a new type of observability platform built on the same belief as our open source library — that the most powerful tools can be easy to use. The Pydantic library is the most widely used data validation library for Python, downloaded millions of times a day by thousands of developers all over the world. The Pydantic team also maintain a number of major open source projects including: PyO3, starlette, uvicorn, fastui, arq, and jiter.",
   "url": "https://pydantic.dev/opensource",
+  "joinDate": "2024-10-07",
   "annualReports": [
     {
       "url": "https://pydantic.dev/articles/pydantic-oss-fund-2024",

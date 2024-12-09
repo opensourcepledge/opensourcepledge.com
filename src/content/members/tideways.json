@@ -2,6 +2,7 @@
   "name": "Tideways",
   "description": "Tideways is a PHP Profiling, Monitoring and Exception Tracking tool. It's built on top of several Open Source libraries and frameworks in multiple languages.",
   "url": "https://tideways.com/profiler/blog/tideways-joins-the-open-source-pledge",
+  "joinDate": "2024-10-01",
   "annualReports": [
     {
       "url": "https://tideways.com/profiler/blog/tideways-joins-the-open-source-pledge",
