@@ -15,6 +15,7 @@ export const memberReportSchema = z.object({
 export const memberSchema = z.object({
   name: z.string(),
   description: z.string().optional(),
+  shortDescription: z.string(),
   url: z.string().url(),
   joinDate: z.string().date(),
   annualReports: memberReportSchema.array().nonempty(),

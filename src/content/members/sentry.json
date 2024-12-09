@@ -1,6 +1,7 @@
 {
   "name": "Sentry",
   "description": "Sentry started life as an Open Source side project in 2008. We grew that way for years before commercializing. We've always given back to the community and now we're happy to help other companies do the same through the Open Source Pledge.",
+  "shortDescription": "We've always given back to the community and now we're happy to help other companies do the same through the Open Source Pledge.",
   "url": "https://open.sentry.io/",
   "joinDate": "2024-08-27",
   "annualReports": [
