@@ -8,27 +8,44 @@ interface Props {
 
 const { member } = Astro.props;
 
+import dayjs from 'dayjs';
+
 import { getDollarsPerDev, fmtCurrency } from '../memberFormatting.ts';
 import type { MemberWithId } from "../schemas/members.ts";
+import memberRoles from "../memberRoles.json"
 ---
 
 <a class="member sneaky" href={`/members/${member.id}`}>
-  <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.data.name} logo`>
-  <div class="details">
-    <h2>{member.data.name}</h2>
-    <span>{member.data.annualReports[0].averageNumberOfDevs} devs</span>
-    <span>{fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))} / dev</span>
+  <div class="main">
+    <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.data.name} logo`>
+    <div class="metadata">
+      <h2>{member.data.name}</h2>
+      <span>
+        {(memberRoles as Map)[member.id]}
+        since
+        {dayjs(member.data.joinDate).format('DD MMM YYYY')}
+      </span>
+      <span>
+        {member.data.annualReports[0].averageNumberOfDevs} devs
+        —
+        {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))} / dev
+      </span>
+    </div>
   </div>
+  <em>“{member.data.shortDescription}”</em>
 </a>
 
 <style>
   a.member {
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
     margin: 0;
     padding: 1rem;
-    gap: 1.5rem;
     background-color: var(--color-light-bg);
     border: 3px solid transparent;
+    border-radius: 0.5rem;
+    font-size: smaller;
     @media (max-width: 450px) {
       padding: 0.5rem;
     }
@@ -36,21 +53,26 @@ import type { MemberWithId } from "../schemas/members.ts";
       border: 3px solid var(--color-secondary);
       text-decoration: none;
     }
-    & > img {
-      align-self: center;
-      max-width: 4.5rem;
-      @media (max-width: 450px) {
-        max-width: 3.0rem;
-      }
-    }
-    .details {
+    .main {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 0.2rem;
-      h2 {
-        margin: 0;
-        font-size: 1rem;
+      gap: 1rem;
+      img {
+        align-self: center;
+        max-width: 4.5rem;
+        @media (max-width: 450px) {
+          max-width: 3.0rem;
+        }
+      }
+      .metadata {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.2rem;
+        h2 {
+          margin: 0;
+          font-size: 1.2rem;
+          line-height: 1.3;
+        }
       }
     }
   }
