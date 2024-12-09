@@ -10,41 +10,30 @@ import {
 const members = filterInactiveMembers(await getMembers());
 ---
 
-<table class="table--lrr table--40-30-30">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th class="ndevs">
-        <abbr title="Average number of employed full-time equivalent developers (in latest report)">Devs</abbr>
-      </th>
-      <th>
-        <abbr title="USD paid / average number of employed full-time equivalent developers (in latest report)"
-          >$/dev</abbr
-        >
-      </th>
-    </tr>
-  </thead>
-  <tbody>
+
+<div>
+  <div class="leaderboard-grid">
     {sortMembersByDevs(members).map((member) =>
       <LeaderboardMember member={member}></LeaderboardMember>
     )}
-  </tbody>
-</table>
+  </div>
+  <small>
+    “Devs”: Average number of employed full-time equivalent developers (in latest report).<br>
+    “$ / dev”: USD paid / average number of employed full-time equivalent developers (in latest report).
+  </small>
+</div>
 
 <style>
-  h2 {
-    margin-top: 2rem;
-    padding: 0.3rem 0.5rem;
-    background: var(--color-light-bg);
-    font-size: 1rem;
-    font-weight: normal;
-  }
-  th {
-    font-weight: normal;
-  }
-  th.ndevs, td.ndevs {
-    @media (max-width: 400px) {
-      display: none;
+  .leaderboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    gap: 1rem;
+    @media (max-width: 450px) {
+      grid-template-columns: 1fr;
     }
+  }
+  small {
+    display: block;
+    margin-top: 1rem;
   }
 </style>
