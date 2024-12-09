@@ -28,7 +28,7 @@ const memberDollarsPerDev = fmtCurrency(getDollarsPerDev(member.data.annualRepor
       <h2>{member.data.name}</h2>
       <span>{memberRole} since {memberJoinDate}</span>
       <div class="numbers">
-        <span>{memberNDevs} devs</span>
+        <span>{memberNDevs} dev{memberNDevs != 1 && 's'}</span>
         <span>{memberDollarsPerDev} / dev</span>
       </div>
     </div>
