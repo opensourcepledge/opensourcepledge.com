@@ -14,6 +14,11 @@ import { getDollarsPerDev, fmtCurrency } from '../memberFormatting.ts';
 import type { MemberWithId } from "../schemas/members.ts";
 import type { Map } from '../util.ts';
 import memberRoles from "../memberRoles.json"
+
+const memberRole = (memberRoles as Map)[member.id];
+const memberJoinDate = dayjs(member.data.joinDate).format('DD MMM YYYY');
+const memberNDevs = member.data.annualReports[0].averageNumberOfDevs;
+const memberDollarsPerDev = fmtCurrency(getDollarsPerDev(member.data.annualReports[0]));
 ---
 
 <a class="member sneaky" href={`/members/${member.id}`}>
@@ -21,14 +26,10 @@ import memberRoles from "../memberRoles.json"
     <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.data.name} logo`>
     <div class="metadata">
       <h2>{member.data.name}</h2>
-      <span>
-        {(memberRoles as Map)[member.id]}
-        since
-        {dayjs(member.data.joinDate).format('DD MMM YYYY')}
-      </span>
+      <span>{memberRole} since {memberJoinDate}</span>
       <div class="numbers">
-        <span>{member.data.annualReports[0].averageNumberOfDevs} devs</span>
-        <span>{fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))} / dev</span>
+        <span>{memberNDevs} devs</span>
+        <span>{memberDollarsPerDev} / dev</span>
       </div>
     </div>
   </div>
