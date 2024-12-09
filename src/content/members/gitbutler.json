@@ -1,6 +1,7 @@
 {
   "name": "GitButler",
   "description": "GitButler is built off a vast array of amazing open source projects, such as SvelteKit, Tauri, Rails and more. We believe that it's important to do what we can to support maintainers and help make the Open Source community sustainable.",
+  "shortDescription": "We believe that it's important to do what we can to support maintainers and help make the Open Source community sustainable.",
   "url": "https://docs.gitbutler.com/community/open-source/",
   "joinDate": "2024-09-03",
   "annualReports": [

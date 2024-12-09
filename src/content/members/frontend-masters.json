@@ -1,6 +1,7 @@
 {
   "name": "Frontend Masters",
   "description": "Your path to senior developer and beyond! 🚀 In-depth frontend & fullstack courses.",
+  "shortDescription": "Many maintainers have considered quitting due to burnout. We want to shine a light on this threat to open source.",
   "url": "https://frontendmasters.com/blog/how-were-supporting-open-source-maintainers/",
   "joinDate": "2024-09-12",
   "annualReports": [
