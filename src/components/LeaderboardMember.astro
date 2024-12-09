@@ -26,11 +26,10 @@ import memberRoles from "../memberRoles.json"
         since
         {dayjs(member.data.joinDate).format('DD MMM YYYY')}
       </span>
-      <span>
-        {member.data.annualReports[0].averageNumberOfDevs} devs
-        —
-        {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))} / dev
-      </span>
+      <div class="numbers">
+        <span>{member.data.annualReports[0].averageNumberOfDevs} devs</span>
+        <span>{fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))} / dev</span>
+      </div>
     </div>
   </div>
   <em>“{member.data.shortDescription}”</em>
@@ -69,6 +68,10 @@ import memberRoles from "../memberRoles.json"
         flex-direction: column;
         justify-content: center;
         gap: 0.2rem;
+        .numbers {
+          display: flex;
+          justify-content: space-between;
+        }
         h2 {
           margin: 0;
           font-size: 1.2rem;
