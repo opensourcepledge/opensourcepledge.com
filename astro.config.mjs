@@ -1,4 +1,3 @@
-import react from '@astrojs/react';
 import sanity from '@sanity/astro';
 import { defineConfig } from "astro/config";
 
@@ -16,8 +15,6 @@ export default defineConfig({
       projectId: '4jfayhvz',
       dataset: 'production',
       useCdn: false, // Because we're building statically
-      studioBasePath: '/studio',
     }),
-    react()
   ],
 });
