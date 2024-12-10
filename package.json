@@ -10,21 +10,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.8.1",
-    "@astrojs/react": "^4.0.0",
+    "@astrojs/check": "^0.9.4",
     "@octokit/rest": "^21.0.2",
     "@sanity/astro": "^3.1.6",
     "@sanity/client": "^6.24.1",
     "@sanity/image-url": "^1.1.0",
-    "@sanity/visual-editing": "^2.10.6",
-    "astro": "^4.11.5",
+    "astro": "^4.16.17",
+    "astro-portabletext": "^0.10.1",
     "cheerio": "^1.0.0",
     "dayjs": "^1.11.13",
     "node-fetch": "^3.3.2",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "sanity": "^3.66.1",
-    "tsx": "^4.19.1",
-    "typescript": "^5.5.3"
+    "styled-components": "^6.1.13",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
   }
 }

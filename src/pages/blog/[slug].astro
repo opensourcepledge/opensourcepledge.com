@@ -1,0 +1,117 @@
+---
+// © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
+// SPDX-License-Identifier: Apache-2.0
+
+import Blob from "../../components/Blob.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+dayjs.extend(utc);
+
+import type { SanityDocument } from "@sanity/client";
+import { sanityClient } from "sanity:client";
+import { PortableText } from "astro-portabletext";
+import { urlForImage } from '../../sanity-util.ts';
+import CaptionedImage from '../../portable-text-components/CaptionedImage.astro';
+
+const ARTICLE_QUERY = `*[_type == "article" && slug.current == $slug][0]{
+  _id,
+  title,
+  slug,
+  publishDateTime,
+  canonicalUrl,
+  content,
+  author->{name, slug, avatar}
+}`;
+const article = await sanityClient.fetch<SanityDocument>(ARTICLE_QUERY, Astro.params);
+if (!article || dayjs(article.publishDateTime).isAfter(dayjs().utc())) {
+  return Astro.rewrite('/404');
+}
+
+export async function getStaticPaths(): Promise<{ params: { slug: string } }> {
+  const SLUGS_QUERY = `*[_type == "article"]{
+    "params": { "slug": slug.current }
+  }`;
+  return await sanityClient.fetch(SLUGS_QUERY, Astro.params);
+}
+
+// NOTE: Custom components need to go inside `type`.
+// This is undocumented?
+// https://github.com/theisel/astro-portabletext/pull/173
+const components = {
+  type: {
+    captionedImage: CaptionedImage,
+  }
+};
+---
+
+<Layout title={article.title} canonicalUrl={article.canonicalUrl}>
+  <div class="edge-blobs">
+    <Blob kind="grad-dots-04" top="12%" right="-2rem"></Blob>
+    <Blob kind="grad-dots-05" top="45%" left="-2rem"></Blob>
+  </div>
+  <div class="container">
+    <Blob kind="solid-fill-04" top="2%" right="-24rem"></Blob>
+    <Blob kind="solid-fill-03" top="30%" left="-30rem"></Blob>
+    <Blob kind="grad-dots-03" top="65%" right="-20rem"></Blob>
+    <Blob kind="solid-fill-02" top="60%" right="-24rem"></Blob>
+
+    <main id="main-content">
+      <section>
+        <h1>{article.title}</h1>
+        <div class="meta">
+          <img src={urlForImage(article.author.avatar)}>
+          <div>
+            <em>{article.author.name}</em>
+            <time>{dayjs(article.publishDateTime).format('DD MMM YYYY')}</time>
+          </div>
+        </div>
+        <article>
+          {article.canonicalUrl &&
+            <div class="highlight-box">
+              This post originally appeared
+              <a href={article.canonicalUrl}>on {(new URL(article.canonicalUrl)).host}</a>.
+            </div>
+          }
+          {<PortableText value={article.content} components={components} />}
+        </article>
+      </section>
+    </main>
+  </div>
+</Layout>
+
+<style>
+  h1 {
+    font-size: 2rem;
+  }
+  .meta {
+    display: flex;
+    align-items: center;
+    img {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-right: 1rem;
+      border-radius: 100%;
+    }
+    em {
+      display: block;
+    }
+    time {
+      display: block;
+      font-size: 0.8rem;
+    }
+  }
+  article {
+    margin: 1rem 0;
+    figure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      figcaption {
+        margin-top: 1rem;
+      }
+    }
+  }
+</style>

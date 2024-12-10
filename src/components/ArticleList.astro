@@ -2,27 +2,34 @@
 // © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
 // SPDX-License-Identifier: Apache-2.0
 
-import { getCollection } from 'astro:content';
 import dayjs from 'dayjs';
+import type { SanityDocument } from "@sanity/client";
+import { sanityClient } from "sanity:client";
+import { urlForImage } from '../sanity-util.ts';
 
-const articles = (await getCollection('articles'))
-  .sort((a, b) => +b.data.publishDate - +a.data.publishDate);
+const ARTICLES_QUERY = `*[_type == "article"]|order(publishDateTime desc){
+  _id,
+  title,
+  slug,
+  publishDateTime,
+  author->{name, slug, avatar}
+}`;
+
+const articles = await sanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY);
 ---
 
 <div>
   {articles.map((article) => <div class="article-listing">
     <blockquote>
-      <a href=`/blog/${article.slug}`>
-        <h2>{article.data.title}</h2>
+      <a href=`/blog/${article.slug.current}`>
+        <h2>{article.title}</h2>
       </a>
     </blockquote>
     <div class="meta">
-      {article.data.authorImageSrc &&
-        <img src={article.data.authorImageSrc}>
-      }
+      <img src={urlForImage(article.author.avatar)}>
       <div>
-        <em>{article.data.author}</em>
-        <time>{dayjs(article.data.publishDate).format('DD MMM YYYY')}</time>
+        <em>{article.author.name}</em>
+        <time>{dayjs(article.publishDateTime).format('DD MMM YYYY')}</time>
       </div>
     </div>
     <hr>
