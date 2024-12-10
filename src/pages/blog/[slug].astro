@@ -61,7 +61,10 @@ const components = {
       <section>
         <h1>{article.title}</h1>
         <div class="meta">
-          <img src={urlForImage(article.author.avatar)}>
+          <div
+            class="avatar"
+            style={`background-image: url(${urlForImage(article.author.avatar)}`}
+          ></div>
           <div>
             <em>{article.author.name}</em>
             <time>{dayjs(article.publishDateTime).format('DD MMM YYYY')}</time>
@@ -88,9 +91,11 @@ const components = {
   .meta {
     display: flex;
     align-items: center;
-    img {
+    .avatar {
       width: 2.5rem;
       height: 2.5rem;
+      background-size: cover;
+      background-position: center center;
       margin-right: 1rem;
       border-radius: 100%;
     }
