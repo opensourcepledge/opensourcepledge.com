@@ -26,7 +26,10 @@ const articles = await sanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY);
       </a>
     </blockquote>
     <div class="meta">
-      <img src={urlForImage(article.author.avatar)}>
+      <div
+        class="avatar"
+        style={`background-image: url(${urlForImage(article.author.avatar)}`}
+      ></div>
       <div>
         <em>{article.author.name}</em>
         <time>{dayjs(article.publishDateTime).format('DD MMM YYYY')}</time>
@@ -60,9 +63,11 @@ const articles = await sanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY);
     .meta {
       display: flex;
       align-items: center;
-      img {
+      .avatar {
         width: 2.5rem;
         height: 2.5rem;
+        background-size: cover;
+        background-position: center center;
         margin-right: 1rem;
         border-radius: 100%;
       }
