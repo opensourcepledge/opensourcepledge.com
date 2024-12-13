@@ -180,7 +180,6 @@ live and work in.
 [elastic-license]: https://www.elastic.co/blog/why-license-change-aws
 [elastic]: https://www.elastic.co
 [endorsement-accel]: https://www.accel.com/noteworthy/why-accel-is-supporting-the-open-source-pledge
-[ethan]: https://ethanarrowood.com/
 [ffmpeg]: https://en.wikipedia.org/wiki/FFmpeg
 [filippo]: https://filippo.io/
 [join]: https://opensourcepledge.com/join/

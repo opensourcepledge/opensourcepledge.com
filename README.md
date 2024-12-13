@@ -40,7 +40,7 @@ is in addition to the code, developer time, and gifts-in-kind that many of our c
 [issues]: https://github.com/opensourcepledge/opensourcepledge.com/issues
 [join]: https://opensourcepledge.com/join/
 [launch-ticket]: https://github.com/opensourcepledge/opensourcepledge.com/issues/4
-[mailto]: mailto:chadwhitacre@sentry.io?&cc=vlad@vlad.website;michael.selvidge@sentry.io;ethan@arrowood.dev
+[mailto]: mailto:chadwhitacre@sentry.io?&cc=vlad@vlad.website;michael.selvidge@sentry.io
 [mastodon]: https://fosstodon.org/@opensourcepledge
 [newissue]: https://github.com/opensourcepledge/opensourcepledge.com/issues/new
 [openpath]: https://openpath.quest/
