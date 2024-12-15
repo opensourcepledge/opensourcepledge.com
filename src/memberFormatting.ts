@@ -33,6 +33,10 @@ export function fmtCurrency(num: number) {
   });
 }
 
+export function fmtDevs(num: number) {
+  return `${num} dev${num != 1 ? 's' : ''}`;
+}
+
 export function filterInactiveMembers(members: MemberWithId[]): MemberWithId[] {
   return members.filter((m) => m.data.annualReports.length > 0);
 }

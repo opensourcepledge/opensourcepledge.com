@@ -370,12 +370,18 @@ blockquote {
   padding: 0.8rem 2rem;
   color: var(--color-bg);
   background-color: var(--color-primary);
+  border: none;
   border-radius: 0.5rem;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.2em;
+  cursor: pointer;
+  &.button--small {
+    padding: 0.4rem 1rem;
+    font-size: 1rem;
+  }
   &:hover {
     background: var(--color-secondary);
     color: var(--color-bg);
@@ -383,6 +389,22 @@ blockquote {
   &:active {
     background: var(--color-tertiary);
     color: var(--color-bg);
+  }
+}
+.button-group {
+  display: inline-block;
+  border: 2px solid var(--color-primary);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  .button {
+    margin: 0;
+    border-radius: 0;
+    border-right: 2px solid var(--color-primary);
+    background: none;
+    color: var(--color-primary);
+    &:last-child {
+      border-right: none;
+    }
   }
 }
 section {
