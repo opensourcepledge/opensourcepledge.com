@@ -10,13 +10,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.8.1",
+    "@astrojs/check": "^0.9.4",
     "@octokit/rest": "^21.0.2",
-    "astro": "^4.11.5",
+    "@sanity/astro": "^3.1.6",
+    "@sanity/client": "^6.24.1",
+    "@sanity/image-url": "^1.1.0",
+    "astro": "^4.16.17",
+    "astro-portabletext": "^0.10.1",
     "cheerio": "^1.0.0",
     "dayjs": "^1.11.13",
     "node-fetch": "^3.3.2",
-    "tsx": "^4.19.1",
-    "typescript": "^5.5.3"
+    "sanity": "^3.66.1",
+    "styled-components": "^6.1.13",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
   }
 }

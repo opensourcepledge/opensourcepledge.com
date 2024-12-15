@@ -1,0 +1,23 @@
+---
+// © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
+// SPDX-License-Identifier: Apache-2.0
+
+import { urlForImage } from '../sanity-util.ts';
+const { node } = Astro.props;
+---
+
+<figure>
+  <img
+    src={urlForImage(node.asset)}
+    alt={node.altText}
+    title={node.titleText}
+    style={node.maxWidth && `max-width: ${node.maxWidth}`}
+  >
+  <figcaption>
+    {node.url ?
+      <a href={node.url}>{node.caption}</a>
+    :
+      <span>{node.caption}</span>
+    }
+  </figcaption>
+</figure>
