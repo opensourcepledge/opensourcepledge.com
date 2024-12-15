@@ -4,15 +4,10 @@
 
 import { defineCollection } from "astro:content";
 import { memberSchema } from '../schemas/members';
-import { articleSchema } from '../schemas/articles';
 
 export const collections = {
   members: defineCollection({
     type: "data",
     schema: memberSchema,
-  }),
-  articles: defineCollection({
-    type: "content",
-    schema: articleSchema,
   }),
 };
