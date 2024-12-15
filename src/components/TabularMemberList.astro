@@ -1,0 +1,116 @@
+---
+// © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
+// SPDX-License-Identifier: Apache-2.0
+
+import {
+  getMembers, filterInactiveMembers, getDollarsPerDev, fmtCurrency, sortMembersByDevs
+} from '../memberFormatting.ts';
+
+const members = filterInactiveMembers(await getMembers());
+---
+
+<table class="tabular-member-list table--lrr table--40-30-30">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th class="ndevs">
+        <abbr title="Average number of employed full-time equivalent developers (in latest report)">Devs</abbr>
+      </th>
+      <th>
+        <abbr title="USD paid / average number of employed full-time equivalent developers (in latest report)"
+          >$/dev</abbr
+        >
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    {sortMembersByDevs(members).map((member) =>
+      <tr>
+        <td class="name">
+          <a class="sneaky" href={`/members/${member.id}`}>
+            <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.data.name} logo`>
+            {member.data.name}
+          </a>
+        </td>
+        <td class="ndevs">
+          <a class="sneaky" href={`/members/${member.id}`}>
+            {member.data.annualReports[0].averageNumberOfDevs}
+          </a>
+        </td>
+        <td class="dollars-per-dev">
+          <a class="sneaky" href={`/members/${member.id}`}>
+            {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))}
+          </a>
+        </td>
+      </tr>
+    )}
+  </tbody>
+</table>
+
+<style>
+  h2 {
+    margin-top: 2rem;
+    padding: 0.3rem 0.5rem;
+    background: var(--color-light-bg);
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  table {
+    margin: 0;
+    td, th {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    th.ndevs, td.ndevs {
+      @media (max-width: 400px) {
+        display: none;
+      }
+    }
+    th {
+      font-weight: normal;
+    }
+    tr:has(td a:hover) td a {
+      color: var(--color-secondary);
+      text-decoration: underline;
+    }
+    td {
+      &.name {
+        a {
+          font-weight: bold;
+        }
+      }
+      &.ndevs, &.dollars-per-dev {
+        a {
+          justify-content: flex-end;
+        }
+      }
+      a {
+        display: flex;
+        align-items: center;
+        min-height: 3.5rem;
+        padding: 0.25rem 0
+      }
+      img {
+        max-width: 3.5rem;
+        max-height: 100%;
+        margin-right: 1rem;
+      }
+      @media (max-width: 450px) {
+        a {
+          min-height: 2.5rem;
+        }
+        img {
+          max-width: 2.5rem;
+        }
+      }
+      @media (max-width: 400px) {
+        a {
+          min-height: 2.0rem;
+        }
+        img {
+          max-width: 2.0rem;
+        }
+      }
+    }
+  }
+</style>
