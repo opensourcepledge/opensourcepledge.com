@@ -21,6 +21,14 @@ Make sure you run TypeScript checks after making TypeScript changes:
 npx astro check
 ```
 
+## Writing Blog Posts
+
+Blog posts are written using Sanity's studio, which can be found at [opensourcepledge.sanity.studio][sanity-studio].
+
+After new content is published, the website must be rebuilt and republished. This can be done by running the “Build,
+update members and deploy” workflow on the `main` branch. See here:
+https://github.com/opensourcepledge/opensourcepledge.com/actions/workflows/deploy.yml
+
 ## New Member Workflows
 
 Here's what the workflow for a new member looks like:
@@ -160,3 +168,4 @@ by the [CSS Nesting Can I Use page][css-nesting].
 [join]: https://opensourcepledge.com/join
 [status]: https://updown.io/p/3c87h
 [updown]: https://updown.io
+[sanity-studio]: https://opensourcepledge.sanity.studio/
