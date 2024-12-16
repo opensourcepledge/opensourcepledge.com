@@ -29,6 +29,10 @@ After new content is published, the website must be rebuilt and republished. Thi
 update members and deploy” workflow on the `main` branch. See here:
 https://github.com/opensourcepledge/opensourcepledge.com/actions/workflows/deploy.yml
 
+In Sanity, you can set a “Publish Date/Time” field. You can use this field to publish a blog post, but ensure it does
+not actually show up on the website before a certain date/time. However, do keep in mind that the website will still
+have to be rebuilt and redeployed using the above action _after_ the set date/time.
+
 ## New Member Workflows
 
 Here's what the workflow for a new member looks like:
