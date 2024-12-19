@@ -25,7 +25,7 @@ const ARTICLE_QUERY = `*[_type == "article" && slug.current == $slug][0]{
   author->{name, slug, avatar}
 }`;
 const article = await sanityClient.fetch<SanityDocument>(ARTICLE_QUERY, Astro.params);
-if (!article || dayjs(article.publishDateTime).isAfter(dayjs().utc())) {
+if (!article) {
   return Astro.rewrite('/404');
 }
 
