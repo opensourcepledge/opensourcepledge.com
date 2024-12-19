@@ -3,6 +3,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+dayjs.extend(utc);
+
 import type { SanityDocument } from "@sanity/client";
 import { sanityClient } from "sanity:client";
 import { urlForImage } from '../sanity-util.ts';
@@ -15,7 +18,8 @@ const ARTICLES_QUERY = `*[_type == "article"]|order(publishDateTime desc){
   author->{name, slug, avatar}
 }`;
 
-const articles = await sanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY);
+const articles = (await sanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY))
+  .filter((a) => dayjs(a.publishDateTime).isBefore(dayjs().utc()));
 ---
 
 <div>
