@@ -57,7 +57,7 @@ const components = {
 
     <main id="main-content">
       <section>
-        {isPublished ||
+        {!isPublished &&
           <div class="highlight-box"><strong>Note:</strong> This is an unpublished draft.</div>
         }
         <h1>{article.title}</h1>
