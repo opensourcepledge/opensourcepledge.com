@@ -28,6 +28,7 @@ const article = await sanityClient.fetch<SanityDocument>(ARTICLE_QUERY, Astro.pa
 if (!article) {
   return Astro.rewrite('/404');
 }
+const isPublished = dayjs(article.publishDateTime).isBefore(dayjs().utc());
 
 export async function getStaticPaths(): Promise<{ params: { slug: string } }> {
   const SLUGS_QUERY = `*[_type == "article"]{
@@ -36,9 +37,6 @@ export async function getStaticPaths(): Promise<{ params: { slug: string } }> {
   return await sanityClient.fetch(SLUGS_QUERY, Astro.params);
 }
 
-// NOTE: Custom components need to go inside `type`.
-// This is undocumented?
-// https://github.com/theisel/astro-portabletext/pull/173
 const components = {
   type: {
     captionedImage: CaptionedImage,
@@ -46,7 +44,7 @@ const components = {
 };
 ---
 
-<Layout title={article.title} canonicalUrl={article.canonicalUrl}>
+<Layout title={article.title} canonicalUrl={article.canonicalUrl} preventIndexing={!isPublished}>
   <div class="edge-blobs">
     <Blob kind="grad-dots-04" top="12%" right="-2rem"></Blob>
     <Blob kind="grad-dots-05" top="45%" left="-2rem"></Blob>
@@ -59,6 +57,9 @@ const components = {
 
     <main id="main-content">
       <section>
+        {isPublished ||
+          <div class="highlight-box"><strong>Note:</strong> This is an unpublished draft.</div>
+        }
         <h1>{article.title}</h1>
         <div class="meta">
           <div
