@@ -29,9 +29,12 @@ After new content is published, the website must be rebuilt and republished. Thi
 update members and deploy” workflow on the `main` branch. See here:
 https://github.com/opensourcepledge/opensourcepledge.com/actions/workflows/deploy.yml
 
-In Sanity, you can set a “Publish Date/Time” field. You can use this field to publish a blog post, but ensure it does
-not actually show up on the website before a certain date/time. However, do keep in mind that the website will still
-have to be rebuilt and redeployed using the above action _after_ the set date/time.
+In Sanity, you can set a “Publish Date/Time” field. You can use this field to save a blog post to the Sanity database,
+but ensure it does not actually show up on the website before a certain date/time. However, do keep in mind that the
+website will still have to be rebuilt and redeployed using the above action _after_ the set date/time.
+
+You can view a draft of your unpublished posts by visiting the appropriate URL after building, eg
+`https://opensourcepledge.com/blog/my-post-slug/`.
 
 ## New Member Workflows
 
