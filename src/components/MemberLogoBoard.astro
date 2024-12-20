@@ -16,23 +16,23 @@ if (!nRows) {
 ---
 
 <div class="member-logo-board" data-nrows={nRows}>
+  <MemberLogoBoardItem hidden={nRows < 1} slug="posit" name="Posit" />
   <MemberLogoBoardItem hidden={nRows < 1} slug="gitbutler" name="GitButler" maxHeight="1.6rem" />
   <MemberLogoBoardItem hidden={nRows < 1} slug="antithesis" name="Antithesis" />
   <MemberLogoBoardItem hidden={nRows < 1} slug="sentry" name="Sentry" maxHeight="1.8rem"/>
-  <MemberLogoBoardItem hidden={nRows < 1} slug="astral" name="Astral" maxHeight="1.5rem" />
 
+  <MemberLogoBoardItem hidden={nRows < 2} slug="astral" name="Astral" maxHeight="1.5rem" />
   <MemberLogoBoardItem hidden={nRows < 2} slug="laravel" name="Laravel" />
   <MemberLogoBoardItem hidden={nRows < 2} slug="zerodha" name="Zerodha" />
   <MemberLogoBoardItem hidden={nRows < 2} slug="sanity" name="Sanity" maxHeight="1.8rem" />
-  <MemberLogoBoardItem hidden={nRows < 2} slug="prefect" name="Prefect" />
 
+  <MemberLogoBoardItem hidden={nRows < 3} slug="prefect" name="Prefect" />
   <MemberLogoBoardItem hidden={nRows < 3} slug="pydantic" name="Pydantic Logfire" maxHeight="1.8rem" />
   <MemberLogoBoardItem hidden={nRows < 3} slug="val-town" name="Val Town" />
   <MemberLogoBoardItem hidden={nRows < 3} slug="frontend-masters" name="Frontend Masters" />
-  <MemberLogoBoardItem hidden={nRows < 3} slug="scalar" name="Scalar" maxHeight="1.8rem" />
 
+  <MemberLogoBoardItem hidden={nRows < 4} slug="scalar" name="Scalar" maxHeight="1.8rem" />
   <MemberLogoBoardItem hidden={nRows < 4} slug="buttondown" name="Buttondown" maxHeight="1.8rem" />
-  <MemberLogoBoardItem hidden={nRows < 4} slug="httptoolkit" name="HTTP Toolkit" />
   <MemberLogoBoardItem hidden={nRows < 4} slug="herodevs" name="HeroDevs" />
   <MemberLogoBoardItem hidden={nRows < 4} slug="keygen" name="Keygen" />
 
@@ -43,13 +43,15 @@ if (!nRows) {
 
   <MemberLogoBoardItem hidden={nRows < 6} slug="tideways" name="Tideways" maxHeight="1.7rem" />
   <MemberLogoBoardItem hidden={nRows < 6} slug="vlt" name="vlt" maxHeight="1.7rem" />
-  <MemberLogoBoardItem hidden={nRows < 6} slug="pixee" name="Pixee" maxHeight="1.8rem" />
   <MemberLogoBoardItem hidden={nRows < 6} slug="voidzero" name="VoidZero" maxHeight="1.6rem" />
+  <MemberLogoBoardItem hidden={nRows < 6} slug="httptoolkit" name="HTTP Toolkit" />
 
+  <MemberLogoBoardItem hidden={nRows < 7} slug="pixee" name="Pixee" maxHeight="1.8rem" />
   <MemberLogoBoardItem hidden={nRows < 7} slug="stackblitz" name="StackBlitz" maxHeight="1.4rem" />
   <MemberLogoBoardItem hidden={nRows < 7} slug="chieftools" name="Chief Tools" />
   <MemberLogoBoardItem hidden={nRows < 7} slug="saas-pegasus" name="SaaS Pegasus" />
-  <MemberLogoBoardItem hidden={nRows < 7} slug="rector" name="Rector" maxHeight="1.6rem" />
+
+  <MemberLogoBoardItem hidden={nRows < 8} slug="rector" name="Rector" maxHeight="1.6rem" />
 </div>
 
 <style>
