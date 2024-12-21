@@ -1,7 +1,9 @@
 {
   "name": "Val Town",
   "description": "Val Town is a website to build apps, APIs, and scheduled functions.",
+  "shortDescription": "Thanks so much to all the maintainers we depend on! We are so grateful for your work.",
   "url": "https://blog.val.town/blog/oss",
+  "joinDate": "2024-09-03",
   "annualReports": [
     {
       "url": "https://blog.val.town/blog/oss",

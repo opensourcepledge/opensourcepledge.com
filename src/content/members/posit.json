@@ -1,7 +1,9 @@
 {
   "name": "Posit",
   "description": "Posit creates open-source software like RStudio, Shiny, and Quarto to advance data science, research, and technical communication. We're deeply committed to sustaining open-source ecosystems by supporting projects and organizations that drive innovation. Joining the Open Source Pledge reinforces our dedication to the community and our role as stewards of open-source development.",
+  "shortDescription": "We're deeply committed to sustaining open-source ecosystems by supporting projects and organizations that drive innovation. Joining the Open Source Pledge reinforces our dedication to the community.",
   "url": "https://posit.co/blog/posit-pledge-to-support-open-source/",
+  "joinDate": "2024-12-20",
   "annualReports": [
     {
       "url": "https://posit.co/blog/posit-pledge-to-support-open-source/",
