@@ -392,7 +392,7 @@ blockquote {
   }
 }
 .button-group {
-  display: inline-block;
+  display: flex;
   border: 2px solid var(--color-primary);
   border-radius: 0.5rem;
   overflow: hidden;
@@ -452,6 +452,28 @@ nav {
 }
 img {
   max-width: 100%;
+}
+.icon {
+  display: block;
+  &.icon--stroked {
+    svg {
+      path, rect {
+        stroke: white;
+      }
+    }
+  }
+  &.icon--filled {
+    svg {
+      path, rect {
+        fill: white;
+      }
+    }
+  }
+  svg {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+  }
 }
 footer {
   margin: 4rem 0;
