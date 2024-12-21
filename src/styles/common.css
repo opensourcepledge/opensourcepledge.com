@@ -475,6 +475,18 @@ img {
     height: 1rem;
   }
 }
+.label {
+  display: inline-block;
+  padding: 0 0.5rem;
+  padding-top: 0.3rem;
+  padding-bottom: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: normal;
+  line-height: 1;
+  border-radius: 0.2rem;
+  color: black;
+  background: #85c1e4;
+}
 footer {
   margin: 4rem 0;
   text-align: center;

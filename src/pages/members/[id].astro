@@ -47,7 +47,7 @@ export async function getStaticPaths() {
           <img src=`/images/members/${Astro.params.id}/logo.webp` alt=`The ${member.name} logo`>
           <h1>
             <div>{member.name}</div>
-            <small>{memberRole}</small>
+            <div class="label">{memberRole}</div>
           </h1>
         </div>
 
@@ -120,17 +120,8 @@ export async function getStaticPaths() {
       margin: 0;
       font-size: 2rem;
       line-height: 1;
-      small {
-        display: inline-block;
-        margin-top: 1.0rem;
-        padding: 0 0.5rem;
-        padding-top: 0.3rem;
-        padding-bottom: 0.4rem;
-        font-size: 0.9rem;
-        font-weight: normal;
-        border-radius: 0.2rem;
-        color: black;
-        background: #85c1e4;
+      .label {
+        margin-top: 1rem;
       }
       @media (max-width: 800px) {
         text-align: center;
