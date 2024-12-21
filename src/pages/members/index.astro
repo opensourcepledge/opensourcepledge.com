@@ -9,6 +9,9 @@ import Layout from "../../layouts/Layout.astro";
 import GridMemberList from "../../components/GridMemberList.astro";
 import TabularMemberList from "../../components/TabularMemberList.astro";
 import TotalTally from "../../components/TotalTally.astro";
+
+import svgGrid from '../../assets/icons/grid.svg?raw';
+import svgList from '../../assets/icons/list.svg?raw';
 ---
 
 <Layout title="Members">
@@ -32,11 +35,16 @@ import TotalTally from "../../components/TotalTally.astro";
 
           <div class="controls">
             <div class="button-group">
-              <button class="button button--small tabular-trigger"
-                >table</button
-              ><button class="button button--small grid-trigger"
-                >grid</button
-              >
+              <button class="button button--small tabular-trigger">
+                <div class="icon icon--stroked">
+                  <Fragment set:html={svgList} />
+                </div>
+              </button>
+              <button class="button button--small grid-trigger">
+                <div class="icon icon--stroked">
+                  <Fragment set:html={svgGrid} />
+                </div>
+              </button>
             </div>
           </div>
 
@@ -73,18 +81,25 @@ import TotalTally from "../../components/TotalTally.astro";
     .tabular-member-list {
       display: none;
     }
-    .grid-trigger {
-      background: var(--color-primary);
-      color: var(--color-bg);
-    }
   }
   .member-list-container[data-mode='tabular'] {
     .grid-member-list {
       display: none;
     }
-    .tabular-trigger {
-      background: var(--color-primary);
-      color: var(--color-bg);
+  }
+  .member-list-container[data-mode='tabular'] .tabular-trigger,
+  .member-list-container[data-mode='grid'] .grid-trigger {
+    background: var(--color-primary);
+    color: var(--color-bg);
+    .icon.icon--stroked svg {
+      path, rect {
+        stroke: var(--color-bg);
+      }
+    }
+    .icon.icon--filled svg {
+      path, rect {
+        fill: var(--color-bg);
+      }
     }
   }
 </style>
