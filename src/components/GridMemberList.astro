@@ -19,20 +19,16 @@ const members = filterInactiveMembers(await getMembers());
       <a class="member sneaky" href={`/members/${member.id}`}>
         <div class="main">
           <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.data.name} logo`>
-          <div class="metadata">
-            <h2>{member.data.name}</h2>
-            <span
-              >{(memberRoles as Map)[member.id]}
-              since
-              {dayjs(member.data.joinDate).format('DD MMM YYYY')}</span
-            >
-            <div class="numbers">
-              <span>{fmtDevs(member.data.annualReports[0].averageNumberOfDevs)}</span>
-              <span>{fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))} / dev</span>
-            </div>
-          </div>
+          <h2>
+            <div>{member.data.name}</div>
+            <div class="label">{(memberRoles as Map)[member.id]}</div>
+          </h2>
         </div>
         <em>“{member.data.shortDescription}”</em>
+        <div class="numbers">
+          <span>{fmtDevs(member.data.annualReports[0].averageNumberOfDevs)}</span>
+          <span>{fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))} / dev</span>
+        </div>
       </a>
     )}
   </div>
@@ -78,6 +74,7 @@ const members = filterInactiveMembers(await getMembers());
     .main {
       display: flex;
       gap: 1rem;
+      align-items: center;
       img {
         align-self: center;
         max-width: 4.5rem;
@@ -85,21 +82,23 @@ const members = filterInactiveMembers(await getMembers());
           max-width: 3.0rem;
         }
       }
-      .metadata {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 0.2rem;
-        .numbers {
-          display: flex;
-          justify-content: space-between;
-        }
-        h2 {
-          margin: 0;
-          font-size: 1.2rem;
-          line-height: 1.3;
+      h2 {
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 1.3;
+        .label {
+          margin-top: 0.5rem;
+          font-size: 0.8rem;
         }
       }
+    }
+    em {
+      flex: 1 0;
+    }
+    .numbers {
+      flex: 0 1;
+      display: flex;
+      justify-content: space-between;
     }
   }
 </style>
