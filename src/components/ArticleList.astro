@@ -43,45 +43,6 @@ const articles = (await sanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY))
   </div>)}
 </div>
 
-<style>
-  .article-listing {
-    position: relative;
-    margin: 0;
-    hr {
-      margin: 1.5rem auto;
-      max-width: 10rem;
-      border-color: var(--color-primary);
-      border-width: 1px;
-    }
-    &:last-child hr {
-      display: none;
-    }
-    h2 {
-      font-size: 1.2rem;
-      font-weight: normal;
-      font-family: Libre Franklin, sans-serif;
-    }
-    blockquote {
-      margin: 0;
-    }
-    .meta {
-      display: flex;
-      align-items: center;
-      .avatar {
-        width: 2.5rem;
-        height: 2.5rem;
-        background-size: cover;
-        background-position: center center;
-        margin-right: 1rem;
-        border-radius: 100%;
-      }
-      em {
-        display: block;
-      }
-      time {
-        display: block;
-        font-size: 0.8rem;
-      }
-    }
-  }
-</style>
+<!--
+  Styles are in `common.css`, because they are reused in `rss.xsl`.
+-->

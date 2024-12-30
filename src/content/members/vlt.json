@@ -1,7 +1,9 @@
 {
   "name": "vlt",
   "description": "We’re building the future of JavaScript packages",
+  "shortDescription": "We believe open source software is at the heart of modern businesses success.",
   "url": "https://blog.vlt.sh/blog/making-open-source-more-sustainable",
+  "joinDate": "2024-10-08",
   "annualReports": [
     {
       "url": "https://blog.vlt.sh/blog/making-open-source-more-sustainable",

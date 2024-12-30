@@ -1,7 +1,9 @@
 {
   "name": "Scalar",
   "description": "Scalar builds open-source tools for APIs, with first class OpenAPI support.",
+  "shortDescription": "Thanks to all the maintainers and contributors whose software we are privileged to use and build with.",
   "url": "https://scalar.com/blog/oss-pledge-2024",
+  "joinDate": "2024-09-03",
   "annualReports": [
     {
       "url": "https://scalar.com/blog/oss-pledge-2024",
