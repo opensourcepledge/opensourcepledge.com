@@ -15,3 +15,12 @@ export function shuffle(arr: any[]) {
 export function range(n: number) {
   return [...Array(n).keys()];
 }
+
+export function slugify(str: string) {
+  return str
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9 -]/g, '')
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+}
