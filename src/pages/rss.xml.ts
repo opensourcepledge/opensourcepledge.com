@@ -25,7 +25,7 @@ export const GET: APIRoute = async (context) => {
 
   const rssString = await getRssString({
     title: 'The Open Source Pledge Blog',
-    description: 'Exploring ways to improve how the Open Source ecosystem is funded.',
+    description: 'Unlocking funds from companies to Open Source maintainers.',
     site: context.site as URL,
     items: articles.map((a) => {
       return {
