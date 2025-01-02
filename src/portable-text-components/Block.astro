@@ -1,0 +1,31 @@
+---
+import type { BlockProps } from 'astro-portabletext/types';
+import type { ToolkitNestedPortableTextSpan } from '@portabletext/toolkit';
+import { spanToPlainText } from '@portabletext/toolkit';
+import { usePortableText } from 'astro-portabletext';
+
+import { slugify } from '../util.ts';
+
+type Props = BlockProps;
+const { node, isInline, index, ...attrs } = Astro.props;
+const { getDefaultComponent, render } = usePortableText(node);
+const styleIs = (style: string) => style === node.style;
+const DefaultBlock = getDefaultComponent();
+
+// tsc says these types shouldn't be compatible, but converting works fine, so we just force the cast.
+const nodeSpan = node as unknown as ToolkitNestedPortableTextSpan;
+---
+
+{
+  (styleIs('h1') && <h1 id={slugify(spanToPlainText(nodeSpan))} {...attrs}>{render({})}</h1>) ||
+  (styleIs('h2') && <h2 id={slugify(spanToPlainText(nodeSpan))} {...attrs}>{render({})}</h2>) ||
+  (styleIs('h3') && <h3 id={slugify(spanToPlainText(nodeSpan))} {...attrs}>{render({})}</h3>) ||
+  (styleIs('h4') && <h4 id={slugify(spanToPlainText(nodeSpan))} {...attrs}>{render({})}</h4>) ||
+  (styleIs('h5') && <h5 id={slugify(spanToPlainText(nodeSpan))} {...attrs}>{render({})}</h5>) ||
+  (styleIs('h6') && <h6 id={slugify(spanToPlainText(nodeSpan))} {...attrs}>{render({})}</h6>) ||
+  (
+    <DefaultBlock {...Astro.props}>
+      <slot />
+    </DefaultBlock>
+  )
+}
