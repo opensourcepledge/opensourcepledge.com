@@ -1,0 +1,32 @@
+type: software
+cff-version: 1.2.0
+abstract: "Our goal is to make the Open Source ecosystem more sustainable by establishing a new social norm of companies paying the Open Source maintainers they depend on."
+message: "Please use this information to cite the Open Source Pledge. See the project's REUSE data for license information."
+authors:
+- family-names: "Harbuz"
+  given-names: "Vlad-Stefan"
+- family-names: "Kumparak"
+  given-names: "Greg"
+- family-names: "Selvidge"
+  given-names: "Michael"
+- family-names: "Whitacre"
+  given-names: "Chad"
+- name: "Functional Software, Inc. d/b/a Sentry"
+contact:
+- family-names: "Harbuz"
+  given-names: "Vlad-Stefan"
+  email: vlad@vlad.website
+- family-names: "Kumparak"
+  given-names: "Greg"
+  email: greg.kumparak@sentry.io
+- family-names: "Selvidge"
+  given-names: "Michael"
+  email: michael.selvidge@sentry.io
+- family-names: "Whitacre"
+  given-names: "Chad"
+  email: chadwhitacre@sentry.io
+title: "Open Source Pledge"
+date-released: 2024-10-08
+url: "https://opensourcepledge.com/"
+repository: "https://github.com/opensourcepledge/opensourcepledge.com"
+version: "1.0.0"

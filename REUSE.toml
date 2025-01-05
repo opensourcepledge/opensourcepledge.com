@@ -7,6 +7,7 @@ path = [
     ".github/**/*",
     ".gitignore",
     ".vscode/*",
+    "CITATION.cff",
     "CNAME",
     "REUSE.toml",
     "astro.config.mjs",
