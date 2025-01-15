@@ -19,7 +19,9 @@ const members = filterInactiveMembers(await getMembers());
           <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.data.name} logo`>
           <h2>
             <div>{member.data.name}</div>
-            <div class="label">{(memberRoles as Map)[member.id]}</div>
+            {(memberRoles as Map)[member.id] != "Member" &&
+              <div class="label">{(memberRoles as Map)[member.id]}</div>
+            }
           </h2>
         </div>
         <em>“{member.data.shortDescription}”</em>
