@@ -82,6 +82,7 @@ const components = {
           }
           {<PortableText value={article.content} components={components} />}
         </article>
+        <hr>
       </section>
     </main>
   </div>
@@ -121,5 +122,9 @@ const components = {
         margin-top: 1rem;
       }
     }
+  }
+  article + hr {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
   }
 </style>

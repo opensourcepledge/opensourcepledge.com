@@ -570,15 +570,16 @@ footer {
   font-size: 1.2rem;
 }
 
+hr {
+  margin: 1.5rem auto;
+  max-width: 10rem;
+  border-color: var(--color-primary);
+  border-width: 1px;
+}
+
 .article-listing {
   position: relative;
   margin: 0;
-  hr {
-    margin: 1.5rem auto;
-    max-width: 10rem;
-    border-color: var(--color-primary);
-    border-width: 1px;
-  }
   &:last-child hr {
     display: none;
   }
