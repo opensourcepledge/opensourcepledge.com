@@ -478,8 +478,8 @@ img {
 .label {
   display: inline-block;
   padding: 0 0.5rem;
-  padding-top: 0.3rem;
-  padding-bottom: 0.4rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
   font-size: 0.9rem;
   font-weight: normal;
   line-height: 1;
@@ -570,15 +570,16 @@ footer {
   font-size: 1.2rem;
 }
 
+hr {
+  margin: 1.5rem auto;
+  max-width: 10rem;
+  border-color: var(--color-primary);
+  border-width: 1px;
+}
+
 .article-listing {
   position: relative;
   margin: 0;
-  hr {
-    margin: 1.5rem auto;
-    max-width: 10rem;
-    border-color: var(--color-primary);
-    border-width: 1px;
-  }
   &:last-child hr {
     display: none;
   }
