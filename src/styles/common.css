@@ -478,8 +478,8 @@ img {
 .label {
   display: inline-block;
   padding: 0 0.5rem;
-  padding-top: 0.3rem;
-  padding-bottom: 0.4rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
   font-size: 0.9rem;
   font-weight: normal;
   line-height: 1;

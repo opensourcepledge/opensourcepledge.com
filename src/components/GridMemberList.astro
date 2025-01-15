@@ -61,6 +61,7 @@ const members = filterInactiveMembers(await getMembers());
     border: 3px solid transparent;
     border-radius: 0.5rem;
     font-size: smaller;
+    cursor: pointer;
     @media (max-width: 450px) {
       padding: 0.5rem;
     }
@@ -68,10 +69,6 @@ const members = filterInactiveMembers(await getMembers());
       border: 3px solid var(--color-secondary);
       text-decoration: none;
       color: white;
-      h2 {
-        text-decoration: underline;
-        color: var(--color-secondary);
-      }
     }
     .main {
       display: flex;
@@ -80,6 +77,7 @@ const members = filterInactiveMembers(await getMembers());
       img {
         align-self: center;
         max-width: 4.5rem;
+        border-radius: 0.5rem;
         @media (max-width: 450px) {
           max-width: 3.0rem;
         }
