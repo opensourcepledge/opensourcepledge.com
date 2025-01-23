@@ -86,15 +86,21 @@ export default defineConfig({
             type: 'url',
           }),
           defineField({
-            name: 'bannerImage',
-            title: 'Banner Image',
-            description: 'A banner to be shown at the top of the article',
+            name: 'opengraphImage',
+            title: 'OpenGraph Image',
+            description: 'An image to be shown in OpenGraph previews, eg on social media',
             type: 'image',
           }),
           defineField({
-            name: 'bannerImageAltText',
-            title: 'Banner Image Alt Text',
-            description: 'Alt text for the banner image',
+            name: 'opengraphImageAltText',
+            title: 'OpenGraph Image Alt Text',
+            description: 'Alt text for the OpenGraph image',
+            type: 'string',
+          }),
+          defineField({
+            name: 'opengraphDescription',
+            title: 'OpenGraph Description',
+            description: 'An excerpt of the content to be shown in OpenGraph previews, eg on social media',
             type: 'string',
           }),
           defineField({

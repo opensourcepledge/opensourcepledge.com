@@ -8,9 +8,14 @@ interface Props {
   canonicalUrl?: string;
   navless?: boolean;
   preventIndexing?: boolean;
+  ogDescription?: string;
+  ogImageUrl?: string;
+  ogImageAlt?: string;
 }
 
-const { title, canonicalUrl, navless, preventIndexing } = Astro.props;
+const {
+  title, canonicalUrl, navless, preventIndexing, ogDescription, ogImageUrl, ogImageAlt,
+} = Astro.props;
 
 import '../styles/common.css';
 ---
@@ -23,12 +28,20 @@ import '../styles/common.css';
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <title>{ title ? (title + " | Open Source Pledge") : "Open Source Pledge" }</title>
-    <meta name="description" content="Our companies feast year after year at the Open Source table. It's time to settle up.">
+    <meta
+      name="description"
+      content={ogDescription || "Our companies feast year after year at the Open Source table. It's time to settle up."}>
     <meta property="og:type" content="website">
-    <meta property="og:title" content={ title ? (title + " | Open Source Pledge") : "Open Source Pledge" }>
-    <meta property="og:description" content="Our companies feast year after year at the Open Source table. It's time to settle up.">
-    <meta property="og:image" content="https://opensourcepledge.com/logos/opensourcepledge-logo-horiz-color-opengraph.png">
-    <meta property="og:image:alt" content="The Open Source Pledge logo.">
+    <meta property="og:title" content={title ? (title + " | Open Source Pledge") : "Open Source Pledge"}>
+    <meta
+      property="og:description"
+      content={ogDescription || "Our companies feast year after year at the Open Source table. It's time to settle up."}>
+    <meta
+      property="og:image"
+      content={ogImageUrl || "https://opensourcepledge.com/logos/opensourcepledge-logo-horiz-color-opengraph.png"}>
+    <meta
+      property="og:image:alt"
+      content={ogImageAlt || "The Open Source Pledge logo."}>
     <meta property="og:site_name" content="Open Source Pledge">
     <meta property="og:determiner" content="the">
     <meta property="og:url" content={Astro.url}>

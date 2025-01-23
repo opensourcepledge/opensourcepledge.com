@@ -22,6 +22,9 @@ const ARTICLE_QUERY = `*[_type == "article" && slug.current == $slug][0]{
   slug,
   publishDateTime,
   canonicalUrl,
+  opengraphImage,
+  opengraphImageAltText,
+  opengraphDescription,
   content,
   author->{name, slug, avatar}
 }`;
@@ -46,7 +49,14 @@ const components = {
 };
 ---
 
-<Layout title={article.title} canonicalUrl={article.canonicalUrl} preventIndexing={!isPublished}>
+<Layout
+  title={article.title}
+  canonicalUrl={article.canonicalUrl}
+  preventIndexing={!isPublished}
+  ogDescription={article.opengraphDescription}
+  ogImageUrl={article.opengraphImage ? urlForImage(article.opengraphImage) : undefined}
+  ogImageAlt={article.opengraphImageAltText}
+>
   <div class="edge-blobs">
     <Blob kind="grad-dots-04" top="12%" right="-2rem"></Blob>
     <Blob kind="grad-dots-05" top="45%" left="-2rem"></Blob>
