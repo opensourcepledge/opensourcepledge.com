@@ -159,6 +159,19 @@ export default defineConfig({
               },
               {
                 type: 'object',
+                title: 'Video Embed',
+                name: 'videoEmbed',
+                fields: [
+                  {
+                    type: 'string',
+                    name: 'videoUrl',
+                    title: 'Video URL',
+                    description: 'The URL of the video',
+                  },
+                ],
+              },
+              {
+                type: 'object',
                 title: 'YouTube Embed',
                 name: 'youtubeEmbed',
                 fields: [
@@ -166,7 +179,7 @@ export default defineConfig({
                     type: 'string',
                     name: 'videoId',
                     title: 'Video ID',
-                    description: 'The YouTube video ID, usually found after "?v=" in the video URL. For example, "dQw4w9WgXcQ".',
+                    description: 'The YouTube video ID, usually found after "?v=" in the video URL. For example, "dQw4w9WgXcQ"',
                   },
                 ],
               }
