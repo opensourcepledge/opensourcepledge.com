@@ -453,6 +453,10 @@ nav {
 img {
   max-width: 100%;
 }
+video {
+  max-width: 100%;
+  margin: 2rem auto;
+}
 iframe {
   display: block;
   width: 100%;
