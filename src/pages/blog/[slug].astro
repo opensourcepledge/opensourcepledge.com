@@ -15,6 +15,7 @@ import { PortableText } from "astro-portabletext";
 import { urlForImage } from '../../sanity-util.ts';
 import Block from '../../portable-text-components/Block.astro';
 import CaptionedImage from '../../portable-text-components/CaptionedImage.astro';
+import YoutubeEmbed from '../../portable-text-components/YoutubeEmbed.astro';
 
 const ARTICLE_QUERY = `*[_type == "article" && slug.current == $slug][0]{
   _id,
@@ -44,6 +45,7 @@ export async function getStaticPaths(): Promise<{ params: { slug: string } }> {
 const components = {
   type: {
     captionedImage: CaptionedImage,
+    youtubeEmbed: YoutubeEmbed,
   },
   block: Block,
 };
