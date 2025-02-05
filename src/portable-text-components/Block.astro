@@ -23,6 +23,7 @@ const nodeSpan = node as unknown as ToolkitNestedPortableTextSpan;
   (styleIs('h4') && <h4 id={slugify(spanToPlainText(nodeSpan))} {...attrs}>{render({})}</h4>) ||
   (styleIs('h5') && <h5 id={slugify(spanToPlainText(nodeSpan))} {...attrs}>{render({})}</h5>) ||
   (styleIs('h6') && <h6 id={slugify(spanToPlainText(nodeSpan))} {...attrs}>{render({})}</h6>) ||
+  (styleIs('highlightBox') && <div class="highlight-box" {...attrs}>{render({})}</div>) ||
   (
     <DefaultBlock {...Astro.props}>
       <slot />

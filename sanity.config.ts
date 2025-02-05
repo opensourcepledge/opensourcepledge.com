@@ -3,6 +3,23 @@
 
 import { defineConfig, defineField } from "sanity";
 import { structureTool } from "sanity/structure";
+import React from 'react';
+
+class HighlightBox extends React.Component {
+  render() {
+    return React.createElement(
+      'div',
+      {
+        style: {
+          background: '#16212d',
+          borderRadius: '0.5rem',
+          padding: '1rem 1.25rem',
+          color: 'white',
+        }
+      },
+      ...(this.props as any).children);
+  }
+}
 
 export default defineConfig({
   projectId: '4jfayhvz',
@@ -119,7 +136,24 @@ export default defineConfig({
             description: "The article's content",
             type: 'array',
             of: [
-              { type: 'block' },
+              {
+                type: 'block',
+                styles: [
+                  {title: 'Normal', value: 'normal'},
+                  {title: 'H1', value: 'h1'},
+                  {title: 'H2', value: 'h2'},
+                  {title: 'H3', value: 'h3'},
+                  {title: 'H4', value: 'h4'},
+                  {title: 'H5', value: 'h5'},
+                  {title: 'H6', value: 'h6'},
+                  {title: 'Quote', value: 'blockquote'},
+                  {
+                    title: 'Highlight Box',
+                    value: 'highlightBox',
+                    component: HighlightBox,
+                  },
+                ],
+              },
               {
                 type: 'image',
                 title: 'Captioned Image',
