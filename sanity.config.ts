@@ -201,6 +201,13 @@ export default defineConfig({
                     name: 'videoUrl',
                     title: 'Video URL',
                     description: 'The URL of the video',
+                    validation: (rule) => rule.required(),
+                  },
+                  {
+                    type: 'string',
+                    name: 'posterUrl',
+                    title: 'Poster URL',
+                    description: 'The optional URL of a thumbnail image to show before the video is loaded',
                   },
                 ],
               },
@@ -214,6 +221,7 @@ export default defineConfig({
                     name: 'videoId',
                     title: 'Video ID',
                     description: 'The YouTube video ID, usually found after "?v=" in the video URL. For example, "dQw4w9WgXcQ"',
+                    validation: (rule) => rule.required(),
                   },
                 ],
               }
