@@ -453,6 +453,20 @@ nav {
 img {
   max-width: 100%;
 }
+video {
+  max-width: 100%;
+  margin: 2rem auto;
+}
+iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 2rem auto;
+  &.youtube-embed {
+    aspect-ratio: 1.777777;
+  }
+}
 .icon {
   display: block;
   &.icon--stroked {
