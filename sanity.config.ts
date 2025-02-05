@@ -190,6 +190,32 @@ export default defineConfig({
                     description: 'An optional max width for the image, as a CSS value (eg 10rem)',
                   },
                 ]
+              },
+              {
+                type: 'object',
+                title: 'Video Embed',
+                name: 'videoEmbed',
+                fields: [
+                  {
+                    type: 'string',
+                    name: 'videoUrl',
+                    title: 'Video URL',
+                    description: 'The URL of the video',
+                  },
+                ],
+              },
+              {
+                type: 'object',
+                title: 'YouTube Embed',
+                name: 'youtubeEmbed',
+                fields: [
+                  {
+                    type: 'string',
+                    name: 'videoId',
+                    title: 'Video ID',
+                    description: 'The YouTube video ID, usually found after "?v=" in the video URL. For example, "dQw4w9WgXcQ"',
+                  },
+                ],
               }
             ],
             validation: (rule) => rule.required(),
