@@ -5,7 +5,7 @@
 const { node } = Astro.props;
 ---
 
-<video controls width="980">
+<video controls width="980" poster={node.posterUrl}>
   <source src={node.videoUrl}>
   <a href={node.videoUrl}>Download the video.</a>
 </video>
