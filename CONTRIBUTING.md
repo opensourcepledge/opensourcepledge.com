@@ -85,6 +85,10 @@ that this must be an SVG file. If a vector logo is somehow not available, raster
 
 Remember that a corresponding `minimal.svg.license` file must also be added.
 
+For the logo to actually show up on the homepage, you also need to edit `MemberLogoBoard.astro` to put it in an
+appropriate place. Check if giving the `maxHeight` property a specific value will make the new logo fit in better
+from a visually proportional point of view.
+
 ### Additional Information
 
 When onboarding members, we will receive logo files for those members. Make sure to contribute these logo files, and any
