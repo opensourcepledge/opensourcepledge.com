@@ -25,6 +25,8 @@ is in addition to the code, developer time, and gifts-in-kind that many of our c
   * [“The Open Source Sustainability Crisis”][crisis] by [Chad][openpath]
   * [“Join the Pledge”][sentry-blog-post] by [David Cramer][cramer-author]
   * [“The Philosophy of the Open Source Pledge”][pledgephil] by [Vlad][vlad.website]
+  * [“Why and How Companies Should Pay Open Source Maintainers”][fosdem-talk] by [Vlad][vlad.website]
+    at [FOSDEM 2025][fosdem]
 * **Want to help?** Feel free to reach out to the working group leads in issues, [via email][mailto] or
   [on Discord][discord].
   * Know a company that might be interested in joining the Pledge? Introduce us [via email][mailto], or drop us their
@@ -32,11 +34,15 @@ is in addition to the code, developer time, and gifts-in-kind that many of our c
   * To help with building [opensourcepledge.com][osp], read [CONTRIBUTING.md](CONTRIBUTING.md) and [dive into our
     issues][issues].
 * **Just want to keep up to date?** Follow us on [Mastodon][mastodon] or [Bluesky][bsky].
+* **Want to cite our work?** Click “cite this repository” in the top right.
 
+[bsky]: https://bsky.app/profile/opensourcepledge.com
 [contributors]: https://github.com/opensourcepledge/opensourcepledge.com/graphs/contributors
 [cramer-author]: https://blog.sentry.io/authors/david-cramer/
 [crisis]: https://openpath.quest/2024/the-open-source-sustainability-crisis/
 [discord]: https://discord.gg/svH5XzDsBd
+[fosdem-talk]: https://www.youtube.com/watch?v=UarZwUjFJpI
+[fosdem]: https://fosdem.org/2025/
 [issues]: https://github.com/opensourcepledge/opensourcepledge.com/issues
 [join]: https://opensourcepledge.com/join/
 [launch-ticket]: https://github.com/opensourcepledge/opensourcepledge.com/issues/4
@@ -48,5 +54,4 @@ is in addition to the code, developer time, and gifts-in-kind that many of our c
 [pledgephil]: https://vlad.website/the-philosophy-of-the-open-source-pledge/
 [sentry-blog-post]: https://blog.sentry.io/join-the-pledge/
 [sentry]: https://sentry.io/welcome/
-[bsky]: https://bsky.app/profile/opensourcepledge.com
 [vlad.website]: https://vlad.website/
