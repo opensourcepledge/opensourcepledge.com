@@ -86,7 +86,8 @@ if (!nRows) {
     let nChosen = 0;
     const nTotal = $items.length;
     $items.forEach(($item, idx) => {
-      const mustChoose = (nToChoose - nChosen >= nTotal - idx);
+      const isSentry = $item.dataset.slug == 'sentry';
+      const mustChoose = (nToChoose - nChosen >= nTotal - idx) || isSentry;
       const mustNotChoose = nChosen == nToChoose;
       if (mustNotChoose) {
         $item.hidden = true;
