@@ -22,7 +22,7 @@ if (!hidden) {
 const { default: svg } = await import (`../assets/images/members/${slug}/minimal.svg?raw`);
 ---
 
-<div hidden={hidden} class="member-logo-board-item" role="img" aria-label=`The ${name} logo`>
+<div hidden={hidden} class="member-logo-board-item" role="img" aria-label=`The ${name} logo` data-slug={slug}>
   <Fragment set:html={svg} />
 </div>
 
