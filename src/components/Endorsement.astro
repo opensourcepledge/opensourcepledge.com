@@ -7,7 +7,7 @@ interface Props {
   title?: string;
   handle: string;
   imageUrl: string;
-  sourceUrl: string;
+  sourceUrl?: string;
   hidden?: boolean;
 }
 
@@ -22,9 +22,12 @@ const { name, title, handle, imageUrl, sourceUrl, hidden } = Astro.props;
     <img src={imageUrl} alt=`An image for ${name}`>
     <div>
       <div>{name}{title && <small> ({title})</small>}</div>
+      {sourceUrl ? (
       <a href={sourceUrl}
         ><small>{handle}</small></a
-      >
+      > ) : (
+        <small>{handle}</small>
+      )}
     </div>
   </figcaption>
   <hr>
