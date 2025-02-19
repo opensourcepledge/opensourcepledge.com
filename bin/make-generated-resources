@@ -1,0 +1,65 @@
+#!/bin/sh -eu
+
+# Generates resources that depend on dynamic content, such as the OpenGraph
+# image.
+#
+# USAGE: make-generated-resources
+#
+# Must be run in the repository's root directory.
+
+get_file_age_in_sec() {
+  echo $(($(date +%s) - $(stat -c %Y -- "$1")))
+}
+
+# HACK: This momentarily installs fonts into the user's font folder, then
+# removes them (unless they already existed).
+#
+# We would like to have imagemagick generate images using fonts that we
+# explicitly specify by path. This would allow us to avoid polluting default
+# font directories such as the user's `~/.local/share/fonts` directory. But
+# there doesn't seem a way to explicitly give imagemagick font paths, outside
+# of the `-font` option, which is not consulted when converting SVG text to
+# PNG. imagemagick uses fontconfig to get the list of installed fonts, but
+# there doesn't seem to be a way to momentarily get fontconfig to use a font,
+# and indeed this might not make sense.
+#
+# So, for each font file:
+# * put it in the user's font directory unless it's already there,
+# * do our imagemagick stuff,
+# * if the file is less than one hour old, remove it.
+
+mkdir -p ~/.local/share/fonts/
+
+for font_path in public/fonts/*.ttf; do
+  font_name=$(basename $font_path)
+  installed_font_path="$HOME/.local/share/fonts/$font_name"
+  if [ -f $installed_font_path ]; then
+    echo "Font already exists: $installed_font_path"
+  else
+    echo "Installing $installed_font_path"
+    cp $font_path $installed_font_path
+  fi
+done
+
+echo 'Generating files'
+
+grand_total=$(./src/memberData/bin/getGrandTotalRaised.ts)
+sed -i "s/\\\$[^<]\\+/${grand_total}/" public/generated/templates/opengraph.svg
+
+echo 'Generated SVG file'
+cat public/generated/templates/opengraph.svg
+
+echo 'Generating PNG image'
+magick -verbose public/generated/templates/opengraph.svg public/generated/output/opengraph.png
+
+for font_path in public/fonts/*.ttf; do
+  font_name=$(basename $font_path)
+  installed_font_path="$HOME/.local/share/fonts/$font_name"
+  installed_font_age=$(get_file_age_in_sec $installed_font_path)
+  if [ $installed_font_age -gt 3600 ]; then
+    echo "Font is more than an hour old, ignoring: $installed_font_path"
+  else
+    echo "Font is less than an hour old, deleting: $installed_font_path"
+    rm $installed_font_path
+  fi
+done
