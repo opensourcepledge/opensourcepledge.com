@@ -1,5 +1,8 @@
 #!/bin/sh -eu
 
+# © 2024 Functional Software, Inc. dba Sentry
+# SPDX-License-Identifier: Apache-2.0
+
 # Generates resources that depend on dynamic content, such as the OpenGraph
 # image.
 #
