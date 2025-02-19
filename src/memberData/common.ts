@@ -17,6 +17,75 @@ const REPO_OWNER = 'opensourcepledge';
 const REPO_NAME = 'opensourcepledge.com';
 const EXCEPTION_LABEL = 'member-exception';
 
+export function getDollarsPerDev(report: MemberReport) {
+  return report.usdAmountPaid / report.averageNumberOfDevs;
+}
+
+export function getGrandTotalRaised(members: MemberWithId[]) {
+  members = filterInactiveMembers(members);
+  let grandTotal = 0;
+  members.forEach((member) => {
+    grandTotal += member.data.annualReports[0].usdAmountPaid;
+  });
+  return grandTotal;
+}
+
+export function fmtCurrency(num: number) {
+  return '$' + num.toLocaleString(undefined, {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  });
+}
+
+export function fmtDevs(num: number) {
+  return `${num} dev${num != 1 ? 's' : ''}`;
+}
+
+export function filterInactiveMembers(members: MemberWithId[]): MemberWithId[] {
+  return members.filter((m) => m.data.annualReports.length > 0);
+}
+
+/**
+ * Sorts members by the average number of devs in their latest annual report.
+ */
+export function sortMembersByDevs(members: MemberWithId[]): MemberWithId[] {
+  return [...members].sort((m1, m2) => {
+    if (m1.data.annualReports.length == 0) {
+      return 1;
+    }
+    if (m2.data.annualReports.length == 0) {
+      return -1;
+    }
+    const devs1 = m1.data.annualReports[0].averageNumberOfDevs;
+    const devs2 = m2.data.annualReports[0].averageNumberOfDevs;
+    if (devs1 == devs2) {
+      const dpd1 = getDollarsPerDev(m1.data.annualReports[0]);
+      const dpd2 = getDollarsPerDev(m2.data.annualReports[0]);
+      return dpd2 - dpd1;
+    } else {
+      return devs2 - devs1;
+    }
+  });
+}
+
+/**
+ * Sorts members by the dollars per dev in their latest annual report.
+ */
+export function sortMembersByDollarsPerDev(members: MemberWithId[]): MemberWithId[] {
+  return [...members].sort((m1, m2) => {
+    if (m1.data.annualReports.length == 0) {
+      return 1;
+    }
+    if (m2.data.annualReports.length == 0) {
+      return -1;
+    }
+    const dpd1 = getDollarsPerDev(m1.data.annualReports[0]);
+    const dpd2 = getDollarsPerDev(m2.data.annualReports[0]);
+    return dpd2 - dpd1;
+  });
+}
+
+
 export function sortReportsForMember(member: Member): Member {
   const sortedReports = [...member.annualReports].sort((a, b) =>
     new Date(a.year) < new Date(b.year) ? 1 : -1
