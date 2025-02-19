@@ -25,6 +25,9 @@ jobs:
         run: ./src/memberData/bin/checkMembers.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: mfinelli/setup-imagemagick@v6
+      - name: Build generated resources
+        run: ./bin/make-generated-resources
       - name: Build website files
         uses: withastro/action@v2
   deploy:
