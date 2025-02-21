@@ -13,3 +13,6 @@ jobs:
         run: npm install
       - name: Run checks
         run: npx astro check
+      - uses: mfinelli/setup-imagemagick@v6
+      - name: Build generated resources
+        run: ./bin/make-generated-resources
