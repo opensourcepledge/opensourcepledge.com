@@ -7,9 +7,8 @@ import Blob from "../../components/Blob.astro";
 import Layout from "../../layouts/Layout.astro";
 import TextButton from "../../components/TextButton.astro";
 
-import {
-  getMembers, getDollarsPerDev, fmtCurrency
-} from '../../memberFormatting.ts';
+import { getDollarsPerDev, fmtCurrency } from '../../memberData/common.ts';
+import { getMembers } from '../../memberCollections.ts';
 import type { Map } from '../../util.ts';
 import memberRoles from "../../memberRoles.json"
 import type { Member } from "../../schemas/members.ts";
