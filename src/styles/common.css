@@ -426,6 +426,7 @@ section {
 nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-top: 2rem;
   margin-bottom: 2rem;
   @media (max-width: 800px) {
@@ -433,20 +434,20 @@ nav {
     gap: 1rem;
   }
   a {
-    flex: 1 0;
     text-decoration: none;
     img {
       max-height: 3.5rem;
     }
   }
   ul {
-    flex: 0 1;
     list-style: none;
-    margin: 0 -1rem;
     padding: 0;
     display: flex;
-    li {
-      margin: 0 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    column-gap: 2rem;
+    @media (max-width: 800px) {
+      justify-content: center;
     }
   }
 }
