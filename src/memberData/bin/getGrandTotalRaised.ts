@@ -1,6 +1,6 @@
 #!/usr/bin/env -S npx tsx
 
-// © 2024 Functional Software, Inc. dba Sentry
+// © 2025 Functional Software, Inc. dba Sentry
 // SPDX-License-Identifier: Apache-2.0
 
 // Must be run in repository root.
