@@ -2,6 +2,12 @@
 // © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
 // SPDX-License-Identifier: Apache-2.0
 
+interface Props {
+  showDrafts?: boolean;
+}
+
+const { showDrafts } = Astro.props;
+
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 dayjs.extend(utc);
@@ -19,7 +25,13 @@ const ARTICLES_QUERY = `*[_type == "article"]|order(publishDateTime desc){
 }`;
 
 const articles = (await sanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY))
-  .filter((a) => dayjs(a.publishDateTime).isBefore(dayjs().utc()));
+  .filter((a) => {
+    if (showDrafts) {
+      return !dayjs(a.publishDateTime).isBefore(dayjs().utc());
+    } else {
+      return dayjs(a.publishDateTime).isBefore(dayjs().utc());
+    }
+  });
 ---
 
 <div>
