@@ -18,6 +18,8 @@ const {
 } = Astro.props;
 
 import '../styles/common.css';
+
+import LatestBlogPostBanner from "../components/LatestBlogPostBanner.astro";
 ---
 
 <!doctype html>
@@ -63,6 +65,7 @@ import '../styles/common.css';
   </head>
   <body>
     <a class="skiplink" href="#main-content">Skip to main content</a>
+    <LatestBlogPostBanner></LatestBlogPostBanner>
     { !navless && (
       <nav class="container">
         <a href="/">
