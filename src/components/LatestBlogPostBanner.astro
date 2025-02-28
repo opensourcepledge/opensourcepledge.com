@@ -1,0 +1,77 @@
+---
+// © 2025 Functional Software, Inc. dba Sentry
+// SPDX-License-Identifier: Apache-2.0
+
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+dayjs.extend(utc);
+
+import type { SanityDocument } from "@sanity/client";
+import { sanityClient } from "sanity:client";
+
+const ARTICLES_QUERY = `*[_type == "article"]|order(publishDateTime desc){
+  _id,
+  title,
+  slug,
+  publishDateTime,
+  author->{name, slug, avatar}
+}`;
+
+const articles = (await sanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY))
+  .filter((a) => dayjs(a.publishDateTime).isBefore(dayjs().utc()));
+
+const article = articles[0];
+---
+
+{ article && (
+<div class="latest-blog-post-banner">
+  <div class="container">
+    <a href=`/blog/${article.slug.current}`>
+      <strong class="latest-long">Latest post</strong>
+      <strong class="latest-short">Latest:&#32;</strong>
+      <span class="sep"></span>
+      <span>{ article.title }</span>
+    </a>
+  </div>
+</div>
+) }
+
+<style>
+  .latest-blog-post-banner {
+    padding: 0.2rem 0;
+    background-color: var(--color-light-bg);
+    a {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      color: var(--color-primary);
+      text-decoration: none;
+      &:hover {
+        color: var(--color-secondary);
+        .sep {
+          border-color: var(--color-secondary);
+        }
+      }
+      @media (max-width: 800px) {
+        display: block;
+        text-align: center;
+        .latest-long {
+          display: none;
+        }
+        .latest-short {
+          display: inline;
+        }
+        .sep {
+          display: none;
+        }
+      }
+    }
+    .latest-short {
+      display: none;
+    }
+    .sep {
+      border-right: 1px solid var(--color-primary);
+      height: 1rem;
+    }
+  }
+</style>
