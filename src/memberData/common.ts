@@ -120,26 +120,46 @@ export function isReportOverdue(member: Member) {
 }
 
 export async function isMemberUrlNotRetrievable(member: Member) {
-  try {
-    const res = await fetch(member.url, { method: 'HEAD' })
-    if (res.status != 200) {
-      return true;
+  const MAX_N_ATTEMPTS = 5;
+  let n_attempts = 0;
+  while (true) {
+    try {
+      console.log(`GET ${member.url}`);
+      const res = await fetch(member.url, { method: 'HEAD' })
+      if (res.status != 200) {
+        throw new Error(`Status code was ${res.status}`);
+      }
+      break;
+    } catch (e) {
+      n_attempts += 1;
+      if (n_attempts >= MAX_N_ATTEMPTS) {
+        return true;
+      }
+      await new Promise(r => setTimeout(r, 2000));
     }
-  } catch (e) {
-    return true;
   }
   return false;
 }
 
 export async function isReportUrlNotRetrievable(member: Member) {
   for (const report of member.annualReports) {
-    try {
-      const res = await fetch(report.url, { method: 'HEAD' })
-      if (res.status != 200) {
-        return true;
+    const MAX_N_ATTEMPTS = 5;
+    let n_attempts = 0;
+    while (true) {
+      try {
+        console.log(`GET ${report.url}`);
+        const res = await fetch(report.url, { method: 'HEAD' })
+        if (res.status != 200) {
+          throw new Error(`Status code was ${res.status}`);
+        }
+        break;
+      } catch (e) {
+        n_attempts += 1;
+        if (n_attempts >= MAX_N_ATTEMPTS) {
+          return true;
+        }
+        await new Promise(r => setTimeout(r, 2000));
       }
-    } catch (e) {
-      return true;
     }
   }
   return false;
