@@ -10,5 +10,6 @@ import { sortReportsForMemberWithId } from "./memberData/common.ts";
 export async function getMembers(): Promise<MemberWithId[]> {
   return (await getCollection('members'))
     .filter((member) => member.id in (memberRoles as Map))
+    .filter((member) => member.data.annualReports.length > 0)
     .map(sortReportsForMemberWithId);
 }
