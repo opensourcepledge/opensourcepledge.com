@@ -14,7 +14,7 @@ dayjs.extend(utc);
 
 import type { SanityDocument } from "@sanity/client";
 import { sanityClient } from "sanity:client";
-import { urlForImage } from '../sanity-util.ts';
+import { urlForImage } from '../sanityUtil.ts';
 
 const ARTICLES_QUERY = `*[_type == "article"]|order(publishDateTime desc){
   _id,

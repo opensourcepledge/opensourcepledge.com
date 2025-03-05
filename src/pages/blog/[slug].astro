@@ -12,11 +12,11 @@ dayjs.extend(utc);
 import type { SanityDocument } from "@sanity/client";
 import { sanityClient } from "sanity:client";
 import { PortableText } from "astro-portabletext";
-import { urlForImage } from '../../sanity-util.ts';
-import Block from '../../portable-text-components/Block.astro';
-import CaptionedImage from '../../portable-text-components/CaptionedImage.astro';
-import YoutubeEmbed from '../../portable-text-components/YoutubeEmbed.astro';
-import VideoEmbed from '../../portable-text-components/VideoEmbed.astro';
+import { urlForImage } from '../../sanityUtil.ts';
+import Block from '../../portableTextComponents/Block.astro';
+import CaptionedImage from '../../portableTextComponents/CaptionedImage.astro';
+import YoutubeEmbed from '../../portableTextComponents/YoutubeEmbed.astro';
+import VideoEmbed from '../../portableTextComponents/VideoEmbed.astro';
 
 const ARTICLE_QUERY = `*[_type == "article" && slug.current == $slug][0]{
   _id,
