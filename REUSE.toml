@@ -16,6 +16,7 @@ path = [
     "package.json",
     "public/.well-known/atproto-did",
     "public/images/example-members/*",
+    "public/robots.txt",
     "src/content/members/*",
     "src/env.d.ts",
     "src/memberRoles.json",
