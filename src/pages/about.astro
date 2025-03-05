@@ -8,11 +8,10 @@ import Button from "../components/Button.astro";
 import Layout from "../layouts/Layout.astro";
 import MiniLeaderboard from "../components/MiniLeaderboard.astro";
 import TextButton from "../components/TextButton.astro";
-import { filterInactiveMembers } from '../memberData/common.ts';
 import { getMembers } from '../memberCollections.ts';
 import TableOfContents from "../components/TableOfContents.astro";
 
-const members = filterInactiveMembers(await getMembers());
+const members = await getMembers();
 ---
 
 <Layout title="About the Pledge">

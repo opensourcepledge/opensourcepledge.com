@@ -22,7 +22,6 @@ export function getDollarsPerDev(report: MemberReport) {
 }
 
 export function getGrandTotalRaised(members: MemberWithId[]) {
-  members = filterInactiveMembers(members);
   let grandTotal = 0;
   members.forEach((member) => {
     grandTotal += member.data.annualReports[0].usdAmountPaid;
@@ -39,10 +38,6 @@ export function fmtCurrency(num: number) {
 
 export function fmtDevs(num: number) {
   return `${num} dev${num != 1 ? 's' : ''}`;
-}
-
-export function filterInactiveMembers(members: MemberWithId[]): MemberWithId[] {
-  return members.filter((m) => m.data.annualReports.length > 0);
 }
 
 /**
