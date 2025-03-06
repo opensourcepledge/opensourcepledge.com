@@ -191,14 +191,14 @@ async function getJobsForHeroDevsUrl(jobsUrl: string) {
 
 async function getJobsForUrl(jobsUrl: string) {
   const patternPairs: [RegExp, JobGetter][] = [
-    [/\/\/jobs.ashbyhq.com/, getJobsForAshbyUrl],
-    [/\/\/apply.workable.com/, getJobsForWorkableUrl],
-    [/\/\/jobs.lever.co/, getJobsForLeverUrl],
-    [/\/\/boards.greenhouse.io\/embed/, getJobsForGreenhouseListUrl],
-    [/\/\/boards.greenhouse.io\/(?!embed)/, getJobsForGreenhouseListUrl],
-    [/\/\/job-boards.greenhouse.io/, getJobsForGreenhouseTabularUrl],
-    [/\/\/www.emergetools.com/, getJobsForEmergeToolsUrl],
-    [/\/\/www.herodevs.com/, getJobsForHeroDevsUrl],
+    [/\/\/jobs\.ashbyhq\.com/, getJobsForAshbyUrl],
+    [/\/\/apply\.workable\.com/, getJobsForWorkableUrl],
+    [/\/\/jobs\.lever\.co/, getJobsForLeverUrl],
+    [/\/\/boards\.greenhouse\.io\/embed/, getJobsForGreenhouseListUrl],
+    [/\/\/boards\.greenhouse\.io\/(?!embed)/, getJobsForGreenhouseListUrl],
+    [/\/\/job-boards\.greenhouse\.io/, getJobsForGreenhouseTabularUrl],
+    [/\/\/www\.emergetools\.com/, getJobsForEmergeToolsUrl],
+    [/\/\/www\.herodevs\.com/, getJobsForHeroDevsUrl],
   ];
   for (const [pattern, getterFn] of patternPairs) {
     if (pattern.test(jobsUrl)) {
