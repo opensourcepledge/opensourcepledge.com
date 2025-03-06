@@ -1,0 +1,97 @@
+---
+// © 2025 Functional Software, Inc. dba Sentry
+// SPDX-License-Identifier: Apache-2.0
+
+import Blob from "../components/Blob.astro";
+import Layout from "../layouts/Layout.astro";
+import type { JobSet } from "../jobs/index.ts";
+import jobSetRaw from "../cache/jobSet.json";
+import { getMembersAsMap } from '../memberCollections.ts';
+
+const jobSet = jobSetRaw as JobSet;
+const memberMap = await getMembersAsMap();
+---
+
+<Layout title="Jobs">
+  <div class="edge-blobs">
+    <Blob kind="solid-fill-03" top="72%" left="-13rem"></Blob>
+    <Blob kind="grad-dots-04" top="8%" right="-3rem"></Blob>
+    <Blob kind="grad-dots-06" top="37%" right="-5rem"></Blob>
+  </div>
+  <div class="container">
+    <Blob kind="solid-fill-05" top="20%" left="-16rem"></Blob>
+    <Blob kind="solid-fill-04" top="90%" right="-20rem"></Blob>
+    <Blob kind="grad-dots-03" top="10%" left="-15rem"></Blob>
+
+    <main id="main-content">
+      <section class="text-center">
+        <h1>Jobs</h1>
+        <h2>Join the companies pioneering Open Source sustainability</h2>
+        <p>
+          This page aggregates open job postings from our member companies, so that you can find a job at a company that
+          matches your values.
+        </p>
+      </section>
+      <section>
+        {Object.keys(jobSet.companies).map((memberId) =>
+          jobSet.companies[memberId].length > 0 && (
+            <div class="job-set">
+              <div class="job-set-head">
+                <img src=`/images/members/${memberId}/logo.webp` alt=`The ${memberMap[memberId].name} logo`>
+                <h2>{memberMap[memberId].name}</h2>
+              </div>
+              <em>“{memberMap[memberId].description}”</em>
+              <hr>
+              {jobSet.companies[memberId].map((job) =>
+                <a class="job-link" href={job.url}>{job.title}</a>
+              )}
+            </div>
+          )
+        )}
+      </section>
+    </main>
+  </div>
+</Layout>
+
+<style>
+  .job-set {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--color-light-bg);
+    border: 3px solid transparent;
+    border-radius: 0.5rem;
+    .job-set-head {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      img {
+        align-self: center;
+        max-width: 4.5rem;
+        border-radius: 0.5rem;
+        @media (max-width: 450px) {
+          max-width: 3.0rem;
+        }
+      }
+      h2 {
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 1.3;
+      }
+    }
+    .job-link {
+      position: relative;
+      display: block;
+      padding: 0.2rem 0;
+      padding-right: 1.5rem;
+      text-decoration: none;
+      &:after {
+        content: '→';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+      }
+    }
+  }
+</style>

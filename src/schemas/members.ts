@@ -27,4 +27,7 @@ export type MemberReport = z.infer<typeof memberReportSchema>;
 export interface MemberWithId {
   id: string,
   data: Member,
-}
+};
+export type MemberMap = {
+  [id: string]: Member;
+};
