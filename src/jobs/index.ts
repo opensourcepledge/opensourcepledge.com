@@ -6,17 +6,18 @@ import fetch from "node-fetch";
 import memberRoles from "../memberRoles.json";
 import type { Member } from "../schemas/members.ts";
 
-type JobSet = {
-  dateFetched: Date,
-  companies: {
-    [id: string]: any;
-  };
-}
-
 type Job = {
   title: string;
   url: string;
 };
+
+export type JobSet = {
+  fetchedTimestamp: number,
+  companies: {
+    [id: string]: Job[];
+  };
+}
+
 type JobGetter = ((jobsUrl: string) => Promise<Job[]>);
 
 type AshbyAppData = {
@@ -106,7 +107,7 @@ async function getJobsForUrl(jobsUrl: string) {
 export async function getJobSet() {
   let jobSet: JobSet = {
     companies: {},
-    dateFetched: new Date(),
+    fetchedTimestamp: +(new Date()),
   };
   const memberSlugs = Object.keys(memberRoles);
   for (const memberSlug of memberSlugs) {
