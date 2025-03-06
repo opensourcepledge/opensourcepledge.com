@@ -126,9 +126,22 @@ async function getJobsForGreenhouseListUrl(jobsUrl: string) {
   }
 }
 
-// async function getJobsForGreenhouseTabularUrl(jobsUrl: string) {
-//   return [];
-// }
+async function getJobsForGreenhouseTabularUrl(jobsUrl: string) {
+  try {
+    const page = await (await fetch(jobsUrl)).text();
+    const $ = cheerio.load(page);
+    const $postings = $('.job-post a');
+    return $postings.map(function() {
+      return {
+        title: $(this).children().first().text(),
+        url: $(this).attr('href'),
+      }
+    }).toArray();
+  } catch(e) {
+    console.warn(`Could not get job data from Greenhouse tabular URL: ${jobsUrl}`, e);
+    return [];
+  }
+}
 
 // async function getJobsForEmergeToolsUrl(jobsUrl: string) {
 //   return [];
@@ -145,7 +158,7 @@ async function getJobsForUrl(jobsUrl: string) {
     [/\/\/jobs.lever.co/, getJobsForLeverUrl],
     [/\/\/boards.greenhouse.io\/embed/, getJobsForGreenhouseListUrl],
     [/\/\/boards.greenhouse.io\/(?!embed)/, getJobsForGreenhouseListUrl],
-    // [/\/\/job-boards.greenhouse.io/, getJobsForGreenhouseTabularUrl],
+    [/\/\/job-boards.greenhouse.io/, getJobsForGreenhouseTabularUrl],
     // [/\/\/www.emergetools.com/, getJobsForEmergeToolsUrl],
     // [/\/\/www.herodevs.com/, getJobsForHeroDevsUrl],
   ];
