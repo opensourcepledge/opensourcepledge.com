@@ -103,16 +103,28 @@ async function getJobsForLeverUrl(jobsUrl: string) {
     console.warn(`Could not get job data from Lever URL: ${jobsUrl}`, e);
     return [];
   }
-  return [];
 }
 
-// async function getJobsForGreenhouseEmbedUrl(jobsUrl: string) {
-//   return [];
-// }
-
-// async function getJobsForGreenhouseListUrl(jobsUrl: string) {
-//   return [];
-// }
+async function getJobsForGreenhouseListUrl(jobsUrl: string) {
+  try {
+    const page = await (await fetch(jobsUrl)).text();
+    const $ = cheerio.load(page);
+    const $postings = $('.opening a');
+    return $postings.map(function() {
+      let url = $(this).attr('href');
+      if (url.startsWith('/')) {
+        url = `https://boards.greenhouse.io${url}`;
+      }
+      return {
+        title: $(this).text(),
+        url: url,
+      }
+    }).toArray();
+  } catch(e) {
+    console.warn(`Could not get job data from Greenhouse list URL: ${jobsUrl}`, e);
+    return [];
+  }
+}
 
 // async function getJobsForGreenhouseTabularUrl(jobsUrl: string) {
 //   return [];
@@ -128,14 +140,14 @@ async function getJobsForLeverUrl(jobsUrl: string) {
 
 async function getJobsForUrl(jobsUrl: string) {
   const patternPairs: [RegExp, JobGetter][] = [
-    [/jobs.ashbyhq.com/, getJobsForAshbyUrl],
-    [/apply.workable.com/, getJobsForWorkableUrl],
-    [/jobs.lever.co/, getJobsForLeverUrl],
-    // [/boards.greenhouse.io\/embed/, getJobsForGreenhouseEmbedUrl],
-    // [/boards.greenhouse.io\/(?!embed)/, getJobsForGreenhouseListUrl],
-    // [/job-boards.greenhouse.io/, getJobsForGreenhouseTabularUrl],
-    // [/www.emergetools.com/, getJobsForEmergeToolsUrl],
-    // [/www.herodevs.com/, getJobsForHeroDevsUrl],
+    [/\/\/jobs.ashbyhq.com/, getJobsForAshbyUrl],
+    [/\/\/apply.workable.com/, getJobsForWorkableUrl],
+    [/\/\/jobs.lever.co/, getJobsForLeverUrl],
+    [/\/\/boards.greenhouse.io\/embed/, getJobsForGreenhouseListUrl],
+    [/\/\/boards.greenhouse.io\/(?!embed)/, getJobsForGreenhouseListUrl],
+    // [/\/\/job-boards.greenhouse.io/, getJobsForGreenhouseTabularUrl],
+    // [/\/\/www.emergetools.com/, getJobsForEmergeToolsUrl],
+    // [/\/\/www.herodevs.com/, getJobsForHeroDevsUrl],
   ];
   for (const [pattern, getterFn] of patternPairs) {
     if (pattern.test(jobsUrl)) {
