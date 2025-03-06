@@ -32,6 +32,13 @@ type AshbyAppData = {
   };
 };
 
+type WorkableJobsData = {
+  results: {
+    shortcode: string;
+    title: string;
+  }[];
+};
+
 async function getJobsForAshbyUrl(jobsUrl: string) {
   const page = await (await fetch(jobsUrl)).text();
 
@@ -56,9 +63,31 @@ async function getJobsForAshbyUrl(jobsUrl: string) {
   }
 }
 
-// async function getJobsForWorkableUrl(jobsUrl: string) {
-//   return [];
-// }
+async function getJobsForWorkableUrl(jobsUrl: string) {
+  const reCompanyId = /apply.workable.com\/api\/v3\/accounts\/([a-zA-Z0-9-_]*)\/jobs/;
+  const idMatches = jobsUrl.match(reCompanyId);
+  if (!idMatches || idMatches.length < 2) {
+    console.warn(`Could not get company ID from Workable URL: ${jobsUrl}`, e);
+    return [];
+  }
+  const companyId = idMatches[1];
+  let jobsData: WorkableJobsData;
+  try {
+    jobsData = await (await fetch(jobsUrl, {
+      method: 'POST',
+      body: '{"query":"","department":[],"location":[],"remote":[],"workplace":[],"worktype":[]}',
+    })).json();
+    return jobsData.results.map((posting) => ({
+      title: posting.title,
+      url: `https://apply.workable.com/${companyId}/j/${posting.shortcode}/`,
+    }));
+  } catch(e) {
+    console.warn(`Could not get job data from Workable URL: ${jobsUrl}`, e);
+    return [];
+  }
+  console.log(jobsData);
+  return [];
+}
 
 // async function getJobsForGreenhouseEmbedUrl(jobsUrl: string) {
 //   return [];
@@ -87,7 +116,7 @@ async function getJobsForAshbyUrl(jobsUrl: string) {
 async function getJobsForUrl(jobsUrl: string) {
   const patternPairs: [RegExp, JobGetter][] = [
     [/jobs.ashbyhq.com/, getJobsForAshbyUrl],
-    // [/apply.workable.com/, getJobsForWorkableUrl],
+    [/apply.workable.com/, getJobsForWorkableUrl],
     // [/boards.greenhouse.io\/embed/, getJobsForGreenhouseEmbedUrl],
     // [/boards.greenhouse.io\/(?!embed)/, getJobsForGreenhouseListUrl],
     // [/job-boards.greenhouse.io/, getJobsForGreenhouseTabularUrl],
