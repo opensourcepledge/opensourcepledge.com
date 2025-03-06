@@ -3,7 +3,7 @@
   "description": "Laravel is the PHP framework for web artisans. Participating in the Open Source Pledge is just one of the ways we continue to invest in the future of open source. By supporting these projects—both financially and through direct contributions—we hope to ensure that the tools developers rely on remain powerful, reliable, and innovative.",
   "shortDescription": "Participating in the Open Source Pledge is just one of the ways we continue to invest in the future of open source.",
   "url": "https://blog.laravel.com/taylors-morning-routine-laravels-open-source-pledge",
-  "jobsUrl": "https://apply.workable.com/laravel/",
+  "jobsUrl": "https://apply.workable.com/api/v3/accounts/laravel/jobs",
   "joinDate": "2024-10-08",
   "annualReports": [
     {
