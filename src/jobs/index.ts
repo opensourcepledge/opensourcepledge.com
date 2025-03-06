@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import fetch from "node-fetch";
+import * as cheerio from 'cheerio';
 
 import memberRoles from "../memberRoles.json";
 import type { Member } from "../schemas/members.ts";
@@ -85,7 +86,23 @@ async function getJobsForWorkableUrl(jobsUrl: string) {
     console.warn(`Could not get job data from Workable URL: ${jobsUrl}`, e);
     return [];
   }
-  console.log(jobsData);
+}
+
+async function getJobsForLeverUrl(jobsUrl: string) {
+  try {
+    const page = await (await fetch(jobsUrl)).text();
+    const $ = cheerio.load(page);
+    const $postings = $('.posting-title');
+    return $postings.map(function() {
+      return {
+        title: $(this).find('h5').text(),
+        url: $(this).attr('href'),
+      }
+    }).toArray();
+  } catch(e) {
+    console.warn(`Could not get job data from Lever URL: ${jobsUrl}`, e);
+    return [];
+  }
   return [];
 }
 
@@ -101,10 +118,6 @@ async function getJobsForWorkableUrl(jobsUrl: string) {
 //   return [];
 // }
 
-// async function getJobsForLeverUrl(jobsUrl: string) {
-//   return [];
-// }
-
 // async function getJobsForEmergeToolsUrl(jobsUrl: string) {
 //   return [];
 // }
@@ -117,10 +130,10 @@ async function getJobsForUrl(jobsUrl: string) {
   const patternPairs: [RegExp, JobGetter][] = [
     [/jobs.ashbyhq.com/, getJobsForAshbyUrl],
     [/apply.workable.com/, getJobsForWorkableUrl],
+    [/jobs.lever.co/, getJobsForLeverUrl],
     // [/boards.greenhouse.io\/embed/, getJobsForGreenhouseEmbedUrl],
     // [/boards.greenhouse.io\/(?!embed)/, getJobsForGreenhouseListUrl],
     // [/job-boards.greenhouse.io/, getJobsForGreenhouseTabularUrl],
-    // [/jobs.lever.co/, getJobsForLeverUrl],
     // [/www.emergetools.com/, getJobsForEmergeToolsUrl],
     // [/www.herodevs.com/, getJobsForHeroDevsUrl],
   ];
