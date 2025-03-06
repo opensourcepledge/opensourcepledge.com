@@ -34,6 +34,7 @@ type AshbyAppData = {
 };
 
 type WorkableJobsData = {
+  total: number;
   results: {
     shortcode: string;
     title: string;
@@ -68,16 +69,17 @@ async function getJobsForWorkableUrl(jobsUrl: string) {
   const reCompanyId = /apply.workable.com\/api\/v3\/accounts\/([a-zA-Z0-9-_]*)\/jobs/;
   const idMatches = jobsUrl.match(reCompanyId);
   if (!idMatches || idMatches.length < 2) {
-    console.warn(`Could not get company ID from Workable URL: ${jobsUrl}`, e);
+    console.warn(`Could not get company ID from Workable URL: ${jobsUrl}`);
     return [];
   }
   const companyId = idMatches[1];
   let jobsData: WorkableJobsData;
   try {
-    jobsData = await (await fetch(jobsUrl, {
+    const res = await fetch(jobsUrl, {
       method: 'POST',
       body: '{"query":"","department":[],"location":[],"remote":[],"workplace":[],"worktype":[]}',
-    })).json();
+    });
+    jobsData = (await res.json()) as WorkableJobsData;
     return jobsData.results.map((posting) => ({
       title: posting.title,
       url: `https://apply.workable.com/${companyId}/j/${posting.shortcode}/`,
@@ -93,12 +95,14 @@ async function getJobsForLeverUrl(jobsUrl: string) {
     const page = await (await fetch(jobsUrl)).text();
     const $ = cheerio.load(page);
     const $postings = $('.posting-title');
-    return $postings.map(function() {
+    let jobs: Job[];
+    jobs = $postings.map(function() {
       return {
         title: $(this).find('h5').text(),
-        url: $(this).attr('href'),
+        url: $(this).attr('href') || '',
       }
     }).toArray();
+    return jobs;
   } catch(e) {
     console.warn(`Could not get job data from Lever URL: ${jobsUrl}`, e);
     return [];
@@ -110,8 +114,9 @@ async function getJobsForGreenhouseListUrl(jobsUrl: string) {
     const page = await (await fetch(jobsUrl)).text();
     const $ = cheerio.load(page);
     const $postings = $('.opening a');
-    return $postings.map(function() {
-      let url = $(this).attr('href');
+    let jobs: Job[];
+    jobs = $postings.map(function() {
+      let url = $(this).attr('href') || '';
       if (url.startsWith('/')) {
         url = `https://boards.greenhouse.io${url}`;
       }
@@ -120,6 +125,7 @@ async function getJobsForGreenhouseListUrl(jobsUrl: string) {
         url: url,
       }
     }).toArray();
+    return jobs;
   } catch(e) {
     console.warn(`Could not get job data from Greenhouse list URL: ${jobsUrl}`, e);
     return [];
@@ -131,12 +137,14 @@ async function getJobsForGreenhouseTabularUrl(jobsUrl: string) {
     const page = await (await fetch(jobsUrl)).text();
     const $ = cheerio.load(page);
     const $postings = $('.job-post a');
-    return $postings.map(function() {
+    let jobs: Job[];
+    jobs = $postings.map(function() {
       return {
         title: $(this).children().first().text(),
-        url: $(this).attr('href'),
+        url: $(this).attr('href') || '',
       }
     }).toArray();
+    return jobs;
   } catch(e) {
     console.warn(`Could not get job data from Greenhouse tabular URL: ${jobsUrl}`, e);
     return [];
@@ -148,12 +156,14 @@ async function getJobsForEmergeToolsUrl(jobsUrl: string) {
     const page = await (await fetch(jobsUrl)).text();
     const $ = cheerio.load(page);
     const $postings = $('a[href^="/careers/jobs"]');
-    return $postings.map(function() {
+    let jobs: Job[];
+    jobs = $postings.map(function() {
       return {
         title: $(this).text(),
         url: 'https://www.emergetools.com' + $(this).attr('href'),
       }
     }).toArray();
+    return jobs;
   } catch(e) {
     console.warn(`Could not get job data from Emerge Tools URL: ${jobsUrl}`, e);
     return [];
@@ -165,12 +175,14 @@ async function getJobsForHeroDevsUrl(jobsUrl: string) {
     const page = await (await fetch(jobsUrl)).text();
     const $ = cheerio.load(page);
     const $postings = $('a[href^="/job-posting/"]');
-    return $postings.map(function() {
+    let jobs: Job[];
+    jobs = $postings.map(function() {
       return {
         title: $(this).children().first().text(),
         url: 'https://www.herodevs.com' + $(this).attr('href'),
       }
     }).toArray();
+    return jobs;
   } catch(e) {
     console.warn(`Could not get job data from HeroDevs URL: ${jobsUrl}`, e);
     return [];
