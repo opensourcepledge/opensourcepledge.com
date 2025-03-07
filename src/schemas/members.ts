@@ -17,6 +17,7 @@ export const memberSchema = z.object({
   description: z.string(),
   shortDescription: z.string(),
   url: z.string().url(),
+  jobsUrl: z.string().url().optional(),
   joinDate: z.string().date(),
   annualReports: memberReportSchema.array().nonempty(),
 });
@@ -26,4 +27,7 @@ export type MemberReport = z.infer<typeof memberReportSchema>;
 export interface MemberWithId {
   id: string,
   data: Member,
-}
+};
+export type MemberMap = {
+  [id: string]: Member;
+};

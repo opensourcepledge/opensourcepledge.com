@@ -3,11 +3,9 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { getMembers } from '../memberCollections.ts';
-import {
-  filterInactiveMembers, getDollarsPerDev, fmtCurrency, sortMembersByDevs
-} from '../memberData/common.ts';
+import { getDollarsPerDev, fmtCurrency, sortMembersByDevs } from '../memberData/common.ts';
 
-const members = filterInactiveMembers(await getMembers());
+const members = await getMembers();
 ---
 
 <table class="tabular-member-list table--lrr table--40-30-30">
