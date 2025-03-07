@@ -3,13 +3,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { getMembers } from '../memberCollections.ts';
-import {
-  filterInactiveMembers, sortMembersByDevs, fmtCurrency, fmtDevs, getDollarsPerDev
-} from '../memberData/common.ts';
+import { sortMembersByDevs, fmtCurrency, fmtDevs, getDollarsPerDev } from '../memberData/common.ts';
 import type { Map } from '../util.ts';
 import memberRoles from "../memberRoles.json"
 
-const members = filterInactiveMembers(await getMembers());
+const members = await getMembers();
 ---
 
 <div class="grid-member-list">
