@@ -407,6 +407,16 @@ blockquote {
     }
   }
 }
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  figcaption {
+    margin-top: 1rem;
+  }
+}
 section {
   margin: 4rem 0;
   @media (max-width: 800px) {
