@@ -505,9 +505,13 @@ iframe {
 footer {
   margin: 4rem 0;
   text-align: center;
-  span {
-    display: inline-block;
-    margin: 0 1rem;
+  .footer-nav {
+    max-width: 30rem;
+    margin: 0 auto;
+    span {
+      display: inline-block;
+      margin: 0 1rem;
+    }
   }
   .footer-socials {
     display: flex;
