@@ -1,0 +1,156 @@
+---
+// © 2025 Functional Software, Inc. dba Sentry
+// SPDX-License-Identifier: Apache-2.0
+
+import Blob from "../../components/Blob.astro";
+import Button from "../../components/Button.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Resources">
+  <div class="edge-blobs">
+    <Blob kind="solid-fill-03" top="42%" left="-13rem"></Blob>
+    <Blob kind="grad-dots-06" top="37%" right="-5rem"></Blob>
+  </div>
+  <div class="container">
+    <Blob kind="solid-fill-05" top="20%" right="-16rem"></Blob>
+    <Blob kind="solid-fill-04" top="90%" left="-20rem"></Blob>
+    <Blob kind="grad-dots-03" top="10%" left="-15rem"></Blob>
+
+    <main id="main-content">
+      <section>
+        <h1>Member Badges</h1>
+        <p>
+          Placing member badges on your website is a way to show visitors that you care about Open Source, that your
+          commitment to Open Source is serious, and that you've put your money where your mouth is. It also helps show
+          potential employees who care about Open Source that your company might be a good place for them. And member
+          badges also promote the Pledge itself, which helps us achieve our mission of getting maintainers paid.
+        </p>
+        <p>
+          There are two natural places to place these badges on your website: your footer, and your Careers page.
+        </p>
+        <p>
+          We recommend making the badge a link to your Open Source Pledge member page, which will provide your visitors
+          with more information about your commitment to Open Source, such as your payments to maintainers and your blog
+          posts.
+        </p>
+        <p>
+          You can choose whichever one of these badges is most appropriate for you.
+        </p>
+
+        <div class="badges">
+          <figure class="badge">
+            <div class="badge__image">
+              <img src="/logos/opensourcepledge-badge-horiz-color@2x.svg">
+            </div>
+            <figcaption>
+              Horizontal, Color<br>
+              <a href="/logos/opensourcepledge-badge-horiz-color@2x.svg">SVG</a>,
+              <a href="/logos/opensourcepledge-badge-horiz-color.png">PNG</a>
+            </figcaption>
+          </figure>
+          <figure class="badge badge--dark">
+            <div class="badge__image">
+              <img src="/logos/opensourcepledge-badge-horiz-mono-dark@2x.svg">
+            </div>
+            <figcaption>
+              Horizontal, Black<br>
+              <a href="/logos/opensourcepledge-badge-horiz-mono-dark@2x.svg">SVG</a>,
+              <a href="/logos/opensourcepledge-badge-horiz-mono-dark.png">PNG</a>
+            </figcaption>
+          </figure>
+          <figure class="badge">
+            <div class="badge__image">
+              <img src="/logos/opensourcepledge-badge-horiz-mono-light@2x.svg">
+            </div>
+            <figcaption>
+              Horizontal, White<br>
+              <a href="/logos/opensourcepledge-badge-horiz-mono-light@2x.svg">SVG</a>,
+              <a href="/logos/opensourcepledge-badge-horiz-mono-light.png">PNG</a>
+            </figcaption>
+          </figure>
+          <figure class="badge">
+            <div class="badge__image">
+              <img src="/logos/opensourcepledge-badge-vert-color@2x.svg">
+            </div>
+            <figcaption>
+              Vertical, Color<br>
+              <a href="/logos/opensourcepledge-badge-vert-color@2x.svg">SVG</a>,
+              <a href="/logos/opensourcepledge-badge-vert-color.png">PNG</a>
+            </figcaption>
+          </figure>
+          <figure class="badge badge--dark">
+            <div class="badge__image">
+              <img src="/logos/opensourcepledge-badge-vert-mono-dark@2x.svg">
+            </div>
+            <figcaption>
+              Vertical, Black<br>
+              <a href="/logos/opensourcepledge-badge-vert-mono-dark@2x.svg">SVG</a>,
+              <a href="/logos/opensourcepledge-badge-vert-mono-dark.png">PNG</a>
+            </figcaption>
+          </figure>
+          <figure class="badge">
+            <div class="badge__image">
+              <img src="/logos/opensourcepledge-badge-vert-mono-light@2x.svg">
+            </div>
+            <figcaption>
+              Vertical, White<br>
+              <a href="/logos/opensourcepledge-badge-vert-mono-light@2x.svg">SVG</a>,
+              <a href="/logos/opensourcepledge-badge-vert-mono-light.png">PNG</a>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section>
+        <h2>Usage Example</h2>
+        <p>In case it's a helpful example, here's how Sentry uses the member badge in their footer.</p>
+        <figure>
+          <img src="/images/sentry-badge-mockup.png">
+        </figure>
+      </section>
+    </main>
+  </div>
+</Layout>
+
+<style>
+  .badges {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(9rem, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+    figure.badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      margin: 0;
+      padding: 1rem;
+      background-color: var(--color-light-bg);
+      border-radius: 0.5rem;
+      .badge__image {
+        background-image: url(/images/checkerboard-dark.svg);
+        background-size: 16px 16px;
+      }
+      &.badge--dark {
+        .badge__image {
+          background-image: url(/images/checkerboard-light.svg);
+        }
+      }
+      .badge__image {
+        padding: 1rem;
+        img {
+          max-height: 10rem;
+        }
+      }
+      figcaption {
+        align-self: flex-start;
+      }
+    }
+    @media (max-width: 800px) {
+      display: block;
+      figure.badge {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+</style>
