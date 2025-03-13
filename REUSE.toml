@@ -17,6 +17,7 @@ path = [
     "public/.well-known/atproto-did",
     "public/images/example-members/*",
     "public/robots.txt",
+    "src/cache/jobSet.json",
     "src/content/members/*",
     "src/env.d.ts",
     "src/memberRoles.json",
