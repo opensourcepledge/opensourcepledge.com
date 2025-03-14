@@ -113,6 +113,16 @@ import Layout from "../../layouts/Layout.astro";
 </Layout>
 
 <style>
+  figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem;
+    figcaption {
+      margin-top: 1rem;
+    }
+  }
   .badges {
     display: grid;
     grid-template-columns: repeat(3, minmax(9rem, 1fr));
