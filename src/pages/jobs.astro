@@ -38,7 +38,7 @@ const memberMap = await getMembersAsMap();
             <div class="job-set">
               <div class="job-set-head">
                 <img src=`/images/members/${memberId}/logo.webp` alt=`The ${memberMap[memberId].name} logo`>
-                <h2>{memberMap[memberId].name}</h2>
+                <h2><a href=`/members/${memberId}`>{memberMap[memberId].name}</a></h2>
               </div>
               <em>“{memberMap[memberId].description}”</em>
               <hr>
@@ -77,6 +77,10 @@ const memberMap = await getMembersAsMap();
         margin: 0;
         font-size: 1.2rem;
         line-height: 1.3;
+        a:not(:hover) {
+          color: var(--color-text);
+          text-decoration: none;
+        }
       }
     }
     .job-link {
