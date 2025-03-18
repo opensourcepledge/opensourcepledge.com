@@ -224,6 +224,29 @@ export default defineConfig({
                     validation: (rule) => rule.required(),
                   },
                 ],
+              },
+              {
+                type: 'object',
+                title: 'Horizontal Rule',
+                name: 'horizontalRule',
+                description: 'Horizontal rule',
+                fields: [
+                  // NOTE: We don't generally need a field for this component.
+                  // However, there are two reasons to actually have a field.
+                  // (1) All Sanity schema types seem to require fields. (2) It
+                  // is useful to have a field called “title” which shows this
+                  // component's title in the article preview. So we create a
+                  // dummy “title” field that always has the same title.
+                  {
+                    type: 'string',
+                    name: 'title',
+                    title: 'Horizontal rule dummy title',
+                    hidden: true,
+                  },
+                ],
+                initialValue: {
+                  title: 'Horizontal rule',
+                },
               }
             ],
             validation: (rule) => rule.required(),
