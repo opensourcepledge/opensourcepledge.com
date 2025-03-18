@@ -17,6 +17,7 @@ import Block from '../../portableTextComponents/Block.astro';
 import CaptionedImage from '../../portableTextComponents/CaptionedImage.astro';
 import YoutubeEmbed from '../../portableTextComponents/YoutubeEmbed.astro';
 import VideoEmbed from '../../portableTextComponents/VideoEmbed.astro';
+import HorizontalRule from '../../portableTextComponents/HorizontalRule.astro';
 
 const ARTICLE_QUERY = `*[_type == "article" && slug.current == $slug][0]{
   _id,
@@ -48,6 +49,7 @@ const components = {
     captionedImage: CaptionedImage,
     youtubeEmbed: YoutubeEmbed,
     videoEmbed: VideoEmbed,
+    horizontalRule: HorizontalRule,
   },
   block: Block,
 };
