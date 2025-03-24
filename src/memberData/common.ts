@@ -114,18 +114,29 @@ export function isReportOverdue(member: Member) {
   return latestReportEndDate.isBefore(dayjs().subtract(1, 'year'));
 }
 
+async function makeHeadRequest(url: string) {
+  return fetch(url, {
+    method: 'HEAD',
+  });
+}
+
 export async function isMemberUrlNotRetrievable(member: Member) {
   const MAX_N_ATTEMPTS = 5;
   let n_attempts = 0;
   while (true) {
     try {
       console.log(`GET ${member.url}`);
-      const res = await fetch(member.url, { method: 'HEAD' })
+      const res = await makeHeadRequest(member.url);
+      if (res.status == 429) {
+        console.log('Got 429, skipping...');
+        break;
+      }
       if (res.status != 200) {
-        throw new Error(`Status code was ${res.status}`);
+        throw new Error(`Status code was ${res.status}`, { cause: res });
       }
       break;
     } catch (e) {
+      console.error(e);
       n_attempts += 1;
       if (n_attempts >= MAX_N_ATTEMPTS) {
         return true;
@@ -143,12 +154,17 @@ export async function isReportUrlNotRetrievable(member: Member) {
     while (true) {
       try {
         console.log(`GET ${report.url}`);
-        const res = await fetch(report.url, { method: 'HEAD' })
+        const res = await makeHeadRequest(report.url);
+        if (res.status == 429) {
+          console.log('Got 429, skipping...');
+          break;
+        }
         if (res.status != 200) {
-          throw new Error(`Status code was ${res.status}`);
+          throw new Error(`Status code was ${res.status}`, { cause: res });
         }
         break;
       } catch (e) {
+        console.error(e);
         n_attempts += 1;
         if (n_attempts >= MAX_N_ATTEMPTS) {
           return true;
