@@ -1,0 +1,17 @@
+{
+  "name": "GitBook",
+  "description": "GitBook is a modern documentation platform that empowers teams to create and publish API and product documentation—often the first touchpoint for users exploring a feature or product. Understanding that great documentation is as vital as the product itself, GitBook transforms static pages into dynamic, AI-powered knowledge experiences that evolve alongside your product. With an intuitive interface and seamless integrations, GitBook makes it easy to keep documentation fresh, relevant, and genuinely engaging.",
+  "shortDescription": "GitBook is a modern documentation platform that empowers teams to create and publish API and product documentation.",
+  "url": "https://www.gitbook.com/blog/the-gitbook-oss-fund",
+  "jobsUrl": "https://jobs.ashbyhq.com/GitBook",
+  "joinDate": "2025-03-28",
+  "annualReports": [
+    {
+      "url": "https://www.gitbook.com/blog/the-gitbook-oss-fund",
+      "year": "2025",
+      "reportDate": "2025-03-28",
+      "averageNumberOfDevs": 13,
+      "usdAmountPaid": 32700
+    }
+  ]
+}
