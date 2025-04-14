@@ -28,9 +28,9 @@ is in addition to the code, developer time, and gifts-in-kind that many of our c
   * [“Why and How Companies Should Pay Open Source Maintainers”][fosdem-talk] by [Vlad][vlad.website]
     at [FOSDEM 2025][fosdem]
 * **Want to help?** Feel free to reach out to the working group leads in issues, [via email][mailto] or
-  [on Discord][discord].
+  [on Slack][slack].
   * Know a company that might be interested in joining the Pledge? Introduce us [via email][mailto], or drop us their
-    contact details [via email][mailto] or [on Discord][discord].
+    contact details [via email][mailto] or [on Slack][slack].
   * To help with building [opensourcepledge.com][osp], read [CONTRIBUTING.md](CONTRIBUTING.md) and [dive into our
     issues][issues].
 * **Just want to keep up to date?** Follow us on [Mastodon][mastodon] or [Bluesky][bsky].
@@ -40,7 +40,6 @@ is in addition to the code, developer time, and gifts-in-kind that many of our c
 [contributors]: https://github.com/opensourcepledge/opensourcepledge.com/graphs/contributors
 [cramer-author]: https://blog.sentry.io/authors/david-cramer/
 [crisis]: https://openpath.quest/2024/the-open-source-sustainability-crisis/
-[discord]: https://discord.gg/svH5XzDsBd
 [fosdem-talk]: https://www.youtube.com/watch?v=UarZwUjFJpI
 [fosdem]: https://fosdem.org/2025/
 [issues]: https://github.com/opensourcepledge/opensourcepledge.com/issues
@@ -54,4 +53,5 @@ is in addition to the code, developer time, and gifts-in-kind that many of our c
 [pledgephil]: https://vlad.website/the-philosophy-of-the-open-source-pledge/
 [sentry-blog-post]: https://blog.sentry.io/join-the-pledge/
 [sentry]: https://sentry.io/welcome/
+[slack]: https://join.slack.com/t/opensourcepledge/shared_invite/zt-33qxp7jsz-CJeYxDBnc2Y3FuZvGCHLMw
 [vlad.website]: https://vlad.website/
