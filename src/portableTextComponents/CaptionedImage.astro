@@ -13,11 +13,11 @@ const { node } = Astro.props;
     title={node.titleText}
     style={node.maxWidth && `max-width: ${node.maxWidth}`}
   >
-  <figcaption>
+  <figcaption><em>
     {node.url ?
       <a href={node.url}>{node.caption}</a>
     :
       <span>{node.caption}</span>
     }
-  </figcaption>
+  </em></figcaption>
 </figure>
