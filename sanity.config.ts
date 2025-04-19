@@ -247,7 +247,21 @@ export default defineConfig({
                 initialValue: {
                   title: 'Horizontal rule',
                 },
-              }
+              },
+              {
+                type: 'object',
+                title: 'Call to Action',
+                name: 'callToAction',
+                fields: [
+                  {
+                    type: 'string',
+                    name: 'text',
+                    title: 'Text',
+                    description: 'The text for this call to action, such as “Pay maintainers now”',
+                    validation: (rule) => rule.required(),
+                  }
+                ],
+              },
             ],
             validation: (rule) => rule.required(),
           })
