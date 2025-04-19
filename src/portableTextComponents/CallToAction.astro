@@ -1,0 +1,20 @@
+---
+// © 2025 Functional Software, Inc. dba Sentry
+// SPDX-License-Identifier: Apache-2.0
+
+const { node } = Astro.props;
+
+import Button from "../components/Button.astro";
+---
+
+<section class="flex-center bottom-cta">
+  <div>
+    <div class="text-center">
+      <h2>{node.text}</h2>
+    </div>
+
+    <div class="text-center">
+      <Button href="/join">Join the Pledge</Button>
+    </div>
+  </div>
+</section>
