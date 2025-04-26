@@ -1,6 +1,6 @@
 {
   "name": "Bolt",
-  "description": "Bolt lets you create instant dev environments locally in your browser powered by WebContainers. We depend on Open Source to build our products. We also have a close relationship with Open Source teams. They are avid users of our tools and help us improve them in a close feedback loop. We have been involved in key projects, hiring maintainers of infrastructure projects like Vite and Vitest and organizing ViteConf, a free online event for the Web community. We're happy to continue giving back to the Open Source community by joining the Open Source Pledge.",
+  "description": "Bolt lets you prompt, run, edit, and deploy full-stack web and mobile apps. We depend on Open Source to build our products. We also have a close relationship with Open Source teams. They are avid users of our tools and help us improve them in a close feedback loop. We have been involved in key projects, hiring maintainers of infrastructure projects like Vite and Vitest and organizing ViteConf, a free online event for the Web community. We're happy to continue giving back to the Open Source community by joining the Open Source Pledge.",
   "shortDescription": "We're happy to continue giving back to the Open Source community by joining the Open Source Pledge.",
   "url": "https://blog.stackblitz.com/posts/stackblitz-joins-osspledge/",
   "jobsUrl": "https://jobs.lever.co/stackblitz",
