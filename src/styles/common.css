@@ -541,6 +541,12 @@ footer {
   align-items: center;
   justify-content: center;
 }
+.flex-row {
+  flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
 .text-center {
   text-align: center;
 }
@@ -592,6 +598,30 @@ footer {
   border: 3px solid var(--color-text);
   font-weight: bold;
   font-size: 1.2rem;
+}
+.badge-heading {
+  text-align: center;
+  h1, h2, h3, h4, h5, h6 {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    transform: rotate(3deg);
+    position: relative;
+    z-index: 20;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.3rem;
+    background-color: var(--color-primary);
+    color: black;
+  }
+}
+.badge-heading-container {
+  position: relative;
+  .badge-heading {
+    position: absolute;
+    top: -1.3rem;
+    left: 0;
+    right: 0;
+  }
 }
 
 hr {
