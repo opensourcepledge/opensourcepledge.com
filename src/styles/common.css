@@ -469,6 +469,7 @@ iframe {
   max-width: 100%;
   height: auto;
   margin: 2rem auto;
+  border: none;
   &.youtube-embed {
     aspect-ratio: 1.777777;
   }
