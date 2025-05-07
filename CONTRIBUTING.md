@@ -77,7 +77,7 @@ though members can also have custom roles.
 
 At this point, the member will show up on the website.
 
-### 5. (Technically Optional) Logo added to `src/assets/images/members`
+### 5. (Technically Optional) Add logo to `src/assets/images/members`
 
 For a member's logo to show up on the homepage, it must be added to `src/assets/images/members/<slug>/minimal.svg`. This
 should be a white- or greyscale-only version of the member's logo. If in doubt, check the other existing logos. Note
@@ -89,13 +89,20 @@ For the logo to actually show up on the homepage, you also need to edit `MemberL
 appropriate place. Check if giving the `maxHeight` property a specific value will make the new logo fit in better
 from a visually proportional point of view.
 
-### Additional Information
+### 6. Add member logo to Google Drive
 
 When onboarding members, we will receive logo files for those members. Make sure to contribute these logo files, and any
 modified logo files you create, back to our [“Member Logos”][member-logos] Google Drive folder. If you don't have
 access, contact @selviano.
 
-[member-logos]: https://drive.google.com/drive/folders/1HxYaaY1wy1hZT6O0ZY58s7Y8N4aV0fcn
+### 7. Update member information in CRM
+
+Make sure the new member company's information is up to date in our [CRM][crm]. This is important in order to make sure
+we don't use out of date data. If the company is not yet in the CRM, add it and apply the appropriate labels. If the
+company is already in the CRM, make sure the appropriate labels are applied to it.
+
+If you do not have access to the CRM, open an issue in [the website repository][website-repo] asking for this update to
+be made.
 
 ## Archiving Member Reports
 
@@ -175,8 +182,11 @@ We track uptime using [updown.io][updown]: [Open Source Pledge Status Page][stat
 The least-supported clientside feature we're using is CSS Nesting. This means that our supported browser are described
 by the [CSS Nesting Can I Use page][css-nesting].
 
+[crm]: https://github.com/opensourcepledge/crm/issues
 [css-nesting]: https://caniuse.com/css-nesting
 [join]: https://opensourcepledge.com/join
+[member-logos]: https://drive.google.com/drive/folders/1HxYaaY1wy1hZT6O0ZY58s7Y8N4aV0fcn
+[sanity-studio]: https://opensourcepledge.sanity.studio/
 [status]: https://updown.io/p/3c87h
 [updown]: https://updown.io
-[sanity-studio]: https://opensourcepledge.sanity.studio/
+[website-repo]: https://github.com/opensourcepledge/opensourcepledge.com
