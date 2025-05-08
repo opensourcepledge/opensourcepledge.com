@@ -12,11 +12,11 @@ SPDX-License-Identifier: CC-BY-SA-4.0
   </a>
 </p>
 
-_Our companies feast at the Open Source table year after year. [Let's settle up][osp]._
+_Open Source software powers the world, but who supports the maintainers? [We do][osp]._
 
 Our goal is to establish a new social norm in the tech industry of companies paying Open Source maintainers — a minimum
-of $2000 per year per developer on staff at our companies, to Open Source maintainers of each company’s choosing. This
-is in addition to the code, developer time, and gifts-in-kind that many of our companies also contribute.
+of $2000 per year per developer on staff, to Open Source maintainers of each company’s choosing. This is in addition to
+the code, developer time, and gifts-in-kind that many Pledge member companies also contribute.
 
 * **Want to learn more?** Visit [opensourcepledge.com][osp].
 * **Want to join the Pledge?** [Find out how][join].
