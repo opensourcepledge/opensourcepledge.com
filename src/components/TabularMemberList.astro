@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { getMembers } from '../memberCollections.ts';
-import { getDollarsPerDev, fmtCurrency, sortMembersByDevs } from '../memberData/common.ts';
+import { getDollarsPerDev, fmtCurrency, sortMembersByJoinDate } from '../memberData/common.ts';
 
 const members = await getMembers();
 ---
@@ -23,7 +23,7 @@ const members = await getMembers();
     </tr>
   </thead>
   <tbody>
-    {sortMembersByDevs(members).map((member) =>
+    {sortMembersByJoinDate(members).map((member) =>
       <tr>
         <td class="name">
           <a class="sneaky" href={`/members/${member.id}`}>

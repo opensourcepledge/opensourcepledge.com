@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { getMembers } from '../memberCollections.ts';
-import { sortMembersByDevs, fmtCurrency, fmtDevs, getDollarsPerDev } from '../memberData/common.ts';
+import { sortMembersByJoinDate, fmtCurrency, fmtDevs, getDollarsPerDev } from '../memberData/common.ts';
 import type { Map } from '../util.ts';
 import memberRoles from "../memberRoles.json"
 
@@ -12,7 +12,7 @@ const members = await getMembers();
 
 <div class="grid-member-list">
   <div class="members">
-    {sortMembersByDevs(members).map((member) =>
+    {sortMembersByJoinDate(members).map((member) =>
       <a class="member sneaky" href={`/members/${member.id}`}>
         <div class="main">
           <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.data.name} logo`>
