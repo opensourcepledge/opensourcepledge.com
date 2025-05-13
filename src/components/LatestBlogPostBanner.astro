@@ -26,11 +26,11 @@ const article = articles[0];
 { article && (
 <div class="latest-blog-post-banner">
   <div class="container">
-    <a href=`https://maintainermonth.github.com/schedule/2025-05-01-OpenPath`>
-      <strong class="latest-long">New</strong>
-      <strong class="latest-short">New:&#32;</strong>
+    <a href=`/blog/${article.slug.current}`>
+      <strong class="latest-long">Latest post</strong>
+      <strong class="latest-short">Latest:&#32;</strong>
       <span class="sep"></span>
-      <span>Watch <em>Open Path</em>, featured on Maintainer Month</span>
+      <span>{ article.title }</span>
     </a>
   </div>
 </div>
