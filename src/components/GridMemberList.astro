@@ -13,7 +13,13 @@ const members = await getMembers();
 <div class="grid-member-list">
   <div class="members">
     {sortMembersByDevs(members).map((member) =>
-      <a class="member sneaky" href={`/members/${member.id}`}>
+      <a
+        class="member sneaky"
+        href={`/members/${member.id}`}
+        data-ndevs={member.data.annualReports[0].averageNumberOfDevs}
+        data-join-date={member.data.joinDate}
+        data-name={member.data.name}
+      >
         <div class="main">
           <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.data.name} logo`>
           <h2>

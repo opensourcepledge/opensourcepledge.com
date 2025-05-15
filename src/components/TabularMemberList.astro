@@ -22,9 +22,14 @@ const members = await getMembers();
       </th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="members">
     {sortMembersByDevs(members).map((member) =>
-      <tr>
+      <tr
+        class="member"
+        data-ndevs={member.data.annualReports[0].averageNumberOfDevs}
+        data-join-date={member.data.joinDate}
+        data-name={member.data.name}
+      >
         <td class="name">
           <a class="sneaky" href={`/members/${member.id}`}>
             <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.data.name} logo`>
