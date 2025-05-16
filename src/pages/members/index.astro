@@ -34,6 +34,15 @@ import svgList from '../../assets/icons/list.svg?raw';
           <TotalTally />
 
           <div class="controls">
+            <div>
+              Sort by
+              <select class="select sort-selector" autocomplete="off">
+                <option value="ndevs/desc">most devs</option>
+                <option value="ndevs/asc">fewest devs</option>
+                <option value="joinDate/desc">joined most recently</option>
+                <option value="joinDate/asc">joined longest ago</option>
+              </select>
+            </div>
             <div class="button-group">
               <button class="button button--small tabular-trigger">
                 <div class="icon icon--stroked">
@@ -75,7 +84,14 @@ import svgList from '../../assets/icons/list.svg?raw';
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin: 1rem 0;
+    @media (max-width: 500px) {
+      justify-content: center;
+      align-items: flex-end;
+      flex-direction: column-reverse;
+    }
   }
   .member-list-container[data-mode='grid'] {
     .tabular-member-list {
@@ -104,11 +120,58 @@ import svgList from '../../assets/icons/list.svg?raw';
 </style>
 
 <script>
+  function sortMembers($memberContainer: Element, sortBy: string) {
+    function sort($a: Element, $b: Element) {
+      if (!($a instanceof HTMLElement) || !($b instanceof HTMLElement)) {
+        return 0;
+      }
+      const aNDevsStr = $a.dataset.ndevs;
+      const bNDevsStr = $b.dataset.ndevs;
+      const aJoinDate = $a.dataset.joinDate;
+      const bJoinDate = $b.dataset.joinDate;
+      const aName = $a.dataset.name;
+      const bName = $b.dataset.name;
+      if (
+        aNDevsStr == undefined || bNDevsStr == undefined ||
+        aJoinDate == undefined || bJoinDate == undefined ||
+        aName == undefined || bName == undefined
+      ) {
+        return 0;
+      }
+      const aNDevs = +aNDevsStr;
+      const bNDevs = +bNDevsStr;
+
+      let diff = 0;
+      if (sortBy == 'ndevs/desc') {
+        diff = bNDevs - aNDevs;
+      } else if (sortBy == 'ndevs/asc') {
+        diff = aNDevs - bNDevs;
+      } else if (sortBy == 'joinDate/desc') {
+        diff = bJoinDate.localeCompare(aJoinDate);
+      } else if (sortBy == 'joinDate/asc') {
+        diff = aJoinDate.localeCompare(bJoinDate);
+      }
+      if (diff == 0) {
+        diff = aName.localeCompare(bName);
+      }
+
+      return diff;
+    }
+
+    const $members = Array.from($memberContainer.querySelectorAll('.member'));
+    const $sortedMembers = $members.sort(sort);
+
+    $sortedMembers.forEach(($member) => {
+      $memberContainer.appendChild($member);
+    });
+  }
+
   const $listContainer = document.querySelector('.member-list-container');
 
   if ($listContainer) {
-    const $tabularTriggers = document.querySelectorAll('.tabular-trigger');
-    const $gridTriggers = document.querySelectorAll('.grid-trigger');
+    const $tabularTriggers = $listContainer.querySelectorAll('.tabular-trigger');
+    const $gridTriggers = $listContainer.querySelectorAll('.grid-trigger');
+    const $sortSelector = $listContainer.querySelectorAll('.sort-selector');
 
     $tabularTriggers.forEach(($trigger) => {
       $trigger.addEventListener('click', () => {
@@ -119,6 +182,15 @@ import svgList from '../../assets/icons/list.svg?raw';
     $gridTriggers.forEach(($trigger) => {
       $trigger.addEventListener('click', () => {
         $listContainer.setAttribute('data-mode', 'grid');
+      });
+    });
+
+    $sortSelector.forEach(($selector) => {
+      $selector.addEventListener('change', () => {
+        const $memberContainers = $listContainer.querySelectorAll('.members');
+        $memberContainers.forEach(($memberContainer) => {
+          sortMembers($memberContainer, ($selector as HTMLSelectElement).value);
+        });
       });
     });
   }
