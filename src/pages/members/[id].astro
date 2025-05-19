@@ -54,6 +54,10 @@ export async function getStaticPaths() {
 
         <a href={member.url}>Learn more →</a>
 
+        <p>
+          <em>Joined on {dayjs(member.joinDate).format('DD MMM YYYY')}.</em>
+        </p>
+
         {member.annualReports.map(report => <section class="annual-report">
           <div>
             <h2>

@@ -64,6 +64,15 @@ export function sortMembersByDevs(members: MemberWithId[]): MemberWithId[] {
 }
 
 /**
+ * Sorts members by join date, newest first.
+ */
+export function sortMembersByJoinDate(members: MemberWithId[]): MemberWithId[] {
+  return [...members].sort((m1, m2) => {
+    return m2.data.joinDate.localeCompare(m1.data.joinDate);
+  });
+}
+
+/**
  * Sorts members by the dollars per dev in their latest annual report.
  */
 export function sortMembersByDollarsPerDev(members: MemberWithId[]): MemberWithId[] {
