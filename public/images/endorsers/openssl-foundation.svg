@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg2" width="1500" height="1500" preserveAspectRatio="xMidYMid" version="1.0" viewBox="0 0 1125 1125" xmlns="http://www.w3.org/2000/svg">
+ <metadata id="metadata1">Created by potrace 1.14, written by Peter Selinger 2001-2017</metadata>
+ <rect id="rect3" width="1125" height="1125" fill="#fff" stroke-width=".75"/>
+ <g id="g3" transform="translate(-12.607 -7.8625)" stroke-width="14.492">
+  <path id="path2-3" class="cls-2" d="m624.38 307.9v131.59c103.91 0 188.4 84.491 188.4 188.4 0 103.91-84.491 188.4-188.4 188.4-103.91 0-188.4-84.491-188.4-188.4h-131.45c0 176.37 143.48 319.99 319.99 319.99 176.52 0 319.99-143.48 319.99-319.99 0-176.52-143.48-319.99-319.99-319.99" fill="#003d47"/>
+  <path id="path3" class="cls-1" d="m525.69 324.42v-131.59c-176.52 0-319.99 143.62-319.99 319.99h131.45c0-103.91 84.491-188.4 188.4-188.4" fill="#3c8e43"/>
+ </g>
+</svg>
