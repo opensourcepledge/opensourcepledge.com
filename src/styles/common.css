@@ -339,15 +339,6 @@ table {
     }
   }
 }
-ul {
-  padding-left: 0;
-  li {
-    list-style-position: inside;
-  }
-}
-ol {
-  padding-left: 0;
-}
 ul, ol {
   li > ul, li > ol {
     padding-left: 2rem;
