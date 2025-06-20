@@ -11,5 +11,9 @@ export const GET: APIRoute = async (_context) => {
   // PR!
   // NOTE: At the time of writing, this is used only in `rss.xsl`. It doesn't
   // seem straightforwardly possible to embed the CSS in the XSL file.
-  return new Response(css);
+  return new Response(css, {
+    headers: {
+      'Content-Type': 'text/css',
+    },
+  });
 }
