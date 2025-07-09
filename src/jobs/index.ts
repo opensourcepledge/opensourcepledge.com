@@ -151,25 +151,6 @@ async function getJobsForGreenhouseTabularUrl(jobsUrl: string) {
   }
 }
 
-async function getJobsForEmergeToolsUrl(jobsUrl: string) {
-  try {
-    const page = await (await fetch(jobsUrl)).text();
-    const $ = cheerio.load(page);
-    const $postings = $('a[href^="/careers/jobs"]');
-    let jobs: Job[];
-    jobs = $postings.map(function() {
-      return {
-        title: $(this).text(),
-        url: 'https://www.emergetools.com' + $(this).attr('href'),
-      }
-    }).toArray();
-    return jobs;
-  } catch(e) {
-    console.warn(`Could not get job data from Emerge Tools URL: ${jobsUrl}`, e);
-    return [];
-  }
-}
-
 async function getJobsForHeroDevsUrl(jobsUrl: string) {
   try {
     const page = await (await fetch(jobsUrl)).text();
@@ -197,7 +178,6 @@ async function getJobsForUrl(jobsUrl: string) {
     [/\/\/boards\.greenhouse\.io\/embed/, getJobsForGreenhouseListUrl],
     [/\/\/boards\.greenhouse\.io\/(?!embed)/, getJobsForGreenhouseListUrl],
     [/\/\/job-boards\.greenhouse\.io/, getJobsForGreenhouseTabularUrl],
-    [/\/\/www\.emergetools\.com/, getJobsForEmergeToolsUrl],
     [/\/\/www\.herodevs\.com/, getJobsForHeroDevsUrl],
   ];
   for (const [pattern, getterFn] of patternPairs) {
