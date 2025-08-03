@@ -276,6 +276,11 @@ form {
     }
   }
 }
+details {
+  summary {
+    cursor: pointer;
+  }
+}
 .container {
   position: relative;
   margin-left: auto;
