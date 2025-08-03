@@ -31,45 +31,126 @@ const memberMap = await getMembersAsMap();
     <main id="main-content">
       <section class="text-center">
         <h1>Jobs</h1>
-        <h2>Join the companies pioneering Open Source sustainability</h2>
         <p>
+          <strong>
+            Join the companies pioneering Open Source sustainability.
+          </strong>
+          <br>
           This page aggregates open job postings from our member companies, so that you can find a job at a company that
           matches your values.
         </p>
       </section>
       <section>
-        <div class="featured-job badge-heading-container">
-          <div class="badge-heading">
-            <h2>Job of the week</h2>
-          </div>
-          <div class="flex-center flex-column">
-            <div class="featured-job-head">
-              <img src=`/images/members/antithesis/logo.webp` alt=`The Antithesis logo`>
-              <h2><a href=`/members/antithesis`>Antithesis</a></h2>
+        <div class="jotw">
+          <div class="featured-job badge-heading-container">
+            <div class="badge-heading">
+              <h2>Job of the week</h2>
             </div>
-            <h2 class="job-title">
-              <a href="https://jobs.ashbyhq.com/Antithesis/53982bd0-66c1-4fec-90a0-4d4a48cb4e87" target="_blank">
-                Developer Relations Lead
+            <div class="flex-center flex-column">
+              <div class="featured-job-head">
+                <img src=`/images/members/antithesis/logo.webp` alt=`The Antithesis logo`>
+                <h2><a href=`/members/antithesis`>Antithesis</a></h2>
+              </div>
+              <h2 class="job-title">
+                <a href="https://jobs.ashbyhq.com/Antithesis/53982bd0-66c1-4fec-90a0-4d4a48cb4e87" target="_blank">
+                  Developer Relations Lead
+                </a>
+              </h2>
+            </div>
+            <p>
+              Love the feeling of finding a reproducible bug? You might be interested in becoming a Developer Relations
+              Lead at Antithesis. This team of bug-finding experts are looking for someone to build and nurture a
+              community of developers who believe in
+              <a href="https://antithesis.com/" target="_blank">fully deterministic</a>
+              property-based testing.
+              <a
+                href="https://jobs.ashbyhq.com/Antithesis/53982bd0-66c1-4fec-90a0-4d4a48cb4e87"
+                style="white-space: nowrap"
+                target="_blank"
+              >
+                Apply now →
               </a>
-            </h2>
+            </p>
           </div>
-          <p>
-            Love the feeling of finding a reproducible bug? You might be interested in becoming a Developer Relations
-            Lead at Antithesis. This team of bug-finding experts are looking for someone to build and nurture a
-            community of developers who believe in
-            <a href="https://antithesis.com/" target="_blank">fully deterministic</a>
-            property-based testing.
-            <a
-              href="https://jobs.ashbyhq.com/Antithesis/53982bd0-66c1-4fec-90a0-4d4a48cb4e87"
-              style="white-space: nowrap"
-              target="_blank"
-            >
-              Apply now →
-            </a>
-          </p>
+          <div class="text-center previous-jotw">
+            <details>
+              <summary>See previous Jobs of the Week</summary>
+              <div class="featured-job">
+                <div class="flex-center flex-column">
+                  <div class="featured-job-head">
+                    <img src=`/images/members/gitbook/logo.webp` alt=`The GitBook logo`>
+                    <h2><a href=`/members/gitbook`>GitBook</a></h2>
+                  </div>
+                  <h2 class="job-title">
+                    <a href="https://jobs.ashbyhq.com/GitBook/18363361-516d-4324-b9a1-203aaf8cf3bd">
+                      Product Engineer
+                    </a>
+                  </h2>
+                </div>
+                <p>
+                  GitBook is a platform that lets users collaboratively build and publish beautiful documentation. Are you an
+                  experienced Typescript/Node developer looking to contribute to a product that has an impact on millions
+                  of users, while mentoring engineers so they can do their best work?
+                </p>
+                <p>
+                  Then consider dropping GitBook a line — you'd be working for a company that pioneers sustainable Open Source
+                  by paying the maintainers it depends on.
+                  <a href="https://jobs.ashbyhq.com/GitBook/18363361-516d-4324-b9a1-203aaf8cf3bd" style="white-space: nowrap">Apply now →</a>
+                </p>
+              </div>
+              <div class="featured-job">
+                <div class="flex-center flex-column">
+                  <div class="featured-job-head">
+                    <img src=`/images/members/bolt/logo.webp` alt=`The Bolt logo`>
+                    <h2><a href=`/members/bolt`>Bolt</a></h2>
+                  </div>
+                  <h2 class="job-title">
+                    <a href="https://jobs.lever.co/stackblitz/7ccd2472-1416-4448-8642-e58e9b32e129">
+                      Senior Software Engineer (TypeScript/Node.js)
+                    </a>
+                  </h2>
+                </div>
+                <p>
+                  Bolt are looking for an engineer to advance web computing by working on WebContainer, the first-ever
+                  in-browser WebAssembly-based operating system. The job is remote and gives you a high degree of autonomy.
+                </p>
+                <p>
+                  But more than that, you'd be getting paid to be an Open Source contributor to projects such as Node.js,
+                  Next.js and others. Sound good?
+                  <a href="https://jobs.lever.co/stackblitz/7ccd2472-1416-4448-8642-e58e9b32e129">Apply now →</a>
+                </p>
+              </div>
+              <div class="featured-job">
+                <div class="flex-center flex-column">
+                  <div class="featured-job-head">
+                    <img src=`/images/members/astral/logo.webp` alt=`The Astral logo`>
+                    <h2><a href=`/members/astral`>Astral</a></h2>
+                  </div>
+                  <h2 class="job-title">
+                    <a href="https://jobs.ashbyhq.com/Astral/84cf53c0-d584-47c6-bff0-07ec97c85093">
+                      Software Engineer, Build Systems & Linkers
+                    </a>
+                  </h2>
+                </div>
+                <p>
+                  Astral have built
+                  <a href="https://github.com/astral-sh/ruff">Ruff</a>,
+                  an extremely fast Python linter and formatter;
+                  and
+                  <a href="https://github.com/astral-sh/uv">uv</a>,
+                  a comprehensive Python package manager — two of the fastest-growing developer tools ever.
+                </p>
+                <p>
+                  Now, Astral is looking for a developer to work on build systems and linkers, as part of a remote, highly
+                  distributed team with competitive pay. And best of all —
+                  <em>you'd be getting paid to be an Open Source maintainer</em>.
+                  <a href="https://jobs.ashbyhq.com/Astral/84cf53c0-d584-47c6-bff0-07ec97c85093">Apply now →</a>
+                </p>
+              </div>
+            </details>
+          </div>
         </div>
-      </section>
-      <section>
+
         {Object.keys(jobSet.companies).map((memberId) =>
           jobSet.companies[memberId].length > 0 && (
             <div class="job-set">
@@ -91,6 +172,16 @@ const memberMap = await getMembersAsMap();
 </Layout>
 
 <style>
+  .jotw {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-light-bg);
+  }
+  .previous-jotw {
+    summary + .featured-job {
+      margin-top: 1rem;
+    }
+  }
   .featured-job {
     margin-bottom: 1rem;
     padding: 1rem;
@@ -125,6 +216,7 @@ const memberMap = await getMembersAsMap();
     }
     .job-title {
       font-size: 1.2rem;
+      margin-bottom: 0;
     }
   }
   .job-set {
