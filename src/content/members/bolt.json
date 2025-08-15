@@ -7,6 +7,13 @@
   "joinDate": "2024-09-19",
   "annualReports": [
     {
+      "url": "https://blog.stackblitz.com/posts/bolt-100k-oss-fund/",
+      "year": "2025",
+      "reportDate": "2025-02-13",
+      "averageNumberOfDevs": 22,
+      "usdAmountPaid": 75000
+    },
+    {
       "url": "https://blog.stackblitz.com/posts/stackblitz-joins-osspledge/",
       "year": "2024",
       "reportDate": "2024-09-19",
