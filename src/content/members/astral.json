@@ -12,6 +12,13 @@
       "reportDate": "2024-08-28",
       "averageNumberOfDevs": 8,
       "usdAmountPaid": 26000
+    },
+    {
+      "url": "https://astral.sh/blog/astral-oss-fund-one-year-later",
+      "year": "2025",
+      "reportDate": "2025-08-28",
+      "averageNumberOfDevs": 16,
+      "usdAmountPaid": 44000
     }
   ]
 }
