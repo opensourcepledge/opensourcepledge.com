@@ -32,15 +32,14 @@ import TotalTally from "../components/TotalTally.astro";
         <Blob kind="grad-dots-05" top="65%" right="-3.5rem"></Blob>
         <div class="pc-hero-container">
           <div class="heading-and-mini-pc">
-            <h1>Pay your share</h1>
+            <div>
+              <h1>Together,&ensp;we<wbr> pay&ensp;the&ensp;maintainers</h1>
+              <p>Why? The world depends on Open Source software. We're here to prevent burnout and keep everyone safer.</p>
+            </div>
             <div class="mini-pc">
               <img src="/images/piggybank.webp" alt="A hand puts bills into a computer monitor">
             </div>
           </div>
-          <p
-            >Whether you're a CEO, CFO, CTO, or just a dev, your company surely depends on Open Source software. It's
-            time to pay the maintainers.</p
-          >
           <Button href="/join">Join the Pledge</Button>
           <a class="sentry-credit" href="https://sentry.io/" target="_blank" title="Sentry">
             <span>Created&nbsp;by</span>
@@ -123,13 +122,14 @@ import TotalTally from "../components/TotalTally.astro";
     background-repeat: no-repeat;
     background-position: right center;
     .pc-hero-container {
-      padding-right: 60%;
+      padding-right: 40%;
       .heading-and-mini-pc {
         position: relative;
+        margin-bottom: 0.5rem;
         h1 {
           margin: 0;
-          font-size: 6rem;
-          line-height: 1;
+          font-size: 2.5rem;
+          line-height: 1.1;
         }
         .mini-pc {
           display: none;
@@ -147,14 +147,14 @@ import TotalTally from "../components/TotalTally.astro";
   a.sentry-credit {
     display: flex;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     flex-wrap: wrap;
     text-align: center;
     gap: 0.5rem;
     color: white;
     text-decoration: none;
     svg {
-      height: 1.2rem;
+      height: 1.1rem;
     }
   }
   @media (max-width: 600px) {
@@ -171,16 +171,15 @@ import TotalTally from "../components/TotalTally.astro";
         .heading-and-mini-pc {
           display: flex;
           align-items: center;
-          h1 {
+          & > div {
             flex: 1;
-            font-size: 3rem;
+          }
+          h1 {
+            font-size: 1.5rem;
           }
           .mini-pc {
             flex: 1;
             display: block;
-            img {
-              max-width: 100%;
-            }
           }
         }
       }
