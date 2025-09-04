@@ -457,6 +457,7 @@ nav {
     column-gap: 2rem;
     @media (max-width: 800px) {
       justify-content: center;
+      column-gap: 1.5rem;
     }
   }
 }
