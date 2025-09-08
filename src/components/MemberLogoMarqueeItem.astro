@@ -1,0 +1,41 @@
+---
+// © 2025 Functional Software, Inc. dba Sentry
+// SPDX-License-Identifier: Apache-2.0
+
+interface Props {
+  slug: string;
+  name: string;
+  height?: string;
+  hidden?: boolean;
+}
+
+let { slug, name, height, hidden } = Astro.props;
+
+if (!height) {
+  height = '1.4rem';
+}
+
+if (!hidden) {
+  hidden = false;
+}
+
+const { default: svg } = await import(`../assets/images/members/${slug}/minimal.svg?raw`);
+---
+
+<div hidden={hidden} class="member-logo-board-item" role="img" aria-label=`The ${name} logo` data-slug={slug}>
+  <Fragment set:html={svg} />
+</div>
+
+<style define:vars={{ height }}>
+  .member-logo-board-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    svg {
+      flex: 1;
+      width: auto;
+      height: var(--height);
+    }
+  }
+</style>

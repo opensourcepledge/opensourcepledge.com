@@ -8,6 +8,7 @@ import Button from "../components/Button.astro";
 import EndorsementList from "../components/EndorsementList.astro";
 import Layout from "../layouts/Layout.astro";
 import MemberLogoBoard from "../components/MemberLogoBoard.astro";
+import MemberLogoMarquee from "../components/MemberLogoMarquee.astro";
 import PressItemList from "../components/PressItemList.astro";
 import TextButton from "../components/TextButton.astro";
 import TotalTally from "../components/TotalTally.astro";
@@ -18,16 +19,13 @@ import TotalTally from "../components/TotalTally.astro";
     <Blob kind="solid-fill-03" top="35%" right="-13rem"></Blob>
     <Blob kind="grad-dots-02" top="60%" right="-4rem"></Blob>
   </div>
-  <div class="container">
-    <Blob kind="grad-dots-04" top="-2%" left="-20rem"></Blob>
-    <Blob kind="grad-dots-03" top="50%" left="-20rem"></Blob>
-    <Blob kind="solid-fill-01" top="2%" left="-20rem"></Blob>
-    <Blob kind="solid-fill-05" top="20%" left="-16rem"></Blob>
-    <Blob kind="solid-fill-02" top="70%" left="-20rem"></Blob>
-    <Blob kind="grad-dots-01" top="80%" left="-13rem"></Blob>
-    <Blob kind="solid-fill-04" top="90%" right="-20rem"></Blob>
 
-    <main id="main-content">
+  <main id="main-content">
+    <div class="container">
+      <Blob kind="grad-dots-04" top="-13%" left="-20rem"></Blob>
+      <Blob kind="solid-fill-01" top="10%" left="-20rem"></Blob>
+      <Blob kind="solid-fill-05" top="90%" left="-16rem"></Blob>
+
       <section class="pc-hero">
         <Blob kind="grad-dots-05" top="65%" right="-3.5rem"></Blob>
         <div class="pc-hero-container">
@@ -47,6 +45,26 @@ import TotalTally from "../components/TotalTally.astro";
           </a>
         </div>
       </section>
+    </div>
+
+    <div class="text-center">
+      <MemberLogoMarquee></MemberLogoMarquee>
+      <TotalTally />
+    </div>
+
+    <div class="container">
+      <Blob kind="grad-dots-03" top="20%" left="-20rem"></Blob>
+      <Blob kind="solid-fill-02" top="40%" left="-20rem"></Blob>
+      <Blob kind="grad-dots-01" top="50%" left="-13rem"></Blob>
+      <Blob kind="solid-fill-04" top="60%" right="-20rem"></Blob>
+
+      <section>
+        <EndorsementList></EndorsementList>
+
+        <div class="text-center">
+          <TextButton href="/endorsements/">See all endorsements</TextButton>
+        </div>
+      </section>
 
       <section>
         <h2>TL;DR</h2>
@@ -59,32 +77,6 @@ import TotalTally from "../components/TotalTally.astro";
         <div class="highlight-box highlight-box--circled">
           <h3><div><span class="circled">2</span></div><span>Self-report annually</span></h3>
           <p>Each year, publish a blog post outlining your payments to maintainers.</p>
-        </div>
-      </section>
-
-      <section>
-        <TotalTally />
-      </section>
-
-      <section>
-        <div>
-          <div class="text-center">
-            <h2>Some Member Companies</h2>
-          </div>
-
-          <MemberLogoBoard nRows={3}></MemberLogoBoard>
-
-          <div class="text-center">
-            <TextButton href="/members/">Explore all member companies</TextButton>
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <EndorsementList></EndorsementList>
-
-        <div class="text-center">
-          <TextButton href="/endorsements/">See all endorsements</TextButton>
         </div>
       </section>
 
@@ -107,13 +99,14 @@ import TotalTally from "../components/TotalTally.astro";
           </div>
         </div>
       </section>
-    </main>
-  </div>
+    </div>
+  </main>
 </Layout>
 
 <style>
   .pc-hero {
     position: relative;
+    margin-top: 3rem;
     margin-left: -4rem;
     margin-right: -4rem;
     padding: 0 4rem;

@@ -1,0 +1,23 @@
+---
+// © 2025 Functional Software, Inc. dba Sentry
+// SPDX-License-Identifier: Apache-2.0
+
+import MemberLogoMarqueeItems from "../components/MemberLogoMarqueeItems.astro";
+---
+
+<div class="member-logo-marquee">
+  <MemberLogoMarqueeItems />
+  <MemberLogoMarqueeItems ariaHidden={true} />
+</div>
+
+<style>
+  .member-logo-marquee {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 1.0rem;
+    padding: 0.5rem 0;
+    background: var(--color-light-bg);
+  }
+</style>

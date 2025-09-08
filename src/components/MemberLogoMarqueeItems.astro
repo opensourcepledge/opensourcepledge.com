@@ -1,0 +1,68 @@
+---
+// © 2025 Functional Software, Inc. dba Sentry
+// SPDX-License-Identifier: Apache-2.0
+
+import MemberLogoMarqueeItem from "../components/MemberLogoMarqueeItem.astro";
+
+interface Props {
+  ariaHidden?: boolean;
+}
+
+let { ariaHidden } = Astro.props;
+
+if (!ariaHidden) {
+  ariaHidden = false;
+}
+---
+
+<div class="member-logo-marquee-items" aria-hidden={ariaHidden}>
+  <MemberLogoMarqueeItem slug="posit" name="Posit" />
+  <MemberLogoMarqueeItem slug="gitbutler" name="GitButler" />
+  <MemberLogoMarqueeItem slug="antithesis" name="Antithesis" />
+  <MemberLogoMarqueeItem slug="sentry" name="Sentry" />
+  <MemberLogoMarqueeItem slug="astral" name="Astral" />
+  <MemberLogoMarqueeItem slug="laravel" name="Laravel" />
+  <MemberLogoMarqueeItem slug="zerodha" name="Zerodha" />
+  <MemberLogoMarqueeItem slug="sanity" name="Sanity" />
+  <MemberLogoMarqueeItem slug="prefect" name="Prefect" />
+  <MemberLogoMarqueeItem slug="pydantic" name="Pydantic Logfire" />
+  <MemberLogoMarqueeItem slug="val-town" name="Val Town" />
+  <MemberLogoMarqueeItem slug="convex" name="Convex" />
+  <MemberLogoMarqueeItem slug="scalar" name="Scalar" />
+  <MemberLogoMarqueeItem slug="buttondown" name="Buttondown" />
+  <MemberLogoMarqueeItem slug="herodevs" name="HeroDevs" />
+  <MemberLogoMarqueeItem slug="keygen" name="Keygen" />
+  <MemberLogoMarqueeItem slug="browserbase" name="Browserbase" />
+  <MemberLogoMarqueeItem slug="frontend-masters" name="Frontend Masters" />
+  <MemberLogoMarqueeItem slug="gitbook" name="GitBook" />
+  <MemberLogoMarqueeItem slug="bolt" name="Bolt" />
+  <MemberLogoMarqueeItem slug="tideways" name="Tideways" />
+  <MemberLogoMarqueeItem slug="voidzero" name="VoidZero" />
+  <MemberLogoMarqueeItem slug="ag-grid" name="AG Grid" />
+  <MemberLogoMarqueeItem slug="httptoolkit" name="HTTP Toolkit" />
+  <MemberLogoMarqueeItem slug="private-packagist" name="Private Packagist" />
+  <MemberLogoMarqueeItem slug="vlt" name="vlt" />
+  <MemberLogoMarqueeItem slug="speakeasy" name="Speakeasy" />
+  <MemberLogoMarqueeItem slug="chieftools" name="Chief Tools" />
+  <MemberLogoMarqueeItem slug="saas-pegasus" name="SaaS Pegasus" />
+  <MemberLogoMarqueeItem slug="pixee" name="Pixee" />
+</div>
+
+<style>
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - 1.0rem));
+    }
+  }
+  .member-logo-marquee-items {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    gap: 1.0rem;
+    animation: marquee 45s linear infinite;
+  }
+</style>

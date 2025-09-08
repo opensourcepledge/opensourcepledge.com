@@ -7,7 +7,7 @@ import { getMembers } from '../memberCollections.ts';
 ---
 
 <div class="total-tally">
-  <p>Our members have paid maintainers</p>
+  <p>Our <a href="/members">Members</a> have paid maintainers</p>
   <h2>{fmtCurrency(getGrandTotalRaised(await getMembers()))}</h2>
   <p>over the last year.</p>
 </div>

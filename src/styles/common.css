@@ -199,6 +199,12 @@ a.skiplink {
     transform: translateY(0);
   }
 }
+.small-caps {
+  font-variant-caps: small-caps;
+  font-feature-settings: "smcp";
+  text-transform: lowercase;
+  letter-spacing: 1px;
+}
 form {
   margin: 1rem 0;
   button {
