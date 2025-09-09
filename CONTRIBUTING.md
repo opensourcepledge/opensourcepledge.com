@@ -107,7 +107,7 @@ be made.
 ## Workflow: Lapsed Members
 
 Remove a member from the website when either (1) their report due date has passed and they have indicated they do not
-plan to renew, or (2) their report due date, plus a grace period of a month, have passsed.
+plan to renew, or (2) their report due date, plus a grace period of a month, have passed.
 
 When removing a member, take the following steps:
 
