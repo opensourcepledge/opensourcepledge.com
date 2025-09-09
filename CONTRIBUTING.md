@@ -36,7 +36,7 @@ website will still have to be rebuilt and redeployed using the above action _aft
 You can view a draft of your unpublished posts by visiting the appropriate URL after building, eg
 `https://opensourcepledge.com/blog/my-post-slug/`.
 
-## New Member Workflows
+## Workflow: New Members
 
 Here's what the workflow for a new member looks like:
 
@@ -103,6 +103,19 @@ company is already in the CRM, make sure the appropriate labels are applied to i
 
 If you do not have access to the CRM, open an issue in [the website repository][website-repo] asking for this update to
 be made.
+
+## Workflow: Lapsed Members
+
+Remove a member from the website when either (1) their report due date has passed and they have indicated they do not
+plan to renew, or (2) their report due date, plus a grace period of a month, have passsed.
+
+When removing a member, take the following steps:
+
+* Remove the member from `src/memberRoles.json`, causing the member to no longer be displayed on the website
+* Remove the member's logo from wherever it may be featured on the website, such as `MemberLogoBoard.astro`
+
+Do not delete any of the member's files. The member's JSON file, as well as their logo assets, might be useful in the
+future!
 
 ## Archiving Member Reports
 
