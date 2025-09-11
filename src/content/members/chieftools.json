@@ -6,6 +6,13 @@
   "joinDate": "2024-09-15",
   "annualReports": [
     {
+      "url": "https://chief.app/blog/renewing-our-open-source-pledge-2025",
+      "year": "2025",
+      "reportDate": "2025-09-11",
+      "averageNumberOfDevs": 1,
+      "usdAmountPaid": 2400
+    },
+    {
       "url": "https://aka.chief.app/osspledge?ref=osspledge",
       "year": "2024",
       "reportDate": "2024-09-15",
