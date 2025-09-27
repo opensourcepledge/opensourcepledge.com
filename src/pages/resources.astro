@@ -93,13 +93,17 @@ import Layout from "../layouts/Layout.astro";
 
         <div class="sticker">
           <h3>Logo</h2>
-          <img src="/resources/stickers/open-source-pledge-logo-sticker.svg">
+          <div class="sticker__image">
+            <img src="/resources/stickers/open-source-pledge-logo-sticker.svg">
+          </div>
           <Button href="/resources/stickers/open-source-pledge-logo-sticker.png">PNG</Button>
           <Button href="/resources/stickers/open-source-pledge-logo-sticker.svg">SVG</Button>
         </div>
         <div class="sticker">
           <h3>Money Machine</h2>
-          <img src="/resources/stickers/open-source-pledge-money-machine.png">
+          <div class="sticker__image">
+            <img src="/resources/stickers/open-source-pledge-money-machine.png">
+          </div>
           <Button href="/resources/stickers/open-source-pledge-money-machine.png">PNG</Button>
         </div>
       </section>
@@ -140,43 +144,42 @@ import Layout from "../layouts/Layout.astro";
 
         <h3>Non-Exhaustive Examples of Disallowed Use</h3>
 
-        <p>
-          <ul>
-            <li>
-              You may not sell the Open Source Pledge trademarks, or works containing them, other than in the specific
-              conditions regarding physical items set out above.
-            </li>
-            <li>
-              You may not use the Open Source Pledge trademarks in any way that misrepresents the Open Source Pledge or
-              causes confusion. For example, you may not use the Open Source Pledge trademarks:
-              <ul>
-                <li>
-                  to refer to something other than the Open Source Pledge;
-                </li>
-                <li>
-                  to falsely imply that certain entities are Open Source Pledge Members;
-                </li>
-                <li>
-                  to falsely imply sponsorship or endorsement by the Open Source Pledge;
-                </li>
-                <li>
-                  on a website styled in such a way that would make it confusing for users whether or not the website is
-                  affiliated with the Open Source Pledge; or
-                </li>
-                <li>
-                  in domain names, social media accounts, company names, or other names, in a way that implies
-                  endorsement by the Open Source Pledge.
-                </li>
-              </ul>
-            </li>
-            <li>
-              You may not use the Open Source Pledge trademarks to disparage the Open Source Pledge or its reputation.
-            </li>
-            <li>
-              You may not alter the Open Source Pledge trademarks, for example by creating your own variations of the
-              logo or illustrations.
-            </li>
-        </p>
+        <ul>
+          <li>
+            You may not sell the Open Source Pledge trademarks, or works containing them, other than in the specific
+            conditions regarding physical items set out above.
+          </li>
+          <li>
+            You may not use the Open Source Pledge trademarks in any way that misrepresents the Open Source Pledge or
+            causes confusion. For example, you may not use the Open Source Pledge trademarks:
+            <ul>
+              <li>
+                to refer to something other than the Open Source Pledge;
+              </li>
+              <li>
+                to falsely imply that certain entities are Open Source Pledge Members;
+              </li>
+              <li>
+                to falsely imply sponsorship or endorsement by the Open Source Pledge;
+              </li>
+              <li>
+                on a website styled in such a way that would make it confusing for users whether or not the website is
+                affiliated with the Open Source Pledge; or
+              </li>
+              <li>
+                in domain names, social media accounts, company names, or other names, in a way that implies
+                endorsement by the Open Source Pledge.
+              </li>
+            </ul>
+          </li>
+          <li>
+            You may not use the Open Source Pledge trademarks to disparage the Open Source Pledge or its reputation.
+          </li>
+          <li>
+            You may not alter the Open Source Pledge trademarks, for example by creating your own variations of the
+            logo or illustrations.
+          </li>
+        </ul>
 
         <p>
           Resources belonging to third parties, such as member logos, should only be used with approval from their
@@ -198,10 +201,14 @@ import Layout from "../layouts/Layout.astro";
 
 <style>
   .sticker {
-    img {
-      display: block;
+    .sticker__image {
       max-width: 12rem;
-      margin: 2rem 0;
+      padding: 1rem;
+      background-image: url(/images/checkerboard-light.svg);
+      background-size: 16px 16px;
+      img {
+        display: block;
+      }
     }
   }
 </style>
