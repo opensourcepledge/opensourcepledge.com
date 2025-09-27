@@ -170,6 +170,25 @@ async function getJobsForHeroDevsUrl(jobsUrl: string) {
   }
 }
 
+async function getJobsForGitButlerUrl(jobsUrl: string) {
+  try {
+    const page = await (await fetch(jobsUrl)).text();
+    const $ = cheerio.load(page);
+    const $postings = $('.job-card');
+    let jobs: Job[];
+    jobs = $postings.map(function() {
+      return {
+        title: $(this).find('h3').text(),
+        url: 'https://jobs.gitbutler.com' + $(this).find('a').attr('href'),
+      }
+    }).toArray();
+    return jobs;
+  } catch(e) {
+    console.warn(`Could not get job data from GitButler URL: ${jobsUrl}`, e);
+    return [];
+  }
+}
+
 async function getJobsForUrl(jobsUrl: string) {
   const patternPairs: [RegExp, JobGetter][] = [
     [/\/\/jobs\.ashbyhq\.com/, getJobsForAshbyUrl],
@@ -179,6 +198,7 @@ async function getJobsForUrl(jobsUrl: string) {
     [/\/\/boards\.greenhouse\.io\/(?!embed)/, getJobsForGreenhouseListUrl],
     [/\/\/job-boards\.greenhouse\.io/, getJobsForGreenhouseTabularUrl],
     [/\/\/www\.herodevs\.com/, getJobsForHeroDevsUrl],
+    [/\/\/jobs\.gitbutler\.com/, getJobsForGitButlerUrl],
   ];
   for (const [pattern, getterFn] of patternPairs) {
     if (pattern.test(jobsUrl)) {
