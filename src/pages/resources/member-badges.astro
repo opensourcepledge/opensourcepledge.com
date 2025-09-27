@@ -18,7 +18,7 @@ import Layout from "../../layouts/Layout.astro";
 
     <main id="main-content">
       <section>
-        <h1>Member Badges</h1>
+        <h1>Member Badges and Social Icons</h1>
         <p>
           Placing member badges on your website is a way to show visitors that you care about Open Source, that your
           commitment to Open Source is serious, and that you've put your money where your mouth is. It also helps show
@@ -37,9 +37,9 @@ import Layout from "../../layouts/Layout.astro";
           You can choose whichever one of these badges is most appropriate for you.
         </p>
 
-        <div class="badges">
-          <figure class="badge">
-            <div class="badge__image">
+        <div class="resources">
+          <figure class="resource">
+            <div class="resource__image">
               <img src="/logos/opensourcepledge-badge-horiz-color@2x.svg">
             </div>
             <figcaption>
@@ -48,8 +48,8 @@ import Layout from "../../layouts/Layout.astro";
               <a href="/logos/opensourcepledge-badge-horiz-color.png">PNG</a>
             </figcaption>
           </figure>
-          <figure class="badge badge--dark">
-            <div class="badge__image">
+          <figure class="resource resource--dark">
+            <div class="resource__image">
               <img src="/logos/opensourcepledge-badge-horiz-mono-dark@2x.svg">
             </div>
             <figcaption>
@@ -58,8 +58,8 @@ import Layout from "../../layouts/Layout.astro";
               <a href="/logos/opensourcepledge-badge-horiz-mono-dark.png">PNG</a>
             </figcaption>
           </figure>
-          <figure class="badge">
-            <div class="badge__image">
+          <figure class="resource">
+            <div class="resource__image">
               <img src="/logos/opensourcepledge-badge-horiz-mono-light@2x.svg">
             </div>
             <figcaption>
@@ -68,8 +68,8 @@ import Layout from "../../layouts/Layout.astro";
               <a href="/logos/opensourcepledge-badge-horiz-mono-light.png">PNG</a>
             </figcaption>
           </figure>
-          <figure class="badge">
-            <div class="badge__image">
+          <figure class="resource">
+            <div class="resource__image">
               <img src="/logos/opensourcepledge-badge-vert-color@2x.svg">
             </div>
             <figcaption>
@@ -78,8 +78,8 @@ import Layout from "../../layouts/Layout.astro";
               <a href="/logos/opensourcepledge-badge-vert-color.png">PNG</a>
             </figcaption>
           </figure>
-          <figure class="badge badge--dark">
-            <div class="badge__image">
+          <figure class="resource resource--dark">
+            <div class="resource__image">
               <img src="/logos/opensourcepledge-badge-vert-mono-dark@2x.svg">
             </div>
             <figcaption>
@@ -88,14 +88,41 @@ import Layout from "../../layouts/Layout.astro";
               <a href="/logos/opensourcepledge-badge-vert-mono-dark.png">PNG</a>
             </figcaption>
           </figure>
-          <figure class="badge">
-            <div class="badge__image">
+          <figure class="resource">
+            <div class="resource__image">
               <img src="/logos/opensourcepledge-badge-vert-mono-light@2x.svg">
             </div>
             <figcaption>
               Vertical, White<br>
               <a href="/logos/opensourcepledge-badge-vert-mono-light@2x.svg">SVG</a>,
               <a href="/logos/opensourcepledge-badge-vert-mono-light.png">PNG</a>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section>
+        <h2>Social Icons</h2>
+        <p>
+          We've also created some social icons, which you can use next to your regular social media icons. We recommend
+          making this icon link to your member page!
+        </p>
+        <div class="resources">
+          <figure class="resource resource--black">
+            <div class="resource__image">
+              <img src="/logos/opensourcepledge-social-black.svg">
+            </div>
+            <figcaption>
+              Black<br>
+              <a href="/logos/opensourcepledge-social-black.svg">SVG</a>
+            </figcaption>
+          </figure>
+          <figure class="resource resource--white">
+            <div class="resource__image">
+              <img src="/logos/opensourcepledge-social-white.svg">
+            </div>
+            <figcaption>
+              White<br>
+              <a href="/logos/opensourcepledge-social-white.svg">SVG</a>
             </figcaption>
           </figure>
         </div>
@@ -112,6 +139,9 @@ import Layout from "../../layouts/Layout.astro";
 </Layout>
 
 <style>
+  h1 {
+    font-size: 2rem;
+  }
   figure {
     display: flex;
     flex-direction: column;
@@ -122,12 +152,12 @@ import Layout from "../../layouts/Layout.astro";
       margin-top: 1rem;
     }
   }
-  .badges {
+  .resources {
     display: grid;
     grid-template-columns: repeat(3, minmax(9rem, 1fr));
     gap: 1rem;
     margin: 2rem 0;
-    figure.badge {
+    figure.resource {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -136,16 +166,29 @@ import Layout from "../../layouts/Layout.astro";
       padding: 1rem;
       background-color: var(--color-light-bg);
       border-radius: 0.5rem;
-      .badge__image {
+      .resource__image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-image: url(/images/checkerboard-dark.svg);
         background-size: 16px 16px;
       }
-      &.badge--dark {
-        .badge__image {
+      &.resource--dark {
+        .resource__image {
           background-image: url(/images/checkerboard-light.svg);
         }
       }
-      .badge__image {
+      &.resource--white {
+        .resource__image {
+          background: black;
+        }
+      }
+      &.resource--black {
+        .resource__image {
+          background: white;
+        }
+      }
+      .resource__image {
         padding: 1rem;
         img {
           max-height: 10rem;
@@ -157,7 +200,7 @@ import Layout from "../../layouts/Layout.astro";
     }
     @media (max-width: 800px) {
       display: block;
-      figure.badge {
+      figure.resource {
         margin-bottom: 1rem;
       }
     }
