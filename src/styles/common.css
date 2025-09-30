@@ -678,6 +678,101 @@ hr {
   }
 }
 
+.jotw {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--color-light-bg);
+}
+.previous-jotw {
+  summary + .featured-job {
+    margin-top: 1rem;
+  }
+}
+.featured-job {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 3px solid transparent;
+  border-radius: 0.5rem;
+  background-color: var(--color-light-bg);
+  &.badge-heading-container {
+    padding-top: 2.5rem;
+  }
+  .featured-job-head {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    img {
+      align-self: center;
+      max-width: 4.5rem;
+      border-radius: 0.5rem;
+      @media (max-width: 450px) {
+        max-width: 3.0rem;
+      }
+    }
+    h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 1.3;
+      a:not(:hover) {
+        color: var(--color-text);
+        text-decoration: none;
+      }
+    }
+  }
+  p a {
+    margin-left: 0.2rem;
+  }
+  .job-title {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+}
+.job-set {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--color-light-bg);
+  border: 3px solid transparent;
+  border-radius: 0.5rem;
+  .job-set-head {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    img {
+      align-self: center;
+      max-width: 4.5rem;
+      border-radius: 0.5rem;
+      @media (max-width: 450px) {
+        max-width: 3.0rem;
+      }
+    }
+    h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 1.3;
+      a:not(:hover) {
+        color: var(--color-text);
+        text-decoration: none;
+      }
+    }
+  }
+  .job-link {
+    position: relative;
+    display: block;
+    padding: 0.2rem 0;
+    padding-right: 1.5rem;
+    text-decoration: none;
+    &:after {
+      content: '→';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 0;
+    }
+  }
+}
+
 /*
 Bluesky flutter — https://flutterby.philhawksworth.dev/
 SPDX-SnippetBegin
