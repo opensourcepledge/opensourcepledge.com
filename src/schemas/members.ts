@@ -18,6 +18,7 @@ export const memberSchema = z.object({
   shortDescription: z.string(),
   url: z.string().url(),
   jobsUrl: z.string().url().optional(),
+  blogProfileSlug: z.string().optional(),
   joinDate: z.string().date(),
   annualReports: memberReportSchema.array().nonempty(),
 });

@@ -12,7 +12,15 @@ import { getMembers } from '../../memberCollections.ts';
 import type { Map } from '../../util.ts';
 import memberRoles from "../../memberRoles.json"
 import type { Member } from "../../schemas/members.ts";
+import type { SanityDocument } from "@sanity/client";
+import { sanityClient } from "sanity:client";
+import { urlForImage } from '../../sanityUtil.ts';
+import type { JobSet } from "../../jobs/index.ts";
+import jobSetRaw from "../../cache/jobSet.json";
+
 import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+dayjs.extend(utc);
 
 interface Props {
   member: Member;
@@ -27,6 +35,29 @@ export async function getStaticPaths() {
     return { params: { id }, props: { member: data } };
   });
 }
+
+/* Get company profile blog post, if it exists */
+const ARTICLE_QUERY = `*[_type == "article" && slug.current == $slug][0]{
+  _id,
+  title,
+  slug,
+  publishDateTime,
+  canonicalUrl,
+  opengraphImage,
+  opengraphImageAltText,
+  opengraphDescription,
+  author->{name, slug, avatar}
+}`;
+let memberArticle = undefined;
+let isMemberArticlePublished = false;
+if (member.blogProfileSlug) {
+  memberArticle = await sanityClient.fetch<SanityDocument>(ARTICLE_QUERY, { slug: member.blogProfileSlug });
+  isMemberArticlePublished = dayjs(memberArticle.publishDateTime).isBefore(dayjs().utc());
+}
+
+/* Get jobs, if they exist */
+const jobSet = jobSetRaw as JobSet;
+const memberJobs = jobSet.companies[Astro.params.id];
 ---
 
 <Layout title={member.name}>
@@ -92,6 +123,40 @@ export async function getStaticPaths() {
             <TextButton href={report.url}>Read report</TextButton>
           </div>
         </section>)}
+
+        {memberArticle && isMemberArticlePublished && (
+        <section>
+          <div class="article-listing">
+            <blockquote>
+              <a href=`/blog/${memberArticle.slug.current}`>
+                <h2>{memberArticle.title}</h2>
+              </a>
+            </blockquote>
+            <div class="meta">
+              <div
+                class="avatar"
+                style={`background-image: url(${urlForImage(memberArticle.author.avatar)}`}
+              ></div>
+              <div>
+                <em>{memberArticle.author.name}</em>
+                <time>{dayjs(memberArticle.publishDateTime).format('DD MMM YYYY')}</time>
+              </div>
+            </div>
+            <hr>
+          </div>
+        </section>
+        )}
+
+        {memberJobs && memberJobs.length > 0 && (
+          <section>
+            <h2>Jobs at {member.name}</h2>
+            <div class="job-set">
+              {memberJobs.map((job) =>
+                <a class="job-link" href={job.url}>{job.title}</a>
+              )}
+            </div>
+          </section>
+        )}
 
         <small>
           This information is provided directly by {member.name}. Open
