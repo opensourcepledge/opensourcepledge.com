@@ -7,6 +7,13 @@
   "joinDate": "2024-10-01",
   "annualReports": [
     {
+      "url": "https://www.herodevs.com/blog-posts/herodevs-reaffirms-commitment-oss-pledge-for-2025-with-over-160k-in-support",
+      "year": "2025",
+      "reportDate": "2025-09-30",
+      "averageNumberOfDevs": 50,
+      "usdAmountPaid": 160000
+    },
+    {
       "url": "https://www.herodevs.com/blog-posts/herodevs-joins-the-oss-pledge-supporting-the-future-of-openjs-and-beyond",
       "year": "2024",
       "reportDate": "2024-10-01",
