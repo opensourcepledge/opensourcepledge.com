@@ -189,6 +189,25 @@ async function getJobsForGitButlerUrl(jobsUrl: string) {
   }
 }
 
+async function getJobsForValTownUrl(jobsUrl: string) {
+  try {
+    const page = await (await fetch(jobsUrl)).text();
+    const $ = cheerio.load(page);
+    const $postings = $('a[href^="https://val-town.notion.site/"]');
+    let jobs: Job[];
+    jobs = $postings.map(function() {
+      return {
+        title: $(this).find('h3').text(),
+        url: $(this).attr('href'),
+      }
+    }).toArray();
+    return jobs;
+  } catch(e) {
+    console.warn(`Could not get job data from Val Town URL: ${jobsUrl}`, e);
+    return [];
+  }
+}
+
 async function getJobsForUrl(jobsUrl: string) {
   const patternPairs: [RegExp, JobGetter][] = [
     [/\/\/jobs\.ashbyhq\.com/, getJobsForAshbyUrl],
@@ -199,6 +218,7 @@ async function getJobsForUrl(jobsUrl: string) {
     [/\/\/job-boards\.greenhouse\.io/, getJobsForGreenhouseTabularUrl],
     [/\/\/www\.herodevs\.com/, getJobsForHeroDevsUrl],
     [/\/\/jobs\.gitbutler\.com/, getJobsForGitButlerUrl],
+    [/\/\/(www\.)?val\.town/, getJobsForValTownUrl],
   ];
   for (const [pattern, getterFn] of patternPairs) {
     if (pattern.test(jobsUrl)) {
