@@ -198,7 +198,7 @@ async function getJobsForValTownUrl(jobsUrl: string) {
     jobs = $postings.map(function() {
       return {
         title: $(this).find('h3').text(),
-        url: $(this).attr('href'),
+        url: '' + $(this).attr('href'),
       }
     }).toArray();
     return jobs;
