@@ -7,6 +7,13 @@
   "joinDate": "2024-09-30",
   "annualReports": [
     {
+      "url": "https://www.prefect.io/blog/prefect-s-open-source-sponsorship-2025-update",
+      "year": "2025",
+      "reportDate": "2025-09-25",
+      "averageNumberOfDevs": 15,
+      "usdAmountPaid": 30000
+    },
+    {
       "url": "https://www.prefect.io/blog/prefect-s-commitment-to-open-source-launching-our-sponsorship-initiative",
       "year": "2024",
       "reportDate": "2024-09-30",
