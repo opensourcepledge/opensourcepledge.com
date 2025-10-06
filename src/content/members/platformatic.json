@@ -6,6 +6,13 @@
   "joinDate": "2024-10-08",
   "annualReports": [
     {
+      "url": "https://blog.platformatic.dev/renewing-our-open-source-pledge-for-2025",
+      "year": "2025",
+      "reportDate": "2025-10-06",
+      "averageNumberOfDevs": 8,
+      "usdAmountPaid": 16000
+    },
+    {
       "url": "https://blog.platformatic.dev/platformatic-joins-the-open-source-pledge",
       "year": "2024",
       "reportDate": "2024-10-08",
