@@ -5,8 +5,8 @@
 
 // Must be run in repository root.
 
-import fs from "fs";
-import { Octokit } from "@octokit/rest";
+import fs from 'fs';
+import { Octokit } from '@octokit/rest';
 
 import {
   isReportDueSoon,
@@ -14,9 +14,9 @@ import {
   isMemberUrlNotRetrievable,
   isReportUrlNotRetrievable,
   makeIssueIfNotExists,
-} from "../common.ts";
-import memberRoles from "../../memberRoles.json";
-import { MemberException } from "../common.ts";
+} from '../common.ts';
+import memberRoles from '../../memberRoles.json';
+import { MemberException } from '../common.ts';
 
 
 async function main() {
@@ -27,17 +27,17 @@ async function main() {
   const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
   const octokit = new Octokit({ auth: GITHUB_TOKEN });
 
-  const memberSlugs = Object.keys(memberRoles);
+  const memberIds = Object.keys(memberRoles);
 
-  for (const slug of memberSlugs) {
-    const localPath = `./src/content/members/${slug}.json`;
-    console.log(`Checking member ${slug} at ${localPath}`);
+  for (const id of memberIds) {
+    const jsonPath = `./src/content/members/${id}.json`;
+    console.log(`Checking member ${id} at ${jsonPath}`);
 
     let member = undefined;
     try {
-      member = JSON.parse(fs.readFileSync(localPath).toString());
+      member = JSON.parse(fs.readFileSync(jsonPath).toString());
     } catch (e) {
-      console.error(`ERROR: could not load member data at ${localPath}`);
+      console.error(`ERROR: could not load member data at ${jsonPath}`, e);
       process.exit(1);
     }
 
