@@ -6,6 +6,13 @@
   "joinDate": "2024-10-07",
   "annualReports": [
     {
+      "url": "https://pydantic.dev/articles/pydantic-oss-fund-2025",
+      "year": "2025",
+      "reportDate": "2025-10-07",
+      "averageNumberOfDevs": 14,
+      "usdAmountPaid": 30000
+    },
+    {
       "url": "https://pydantic.dev/articles/pydantic-oss-fund-2024",
       "year": "2024",
       "reportDate": "2024-10-07",
