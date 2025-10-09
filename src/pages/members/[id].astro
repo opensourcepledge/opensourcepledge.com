@@ -83,7 +83,7 @@ const memberJobs = jobSet.companies[Astro.params.id];
 
         <p>{member.description}</p>
 
-        <a href={member.url}>Learn more →</a>
+        <a href={member.url} target="_blank">Learn more →</a>
 
         <p>
           <em>Joined on {dayjs(member.joinDate).format('DD MMM YYYY')}.</em>
@@ -120,7 +120,10 @@ const memberJobs = jobSet.companies[Astro.params.id];
             </tbody>
           </table>
           <div class="text-center">
-            <TextButton href={report.url}>Read report</TextButton>
+            <TextButton
+              href={report.url}
+              target="_blank"
+            >Read report</TextButton>
           </div>
         </section>)}
 
@@ -152,7 +155,11 @@ const memberJobs = jobSet.companies[Astro.params.id];
             <h2>Jobs at {member.name}</h2>
             <div class="job-set">
               {memberJobs.map((job) =>
-                <a class="job-link" href={job.url}>{job.title}</a>
+                <a
+                  class="job-link"
+                  href={job.url}
+                  target="_blank"
+                >{job.title}</a>
               )}
             </div>
           </section>

@@ -16,7 +16,7 @@ const { name, title, date, imageUrl, sourceUrl, hidden } = Astro.props;
 
 <figure class="press-item" hidden={hidden}>
   <blockquote>
-    <a href={sourceUrl}>{title}</a>
+    <a href={sourceUrl} target="_blank">{title}</a>
   </blockquote>
   <figcaption>
     <img src={imageUrl} alt=`An image for ${name}`>

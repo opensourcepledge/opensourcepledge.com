@@ -206,7 +206,7 @@ const memberMap = await getMembersAsMap();
               <em>“{memberMap[memberId].description}”</em>
               <hr>
               {jobSet.companies[memberId].map((job) =>
-                <a class="job-link" href={job.url}>{job.title}</a>
+                <a class="job-link" href={job.url} target="_blank">{job.title}</a>
               )}
             </div>
           )

@@ -5,11 +5,12 @@
 
 interface Props {
   href: string;
+  target: string;
 }
 
-const { href } = Astro.props;
+const { href, target } = Astro.props;
 ---
 
-<a class="button" href={href}>
+<a class="button" href={href} target={target}>
   <slot></slot>
 </a>
