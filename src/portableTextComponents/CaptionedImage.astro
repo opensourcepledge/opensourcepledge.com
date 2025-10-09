@@ -15,7 +15,7 @@ const { node } = Astro.props;
   >
   <figcaption><em>
     {node.url ?
-      <a href={node.url}>{node.caption}</a>
+      <a href={node.url} target="_blank">{node.caption}</a>
     :
       <span>{node.caption}</span>
     }

@@ -95,7 +95,7 @@ const components = {
           {article.canonicalUrl &&
             <div class="highlight-box">
               This post originally appeared
-              <a href={article.canonicalUrl}>on {(new URL(article.canonicalUrl)).host}</a>.
+              <a href={article.canonicalUrl} target="_blank">on {(new URL(article.canonicalUrl)).host}</a>.
             </div>
           }
           {<PortableText value={article.content} components={components} />}

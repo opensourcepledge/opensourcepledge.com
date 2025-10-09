@@ -23,7 +23,7 @@ const { name, title, handle, imageUrl, sourceUrl, hidden } = Astro.props;
     <div>
       <div>{name}{title && <small> ({title})</small>}</div>
       {sourceUrl ? (
-      <a href={sourceUrl}
+      <a href={sourceUrl} target="_blank"
         ><small>{handle}</small></a
       > ) : (
         <small>{handle}</small>
