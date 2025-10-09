@@ -416,7 +416,7 @@ blockquote {
 }
 .select {
   padding: 0.5rem;
-  background: none;
+  background: var(--color-bg);
   border: none;
   color: white;
   font-size: 1rem;
