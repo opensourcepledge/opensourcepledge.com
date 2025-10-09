@@ -1,0 +1,33 @@
+id,name,image,headline,text,cta
+ag-grid,AG Grid,ad-ag-grid.png,No burnout.,Fewer vulns. Pay maintainers like AG Grid does!,Join the Open Source Pledge. 💃🏻 
+antithesis,Antithesis,ad-antithesis.png,No burnout.,Fewer vulns. Pay maintainers like Antithesis does!,Join the Open Source Pledge. 💃🏻 
+astral,Astral,ad-astral.png,No burnout.,Fewer vulns. Pay maintainers like Astral does!,Join the Open Source Pledge. 💃🏻 
+bolt,Bolt,ad-bolt.png,No burnout.,Fewer vulns. Pay maintainers like Bolt does!,Join the Open Source Pledge. 💃🏻 
+browserbase,Browserbase,ad-browserbase.png,No burnout.,Fewer vulns. Pay maintainers like Browserbase does!,Join the Open Source Pledge. 💃🏻 
+buttondown,Buttondown,ad-buttondown.png,No burnout.,Fewer vulns. Pay maintainers like Buttondown does!,Join the Open Source Pledge. 💃🏻 
+chieftools,Chief Tools,ad-chieftools.png,No burnout.,Fewer vulns. Pay maintainers like Chief Tools does!,Join the Open Source Pledge. 💃🏻 
+convex,Convex,ad-convex.png,No burnout.,Fewer vulns. Pay maintainers like Convex does!,Join the Open Source Pledge. 💃🏻 
+foxley-talent,Foxley Talent,ad-foxley-talent.png,No burnout.,Fewer vulns. Pay maintainers like Foxley Talent does!,Join the Open Source Pledge. 💃🏻 
+frontend-masters,Frontend Masters,ad-frontend-masters.png,No burnout.,Fewer vulns. Pay maintainers like Frontend Masters does!,Join the Open Source Pledge. 💃🏻 
+gitbook,GitBook,ad-gitbook.png,No burnout.,Fewer vulns. Pay maintainers like GitBook does!,Join the Open Source Pledge. 💃🏻 
+gitbutler,GitButler,ad-gitbutler.png,No burnout.,Fewer vulns. Pay maintainers like GitButler does!,Join the Open Source Pledge. 💃🏻 
+herodevs,HeroDevs,ad-herodevs.png,No burnout.,Fewer vulns. Pay maintainers like HeroDevs does!,Join the Open Source Pledge. 💃🏻 
+httptoolkit,HTTP Toolkit,ad-httptoolkit.png,No burnout.,Fewer vulns. Pay maintainers like HTTP Toolkit does!,Join the Open Source Pledge. 💃🏻 
+keygen,Keygen,ad-keygen.png,No burnout.,Fewer vulns. Pay maintainers like Keygen does!,Join the Open Source Pledge. 💃🏻 
+laravel,Laravel,ad-laravel.png,No burnout.,Fewer vulns. Pay maintainers like Laravel does!,Join the Open Source Pledge. 💃🏻 
+pixee,Pixee,ad-pixee.png,No burnout.,Fewer vulns. Pay maintainers like Pixee does!,Join the Open Source Pledge. 💃🏻 
+platformatic,Platformatic,ad-platformatic.png,No burnout.,Fewer vulns. Pay maintainers like Platformatic does!,Join the Open Source Pledge. 💃🏻 
+posit,Posit,ad-posit.png,No burnout.,Fewer vulns. Pay maintainers like Posit does!,Join the Open Source Pledge. 💃🏻 
+prefect,Prefect,ad-prefect.png,No burnout.,Fewer vulns. Pay maintainers like Prefect does!,Join the Open Source Pledge. 💃🏻 
+private-packagist,Private Packagist,ad-private-packagist.png,No burnout.,Fewer vulns. Pay maintainers like Private Packagist does!,Join the Open Source Pledge. 💃🏻 
+pydantic,Pydantic Logfire,ad-pydantic.png,No burnout.,Fewer vulns. Pay maintainers like Pydantic Logfire does!,Join the Open Source Pledge. 💃🏻 
+saas-pegasus,SaaS Pegasus,ad-saas-pegasus.png,No burnout.,Fewer vulns. Pay maintainers like SaaS Pegasus does!,Join the Open Source Pledge. 💃🏻 
+sanity,Sanity,ad-sanity.png,No burnout.,Fewer vulns. Pay maintainers like Sanity does!,Join the Open Source Pledge. 💃🏻 
+scalar,Scalar,ad-scalar.png,No burnout.,Fewer vulns. Pay maintainers like Scalar does!,Join the Open Source Pledge. 💃🏻 
+sentry,Sentry,ad-sentry.png,No burnout.,Fewer vulns. Pay maintainers like Sentry does!,Join the Open Source Pledge. 💃🏻 
+speakeasy,Speakeasy,ad-speakeasy.png,No burnout.,Fewer vulns. Pay maintainers like Speakeasy does!,Join the Open Source Pledge. 💃🏻 
+tideways,Tideways,ad-tideways.png,No burnout.,Fewer vulns. Pay maintainers like Tideways does!,Join the Open Source Pledge. 💃🏻 
+val-town,Val Town,ad-val-town.png,No burnout.,Fewer vulns. Pay maintainers like Val Town does!,Join the Open Source Pledge. 💃🏻 
+vlt,vlt,ad-vlt.png,No burnout.,Fewer vulns. Pay maintainers like vlt does!,Join the Open Source Pledge. 💃🏻 
+voidzero,VoidZero,ad-voidzero.png,No burnout.,Fewer vulns. Pay maintainers like VoidZero does!,Join the Open Source Pledge. 💃🏻 
+zerodha,Zerodha,ad-zerodha.png,No burnout.,Fewer vulns. Pay maintainers like Zerodha does!,Join the Open Source Pledge. 💃🏻 
