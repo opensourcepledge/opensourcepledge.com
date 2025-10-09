@@ -547,6 +547,25 @@ footer {
       }
     }
   }
+  .footer-partners {
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    .footer-partners__partner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      @media (max-width: 800px) {
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+      img {
+        position: relative;
+        top: 1px;
+        max-height: 0.8rem;
+      }
+    }
+  }
 }
 .flex-center {
   display: flex;
