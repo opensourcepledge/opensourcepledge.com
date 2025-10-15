@@ -81,7 +81,16 @@ const memberJobs = jobSet.companies[Astro.params.id];
           </h1>
         </div>
 
-        <p>{member.description}</p>
+        <!--
+          If the description is HTML, render it as HTML, otherwise render it as text inside a <p> tag.
+          The implementation is a bit of a hack: we just check if the description contains the string `</`.
+          This works well enough for our purposes.
+        -->
+        {member.description.includes(`</`) && (
+          <p><Fragment set:html={member.description} /></p>
+        ) || (
+          <p>{member.description}</p>
+        )}
 
         <a href={member.url} target="_blank">Learn more →</a>
 
