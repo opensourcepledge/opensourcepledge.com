@@ -7,6 +7,13 @@
   "joinDate": "2024-09-18",
   "annualReports": [
     {
+      "url": "https://antithesis.com/blog/2025/oss_pledge_2025/",
+      "year": "2025",
+      "reportDate": "2025-10-16",
+      "averageNumberOfDevs": 38,
+      "usdAmountPaid": 110000
+    },
+    {
       "url": "https://antithesis.com/blog/oss_pledge/",
       "year": "2024",
       "reportDate": "2024-09-18",
