@@ -38,9 +38,13 @@ import Layout from "../../layouts/Layout.astro";
         </p>
 
         <div class="resources">
-          <figure class="resource">
+          <figure class="resource resource--light">
             <div class="resource__image">
               <img src="/logos/opensourcepledge-badge-horiz-color@2x.svg">
+              <div class="resource-guide resource-guide--va"></div>
+              <div class="resource-guide resource-guide--vb"></div>
+              <div class="resource-guide resource-guide--ha"></div>
+              <div class="resource-guide resource-guide--hb"></div>
             </div>
             <figcaption>
               Horizontal, Color<br>
@@ -51,6 +55,10 @@ import Layout from "../../layouts/Layout.astro";
           <figure class="resource resource--dark">
             <div class="resource__image">
               <img src="/logos/opensourcepledge-badge-horiz-mono-dark@2x.svg">
+              <div class="resource-guide resource-guide--va"></div>
+              <div class="resource-guide resource-guide--vb"></div>
+              <div class="resource-guide resource-guide--ha"></div>
+              <div class="resource-guide resource-guide--hb"></div>
             </div>
             <figcaption>
               Horizontal, Black<br>
@@ -58,9 +66,13 @@ import Layout from "../../layouts/Layout.astro";
               <a href="/logos/opensourcepledge-badge-horiz-mono-dark.png" target="_blank">PNG</a>
             </figcaption>
           </figure>
-          <figure class="resource">
+          <figure class="resource resource--light">
             <div class="resource__image">
               <img src="/logos/opensourcepledge-badge-horiz-mono-light@2x.svg">
+              <div class="resource-guide resource-guide--va"></div>
+              <div class="resource-guide resource-guide--vb"></div>
+              <div class="resource-guide resource-guide--ha"></div>
+              <div class="resource-guide resource-guide--hb"></div>
             </div>
             <figcaption>
               Horizontal, White<br>
@@ -68,9 +80,13 @@ import Layout from "../../layouts/Layout.astro";
               <a href="/logos/opensourcepledge-badge-horiz-mono-light.png" target="_blank">PNG</a>
             </figcaption>
           </figure>
-          <figure class="resource">
+          <figure class="resource resource--light">
             <div class="resource__image">
               <img src="/logos/opensourcepledge-badge-vert-color@2x.svg">
+              <div class="resource-guide resource-guide--va"></div>
+              <div class="resource-guide resource-guide--vb"></div>
+              <div class="resource-guide resource-guide--ha"></div>
+              <div class="resource-guide resource-guide--hb"></div>
             </div>
             <figcaption>
               Vertical, Color<br>
@@ -81,6 +97,10 @@ import Layout from "../../layouts/Layout.astro";
           <figure class="resource resource--dark">
             <div class="resource__image">
               <img src="/logos/opensourcepledge-badge-vert-mono-dark@2x.svg">
+              <div class="resource-guide resource-guide--va"></div>
+              <div class="resource-guide resource-guide--vb"></div>
+              <div class="resource-guide resource-guide--ha"></div>
+              <div class="resource-guide resource-guide--hb"></div>
             </div>
             <figcaption>
               Vertical, Black<br>
@@ -88,9 +108,13 @@ import Layout from "../../layouts/Layout.astro";
               <a href="/logos/opensourcepledge-badge-vert-mono-dark.png" target="_blank">PNG</a>
             </figcaption>
           </figure>
-          <figure class="resource">
+          <figure class="resource resource--light">
             <div class="resource__image">
               <img src="/logos/opensourcepledge-badge-vert-mono-light@2x.svg">
+              <div class="resource-guide resource-guide--va"></div>
+              <div class="resource-guide resource-guide--vb"></div>
+              <div class="resource-guide resource-guide--ha"></div>
+              <div class="resource-guide resource-guide--hb"></div>
             </div>
             <figcaption>
               Vertical, White<br>
@@ -107,18 +131,26 @@ import Layout from "../../layouts/Layout.astro";
           making this icon link to your member page!
         </p>
         <div class="resources">
-          <figure class="resource resource--black">
+          <figure class="resource resource--dark">
             <div class="resource__image">
               <img src="/logos/opensourcepledge-social-black.svg">
+              <div class="resource-guide resource-guide--va"></div>
+              <div class="resource-guide resource-guide--vb"></div>
+              <div class="resource-guide resource-guide--ha"></div>
+              <div class="resource-guide resource-guide--hb"></div>
             </div>
             <figcaption>
               Black<br>
               <a href="/logos/opensourcepledge-social-black.svg" target="_blank">SVG</a>
             </figcaption>
           </figure>
-          <figure class="resource resource--white">
+          <figure class="resource resource--light">
             <div class="resource__image">
               <img src="/logos/opensourcepledge-social-white.svg">
+              <div class="resource-guide resource-guide--va"></div>
+              <div class="resource-guide resource-guide--vb"></div>
+              <div class="resource-guide resource-guide--ha"></div>
+              <div class="resource-guide resource-guide--hb"></div>
             </div>
             <figcaption>
               White<br>
@@ -166,32 +198,53 @@ import Layout from "../../layouts/Layout.astro";
       padding: 1rem;
       background-color: var(--color-light-bg);
       border-radius: 0.5rem;
-      .resource__image {
+      .resource__image, &.resource--light .resource__image {
         display: flex;
         align-items: center;
         justify-content: center;
         background-image: url(/images/checkerboard-dark.svg);
         background-size: 16px 16px;
-      }
-      &.resource--dark {
-        .resource__image {
-          background-image: url(/images/checkerboard-light.svg);
+        .resource-guide {
         }
       }
-      &.resource--white {
-        .resource__image {
-          background: black;
-        }
-      }
-      &.resource--black {
-        .resource__image {
-          background: white;
+      &.resource--dark .resource__image {
+        background-image: url(/images/checkerboard-light.svg);
+        .resource-guide {
+          --color-resource-guide: #00ffffff;
         }
       }
       .resource__image {
+        position: relative;
         padding: 1rem;
         img {
           max-height: 10rem;
+        }
+        .resource-guide {
+          --color-resource-guide: #00ffff44;
+          position: absolute;
+          border: 0px solid var(--color-resource-guide);
+          &.resource-guide--va, &.resource-guide--vb {
+            top: 0;
+            bottom: 0;
+            border-left-width: 1px;
+          }
+          &.resource-guide--ha, &.resource-guide--hb {
+            left: 0;
+            right: 0;
+            border-top-width: 1px;
+          }
+          &.resource-guide--va {
+            left: calc(1rem - 2px);
+          }
+          &.resource-guide--vb {
+            right: calc(1rem - 2px);
+          }
+          &.resource-guide--ha {
+            top: calc(1rem - 2px);
+          }
+          &.resource-guide--hb {
+            bottom: calc(1rem - 2px);
+          }
         }
       }
       figcaption {
