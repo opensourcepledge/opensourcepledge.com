@@ -28,6 +28,7 @@ SPDX-License-Identifier = "CC0-1.0"
 
 [[annotations]]
 path = [
+    "contrib/ethicalads/**",
     "public/favicon.png",
     "public/favicon.svg",
     "public/generated/**",
