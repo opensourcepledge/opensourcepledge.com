@@ -87,6 +87,27 @@ import TotalTally from "../components/TotalTally.astro";
         </div>
       </section>
 
+      <section class="flex-center flex-column nasdaq-polaroid-section">
+        <div class="nasdaq-polaroid">
+          <img
+            src="/images/nasdaq-2025-10@1000px.jpg"
+            alt="The big Nasdaq screen in Times Square bearing a message saying “Nasdaq celebrates one year of the Open Source Pledge and the companies who pay maintainers”, and many company logos underneath"
+            >
+          <img
+            src="/images/nasdaq-2024-10-teaser.webp"
+            alt="The big Nasdaq screen in Times Square bearing a message saying “Nasdaq celebrates one year of the Open Source Pledge and the companies who pay maintainers”, and many company logos underneath"
+            >
+          <img
+            src="/images/nasdaq-2025-05-teaser.webp"
+            alt="The big Nasdaq screen in Times Square bearing a message saying “Nasdaq celebrates one year of the Open Source Pledge and the companies who pay maintainers”, and many company logos underneath"
+            >
+        </div>
+        <TextButton
+          href="https://bsky.app/profile/opensourcepledge.com/post/3m2ozi5ajrk2w"
+          target="_blank"
+        >Read our one year anniversary post</TextButton>
+      </section>
+
       <section class="flex-center bottom-cta">
         <div>
           <div class="text-center">
@@ -147,6 +168,40 @@ import TotalTally from "../components/TotalTally.astro";
     text-decoration: none;
     svg {
       height: 1.1rem;
+    }
+  }
+  .nasdaq-polaroid-section {
+    .nasdaq-polaroid {
+      position: relative;
+      img {
+        position: relative;
+        z-index: 10;
+        max-width: 100%;
+        width: 25rem;
+        aspect-ratio: 1 / 1;
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0px 0px 50px 25px var(--color-bg);
+        &:nth-child(2), &:nth-child(3) {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        &:nth-child(2) {
+          z-index: 5;
+          transform: rotate(5deg);
+        }
+        &:nth-child(3) {
+          top: 0;
+          left: 0;
+          z-index: 4;
+          transform: rotate(10deg);
+        }
+      }
+    }
+    a {
+      position: relative;
+      z-index: 15;
     }
   }
   @media (max-width: 600px) {
