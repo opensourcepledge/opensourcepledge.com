@@ -6,6 +6,13 @@
   "joinDate": "2024-11-19",
   "annualReports": [
     {
+      "url": "https://floss.fund/blog/second-tranche-2025-anniversary/",
+      "year": "2025",
+      "reportDate": "2025-10-20",
+      "averageNumberOfDevs": 33,
+      "usdAmountPaid": 205000
+    },
+    {
       "url": "https://floss.fund/blog/open-source-pledge-2024/",
       "year": "2024",
       "reportDate": "2024-11-19",
