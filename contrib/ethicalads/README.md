@@ -1,3 +1,8 @@
+<!--
+© 2025 Functional Software, Inc. dba Sentry
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
+
 # Open Source Pledge EthicalAds Materials
 
 This repo contains materials for Pledge ads intended to run on EthicalAds.
