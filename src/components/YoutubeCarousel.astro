@@ -1,0 +1,218 @@
+---
+// © 2025 Functional Software, Inc. dba Sentry
+// SPDX-License-Identifier: Apache-2.0
+
+export type CarouselVideo = {
+  id: string,
+  title: string,
+}
+
+interface Props {
+  videos: CarouselVideo[];
+}
+
+const { videos } = Astro.props;
+---
+
+<div class="ytcarousel">
+  <div class="ytcarousel__main">
+    <h2>{videos[0].title}</h2>
+    <iframe
+      class="youtube-embed"
+      width="980"
+      height="551"
+      src={"https://www.youtube-nocookie.com/embed/" + videos[0].id}
+      title="YouTube video player"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <div class="ytcarousel__controls">
+    <div class="ytcarousel__prev">
+      <button hidden>
+        <strong>← Previous</strong>
+        <div class="ytcarousel__imgcontainer">
+          <object
+            data=`https://img.youtube.com/vi/${videos[0].id}/maxresdefault.jpg`
+            aria-label={videos[0].title}
+            width="177"
+            height="100"
+          >
+            <img
+              src=`https://img.youtube.com/vi/${videos[0].id}/hqdefault.jpg`
+              alt={videos[0].title}
+              width="177"
+              height="100"
+            >
+          </object>
+        </div>
+        <h3>{videos[0].title}</h3>
+      </button>
+    </div>
+    <div class="ytcarousel__next">
+      <button>
+        <strong>Next →</strong>
+        <div class="ytcarousel__imgcontainer">
+          <object
+            data=`https://img.youtube.com/vi/${videos[1].id}/maxresdefault.jpg`
+            aria-label={videos[1].title}
+            width="177"
+            height="100"
+          >
+            <img
+              src=`https://img.youtube.com/vi/${videos[1].id}/hqdefault.jpg`
+              alt={videos[1].title}
+              width="177"
+              height="100"
+            >
+          </object>
+        </div>
+        <h3>{videos[1].title}</h3>
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .ytcarousel {
+    .ytcarousel__main {
+      h2 {
+        line-height: 1.2;
+      }
+      iframe {
+        margin: 0;
+      }
+    }
+    .ytcarousel__controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      .ytcarousel__prev, .ytcarousel__next {
+        button {
+          background: transparent;
+          border: none;
+          padding: 0;
+          margin: 0;
+          /* end resets */
+          flex: 0 1;
+          display: flex;
+          flex-direction: column;
+          max-width: 10rem;
+          padding: 0.7rem;
+          border-radius: var(--border-radius);
+          color: white;
+          background: var(--color-light-bg);
+          cursor: pointer;
+          font-size: 0.7rem;
+          h3 {
+            margin: 0;
+            align-self: flex-start;
+            font-weight: normal;
+            font-family: var(--font-serif);
+            text-align: left;
+          }
+          .ytcarousel__imgcontainer {
+            margin-top: 0.7rem;
+            margin-bottom: 0.3rem;
+            &, object, img {
+              width: 100%;
+              aspect-ratio: 16 / 9;
+            }
+          }
+        }
+      }
+      .ytcarousel__prev {
+        button {
+          text-align: left;
+        }
+      }
+      .ytcarousel__next {
+        button {
+          text-align: right;
+          align-items: flex-end;
+        }
+      }
+    }
+  }
+</style>
+
+<script is:inline define:vars={{videos}}>
+  let idxVideo = 0;
+
+  function canGoToPrevVideo() {
+    return idxVideo > 0;
+  }
+
+  function canGoToNextVideo() {
+    return idxVideo < (videos.length - 1);
+  }
+
+  function updateHtml() {
+    const currVideo = videos[idxVideo];
+    let prevVideo = undefined;
+    let nextVideo = undefined;
+    if (canGoToPrevVideo()) {
+      prevVideo = videos[idxVideo - 1];
+    }
+    if (canGoToNextVideo()) {
+      nextVideo = videos[idxVideo + 1];
+    }
+    const $carousels = document.querySelectorAll('.ytcarousel');
+    $carousels.forEach(($carousel) => {
+      $carousel.querySelector('.ytcarousel__main h2').textContent = currVideo.title;
+      $carousel.querySelector('.ytcarousel__main iframe').src =
+        `https://www.youtube-nocookie.com/embed/${currVideo.id}`;
+
+      if (prevVideo) {
+        $carousel.querySelector('.ytcarousel__prev button').hidden = false;
+        $carousel.querySelector('.ytcarousel__prev h3').textContent = prevVideo.title;
+        $carousel.querySelector('.ytcarousel__prev object').data =
+          `https://img.youtube.com/vi/${prevVideo.id}/maxresdefault.jpg`;
+        $carousel.querySelector('.ytcarousel__prev object img').src =
+          `https://img.youtube.com/vi/${prevVideo.id}/hqdefault.jpg`;
+        $carousel.querySelector('.ytcarousel__prev object').ariaLabel = prevVideo.title;
+        $carousel.querySelector('.ytcarousel__prev object img').alt = prevVideo.title;
+      } else {
+        $carousel.querySelector('.ytcarousel__prev button').hidden = true;
+      }
+
+      if (nextVideo) {
+        $carousel.querySelector('.ytcarousel__next button').hidden = false;
+        $carousel.querySelector('.ytcarousel__next h3').textContent = nextVideo.title;
+        $carousel.querySelector('.ytcarousel__next object').data =
+          `https://img.youtube.com/vi/${nextVideo.id}/maxresdefault.jpg`;
+        $carousel.querySelector('.ytcarousel__next object img').src =
+          `https://img.youtube.com/vi/${nextVideo.id}/hqdefault.jpg`;
+        $carousel.querySelector('.ytcarousel__next object').ariaLabel = nextVideo.title;
+        $carousel.querySelector('.ytcarousel__next object img').alt = nextVideo.title;
+      } else {
+        $carousel.querySelector('.ytcarousel__next button').hidden = true;
+      }
+    });
+  }
+
+  function goToPrevVideo() {
+    if (canGoToPrevVideo()) {
+      idxVideo -= 1;
+      updateHtml();
+    }
+  }
+
+  function goToNextVideo() {
+    if (canGoToNextVideo()) {
+      idxVideo += 1;
+      updateHtml();
+    }
+  }
+
+  const $prevs = document.querySelectorAll('.ytcarousel .ytcarousel__prev button');
+  $prevs.forEach(($prev) => {
+    $prev.addEventListener('click', goToPrevVideo);
+  });
+
+  const $nexts = document.querySelectorAll('.ytcarousel .ytcarousel__next button');
+  $nexts.forEach(($next) => {
+    $next.addEventListener('click', goToNextVideo);
+  });
+</script>
