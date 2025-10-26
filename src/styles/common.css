@@ -117,7 +117,7 @@ SPDX-License-Identifier: Apache-2.0
 
 * {
   box-sizing: border-box;
-  font-family: Libre Franklin, sans-serif;
+  font-family: var(--font-serif);
 }
 :root {
   --color-bg: #080e17;
@@ -128,6 +128,10 @@ SPDX-License-Identifier: Apache-2.0
   --color-muted: #37485c;
   --color-pink: #ff70bc;
   --color-text: white;
+  --font-sans: Azeret Mono, sans-serif;
+  --font-serif: Libre Franklin, sans-serif;
+  --font-monospace: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, monospace;
+  --border-radius: 0.5rem;
 }
 /* We never want anything to have higher specificity than `[hidden]`. */
 [hidden] {
@@ -148,7 +152,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   margin-bottom: 0.5em;
-  font-family: Azeret Mono, sans-serif;
+  font-family: var(--font-sans);
 }
 p {
   margin: 1rem 0;
@@ -163,7 +167,7 @@ table {
   margin: 1rem 0;
 }
 code, pre {
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, monospace;
+  font-family: var(--font-monospace);
   font-size: 0.8rem;
 }
 code {
@@ -213,7 +217,7 @@ form {
     color: black;
     background-color: var(--color-primary);
     border: 0;
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
@@ -234,7 +238,7 @@ form {
     background: var(--color-bg);
     color: white;
     font-size: 1rem;
-    font-family: Libre Franklin, sans-serif;
+    font-family: var(--font-serif);
   }
   .input-wrapper {
     position: relative;
@@ -378,7 +382,7 @@ blockquote {
   color: var(--color-bg);
   background-color: var(--color-primary);
   border: none;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -401,7 +405,7 @@ blockquote {
 .button-group {
   display: flex;
   border: 2px solid var(--color-primary);
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
   overflow: hidden;
   .button {
     margin: 0;
@@ -467,7 +471,7 @@ nav {
     }
   }
 }
-img {
+img, object {
   max-width: 100%;
 }
 video {
@@ -482,7 +486,7 @@ iframe {
   margin: 2rem auto;
   border: none;
   &.youtube-embed {
-    aspect-ratio: 1.777777;
+    aspect-ratio: 16 / 9;
   }
 }
 .icon {
@@ -598,7 +602,7 @@ footer {
   margin: 1rem 0;
   padding: 1rem 1.25rem;
   background: var(--color-light-bg);
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
   h2, h3 {
     font-size: 1.2rem;
     line-height: 1.3;
@@ -671,7 +675,7 @@ hr {
   h2 {
     font-size: 1.2rem;
     font-weight: normal;
-    font-family: Libre Franklin, sans-serif;
+    font-family: var(--font-serif);
   }
   blockquote {
     margin: 0;
@@ -711,7 +715,7 @@ hr {
   margin-bottom: 1rem;
   padding: 1rem;
   border: 3px solid transparent;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
   background-color: var(--color-light-bg);
   &.badge-heading-container {
     padding-top: 2.5rem;
@@ -724,7 +728,7 @@ hr {
     img {
       align-self: center;
       max-width: 4.5rem;
-      border-radius: 0.5rem;
+      border-radius: var(--border-radius);
       @media (max-width: 450px) {
         max-width: 3.0rem;
       }
@@ -752,7 +756,7 @@ hr {
   padding: 1rem;
   background-color: var(--color-light-bg);
   border: 3px solid transparent;
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius);
   .job-set-head {
     display: flex;
     gap: 1rem;
@@ -761,7 +765,7 @@ hr {
     img {
       align-self: center;
       max-width: 4.5rem;
-      border-radius: 0.5rem;
+      border-radius: var(--border-radius);
       @media (max-width: 450px) {
         max-width: 3.0rem;
       }
@@ -805,7 +809,7 @@ hr {
     margin: 0;
     padding: 1rem;
     background-color: var(--color-light-bg);
-    border-radius: 0.5rem;
+    border-radius: var(--border-radius);
     .resource__image, &.resource--light .resource__image {
       display: flex;
       align-items: center;
