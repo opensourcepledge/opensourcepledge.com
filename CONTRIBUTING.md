@@ -45,10 +45,10 @@ Here's what the workflow for a new member looks like:
 For a new member to join, they must create an issue asking to join and providing the information requested in our
 [Join][join] page.
 
-### 2. Create `src/content/members/<member-slug>.json`
+### 2. Create `data/members/<member-id>.json`
 
 After verifying that the prospective member's submitted data is correct, create a JSON file in
-`src/content/members/<member-slug>.json` with this data. The member slug should contain no spaces.
+`data/members/<member-id>.json` with all the member's information.
 
 ### 3. Add logo to `public/images/members`
 
@@ -69,15 +69,7 @@ magick logo.jpg -resize '>800x' -quality 99 -define webp:lossless=false -define 
 
 Remember that a corresponding `logo.webp.license` file must also be added.
 
-### 4. Add role to `src/memberRoles.json`
-
-The step which actually causes a member to show up on the website is adding them to `src/memberRoles.json`. For an
-entry's key, use the same member slug you used in the JSON filename. Members should have a “Member” role by default,
-though members can also have custom roles.
-
-At this point, the member will show up on the website.
-
-### 5. (Technically Optional) Add logo to `src/assets/images/members`
+### 4. (Technically Optional) Add logo to `src/assets/images/members`
 
 For a member's logo to show up on the homepage, it must be added to `src/assets/images/members/<slug>/minimal.svg`. This
 should be a white- or greyscale-only version of the member's logo. If in doubt, check the other existing logos. Note
@@ -89,13 +81,13 @@ For the logo to actually show up on the homepage, you also need to edit `MemberL
 appropriate place. Check if giving the `maxHeight` property a specific value will make the new logo fit in better
 from a visually proportional point of view.
 
-### 6. Add member logo to Google Drive
+### 5. Add member logo to Google Drive
 
 When onboarding members, we will receive logo files for those members. Make sure to contribute these logo files, and any
 modified logo files you create, back to our [“Member Logos”][member-logos] Google Drive folder. If you don't have
 access, contact @selviano.
 
-### 7. Update member information in CRM
+### 6. Update member information in CRM
 
 Make sure the new member company's information is up to date in our [CRM][crm]. This is important in order to make sure
 we don't use out of date data. If the company is not yet in the CRM, add it and apply the appropriate labels. If the
@@ -111,7 +103,7 @@ plan to renew, or (2) their report due date, plus a grace period of a month, hav
 
 When removing a member, take the following steps:
 
-* Remove the member from `src/memberRoles.json`, causing the member to no longer be displayed on the website
+* Set `"active": false` in the member's JSON file, causing the member to no longer be displayed on the website
 * Remove the member's logo from wherever it may be featured on the website, such as `MemberLogoBoard.astro`
 
 Do not delete any of the member's files. The member's JSON file, as well as their logo assets, might be useful in the
@@ -132,7 +124,7 @@ that we can compactly archive a report into a single file.
 To archive all reports, run this from the repository root:
 
 ```
-$ ./src/memberData/bin/archiveMembers.ts
+$ ./src/members/bin/archiveMembers.ts
 ```
 
 This will archive reports using the following directory structure:

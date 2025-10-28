@@ -1,0 +1,26 @@
+{
+  "id": "pydantic",
+  "role": "Innovator",
+  "active": true,
+  "name": "Pydantic Logfire",
+  "description": "<p>The Pydantic Stack gives developers visibility to stay in flow, from local to production, from AI to API.</p><p><strong>Pydantic Validation</strong> is the most widely used data validation library for Python—downloaded millions of times daily by thousands of developers worldwide. It enforces type annotations, plays nicely with type checkers and IDEs, and is both fast and extensible.</p><p><strong>Pydantic AI</strong> is a Python agent framework built to help you confidently ship production-grade applications with Generative AI. Type-safe, model-agnostic, and ready for real work.</p><p><strong>Pydantic Logfire</strong> is an observability platform built on OpenTelemetry. With SDKs for Python, TypeScript, and Rust, Logfire provides comprehensive observability for any workload in any language—with first-class support for AI, from LLM API calls to agent frameworks.</p>",
+  "shortDescription": "For too long the open source ecosystem has been taken for granted. We're proud to be part of the movement to change that.",
+  "url": "https://pydantic.dev/opensource",
+  "joinDate": "2024-10-07",
+  "annualReports": [
+    {
+      "url": "https://pydantic.dev/articles/pydantic-oss-fund-2025",
+      "year": "2025",
+      "reportDate": "2025-10-07",
+      "averageNumberOfDevs": 14,
+      "usdAmountPaid": 30700
+    },
+    {
+      "url": "https://pydantic.dev/articles/pydantic-oss-fund-2024",
+      "year": "2024",
+      "reportDate": "2024-10-07",
+      "averageNumberOfDevs": 11,
+      "usdAmountPaid": 24000
+    }
+  ]
+}

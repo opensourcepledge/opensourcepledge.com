@@ -1,0 +1,41 @@
+{
+  "id": "sentry",
+  "role": "Innovator",
+  "active": true,
+  "name": "Sentry",
+  "description": "Sentry started life as an Open Source side project in 2008. We grew that way for years before commercializing. We've always given back to the community and now we're happy to help other companies do the same through the Open Source Pledge.",
+  "shortDescription": "We've always given back to the community and now we're happy to help other companies do the same through the Open Source Pledge.",
+  "url": "https://open.sentry.io/",
+  "jobsUrl": "https://boards.greenhouse.io/sentry",
+  "joinDate": "2024-08-27",
+  "annualReports": [
+    {
+      "url": "https://blog.sentry.io/we-just-gave-750-000-dollars-to-open-source-maintainers/",
+      "year": "2025",
+      "reportDate": "2024-11-12",
+      "averageNumberOfDevs": 129,
+      "usdAmountPaid": 750000
+    },
+    {
+      "url": "https://blog.sentry.io/we-just-gave-500-000-dollars-to-open-source-maintainers/",
+      "year": "2024",
+      "reportDate": "2023-10-24",
+      "averageNumberOfDevs": 135,
+      "usdAmountPaid": 500000
+    },
+    {
+      "url": "https://blog.sentry.io/we-just-gave-260-028-dollars-to-open-source-maintainers/",
+      "year": "2023",
+      "reportDate": "2022-10-27",
+      "averageNumberOfDevs": 130,
+      "usdAmountPaid": 260280
+    },
+    {
+      "url": "https://blog.sentry.io/we-just-gave-154-999-dollars-and-89-cents-to-open-source-maintainers/",
+      "year": "2022",
+      "reportDate": "2021-10-21",
+      "averageNumberOfDevs": 75,
+      "usdAmountPaid": 155000
+    }
+  ]
+}
