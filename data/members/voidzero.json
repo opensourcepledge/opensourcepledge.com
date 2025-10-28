@@ -1,0 +1,26 @@
+{
+  "id": "voidzero",
+  "role": "Member",
+  "active": true,
+  "name": "VoidZero",
+  "description": "We are an open-source first company and we maintain Vite, Vitest, Rolldown, and Oxc. We also rely on many important dependencies and we'd love to give back.",
+  "shortDescription": "We rely on many important dependencies and we love to give back.",
+  "url": "https://voidzero.dev/posts/oss-pledge",
+  "joinDate": "2024-10-16",
+  "annualReports": [
+    {
+      "url": "https://voidzero.dev/posts/oss-pledge-2025",
+      "year": "2025",
+      "reportDate": "2025-10-06",
+      "averageNumberOfDevs": 14,
+      "usdAmountPaid": 48360
+    },
+    {
+      "url": "https://voidzero.dev/posts/oss-pledge",
+      "year": "2024",
+      "reportDate": "2024-10-16",
+      "averageNumberOfDevs": 10,
+      "usdAmountPaid": 31488
+    }
+  ]
+}

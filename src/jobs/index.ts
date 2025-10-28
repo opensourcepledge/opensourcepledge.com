@@ -4,8 +4,7 @@
 import fetch from "node-fetch";
 import * as cheerio from 'cheerio';
 
-import memberRoles from "../memberRoles.json";
-import type { Member } from "../schemas/members.ts";
+import { getMembers } from "../members/common.ts";
 
 type Job = {
   title: string;
@@ -234,14 +233,13 @@ export async function getJobSet() {
     companies: {},
     fetchedTimestamp: +(new Date()),
   };
-  const memberSlugs = Object.keys(memberRoles);
-  for (const memberSlug of memberSlugs) {
-    const member: Member = await import(`../content/members/${memberSlug}.json`);
+  const members = getMembers();
+  for (const member of members) {
     if (member.jobsUrl) {
-      console.log(`Getting jobs for ${memberSlug} from ${member.jobsUrl}`);
+      console.log(`Getting jobs for ${member.id} from ${member.jobsUrl}`);
       const jobs = await getJobsForUrl(member.jobsUrl);
       console.log(`Got ${jobs.length} jobs`, jobs);
-      jobSet.companies[memberSlug] = jobs;
+      jobSet.companies[member.id] = jobs;
     }
   }
   return jobSet;

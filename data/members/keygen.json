@@ -1,0 +1,40 @@
+{
+  "id": "keygen",
+  "role": "Innovator",
+  "active": true,
+  "name": "Keygen",
+  "description": "Keygen is a Fair Source software licensing and distribution API. Being built on top of Open Source, we strive to give back to the community whenever possible with our own Open Source projects as well as our funds.",
+  "shortDescription": "Being built on top of Open Source, we strive to give back to the community whenever possible with our own Open Source projects as well as our funds.",
+  "url": "https://keygen.sh/open-source/",
+  "joinDate": "2024-09-09",
+  "annualReports": [
+    {
+      "url": "https://keygen.sh/blog/keygen-joins-osspledge/",
+      "year": "2021",
+      "reportDate": "2021-12-31",
+      "averageNumberOfDevs": 1,
+      "usdAmountPaid": 5452
+    },
+    {
+      "url": "https://keygen.sh/blog/keygen-joins-osspledge/",
+      "year": "2022",
+      "reportDate": "2022-12-31",
+      "averageNumberOfDevs": 1,
+      "usdAmountPaid": 10599
+    },
+    {
+      "url": "https://keygen.sh/blog/keygen-joins-osspledge/",
+      "year": "2023",
+      "reportDate": "2023-12-31",
+      "averageNumberOfDevs": 1,
+      "usdAmountPaid": 5058
+    },
+    {
+      "url": "https://keygen.sh/blog/keygen-joins-osspledge/",
+      "year": "2024",
+      "reportDate": "2024-09-09",
+      "averageNumberOfDevs": 1,
+      "usdAmountPaid": 5428
+    }
+  ]
+}

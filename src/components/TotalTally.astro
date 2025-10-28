@@ -2,13 +2,12 @@
 // © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
 // SPDX-License-Identifier: Apache-2.0
 
-import { getGrandTotalRaised, fmtCurrency } from '../memberData/common.ts';
-import { getMembers } from '../memberCollections.ts';
+import { getMembers, getGrandTotalRaised, fmtCurrency } from '../members/common.ts';
 ---
 
 <div class="total-tally">
   <p>Our <a href="/members">Members</a> have paid maintainers</p>
-  <h2>{fmtCurrency(getGrandTotalRaised(await getMembers()))}</h2>
+  <h2>{fmtCurrency(getGrandTotalRaised(getMembers()))}</h2>
   <p>over the last year.</p>
 </div>
 

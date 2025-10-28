@@ -2,10 +2,14 @@
 // © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
 // SPDX-License-Identifier: Apache-2.0
 
-import { getMembers } from '../memberCollections.ts';
-import { getDollarsPerDev, fmtCurrency, sortMembersByDevs } from '../memberData/common.ts';
+import { getDollarsPerDev, fmtCurrency, sortMembersByDevs } from '../members/common.ts';
+import type { Member } from '../members/common.ts';
 
-const members = await getMembers();
+interface Props {
+  members: Member[];
+}
+
+const { members } = Astro.props;
 ---
 
 <table class="tabular-member-list table--lrr table--40-30-30">
@@ -26,24 +30,24 @@ const members = await getMembers();
     {sortMembersByDevs(members).map((member) =>
       <tr
         class="member"
-        data-ndevs={member.data.annualReports[0].averageNumberOfDevs}
-        data-join-date={member.data.joinDate}
-        data-name={member.data.name}
+        data-ndevs={member.annualReports[0].averageNumberOfDevs}
+        data-join-date={member.joinDate}
+        data-name={member.name}
       >
         <td class="name">
           <a class="sneaky" href={`/members/${member.id}`}>
-            <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.data.name} logo`>
-            {member.data.name}
+            <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.name} logo`>
+            {member.name}
           </a>
         </td>
         <td class="ndevs">
           <a class="sneaky" href={`/members/${member.id}`}>
-            {member.data.annualReports[0].averageNumberOfDevs}
+            {member.annualReports[0].averageNumberOfDevs}
           </a>
         </td>
         <td class="dollars-per-dev">
           <a class="sneaky" href={`/members/${member.id}`}>
-            {fmtCurrency(getDollarsPerDev(member.data.annualReports[0]))}
+            {fmtCurrency(getDollarsPerDev(member.annualReports[0]))}
           </a>
         </td>
       </tr>
