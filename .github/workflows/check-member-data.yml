@@ -19,6 +19,6 @@ jobs:
       - name: Install npm packages
         run: npm install
       - name: Check all member data
-        run: ./src/memberData/bin/checkMembers.ts
+        run: ./src/members/bin/checkMembers.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
