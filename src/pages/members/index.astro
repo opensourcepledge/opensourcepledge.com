@@ -8,10 +8,16 @@ import Button from "../../components/Button.astro";
 import Layout from "../../layouts/Layout.astro";
 import GridMemberList from "../../components/GridMemberList.astro";
 import TabularMemberList from "../../components/TabularMemberList.astro";
+import MiniMemberList from "../../components/MiniMemberList.astro";
 import TotalTally from "../../components/TotalTally.astro";
 
 import svgGrid from '../../assets/icons/grid.svg?raw';
 import svgList from '../../assets/icons/list.svg?raw';
+
+import { getMembers } from '../../members/common.ts';
+
+const activeMembers = getMembers();
+const inactiveMembers = getMembers({ onlyInactive: true });
 ---
 
 <Layout title="Members">
@@ -57,8 +63,13 @@ import svgList from '../../assets/icons/list.svg?raw';
             </div>
           </div>
 
-          <TabularMemberList></TabularMemberList>
-          <GridMemberList></GridMemberList>
+          <TabularMemberList members={activeMembers}></TabularMemberList>
+          <GridMemberList members={activeMembers}></GridMemberList>
+        </section>
+
+        <section>
+          <h3>Former Member Companies</h3>
+          <MiniMemberList members={inactiveMembers}></MiniMemberList>
         </section>
 
         <section class="flex-center bottom-cta">

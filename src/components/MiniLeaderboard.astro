@@ -2,11 +2,10 @@
 // © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
 // SPDX-License-Identifier: Apache-2.0
 
-import { getMembers } from '../memberCollections.ts';
-import { sortMembersByDevs } from '../memberData/common.ts';
+import { getMembers, sortMembersByDevs } from '../members/common.ts';
 
 const N_TO_CHOOSE = 5;
-const members = sortMembersByDevs(await getMembers());
+const members = sortMembersByDevs(getMembers());
 ---
 
 <table class="mini-leaderboard">
@@ -14,8 +13,8 @@ const members = sortMembersByDevs(await getMembers());
     {members.map((member, idx) => <tr hidden={idx >= N_TO_CHOOSE}>
       <td>
         <a class="sneaky" href={`/members/${member.id}`}>
-          <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.data.name} logo`>
-          {member.data.name}
+          <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.name} logo`>
+          {member.name}
         </div>
       </td>
     </tr>)}

@@ -1,0 +1,19 @@
+{
+  "id": "foxley-talent",
+  "role": "Member",
+  "active": true,
+  "name": "Foxley Talent",
+  "description": "Foxley Talent is a specialist recruiter for the Python and Django ecosystem. We operate in the United States, Europe and in the UK. We have supported companies to hire Python and Django Developers since 2008 and can help your business to find your next great hire. We are regulars at DjangoCon in the United States and in Europe providing our clients with unique access to the people we meet during the conferences. Our mission is to become THE go-to recruiter for all Python and Django Developer hiring within the regions we support giving back to the community whenever we can along the way.",
+  "shortDescription": "Our mission is to become THE go-to recruiter for all Python and Django Developer hiring within the regions we support giving back to the community whenever we can along the way.",
+  "url": "https://foxleytalent.com/blog/dsf/",
+  "joinDate": "2025-03-13",
+  "annualReports": [
+    {
+      "url": "https://foxleytalent.com/blog/dsf/",
+      "year": "2025",
+      "reportDate": "2025-03-13",
+      "averageNumberOfDevs": 2,
+      "usdAmountPaid": 5000
+    }
+  ]
+}

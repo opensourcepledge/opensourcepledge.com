@@ -46,7 +46,7 @@ done
 
 echo 'Generating files'
 
-grand_total=$(./src/memberData/bin/getGrandTotalRaised.ts)
+grand_total=$(./src/members/bin/getGrandTotalRaised.ts)
 sed -i "s/\\\$[^<]\\+/${grand_total}/" public/generated/templates/opengraph.svg
 
 echo 'Generated SVG file'

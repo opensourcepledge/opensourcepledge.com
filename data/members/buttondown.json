@@ -1,0 +1,20 @@
+{
+  "id": "buttondown",
+  "role": "Innovator",
+  "active": true,
+  "name": "Buttondown",
+  "description": "Buttondown is the easiest way to send emails and grow your audience.",
+  "shortDescription": "We — and you, even if you don't know it — would be nowhere without open source software.",
+  "url": "https://buttondown.com/open-source",
+  "blogProfileSlug": "story-of-buttondown",
+  "joinDate": "2024-10-01",
+  "annualReports": [
+    {
+      "url": "https://buttondown.com/blog/oss-pledge",
+      "year": "2024",
+      "reportDate": "2024-10-01",
+      "averageNumberOfDevs": 1,
+      "usdAmountPaid": 5000
+    }
+  ]
+}
