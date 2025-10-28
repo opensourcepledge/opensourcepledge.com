@@ -22,7 +22,7 @@ jobs:
       - name: Run npm install
         run: npm install
       - name: Check all member data
-        run: ./src/memberData/bin/checkMembers.ts
+        run: ./src/members/bin/checkMembers.ts
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: mfinelli/setup-imagemagick@v6
