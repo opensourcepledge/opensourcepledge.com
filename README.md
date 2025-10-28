@@ -36,12 +36,25 @@ the code, developer time, and gifts-in-kind that many Pledge member companies al
 * **Just want to keep up to date?** Follow us on [Mastodon][mastodon] or [Bluesky][bsky].
 * **Want to cite our work?** Click “cite this repository” in the top right.
 
+---
+
+Open Source Pledge is brought to you by [Sentry][sentry] and contributors.
+The core team is:
+[Vlad-Stefan Harbuz][vlad.website] (independent),
+[Greg Kumparak][greg] (Sentry),
+[Michael Selvidge][selviano] (Sentry), and
+[Chad Whitacre][chad] (Sentry).
+Design is by Sentry's in-house creative team,
+[Studio 404][studio404].
+
 [bsky]: https://bsky.app/profile/opensourcepledge.com
+[chad]: https://chadwhitacre.com/
 [contributors]: https://github.com/opensourcepledge/opensourcepledge.com/graphs/contributors
 [cramer-author]: https://blog.sentry.io/authors/david-cramer/
 [crisis]: https://openpath.quest/2024/the-open-source-sustainability-crisis/
 [fosdem-talk]: https://www.youtube.com/watch?v=UarZwUjFJpI
 [fosdem]: https://fosdem.org/2025/
+[greg]: https://www.kumparak.com/
 [issues]: https://github.com/opensourcepledge/opensourcepledge.com/issues
 [join]: https://opensourcepledge.com/join/
 [launch-ticket]: https://github.com/opensourcepledge/opensourcepledge.com/issues/4
@@ -51,7 +64,9 @@ the code, developer time, and gifts-in-kind that many Pledge member companies al
 [openpath]: https://openpath.quest/
 [osp]: https://opensourcepledge.com
 [pledgephil]: https://vlad.website/the-philosophy-of-the-open-source-pledge/
+[selviano]: https://github.com/selviano
 [sentry-blog-post]: https://blog.sentry.io/join-the-pledge/
 [sentry]: https://sentry.io/welcome/
 [slack]: https://join.slack.com/t/opensourcepledge/shared_invite/zt-33qxp7jsz-CJeYxDBnc2Y3FuZvGCHLMw
+[studio404]: https://sentry.design/
 [vlad.website]: https://vlad.website/
