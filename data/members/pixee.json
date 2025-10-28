@@ -1,0 +1,19 @@
+{
+  "id": "pixee",
+  "role": "Innovator",
+  "active": false,
+  "name": "Pixee",
+  "description": "We build an automated product security engineer for security and development teams. We automatically fix vulnerabilities, triage code scan results, and harden code to give teams more time to focus on the work that matters. And we believe in Open Source! We leverage tools from the community and strive to give back when possible. Through donations and direct contributions to OSS projects and foundations. ",
+  "shortDescription": "We believe in Open Source! We leverage tools from the community and strive to give back when possible.",
+  "url": "https://blog.pixee.ai/pixees-pledge-to-open-source",
+  "joinDate": "2024-10-01",
+  "annualReports": [
+    {
+      "url": "https://blog.pixee.ai/pixees-pledge-to-open-source",
+      "year": "2024",
+      "reportDate": "2024-10-01",
+      "averageNumberOfDevs": 7,
+      "usdAmountPaid": 25265
+    }
+  ]
+}

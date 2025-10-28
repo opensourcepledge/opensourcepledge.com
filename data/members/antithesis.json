@@ -1,0 +1,27 @@
+{
+  "id": "antithesis",
+  "role": "Innovator",
+  "active": true,
+  "name": "Antithesis",
+  "description": "We build an autonomous testing platform. We rely heavily on the countless hours of work contributed by OSS maintainers worldwide for everything from our internal Nix tooling to core components of our product like our deterministic hypervisor, a fork of FreeBSD.",
+  "shortDescription": "We rely heavily on the countless hours of work contributed by OSS maintainers worldwide.",
+  "url": "https://antithesis.com/blog/oss_pledge/",
+  "jobsUrl": "https://jobs.ashbyhq.com/antithesis",
+  "joinDate": "2024-09-18",
+  "annualReports": [
+    {
+      "url": "https://antithesis.com/blog/2025/oss_pledge_2025/",
+      "year": "2025",
+      "reportDate": "2025-10-16",
+      "averageNumberOfDevs": 38,
+      "usdAmountPaid": 110000
+    },
+    {
+      "url": "https://antithesis.com/blog/oss_pledge/",
+      "year": "2024",
+      "reportDate": "2024-09-18",
+      "averageNumberOfDevs": 23,
+      "usdAmountPaid": 186000
+    }
+  ]
+}

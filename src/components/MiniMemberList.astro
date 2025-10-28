@@ -1,8 +1,8 @@
 ---
-// © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
+// © 2025 Functional Software, Inc. dba Sentry
 // SPDX-License-Identifier: Apache-2.0
 
-import { sortMembersByDevs, fmtCurrency, fmtDevs, getDollarsPerDev } from '../members/common.ts';
+import { sortMembersByDevs } from '../members/common.ts';
 import type { Member } from '../members/common.ts';
 
 interface Props {
@@ -12,15 +12,12 @@ interface Props {
 const { members } = Astro.props;
 ---
 
-<div class="grid-member-list">
+<div class="mini-member-list">
   <div class="members">
     {sortMembersByDevs(members).map((member) =>
       <a
         class="member sneaky"
-        href={`/members/${member.id}`}
-        data-ndevs={member.annualReports[0].averageNumberOfDevs}
-        data-join-date={member.joinDate}
-        data-name={member.name}
+        href={member.url}
       >
         <div class="main">
           <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.name} logo`>
@@ -31,18 +28,9 @@ const { members } = Astro.props;
             }
           </h2>
         </div>
-        <em>“{member.shortDescription}”</em>
-        <div class="numbers">
-          <span>{fmtDevs(member.annualReports[0].averageNumberOfDevs)}</span>
-          <span>{fmtCurrency(getDollarsPerDev(member.annualReports[0]))} / dev</span>
-        </div>
       </a>
     )}
   </div>
-  <small>
-    “Devs”: Average number of employed full-time equivalent developers (in latest report).<br>
-    “$ / dev”: USD paid / average number of employed full-time equivalent developers (in latest report).
-  </small>
 </div>
 
 <style>
@@ -53,10 +41,6 @@ const { members } = Astro.props;
     @media (max-width: 860px) {
       grid-template-columns: 1fr;
     }
-  }
-  small {
-    display: block;
-    margin-top: 1rem;
   }
   a.member {
     display: flex;
@@ -98,14 +82,6 @@ const { members } = Astro.props;
           font-size: 0.8rem;
         }
       }
-    }
-    em {
-      flex: 1 0;
-    }
-    .numbers {
-      flex: 0 1;
-      display: flex;
-      justify-content: space-between;
     }
   }
 </style>

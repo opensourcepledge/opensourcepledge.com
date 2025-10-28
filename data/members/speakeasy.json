@@ -1,0 +1,20 @@
+{
+  "id": "speakeasy",
+  "role": "Innovator",
+  "active": true,
+  "name": "Speakeasy",
+  "description": "We build tools that help developers create great APIs. Since the first days of the company, we've always supported the OSS projects that are platform is built on.",
+  "shortDescription": "We've always supported the OSS projects that our platform is built on.",
+  "url": "https://www.speakeasy.com/post/open-source-pledge-2024",
+  "jobsUrl": "https://jobs.ashbyhq.com/Speakeasy",
+  "joinDate": "2024-10-04",
+  "annualReports": [
+    {
+      "url": "https://www.speakeasy.com/post/open-source-pledge-2024",
+      "year": "2024",
+      "reportDate": "2024-12-31",
+      "averageNumberOfDevs": 10,
+      "usdAmountPaid": 42276
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "prefect",
+  "role": "Innovator",
+  "active": true,
+  "name": "Prefect",
+  "description": "Prefect is an open source workflow orchestration framework, supporting a wide range of workflow architectures including batch, event-driven, fully dynamic, and hybrid architecture.",
+  "shortDescription": "By supporting these projects, we're not just giving back—we're investing in the future of open source.",
+  "url": "https://www.prefect.io/blog/prefect-s-commitment-to-open-source-launching-our-sponsorship-initiative",
+  "jobsUrl": "https://jobs.ashbyhq.com/prefect",
+  "joinDate": "2024-09-30",
+  "annualReports": [
+    {
+      "url": "https://www.prefect.io/blog/prefect-s-open-source-sponsorship-2025-update",
+      "year": "2025",
+      "reportDate": "2025-09-25",
+      "averageNumberOfDevs": 15,
+      "usdAmountPaid": 30000
+    },
+    {
+      "url": "https://www.prefect.io/blog/prefect-s-commitment-to-open-source-launching-our-sponsorship-initiative",
+      "year": "2024",
+      "reportDate": "2024-09-30",
+      "averageNumberOfDevs": 17,
+      "usdAmountPaid": 40000
+    }
+  ]
+}

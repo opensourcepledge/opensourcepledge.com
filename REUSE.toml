@@ -11,16 +11,13 @@ path = [
     "CNAME",
     "REUSE.toml",
     "astro.config.mjs",
-    "members.csv",
+    "data/members/*",
     "package-lock.json",
     "package.json",
     "public/.well-known/atproto-did",
-    "public/images/example-members/*",
     "public/robots.txt",
     "src/cache/jobSet.json",
-    "src/content/members/*",
     "src/env.d.ts",
-    "src/memberRoles.json",
     "tsconfig.json",
 ]
 SPDX-FileCopyrightText = "NONE"

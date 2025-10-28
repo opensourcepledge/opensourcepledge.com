@@ -6,10 +6,10 @@ import Blob from "../components/Blob.astro";
 import Layout from "../layouts/Layout.astro";
 import type { JobSet } from "../jobs/index.ts";
 import jobSetRaw from "../cache/jobSet.json";
-import { getMembersAsMap } from '../memberCollections.ts';
+import { getMembersAsMap } from '../members/common.ts';
 
 const jobSet = jobSetRaw as JobSet;
-const memberMap = await getMembersAsMap();
+const memberMap = getMembersAsMap();
 ---
 
 <Layout
@@ -197,7 +197,7 @@ const memberMap = await getMembersAsMap();
         </div>
 
         {Object.keys(jobSet.companies).map((memberId) =>
-          jobSet.companies[memberId].length > 0 && (
+          (jobSet.companies[memberId].length > 0) && (memberId in memberMap) && (
             <div class="job-set">
               <div class="job-set-head">
                 <img src=`/images/members/${memberId}/logo.webp` alt=`The ${memberMap[memberId].name} logo`>

@@ -1,0 +1,26 @@
+{
+  "id": "chieftools",
+  "role": "Innovator",
+  "active": true,
+  "name": "Chief Tools",
+  "description": "Building, deploying and monitoring. Our tools supporting your applications.",
+  "shortDescription": "We're joining the Open Source Pledge because our business is built on and with open-source software.",
+  "url": "https://aka.chief.app/osspledge?ref=osspledge",
+  "joinDate": "2024-09-15",
+  "annualReports": [
+    {
+      "url": "https://chief.app/blog/renewing-our-open-source-pledge-2025",
+      "year": "2025",
+      "reportDate": "2025-09-11",
+      "averageNumberOfDevs": 1,
+      "usdAmountPaid": 2400
+    },
+    {
+      "url": "https://aka.chief.app/osspledge?ref=osspledge",
+      "year": "2024",
+      "reportDate": "2024-09-15",
+      "averageNumberOfDevs": 1,
+      "usdAmountPaid": 2072
+    }
+  ]
+}
