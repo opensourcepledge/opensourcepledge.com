@@ -56,12 +56,24 @@ export function getDollarsPerDev(report: MemberReport) {
   return report.usdAmountPaid / report.averageNumberOfDevs;
 }
 
-export function getGrandTotalRaised(members: Member[]) {
-  let grandTotal = 0;
+export function getAllTimeTotalRaised(members: Member[]) {
+  let total = 0;
   members.forEach((member) => {
-    grandTotal += member.annualReports[0].usdAmountPaid;
+    member.annualReports.forEach((report) => {
+      if (+report.year >= 2023) {
+        total += report.usdAmountPaid;
+      }
+    });
   });
-  return grandTotal;
+  return total;
+}
+
+export function getLastYearTotalRaised(members: Member[]) {
+  let total = 0;
+  members.forEach((member) => {
+    total += member.annualReports[0].usdAmountPaid;
+  });
+  return total;
 }
 
 export function fmtCurrency(num: number) {
