@@ -5,10 +5,10 @@
 
 // Must be run in repository root.
 
-import { getMembers, getGrandTotalRaised, fmtCurrency } from '../common.ts';
+import { getMembers, getAllTimeTotalRaised, fmtCurrency } from '../common.ts';
 
 async function main() {
-  console.log(fmtCurrency(getGrandTotalRaised(getMembers())));
+  console.log(fmtCurrency(getAllTimeTotalRaised(getMembers())));
 }
 
 main();

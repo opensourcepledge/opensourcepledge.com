@@ -46,8 +46,8 @@ done
 
 echo 'Generating files'
 
-grand_total=$(./src/members/bin/getGrandTotalRaised.ts)
-sed -i "s/\\\$[^<]\\+/${grand_total}/" public/generated/templates/opengraph.svg
+all_time_total=$(./src/members/bin/getAllTimeTotalRaised.ts)
+sed -i "s/\\\$[^<]\\+/${all_time_total}/" public/generated/templates/opengraph.svg
 
 echo 'Generated SVG file'
 cat public/generated/templates/opengraph.svg
