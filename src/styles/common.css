@@ -133,8 +133,8 @@ SPDX-License-Identifier: Apache-2.0
   --font-monospace: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, monospace;
   --border-radius: 0.5rem;
 }
-/* We never want anything to have higher specificity than `[hidden]`. */
 [hidden] {
+  /* We never want anything to have higher specificity than `[hidden]`. */
   display: none !important;
 }
 html {
