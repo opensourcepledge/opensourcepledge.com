@@ -117,7 +117,7 @@ SPDX-License-Identifier: Apache-2.0
 
 * {
   box-sizing: border-box;
-  font-family: var(--font-serif);
+  font-family: var(--font-body);
 }
 :root {
   --color-bg: #080e17;
@@ -128,8 +128,8 @@ SPDX-License-Identifier: Apache-2.0
   --color-muted: #37485c;
   --color-pink: #ff70bc;
   --color-text: white;
-  --font-sans: Azeret Mono, sans-serif;
-  --font-serif: Libre Franklin, sans-serif;
+  --font-display: Azeret Mono, sans-serif;
+  --font-body: Libre Franklin, sans-serif;
   --font-monospace: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, monospace;
   --border-radius: 0.5rem;
 }
@@ -152,7 +152,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   margin-bottom: 0.5em;
-  font-family: var(--font-sans);
+  font-family: var(--font-display);
 }
 p {
   margin: 1rem 0;
@@ -238,7 +238,7 @@ form {
     background: var(--color-bg);
     color: white;
     font-size: 1rem;
-    font-family: var(--font-serif);
+    font-family: var(--font-body);
   }
   .input-wrapper {
     position: relative;
@@ -675,7 +675,7 @@ hr {
   h2 {
     font-size: 1.2rem;
     font-weight: normal;
-    font-family: var(--font-serif);
+    font-family: var(--font-body);
   }
   blockquote {
     margin: 0;
