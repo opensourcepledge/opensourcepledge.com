@@ -67,11 +67,6 @@ const inactiveMembers = getMembers({ onlyInactive: true });
           <GridMemberList members={activeMembers}></GridMemberList>
         </section>
 
-        <section>
-          <h3>Former Member Companies</h3>
-          <MiniMemberList members={inactiveMembers}></MiniMemberList>
-        </section>
-
         <section class="flex-center bottom-cta">
           <div>
             <div class="text-center">
@@ -84,6 +79,11 @@ const inactiveMembers = getMembers({ onlyInactive: true });
               >
             </div>
           </div>
+        </section>
+
+        <section>
+          <h3>Former Member Companies</h3>
+          <MiniMemberList members={inactiveMembers}></MiniMemberList>
         </section>
       </main>
     </div>
