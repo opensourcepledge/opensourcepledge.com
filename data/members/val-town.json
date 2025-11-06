@@ -10,6 +10,13 @@
   "joinDate": "2024-09-03",
   "annualReports": [
     {
+      "url": "https://blog.val.town/oss-pledge",
+      "year": "2025",
+      "reportDate": "2025-11-05",
+      "averageNumberOfDevs": 3,
+      "usdAmountPaid": 8131
+    },
+    {
       "url": "https://blog.val.town/blog/oss",
       "year": "2024",
       "reportDate": "2024-09-03",
