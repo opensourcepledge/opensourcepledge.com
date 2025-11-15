@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import Blob from "../../components/Blob.astro";
+import Prebanner from "../../components/Prebanner.astro";
 import Layout from "../../layouts/Layout.astro";
 
 import dayjs from 'dayjs';
@@ -65,6 +66,16 @@ const components = {
   ogImageUrl={article.opengraphImage ? urlForImage(article.opengraphImage) : undefined}
   ogImageAlt={article.opengraphImageAltText}
 >
+  {article.slug.current == 'burnout-in-open-source-a-structural-problem-we-can-fix-together' && (
+    <Prebanner slot="prebanner">
+      <strong>UNDER EMBARGO. Do not share.</strong><br>
+      Embargo ends Tue 18 Nov 2025, 6am PT<br>
+      Miranda's full report PDF is available here:<br>
+      <a href="https://staging.mirandaheath.website/report-on-burnout-in-open-source-software/">
+        → Report on Burnout in Open Source Software
+      </a>
+    </Prebanner>
+  )}
   <div class="edge-blobs">
     <Blob kind="grad-dots-04" top="12%" right="-2rem"></Blob>
     <Blob kind="grad-dots-05" top="45%" left="-2rem"></Blob>
