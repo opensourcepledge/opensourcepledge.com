@@ -66,14 +66,10 @@ const components = {
   ogImageUrl={article.opengraphImage ? urlForImage(article.opengraphImage) : undefined}
   ogImageAlt={article.opengraphImageAltText}
 >
-  {article.slug.current == 'burnout-in-open-source-a-structural-problem-we-can-fix-together' && (
+  {false && (
     <Prebanner slot="prebanner">
       <strong>UNDER EMBARGO. Do not share.</strong><br>
-      Embargo ends Tue 18 Nov 2025, 6am PT<br>
-      Miranda's full report PDF is available here:<br>
-      <a href="https://staging.mirandaheath.website/report-on-burnout-in-open-source-software/">
-        → Report on Burnout in Open Source Software
-      </a>
+      Embargo ends Tue 18 Nov 2025, 6am PT
     </Prebanner>
   )}
   <div class="edge-blobs">
