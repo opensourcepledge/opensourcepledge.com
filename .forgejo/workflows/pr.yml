@@ -1,0 +1,26 @@
+name: Run checks on pull request
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    # NOTE: Tested `codeberg-tiny` and it did not suffice. We should review
+    # this sometime in the future so as to minimally tax Codeberg's
+    # infrastructure.
+    # — vladh, 2025-11-27
+    runs-on: codeberg-small
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Run npm install
+        run: npm install
+      - name: Run checks
+        run: npx astro check
