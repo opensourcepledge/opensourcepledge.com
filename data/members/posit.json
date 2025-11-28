@@ -10,6 +10,13 @@
   "joinDate": "2024-12-20",
   "annualReports": [
     {
+      "url": "https://posit.co/blog/posit-open-source-pledge-2025/",
+      "year": "2025",
+      "reportDate": "2025-11-27",
+      "averageNumberOfDevs": 160,
+      "usdAmountPaid": 750000
+    },
+    {
       "url": "https://posit.co/blog/posit-pledge-to-support-open-source/",
       "year": "2024",
       "reportDate": "2024-12-20",
