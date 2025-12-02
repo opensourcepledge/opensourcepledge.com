@@ -262,6 +262,34 @@ export default defineConfig({
                   }
                 ],
               },
+              {
+                type: 'object',
+                title: 'Large Button',
+                name: 'largeButton',
+                fields: [
+                  {
+                    type: 'string',
+                    name: 'text',
+                    title: 'Text',
+                    description: 'The text for this button',
+                    validation: (rule) => rule.required(),
+                  },
+                  {
+                    type: 'string',
+                    name: 'url',
+                    title: 'URL',
+                    description: 'The URL this button leads to',
+                    validation: (rule) => rule.required(),
+                  },
+                  {
+                    type: 'boolean',
+                    name: 'opensInNewTab',
+                    title: 'Opens in new tab',
+                    description: 'If true, the linked page will open in a new tab',
+                    initialValue: false,
+                  }
+                ],
+              },
             ],
             validation: (rule) => rule.required(),
           })
