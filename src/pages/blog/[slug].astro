@@ -20,6 +20,7 @@ import YoutubeEmbed from '../../portableTextComponents/YoutubeEmbed.astro';
 import VideoEmbed from '../../portableTextComponents/VideoEmbed.astro';
 import HorizontalRule from '../../portableTextComponents/HorizontalRule.astro';
 import CallToAction from '../../portableTextComponents/CallToAction.astro';
+import LargeButton from '../../portableTextComponents/LargeButton.astro';
 
 const ARTICLE_QUERY = `*[_type == "article" && slug.current == $slug][0]{
   _id,
@@ -53,6 +54,7 @@ const components = {
     videoEmbed: VideoEmbed,
     horizontalRule: HorizontalRule,
     callToAction: CallToAction,
+    largeButton: LargeButton,
   },
   block: Block,
 };

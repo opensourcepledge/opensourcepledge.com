@@ -1,0 +1,22 @@
+---
+// © 2025 Functional Software, Inc. dba Sentry
+// SPDX-License-Identifier: Apache-2.0
+
+const { node } = Astro.props;
+
+import Button from "../components/Button.astro";
+
+let target = undefined;
+if (node.opensInNewTab) {
+  target = '_blank';
+}
+console.log('target', target);
+---
+
+<div class="flex-center">
+  <div>
+    <div class="text-center">
+      <Button href={node.url} target={target}>{node.text}</Button>
+    </div>
+  </div>
+</div>
