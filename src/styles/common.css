@@ -139,7 +139,7 @@ SPDX-License-Identifier: Apache-2.0
 }
 html {
   font-size: 20px;
-  line-height: 1.6;
+  line-height: 1.5;
   background-color: var(--color-bg);
   color: var(--color-text);
   overflow-x: hidden;
