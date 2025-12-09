@@ -13,7 +13,6 @@ dayjs.extend(utc);
 
 import type { SanityDocument } from "@sanity/client";
 import { sanityClient } from "sanity:client";
-import { urlForImage } from '../sanityUtil.ts';
 
 async function countBlogPosts() {
   const showDrafts = false;
@@ -46,7 +45,7 @@ solution would require moving the press item and endorsement data out of the .as
 would make editing these items more difficult in the future. We can figure out a better solution later.
 — vladh, 09 Dec 2025
 */
-function countOccurencesInFile(filepath, pattern) {
+function countOccurencesInFile(filepath: string, pattern: RegExp) {
   const fileContents = fs
     .readFileSync(filepath)
     .toString();
