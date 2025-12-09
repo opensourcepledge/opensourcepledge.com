@@ -1,0 +1,107 @@
+---
+// © 2025 Functional Software, Inc. dba Sentry
+// SPDX-License-Identifier: Apache-2.0
+
+import Blob from "../components/Blob.astro";
+import Layout from "../layouts/Layout.astro";
+
+import fs from 'fs';
+
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+dayjs.extend(utc);
+
+import type { SanityDocument } from "@sanity/client";
+import { sanityClient } from "sanity:client";
+import { urlForImage } from '../sanityUtil.ts';
+
+async function countBlogPosts() {
+  const showDrafts = false;
+
+  const ARTICLES_QUERY = `*[_type == "article"]|order(publishDateTime desc){
+    _id,
+    title,
+    slug,
+    publishDateTime,
+    author->{name, slug, avatar}
+  }`;
+
+  const articles = (await sanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY))
+    .filter((a) => {
+      if (showDrafts) {
+        return !dayjs(a.publishDateTime).isBefore(dayjs().utc());
+      } else {
+        return dayjs(a.publishDateTime).isBefore(dayjs().utc());
+      }
+    });
+
+  return articles.length;
+}
+
+/*
+HACK:
+To count press items and blog posts, we just read PressItemList.astro and EndorsementList.astro, and count the number of
+occurences of the strings `<PressItem` and `<Endorsement`, respectively. This is certainly a hack, but a more elegant
+solution would require moving the press item and endorsement data out of the .astro files, which would be more work, and
+would make editing these items more difficult in the future. We can figure out a better solution later.
+— vladh, 09 Dec 2025
+*/
+function countOccurencesInFile(filepath, pattern) {
+  const fileContents = fs
+    .readFileSync(filepath)
+    .toString();
+  return (fileContents.match(pattern) || []).length;
+}
+
+function countPressItems() {
+  return countOccurencesInFile('src/components/PressItemList.astro', /<PressItem/g);
+}
+
+function countEndorsements() {
+  return countOccurencesInFile('src/components/EndorsementList.astro', /<Endorsement/g);
+}
+---
+
+<Layout
+  title="Stats"
+  preventIndexing={true}
+>
+  <div class="edge-blobs">
+    <Blob kind="solid-fill-03" top="45%" right="-11rem"></Blob>
+    <Blob kind="grad-dots-04" top="2%" right="-2rem"></Blob>
+  </div>
+  <div class="container">
+    <Blob kind="solid-fill-04" top="4%" right="-22rem"></Blob>
+    <Blob kind="solid-fill-02" top="25%" left="-22rem"></Blob>
+    <Blob kind="grad-dots-05" top="33%" left="-16rem"></Blob>
+    <Blob kind="grad-dots-03" top="60%" right="-16rem"></Blob>
+    <Blob kind="solid-fill-05" top="65%" left="-7rem"></Blob>
+    <Blob kind="grad-dots-02" top="80%" left="-16rem"></Blob>
+
+    <main id="main-content">
+      <section>
+        <h1>Stats</h1>
+        <table>
+          <tr>
+            <td>Blog posts</td>
+            <td>{await countBlogPosts()}</td>
+          </tr>
+          <tr>
+            <td>Press items</td>
+            <td>{countPressItems()}</td>
+          </tr>
+          <tr>
+            <td>Endorsements</td>
+            <td>{countEndorsements()}</td>
+          </tr>
+        </table>
+      </section>
+    </main>
+  </div>
+</Layout>
+
+<style>
+  table {
+    max-width: 15rem;
+  }
+</style>
