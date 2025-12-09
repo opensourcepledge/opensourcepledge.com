@@ -20,6 +20,7 @@ const {
 import '../styles/common.css';
 
 import LatestBlogPostBanner from "../components/LatestBlogPostBanner.astro";
+import CranberrySossBanner from "../components/CranberrySossBanner.astro";
 ---
 
 <!doctype html>
@@ -67,7 +68,8 @@ import LatestBlogPostBanner from "../components/LatestBlogPostBanner.astro";
     <a class="skiplink" href="#main-content">Skip to main content</a>
     { !navless && (
       <slot name="prebanner"></slot>
-      <LatestBlogPostBanner></LatestBlogPostBanner>
+      <!-- <LatestBlogPostBanner></LatestBlogPostBanner> -->
+      <CranberrySossBanner></CranberrySossBanner>
       <nav class="container">
         <a href="/">
           <img src="/logos/opensourcepledge-logo-horiz-color.png" alt="The Open Source Pledge logo">
