@@ -69,13 +69,13 @@ export function getAllTimeTotalRaised(members: Member[]) {
 }
 
 export function getYearlyTotalsRaised(members: Member[]) {
-  let totals = {};
+  let totals: { [key: number]: number } = {};
   members.forEach((member) => {
     member.annualReports.forEach((report) => {
       if (!(report.year in totals)) {
-        totals[report.year] = 0;
+        totals[+report.year] = 0;
       }
-      totals[report.year] += report.usdAmountPaid;
+      totals[+report.year] += report.usdAmountPaid;
     });
   });
   return totals;
