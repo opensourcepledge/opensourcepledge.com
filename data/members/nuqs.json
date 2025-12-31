@@ -1,0 +1,20 @@
+{
+  "id": "nuqs",
+  "role": "Member",
+  "active": true,
+  "name": "Nuqs",
+  "description": "Type-safe search params state manager for React frameworks. Like useState, but stored in the URL query string. We’re grateful to the Open Source community we’re lucky to be a part of.",
+  "shortDescription": "We’re grateful to the Open Source community we’re lucky to be a part of.",
+  "url": "https://nuqs.dev/blog/open-source-pledge",
+  "joinDate": "2025-11-27",
+  "annualReports": [
+    {
+      "url": "https://nuqs.dev/blog/open-source-pledge",
+      "year": "2025",
+      "reportDate": "2025-11-27",
+      "averageNumberOfDevs": 1,
+      "usdAmountPaid": 3123
+    }
+  ]
+}
+
