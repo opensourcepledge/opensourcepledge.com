@@ -1,0 +1,28 @@
+name: Check all member data
+
+on:
+  schedule:
+    - cron: "25 16 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write
+  issues: write
+
+jobs:
+  build:
+    runs-on: codeberg-tiny
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Install npm packages
+        run: npm install
+      # TODO: Fix
+      # - name: Check all member data
+      #   run: ./src/members/bin/checkMembers.ts
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
