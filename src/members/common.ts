@@ -60,9 +60,7 @@ export function getAllTimeTotalRaised(members: Member[]) {
   let total = 0;
   members.forEach((member) => {
     member.annualReports.forEach((report) => {
-      if (+report.year >= 2023) {
-        total += report.usdAmountPaid;
-      }
+      total += report.usdAmountPaid;
     });
   });
   return total;
