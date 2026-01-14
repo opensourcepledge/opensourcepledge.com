@@ -9,6 +9,13 @@
   "joinDate": "2024-10-01",
   "annualReports": [
     {
+      "url": "https://tideways.com/profiler/blog/our-ongoing-commitment-to-open-source",
+      "year": "2025",
+      "reportDate": "2016-01-04",
+      "averageNumberOfDevs": 4,
+      "usdAmountPaid": 15235
+    },
+    {
       "url": "https://tideways.com/profiler/blog/our-open-source-contributions-in-2024",
       "year": "2024",
       "reportDate": "2025-03-04",
