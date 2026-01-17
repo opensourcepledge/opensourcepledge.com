@@ -39,7 +39,7 @@ path = [
     "public/resources/stickers/*",
     "src/assets/images/blobs/*",
 ]
-SPDX-FileCopyrightText = "© 2024 Functional Software, Inc. d/b/a Sentry"
+SPDX-FileCopyrightText = "© Functional Software, Inc. d/b/a Sentry"
 SPDX-License-Identifier = "LicenseRef-Restricted"
 
 [[annotations]]
@@ -47,7 +47,7 @@ path = [
     "public/fonts/azaret-mono*",
     "public/fonts/AzeretMono*",
 ]
-SPDX-FileCopyrightText = "Copyright 2021 The Azeret Project Authors (https://github.com/displaay/azeret)"
+SPDX-FileCopyrightText = "Copyright The Azeret Project Authors (https://github.com/displaay/azeret)"
 SPDX-License-Identifier = "OFL-1.1"
 
 
@@ -56,5 +56,5 @@ path = [
     "public/fonts/libre-franklin*",
     "public/fonts/LibreFranklin*",
 ]
-SPDX-FileCopyrightText = "Copyright (c) 2015, Impallari Type (www.impallari.com)"
+SPDX-FileCopyrightText = "Copyright (c) Impallari Type (www.impallari.com)"
 SPDX-License-Identifier = "OFL-1.1"
