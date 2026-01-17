@@ -1,0 +1,19 @@
+{
+  "id": "serpapi",
+  "role": "Member",
+  "active": true,
+  "name": "SerpApi",
+  "description": "SerpApi helps developers access public data from various search engines with a simple API. We have long been aware of the importance of contributing to Open Source; of course, we use many Open Source projects. Hopefully, our joining the Pledge will raise awareness amongst other companies about the importance of giving back to Open Source projects.",
+  "shortDescription": "Hopefully, our joining the Pledge will raise awareness amongst other companies about the importance of giving back to Open Source projects.",
+  "url": "https://serpapi.com/blog/2025-open-source-sponsorship-recap/",
+  "joinDate": "2026-01-15",
+  "annualReports": [
+    {
+      "url": "https://serpapi.com/blog/2025-open-source-sponsorship-recap/",
+      "year": "2025",
+      "reportDate": "2026-01-15",
+      "averageNumberOfDevs": 21,
+      "usdAmountPaid": 60000
+    }
+  ]
+}
