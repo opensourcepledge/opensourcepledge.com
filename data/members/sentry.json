@@ -10,6 +10,13 @@
   "joinDate": "2024-08-27",
   "annualReports": [
     {
+      "url": "https://blog.sentry.io/another-year-another-750-000-to-open-source-maintainers/",
+      "year": "2025",
+      "reportDate": "2026-01-06",
+      "averageNumberOfDevs": 132,
+      "usdAmountPaid": 750000
+    },
+    {
       "url": "https://blog.sentry.io/we-just-gave-750-000-dollars-to-open-source-maintainers/",
       "year": "2024",
       "reportDate": "2024-11-12",
