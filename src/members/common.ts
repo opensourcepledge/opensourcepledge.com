@@ -1,5 +1,5 @@
-// © 2024 Vlad-Stefan Harbuz <vlad@vlad.website>
-// © 2025 Functional Software, Inc. dba Sentry
+// © Vlad-Stefan Harbuz <vlad@vlad.website>
+// © Functional Software, Inc. dba Sentry
 // SPDX-License-Identifier: Apache-2.0
 
 import fs from 'fs';

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-// © 2024 Functional Software, Inc. dba Sentry
+// © Functional Software, Inc. dba Sentry
 // SPDX-License-Identifier: Apache-2.0
 -->
 <xsl:stylesheet version="3.0"
