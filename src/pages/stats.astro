@@ -2,17 +2,23 @@
 // © Functional Software, Inc. dba Sentry
 // SPDX-License-Identifier: Apache-2.0
 
-import Blob from "../components/Blob.astro";
-import Layout from "../layouts/Layout.astro";
-
 import fs from 'fs';
 
+import type { SanityDocument } from "@sanity/client";
+import { sanityClient } from "sanity:client";
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 dayjs.extend(utc);
 
-import type { SanityDocument } from "@sanity/client";
-import { sanityClient } from "sanity:client";
+import Blob from "../components/Blob.astro";
+import Layout from "../layouts/Layout.astro";
+import {
+  getMembers,
+  getAllTimeTotalRaised,
+  getLastYearTotalRaised,
+  fmtCurrency,
+  sortMembersByDevs,
+} from '../members/common.ts';
 
 async function countBlogPosts() {
   const showDrafts = false;
@@ -59,6 +65,11 @@ function countPressItems() {
 function countEndorsements() {
   return countOccurencesInFile('src/components/EndorsementList.astro', /<Endorsement/g);
 }
+
+const members = getMembers();
+const maxNDevs = sortMembersByDevs(members)[0].annualReports[0].averageNumberOfDevs;
+const allTimeTotal = getAllTimeTotalRaised(members);
+const lastYearTotal = getLastYearTotalRaised(members);
 ---
 
 <Layout
@@ -82,6 +93,22 @@ function countEndorsements() {
         <h1>Stats</h1>
         <table>
           <tr>
+            <td>Number of members</td>
+            <td>{members.length}</td>
+          </tr>
+          <tr>
+            <td>Largest company by number of devs</td>
+            <td>{maxNDevs}</td>
+          </tr>
+          <tr>
+            <td>All-time total raised</td>
+            <td>{fmtCurrency(allTimeTotal)}</td>
+          </tr>
+          <tr>
+            <td>Rolling one-year total raised</td>
+            <td>{fmtCurrency(lastYearTotal)}</td>
+          </tr>
+          <tr>
             <td>Blog posts</td>
             <td>{await countBlogPosts()}</td>
           </tr>
@@ -101,6 +128,11 @@ function countEndorsements() {
 
 <style>
   table {
-    max-width: 15rem;
+    td {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    tr:last-child td {
+      border-bottom: 0;
+    }
   }
 </style>
