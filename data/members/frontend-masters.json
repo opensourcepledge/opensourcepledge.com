@@ -9,6 +9,13 @@
   "joinDate": "2024-09-12",
   "annualReports": [
     {
+      "url": "https://frontendmasters.com/blog/supporting-open-source-in-2026-why-it-matters-more-than-ever-50000/",
+      "year": "2025",
+      "reportDate": "2026-01-26",
+      "averageNumberOfDevs": 5,
+      "usdAmountPaid": 50000
+    },
+    {
       "url": "https://frontendmasters.com/blog/how-were-supporting-open-source-maintainers/",
       "year": "2024",
       "reportDate": "2024-09-12",
