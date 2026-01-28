@@ -1,0 +1,19 @@
+{
+  "id": "railway",
+  "role": "Member",
+  "active": true,
+  "name": "Railway",
+  "description": "Railway is the all-in-one intelligent cloud provider. We make it easy to deploy anything with one click from 1,800+ templates, and a commission system that's already paid out nearly $1M to creators. Now we're joining the Open Source Pledge to directly fund the Open Source projects our community deploys every day.",
+  "shortDescription": "We're joining the Open Source Pledge to directly fund the Open Source projects our community deploys every day.",
+  "url": "https://blog.railway.com/p/funding-open-source",
+  "joinDate": "2026-12-28",
+  "annualReports": [
+    {
+      "url": "https://blog.railway.com/p/funding-open-source",
+      "year": "2026",
+      "reportDate": "2026-12-28",
+      "averageNumberOfDevs": 27,
+      "usdAmountPaid": 100000
+    }
+  ]
+}
