@@ -1,0 +1,19 @@
+{
+  "id": "coderabbit",
+  "role": "Member",
+  "active": true,
+  "name": "CodeRabbit",
+  "description": "CodeRabbit is an AI-powered code review tool that automates the code review process, providing context-aware feedback on pull requests within minutes. At CodeRabbit, we view our support for open source as a vital investment in its future.",
+  "shortDescription": "At CodeRabbit, we view our support for open source as a vital investment in its future.",
+  "url": "https://www.coderabbit.ai/blog/we-are-committed-to-supporting-open-source-distributed-600000-to-open-source-maintainers-in-2025",
+  "joinDate": "2026-02-04",
+  "annualReports": [
+    {
+      "url": "https://www.coderabbit.ai/blog/we-are-committed-to-supporting-open-source-distributed-600000-to-open-source-maintainers-in-2025",
+      "year": "2025",
+      "reportDate": "2026-02-04",
+      "averageNumberOfDevs": 50,
+      "usdAmountPaid": 600000
+    }
+  ]
+}
