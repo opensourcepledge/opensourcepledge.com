@@ -40,17 +40,12 @@ You can view a draft of your unpublished posts by visiting the appropriate URL a
 
 Here's what the workflow for a new member looks like:
 
-### 1. Prospective member creates issue
-
-For a new member to join, they must create an issue asking to join and providing the information requested in our
-[Join][join] page.
-
-### 2. Create `data/members/<member-id>.json`
+### 1. Create `data/members/<member-id>.json`
 
 After verifying that the prospective member's submitted data is correct, create a JSON file in
 `data/members/<member-id>.json` with all the member's information.
 
-### 3. Add logo to `public/images/members`
+### 2. Add logo to `public/images/members`
 
 The member logo to be shown on the website must be added as `public/images/members/<slug>/logo.webp`. These files should
 be square, kept at or below 800x800px, and compressed as much as possible without giving up fidelity.
@@ -69,7 +64,7 @@ magick logo.jpg -resize '>800x' -quality 99 -define webp:lossless=false -define 
 
 Remember that a corresponding `logo.webp.license` file must also be added.
 
-### 4. (Technically Optional) Add logo to `src/assets/images/members`
+### 3. (Technically Optional) Add logo to `src/assets/images/members`
 
 For a member's logo to show up on the homepage, it must be added to `src/assets/images/members/<slug>/minimal.svg`. This
 should be a white- or greyscale-only version of the member's logo. If in doubt, check the other existing logos. Note
@@ -77,17 +72,17 @@ that this must be an SVG file. If a vector logo is somehow not available, raster
 
 Remember that a corresponding `minimal.svg.license` file must also be added.
 
-For the logo to actually show up on the homepage, you also need to edit `MemberLogoBoard.astro` to put it in an
-appropriate place. Check if giving the `maxHeight` property a specific value will make the new logo fit in better
-from a visually proportional point of view.
+For the logo to actually show up on the homepage, you also need to edit `MemberLogoMarqueeItems.astro` to put it in an
+appropriate place. Check if giving the `height` property a specific value will make the new logo fit in better from a
+visually proportional point of view.
 
-### 5. Add member logo to Google Drive
+### 4. Add member logo to Google Drive
 
 When onboarding members, we will receive logo files for those members. Make sure to contribute these logo files, and any
 modified logo files you create, back to our [“Member Logos”][member-logos] Google Drive folder. If you don't have
 access, contact @selviano.
 
-### 6. Update member information in CRM
+### 5. Update member information in CRM
 
 Make sure the new member company's information is up to date in our [CRM][crm]. This is important in order to make sure
 we don't use out of date data. If the company is not yet in the CRM, add it and apply the appropriate labels. If the
