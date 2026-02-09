@@ -1,0 +1,19 @@
+{
+  "id": "codecrafters",
+  "role": "Member",
+  "active": true,
+  "name": "CodeCrafters",
+  "description": "CodeCrafters (YC S22) makes programming challenges for experienced engineers. e.g Build your own Claude Code, BitTorrent, or Redis from scratch - in any language. We would not be anywhere without the generous work of all the maintainers and contributors to the various OSS we depend on.",
+  "shortDescription": "CodeCrafters would not be anywhere without the generous work of all the maintainers and contributors to the various OSS we depend on.",
+  "url": "https://codecrafters.io/blog/oss-pledge",
+  "joinDate": "2026-02-09",
+  "annualReports": [
+    {
+      "url": "https://codecrafters.io/blog/oss-pledge",
+      "year": "2025",
+      "reportDate": "2026-02-09",
+      "averageNumberOfDevs": 3,
+      "usdAmountPaid": 12000
+    }
+  ]
+}
