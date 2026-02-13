@@ -10,6 +10,13 @@
   "joinDate": "2024-10-01",
   "annualReports": [
     {
+      "url": "https://buttondown.com/blog/oss-pledge-2025",
+      "year": "2025",
+      "reportDate": "2025-11-15",
+      "averageNumberOfDevs": 1,
+      "usdAmountPaid": 5000
+    },
+    {
       "url": "https://buttondown.com/blog/oss-pledge",
       "year": "2024",
       "reportDate": "2024-10-01",
