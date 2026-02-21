@@ -38,13 +38,19 @@ the code, developer time, and gifts-in-kind that many Pledge member companies al
 
 ---
 
-Open Source Pledge is brought to you by [Sentry][sentry] and contributors.
-The core team is:
-[Vlad-Stefan Harbuz][vlad.website] (independent),
-[Greg Kumparak][greg] (Sentry),
-[Michael Selvidge][selviano] (Sentry), and
-[Chad Whitacre][chad] (Sentry).
-Design is by Sentry's in-house creative team,
+The Open Source Pledge is brought to you by [Sentry][sentry] and contributors.
+
+Our core team is:
+
+* [Vlad-Stefan Harbuz][vlad.website] (independent)
+* [Greg Kumparak][greg] (Sentry)
+* [Chad Whitacre][chad] (Sentry)
+
+Former core team members, who we are eternally grateful to:
+
+* [Michael Selvidge][selviano] (formerly at Sentry)
+
+Most design work is done by Sentry's in-house creative team,
 [Studio 404][studio404].
 
 [bsky]: https://bsky.app/profile/opensourcepledge.com
