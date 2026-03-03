@@ -197,12 +197,31 @@ async function getJobsForValTownUrl(jobsUrl: string) {
     jobs = $postings.map(function() {
       return {
         title: $(this).find('h3').text(),
-        url: '' + $(this).attr('href'),
+        url: $(this).attr('href'),
       }
     }).toArray();
     return jobs;
   } catch(e) {
     console.warn(`Could not get job data from Val Town URL: ${jobsUrl}`, e);
+    return [];
+  }
+}
+
+async function getJobsForYcombinatorUrl(jobsUrl: string) {
+  try {
+    const page = await (await fetch(jobsUrl)).text();
+    const $ = cheerio.load(page);
+    const $postings = $('.ycdc-with-link-color a');
+    let jobs: Job[];
+    jobs = $postings.map(function() {
+      return {
+        title: $(this).text(),
+        url: 'https://www.ycombinator.com/' + $(this).attr('href'),
+      }
+    }).toArray();
+    return jobs;
+  } catch(e) {
+    console.warn(`Could not get job data from YCombinator URL: ${jobsUrl}`, e);
     return [];
   }
 }
@@ -218,6 +237,7 @@ async function getJobsForUrl(jobsUrl: string) {
     [/\/\/www\.herodevs\.com/, getJobsForHeroDevsUrl],
     [/\/\/jobs\.gitbutler\.com/, getJobsForGitButlerUrl],
     [/\/\/(www\.)?val\.town/, getJobsForValTownUrl],
+    [/\/\/www\.ycombinator\.com/, getJobsForYcombinatorUrl],
   ];
   for (const [pattern, getterFn] of patternPairs) {
     if (pattern.test(jobsUrl)) {
