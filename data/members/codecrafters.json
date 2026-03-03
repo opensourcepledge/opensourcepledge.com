@@ -6,6 +6,7 @@
   "description": "CodeCrafters (YC S22) makes programming challenges for experienced engineers. e.g Build your own Claude Code, BitTorrent, or Redis from scratch - in any language. We would not be anywhere without the generous work of all the maintainers and contributors to the various OSS we depend on.",
   "shortDescription": "CodeCrafters would not be anywhere without the generous work of all the maintainers and contributors to the various OSS we depend on.",
   "url": "https://codecrafters.io/blog/oss-pledge",
+  "jobsUrl": "https://www.ycombinator.com/companies/codecrafters/jobs",
   "joinDate": "2026-02-09",
   "annualReports": [
     {
