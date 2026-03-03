@@ -216,12 +216,31 @@ async function getJobsForYcombinatorUrl(jobsUrl: string) {
     jobs = $postings.map(function() {
       return {
         title: $(this).text(),
-        url: 'https://www.ycombinator.com/' + $(this).attr('href'),
+        url: 'https://www.ycombinator.com' + $(this).attr('href'),
       }
     }).toArray();
     return jobs;
   } catch(e) {
     console.warn(`Could not get job data from YCombinator URL: ${jobsUrl}`, e);
+    return [];
+  }
+}
+
+async function getRailwayJobs(jobsUrl: string) {
+  try {
+    const page = await (await fetch(jobsUrl)).text();
+    const $ = cheerio.load(page);
+    const $postings = $('a[href^="/careers/"]');
+    let jobs: Job[];
+    jobs = $postings.map(function() {
+      return {
+        title: $(this).find('p:first-child').text(),
+        url: 'https://railway.com' + $(this).attr('href'),
+      }
+    }).toArray();
+    return jobs;
+  } catch(e) {
+    console.warn(`Could not get job data from Railway URL: ${jobsUrl}`, e);
     return [];
   }
 }
@@ -238,6 +257,7 @@ async function getJobsForUrl(jobsUrl: string) {
     [/\/\/jobs\.gitbutler\.com/, getJobsForGitButlerUrl],
     [/\/\/(www\.)?val\.town/, getJobsForValTownUrl],
     [/\/\/www\.ycombinator\.com/, getJobsForYcombinatorUrl],
+    [/\/\/railway\.com/, getRailwayJobs],
   ];
   for (const [pattern, getterFn] of patternPairs) {
     if (pattern.test(jobsUrl)) {
