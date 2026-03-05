@@ -15,6 +15,7 @@
     "@octokit/rest": "^22.0.0",
     "@portabletext/to-html": "^3.0.0",
     "@portabletext/toolkit": "^3.0.1",
+    "@resvg/resvg-js": "^2.6.2",
     "@sanity/astro": "^3.2.10",
     "@sanity/client": "^7.11.0",
     "@sanity/image-url": "^1.2.0",
