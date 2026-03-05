@@ -26,6 +26,7 @@ async function main() {
     font: {
       fontFiles: FONT_FILES,
       defaultFontFamily: 'Azeret Mono',
+      loadSystemFonts: false,
     },
     logLevel: 'debug',
   };
