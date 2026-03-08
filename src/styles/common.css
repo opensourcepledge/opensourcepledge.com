@@ -121,6 +121,7 @@ SPDX-License-Identifier: Apache-2.0
 :root {
   --color-bg: #080e17;
   --color-light-bg: #16212d;
+  --color-mid-bg: #0d131b;
   --color-primary: #2dde74;
   --color-secondary: #9e86ff;
   --color-tertiary: #ffd00e;
@@ -159,7 +160,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 1rem 0;
 }
-p:first-child, ul:first-child, ol:first-child {
+p:first-child, ul:first-child, ol:first-child, fieldset legend + p {
   margin-top: 0;
 }
 p:last-child, ul:last-child, ol:last-child {
@@ -375,6 +376,26 @@ blockquote {
     font-style: italic;
     color: var(--color-primary);
     pointer-events: none;
+  }
+}
+fieldset {
+  padding: 1rem;
+  border: none;
+  background: var(--color-mid-bg);
+  legend {
+    padding: 0.2rem 0.8rem;
+    background: var(--color-primary);
+    color: var(--color-bg);
+    font-family: var(--font-monospace);
+    font-weight: bold;
+    font-variant-caps: small-caps;
+    font-feature-settings: "smcp";
+    text-transform: lowercase;
+    letter-spacing: 1px;
+  }
+  ul {
+    padding-left: 0;
+    list-style: inside;
   }
 }
 .button {

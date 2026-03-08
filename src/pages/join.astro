@@ -5,6 +5,8 @@
 
 import Blob from "../components/Blob.astro";
 import Layout from "../layouts/Layout.astro";
+
+const currentYear = (new Date()).getFullYear();
 ---
 
 <Layout title="Join the Pledge">
@@ -53,22 +55,23 @@ import Layout from "../layouts/Layout.astro";
           <a href="https://astral.sh/blog/astral-oss-fund" target="_blank">Astral</a>.
 
           <p>
-            <strong>Required:</strong>
-            <ul>
-              <li>The year you're reporting for. You can report for a year at any point during that year.</li>
-              <li>Your total of payments made for that year.</li>
-              <li>Your average number of employed full-time equivalent developers for that year.</li>
-              <li>
-                An itemized list of how much was paid to each maintainer/foundation. When this is undesirable or
-                unrealistic, we ask that you make a best effort. Tools you might find useful:
-                the <a href="https://github.com/opensourcepledge/osp-github-reporter" target="_blank"
-                  >Open Source Pledge GitHub Reporter</a
-                >
-                and
-                <a href="https://thanks.dev" target="_blank">thanks.dev</a>.
-              </li>
-            </ul>
+            A post should include the year, your developer count, total paid, and payment breakdown, like so:
           </p>
+
+          <fieldset>
+            <legend>Example post</legend>
+            <p>
+              Today, we're joining the Open Source Pledge. In <strong>{currentYear}</strong>, we had
+              <strong>14 developers</strong> on our team and paid <strong>$30,000</strong> to Open Source maintainers:
+            </p>
+            <ul>
+              <li>$10,000 to <em>foo</em></li>
+              <li>$10,000 to <em>bar</em></li>
+              <li>$5,000 to <em>baz</em></li>
+              <li>$2,500 to <em>quux</em></li>
+              <li>$2,500 to <em>qux</em></li>
+            </ul>
+          </fieldset>
         </div>
       </div>
       <div class="highlight-box">
@@ -79,7 +82,7 @@ import Layout from "../layouts/Layout.astro";
           <h3><span class="inline-number">3. </span>Let us know you'd like to join,</h3>
           by creating a <a href="https://github.com/opensourcepledge/opensourcepledge.com/issues" target="_blank"
             >GitHub issue</a
-          > that includes.
+          > that includes:
 
           <ul>
             <li>A link to your post.</li>
@@ -95,10 +98,10 @@ import Layout from "../layouts/Layout.astro";
         <div class="step">
           <h3><span class="inline-number">4. </span>Celebrate your membership!</h3>
           <p>
-            Once that's all done, you'll officially be a member. This means that your company and reports will show up on
+            You'll then officially be a member — your company and reports will show up on
             <a href="/members">our website</a>,
             and you'll be entitled to use the
-            <a href="/resources">Open Source Pledge Member logo and our other promotional resources</a>
+            <a href="/resources">Pledge Member logo</a>
             on your website and marketing materials.
           </p>
         </div>
@@ -108,11 +111,10 @@ import Layout from "../layouts/Layout.astro";
           <span class="circled">5</span>
         </div>
         <div class="step">
-          <h3><span class="inline-number">5. </span>Renew every year.</h3>
+          <h3><span class="inline-number">5. </span>Renew every year</h3>
 
           <p>
-            To remain a member, every year, you should publish another post detailing that year's payments, and let
-            us know about it.
+            To remain a member, you should publish a new post at some point each year, and let us know about it.
           </p>
         </div>
       </div>
