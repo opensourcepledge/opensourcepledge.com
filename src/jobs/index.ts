@@ -52,11 +52,11 @@ async function getJobsForAshbyUrl(jobsUrl: string) {
 
   try {
     const appData: AshbyAppData = JSON.parse(matches[1]);
-    const orgName = appData.organization.name;
+    const slug = appData.organization.hostedJobsPageSlug;
     const jobPostings = appData.jobBoard.jobPostings;
     return jobPostings.map((posting) => ({
       title: posting.title,
-      url: `https://jobs.ashbyhq.com/${orgName}/${posting.id}`,
+      url: `https://jobs.ashbyhq.com/${slug}/${posting.id}`,
     }));
   } catch(e) {
     console.warn(`Could not get appData from Ashby URL: ${jobsUrl}`);
@@ -245,6 +245,63 @@ async function getRailwayJobs(jobsUrl: string) {
   }
 }
 
+async function getSerpApiJobs(jobsUrl: string) {
+  try {
+    const page = await (await fetch(jobsUrl)).text();
+    const $ = cheerio.load(page);
+    const $postings = $('a[href^="/careers/"]');
+    let jobs: Job[];
+    jobs = $postings.map(function() {
+      return {
+        title: $(this).find('h3').text(),
+        url: 'https://serpapi.com' + $(this).attr('href'),
+      }
+    }).toArray();
+    return jobs;
+  } catch(e) {
+    console.warn(`Could not get job data from SerpApi URL: ${jobsUrl}`, e);
+    return [];
+  }
+}
+
+async function getPydanticJobs(jobsUrl: string) {
+  try {
+    const page = await (await fetch(jobsUrl)).text();
+    const $ = cheerio.load(page);
+    const $postings = $('#join-the-team + h2 + p + div > div');
+    let jobs: Job[];
+    jobs = $postings.map(function() {
+      return {
+        title: $(this).find('h3:first-child').text(),
+        url: 'https://pydantic.dev' + $(this).find('a').attr('href'),
+      }
+    }).toArray();
+    return jobs;
+  } catch(e) {
+    console.warn(`Could not get job data from Pydantic URL: ${jobsUrl}`, e);
+    return [];
+  }
+}
+
+async function getSentryJobs(jobsUrl: string) {
+  try {
+    const page = await (await fetch(jobsUrl)).text();
+    const $ = cheerio.load(page);
+    const $postings = $('a[class^="_jobLink"]');
+    let jobs: Job[];
+    jobs = $postings.map(function() {
+      return {
+        title: $(this).find('span:first-child').text(),
+        url: 'https://sentry.io' + $(this).attr('href'),
+      }
+    }).toArray();
+    return jobs;
+  } catch(e) {
+    console.warn(`Could not get job data from Pydantic URL: ${jobsUrl}`, e);
+    return [];
+  }
+}
+
 async function getJobsForUrl(jobsUrl: string) {
   const patternPairs: [RegExp, JobGetter][] = [
     [/\/\/jobs\.ashbyhq\.com/, getJobsForAshbyUrl],
@@ -258,6 +315,9 @@ async function getJobsForUrl(jobsUrl: string) {
     [/\/\/(www\.)?val\.town/, getJobsForValTownUrl],
     [/\/\/www\.ycombinator\.com/, getJobsForYcombinatorUrl],
     [/\/\/railway\.com/, getRailwayJobs],
+    [/\/\/serpapi\.com/, getSerpApiJobs],
+    [/\/\/pydantic\.dev/, getPydanticJobs],
+    [/\/\/sentry\.io/, getSentryJobs],
   ];
   for (const [pattern, getterFn] of patternPairs) {
     if (pattern.test(jobsUrl)) {
