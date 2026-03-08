@@ -23,6 +23,7 @@ type JobGetter = ((jobsUrl: string) => Promise<Job[]>);
 type AshbyAppData = {
   organization: {
     name: string;
+    hostedJobsPageSlug: string;
   };
   jobBoard: {
     jobPostings: {
