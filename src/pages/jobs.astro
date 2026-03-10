@@ -247,7 +247,16 @@ const memberMap = getMembersAsMap();
                 <img src=`/images/members/${memberId}/logo.webp` alt=`The ${memberMap[memberId].name} logo`>
                 <h2><a href=`/members/${memberId}`>{memberMap[memberId].name}</a></h2>
               </div>
-              <em>“{memberMap[memberId].description}”</em>
+              <!--
+                If the description is HTML, render it as HTML, otherwise render it as text inside a <p> tag.
+                The implementation is a bit of a hack: we just check if the description contains the string `</`.
+                This works well enough for our purposes.
+              -->
+              {memberMap[memberId].description.includes(`</`) && (
+                <p><Fragment set:html={memberMap[memberId].description} /></p>
+              ) || (
+                <p>{memberMap[memberId].description}</p>
+              )}
               <hr>
               {jobSet.companies[memberId].map((job) =>
                 <a class="job-link" href={job.url} target="_blank">{job.title}</a>
