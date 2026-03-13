@@ -26,9 +26,13 @@ const members = getMembers();
     <Blob kind="grad-dots-03" top="10%" left="-15rem"></Blob>
 
     <main id="main-content">
-      <h1>About the Pledge</h1>
+      <section>
+        <div class="text-center">
+          <h1>About the Pledge</h1>
+        </div>
 
-      <TableOfContents filepath={Astro.self.moduleId || ""} />
+        <TableOfContents filepath={Astro.self.moduleId || ""} />
+      </section>
 
       <section id="what-is-the-open-source-pledge">
         <h2>What is the Open Source Pledge?</h2>
