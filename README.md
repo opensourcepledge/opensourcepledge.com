@@ -46,7 +46,7 @@ Our core team is:
 * [Greg Kumparak][greg] (Sentry)
 * [Chad Whitacre][chad] (Sentry)
 
-Former core team members, who we are eternally grateful to:
+Former core team members, to whom we are eternally grateful:
 
 * [Michael Selvidge][selviano] (formerly at Sentry)
 
