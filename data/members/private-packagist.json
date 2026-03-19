@@ -9,6 +9,13 @@
   "joinDate": "2024-09-04",
   "annualReports": [
     {
+      "url": "https://blog.packagist.com/private-packagist-2025-contributions-for-the-open-source-pledge/",
+      "year": "2025",
+      "reportDate": "2026-03-18",
+      "averageNumberOfDevs": 7,
+      "usdAmountPaid": 30497
+    },
+    {
       "url": "https://blog.packagist.com/the-reality-of-funding-open-source/",
       "year": "2024",
       "reportDate": "2025-02-07",
