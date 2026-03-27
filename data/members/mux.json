@@ -1,0 +1,19 @@
+{
+  "id": "mux",
+  "role": "Member",
+  "active": true,
+  "name": "Mux",
+  "description": "Mux is video infrastructure for developers. Mux makes it easy to ship and scale video into anything from websites to platforms to AI workflows, and stewards Video.js, the web's most popular open source video player.",
+  "shortDescription": "Mux is video infrastructure for developers. Mux makes it easy to ship and scale video into anything from websites to platforms to AI workflows, and stewards Video.js, the web's most popular open source video player.",
+  "url": "https://www.mux.com/blog/mux-joins-the-oss-pledge",
+  "joinDate": "2026-03-27",
+  "annualReports": [
+    {
+      "url": "https://www.mux.com/blog/mux-joins-the-oss-pledge",
+      "year": "2025",
+      "reportDate": "2026-03-27",
+      "averageNumberOfDevs": 37,
+      "usdAmountPaid": 77730
+    }
+  ]
+}
