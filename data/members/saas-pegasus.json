@@ -10,6 +10,13 @@
   "annualReports": [
     {
       "url": "https://www.saaspegasus.com/about/open-source/",
+      "year": "2025",
+      "reportDate": "2025-12-19",
+      "averageNumberOfDevs": 1,
+      "usdAmountPaid": 2000
+    },
+    {
+      "url": "https://www.saaspegasus.com/about/open-source/",
       "year": "2024",
       "reportDate": "2024-12-17",
       "averageNumberOfDevs": 1,
