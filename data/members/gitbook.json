@@ -10,8 +10,15 @@
   "joinDate": "2025-03-28",
   "annualReports": [
     {
-      "url": "https://www.gitbook.com/blog/the-gitbook-oss-fund",
+      "url": "https://www.gitbook.com/blog/oss-pledge-2025",
       "year": "2025",
+      "reportDate": "2026-03-27",
+      "averageNumberOfDevs": 15,
+      "usdAmountPaid": 34054
+    },
+    {
+      "url": "https://www.gitbook.com/blog/the-gitbook-oss-fund",
+      "year": "2024",
       "reportDate": "2025-03-28",
       "averageNumberOfDevs": 13,
       "usdAmountPaid": 32700
