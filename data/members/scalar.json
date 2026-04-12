@@ -9,6 +9,13 @@
   "joinDate": "2024-09-03",
   "annualReports": [
     {
+      "url": "https://scalar.com/blog/posts/2026-04-11-oss-pledge",
+      "year": "2025",
+      "reportDate": "2026-04-11",
+      "averageNumberOfDevs": 10,
+      "usdAmountPaid": 21232
+    },
+    {
       "url": "https://scalar.com/blog/oss-pledge-2024",
       "year": "2024",
       "reportDate": "2024-09-03",
