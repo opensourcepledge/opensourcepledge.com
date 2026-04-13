@@ -365,13 +365,13 @@ ul, ol {
 blockquote {
   position: relative;
   margin: 2rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
   &:before {
     content: '“';
     position: absolute;
     top: -0.5rem;
-    left: -0.4rem;
-    font-size: 5rem;
+    left: -0.2rem;
+    font-size: 3rem;
     line-height: 1;
     font-style: italic;
     color: var(--color-primary);
@@ -609,6 +609,12 @@ footer {
 }
 .text-center {
   text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
 }
 .divider {
   margin-top: 2rem;
