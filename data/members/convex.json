@@ -10,6 +10,13 @@
   "joinDate": "2025-02-13",
   "annualReports": [
     {
+      "url": "https://news.convex.dev/convex-open-source-recap-2025/",
+      "year": "2025",
+      "reportDate": "2026-04-08",
+      "averageNumberOfDevs": 11,
+      "usdAmountPaid": 60000
+    },
+    {
       "url": "https://news.convex.dev/open-source-pledge/",
       "year": "2024",
       "reportDate": "2025-02-13",
