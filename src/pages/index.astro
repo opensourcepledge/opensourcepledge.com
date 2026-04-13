@@ -5,7 +5,7 @@
 
 import Blob from "../components/Blob.astro";
 import Button from "../components/Button.astro";
-import EndorsementList from "../components/EndorsementList.astro";
+import Endorsement from "../components/Endorsement.astro";
 import Layout from "../layouts/Layout.astro";
 import MemberLogoMarquee from "../components/MemberLogoMarquee.astro";
 import PressItemList from "../components/PressItemList.astro";
@@ -74,10 +74,41 @@ const totalArc = getLastYearTotalRaised(getMembers());
       <Blob kind="solid-fill-04" top="60%" right="-20rem"></Blob>
 
       <section>
-        <EndorsementList></EndorsementList>
+        <div class="featured-endorsements">
+          <Endorsement
+            name="Open Source Initiative"
+            handle="opensource.org/blog"
+            imageUrl="/images/endorsers/osi.svg"
+            sourceUrl="https://opensource.org/blog/the-open-source-initiative-supports-the-open-source-pledge"
+          >
+            <p
+              >The OSI supports the Pledge. By taking the Pledge, companies [ensure] the
+              long-term health of the Open Source projects they rely on.</p
+            >
+          </Endorsement>
+          <Endorsement
+            name="Accel"
+            handle="accel.com/noteworthy"
+            imageUrl="/images/endorsers/accel.svg"
+            sourceUrl="https://www.accel.com/noteworthy/why-accel-is-supporting-the-open-source-pledge"
+          >
+            <p
+              >The Open Source Pledge addresses a critical challenge facing the sustainability of the foundation upon
+              which much of modern technology is built.</p
+            >
+          </Endorsement>
+          <Endorsement
+            name="Open Source Collective"
+            handle="blog.opencollective.com"
+            imageUrl="/images/endorsers/opensourcecollective.png"
+            sourceUrl="https://blog.opencollective.com/why-the-open-source-pledge-is-both-relevant-and-timely/"
+          >
+            <p>The Open Source Pledge's simple message is incredibly important. Companies: pay your share.</p>
+          </Endorsement>
+        </div>
 
         <div class="text-center">
-          <TextButton href="/endorsements/">See all endorsements</TextButton>
+          <TextButton href="/endorsements/">More →</TextButton>
         </div>
       </section>
 
@@ -185,6 +216,23 @@ const totalArc = getLastYearTotalRaised(getMembers());
         strong {
           display: block;
           font-size: 1.8rem;
+        }
+      }
+    }
+  }
+  .featured-endorsements {
+    display: flex;
+    gap: 3rem;
+    .endorsement {
+      flex: 1;
+      font-size: 0.9rem;
+      figcaption {
+        img {
+          width: 2.3rem;
+          height: 2.3rem;
+        }
+        a {
+          display: none;
         }
       }
     }

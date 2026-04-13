@@ -189,9 +189,20 @@ const { full } = Astro.props;
   >
     <p>I can't overstate how excited I am about this. ❤️</p>
   </Endorsement>
+
 </div>
 
 <style>
+  .endorsement-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    .endorsement {
+      blockquote {
+        font-size: 1.2rem;
+      }
+    }
+  }
 </style>
 
 <script>
