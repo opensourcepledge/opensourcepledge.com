@@ -115,6 +115,42 @@ SPDX-License-Identifier: Apache-2.0
     U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+@font-face {
+  font-family: 'ABC Arizona Flare';
+  font-display: swap;
+  src: url(/fonts/ABCArizonaFlare-Medium-Trial.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'ABC Arizona Flare';
+  font-style: italic;
+  font-display: swap;
+  src: url(/fonts/ABCArizonaFlare-MediumItalic-Trial.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'PP Mori';
+  font-display: swap;
+  src: url(/fonts/PPMori-Regular.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'PP Mori';
+  font-style: italic;
+  font-display: swap;
+  src: url(/fonts/PPMori-RegularItalic.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'PP Mori';
+  font-weight: 800;
+  font-display: swap;
+  src: url(/fonts/PPMori-Black.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'PP Mori';
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+  src: url(/fonts/PPMori-BlackItalic.woff2) format('woff2');
+}
+
 * {
   box-sizing: border-box;
 }
@@ -128,7 +164,7 @@ SPDX-License-Identifier: Apache-2.0
   --color-muted: #37485c;
   --color-pink: #ff70bc;
   --color-text: white;
-  --font-display: 'ABC Arizona Flare Unlicensed Trial Medium', sans-serif;
+  --font-display: 'ABC Arizona Flare', sans-serif;
   --font-body: 'PP Mori', sans-serif;
   --font-monospace: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, monospace;
   --border-radius: 0.5rem;
