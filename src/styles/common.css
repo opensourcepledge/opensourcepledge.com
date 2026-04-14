@@ -365,15 +365,15 @@ ul, ol {
 blockquote {
   position: relative;
   margin: 2rem;
-  padding-top: 1rem;
   &:before {
     content: '“';
     position: absolute;
-    top: -0.5rem;
-    left: -0.2rem;
-    font-size: 3rem;
+    top: -0.3rem;
+    left: -1.6rem;
+    font-size: 2.3rem;
     line-height: 1;
     font-style: italic;
+    font-family: var(--font-display);
     color: var(--color-primary);
     pointer-events: none;
   }
