@@ -685,9 +685,40 @@ footer {
   &.custom-blob--over {
     z-index: 100;
   }
-  &.custom-blob--small {
-    width: 3rem;
-    height: 3rem;
+  &.custom-blob--s {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  &.custom-blob--xs {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+  &.custom-blob--s, &.custom-blob--xs {
+    /* mask-image: url(/images/dots-mask.svg); */
+    /* background: var(--color-primary); */
+    /* background: linear-gradient( */
+    /*   to bottom right in oklab, */
+    /*   var(--color-secondary), */
+    /*   var(--color-secondary), */
+    /*   #00cff4, */
+    /*   var(--color-primary), */
+    /*   var(--color-primary) */
+    /* ); */
+    /* background: linear-gradient( */
+    /*   to bottom right in oklab, */
+    /*   #5500ff, */
+    /*   #9c85f1, */
+    /*   #6dffd4, */
+    /*   #10f310 */
+    /* ); */
+    background: linear-gradient(
+      to bottom left in oklab,
+      #33aa88,
+      var(--color-primary),
+      #88cc22,
+      /* var(--color-tertiary) */
+      var(--color-secondary)
+    );
   }
 }
 .circled {

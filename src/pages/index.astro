@@ -30,14 +30,20 @@ const totalArc = getLastYearTotalRaised(getMembers());
 
   <main id="main-content">
     <div class="container">
+      <!-- <div -->
+      <!--   class="custom-blob custom-blob--a custom-blob--under" -->
+      <!--   style="top: 21%; left: -16.5rem"></div> -->
       <div
-        class="custom-blob custom-blob--a custom-blob--under"
-        style="top: 1%; left: -16.5rem"></div>
+        class="custom-blob custom-blob--b custom-blob--under"
+        style="top: -5%; right: -3.0rem"></div>
       <div
-        class="custom-blob custom-blob--b custom-blob--under custom-blob--small"
-        style="top: 67%; right: -17rem"></div>
+        class="custom-blob custom-blob--a custom-blob--over custom-blob--s"
+        style="top: 69%; right: -14.0rem"></div>
+      <!-- <div -->
+      <!--   class="custom-blob custom-blob--b custom-blob--over custom-blob--s custom-blob--xs" -->
+      <!--   style="top: 149%; left: -21.5rem"></div> -->
       <!-- <Blob kind="grad-dots-simplified-04" top="-13%" left="-20rem"></Blob> -->
-      <Blob kind="solid-fill-01" top="2%" left="-20rem"></Blob>
+      <Blob kind="solid-fill-01" top="55%" left="-20rem"></Blob>
       <Blob kind="solid-fill-05" top="70%" right="-16rem"></Blob>
 
       <section class="hero-section">
@@ -211,6 +217,8 @@ const totalArc = getLastYearTotalRaised(getMembers());
       }
       .piggybank {
         flex-basis: 50rem;
+        position: relative;
+        z-index: 95;
         img {
           border-top-left-radius: 6rem;
           border-top-right-radius: 1rem;
