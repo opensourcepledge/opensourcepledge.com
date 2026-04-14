@@ -23,22 +23,19 @@ const totalArc = getLastYearTotalRaised(getMembers());
 ---
 
 <Layout>
-  <div class="edge-blobs">
-    <Blob kind="solid-fill-03" top="35%" right="-13rem"></Blob>
-    <Blob kind="grad-dots-02" top="60%" right="-4rem"></Blob>
-  </div>
+  <!-- <div class="edge-blobs"> -->
+  <!--   <Blob kind="solid-fill-03" top="35%" right="-13rem"></Blob> -->
+  <!--   <Blob kind="grad-dots-02" top="60%" right="-4rem"></Blob> -->
+  <!-- </div> -->
 
   <main id="main-content">
     <div class="container">
       <!-- <div -->
       <!--   class="custom-blob custom-blob--a custom-blob--under" -->
       <!--   style="top: 21%; left: -16.5rem"></div> -->
-      <div
-        class="custom-blob custom-blob--b custom-blob--under"
-        style="top: -5%; right: -3.0rem"></div>
-      <div
-        class="custom-blob custom-blob--a custom-blob--over custom-blob--s"
-        style="top: 69%; right: -14.0rem"></div>
+      <!-- <div -->
+      <!--   class="custom-blob custom-blob--a custom-blob--over custom-blob--s" -->
+      <!--   style="top: 69%; right: -14.0rem"></div> -->
       <!-- <div -->
       <!--   class="custom-blob custom-blob--b custom-blob--over custom-blob--s custom-blob--xs" -->
       <!--   style="top: 149%; left: -21.5rem"></div> -->
@@ -64,11 +61,14 @@ const totalArc = getLastYearTotalRaised(getMembers());
               </div>
               <div>
                 <strong>{fmtCurrency(totalArc)}</strong>
-                raised over the last year
+                raised in the last year
               </div>
             </div>
           </div>
           <div class="piggybank">
+            <div
+              class="custom-blob custom-blob--b custom-blob--under"
+              style="top: -5%; right: -3.0rem"></div>
             <img src="https://vlad.website/t/test-harriet.jpg" alt="TODO">
           </div>
         </div>
@@ -80,10 +80,10 @@ const totalArc = getLastYearTotalRaised(getMembers());
     </div>
 
     <div class="container">
-      <Blob kind="grad-dots-03" top="20%" left="-20rem"></Blob>
-      <Blob kind="solid-fill-02" top="40%" left="-20rem"></Blob>
-      <Blob kind="grad-dots-01" top="50%" left="-13rem"></Blob>
-      <Blob kind="solid-fill-04" top="60%" right="-20rem"></Blob>
+      <!-- <Blob kind="grad-dots-03" top="20%" left="-20rem"></Blob> -->
+      <!-- <Blob kind="solid-fill-02" top="40%" left="-20rem"></Blob> -->
+      <!-- <Blob kind="grad-dots-01" top="50%" left="-13rem"></Blob> -->
+      <!-- <Blob kind="solid-fill-04" top="60%" right="-20rem"></Blob> -->
 
       <section>
         <div class="featured-endorsements">
@@ -124,6 +124,7 @@ const totalArc = getLastYearTotalRaised(getMembers());
         </div>
       </section>
 
+      <!--
       <section>
         <h2>TL;DR</h2>
 
@@ -177,6 +178,7 @@ const totalArc = getLastYearTotalRaised(getMembers());
             <Button href="/join/">Join the Pledge</Button>
           </div>
         </div>
+        -->
       </section>
     </div>
   </main>
@@ -202,6 +204,9 @@ const totalArc = getLastYearTotalRaised(getMembers());
       display: flex;
       gap: 2rem;
       margin-bottom: 0.5rem;
+      @media (max-width: 900px) {
+        flex-direction: column;
+      }
       h1 {
         margin: 0;
         font-size: 3.0rem;
@@ -216,10 +221,12 @@ const totalArc = getLastYearTotalRaised(getMembers());
         gap: 1.5rem;
       }
       .piggybank {
-        flex-basis: 50rem;
         position: relative;
-        z-index: 95;
         img {
+          width: 50rem;
+          max-width: 100%;
+          position: relative;
+          z-index: 95;
           border-top-left-radius: 6rem;
           border-top-right-radius: 1rem;
         }
@@ -227,6 +234,11 @@ const totalArc = getLastYearTotalRaised(getMembers());
       .totals {
         display: flex;
         gap: 3rem;
+        padding-bottom: 2rem;
+        @media (max-width: 900px) {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
         strong {
           display: block;
           font-size: 1.8rem;
@@ -237,6 +249,10 @@ const totalArc = getLastYearTotalRaised(getMembers());
   .featured-endorsements {
     display: flex;
     gap: 3rem;
+    @media (max-width: 900px) {
+      flex-direction: column;
+      padding-left: 1.5rem;
+    }
     .endorsement {
       flex: 1;
       font-size: 0.9rem;
@@ -291,7 +307,7 @@ const totalArc = getLastYearTotalRaised(getMembers());
       z-index: 15;
     }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     .hero-section {
       & > :global(.blob) {
         display: none;
@@ -301,20 +317,6 @@ const totalArc = getLastYearTotalRaised(getMembers());
         flex-direction: column;
         align-items: center;
         padding-right: 0;
-        .heading-and-mini-pc {
-          display: flex;
-          align-items: center;
-          & > div {
-            flex: 1;
-          }
-          h1 {
-            font-size: 1.5rem;
-          }
-          .mini-pc {
-            flex: 1;
-            display: block;
-          }
-        }
       }
     }
     .bottom-cta {
