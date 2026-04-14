@@ -451,8 +451,8 @@ fieldset {
 }
 section {
   margin: 4rem 0;
-  @media (max-width: 800px) {
-    margin: 2rem 0;
+  @media (max-width: 900px) {
+    margin: 3rem 0;
   }
   h1 {
     font-size: 3rem;
@@ -492,7 +492,7 @@ nav {
     column-gap: 2rem;
     @media (max-width: 800px) {
       justify-content: center;
-      column-gap: 1.5rem;
+      column-gap: 1.0rem;
     }
   }
 }
