@@ -249,9 +249,13 @@ const totalArc = getLastYearTotalRaised(getMembers());
   .featured-endorsements {
     display: flex;
     gap: 3rem;
+    padding-bottom: 1rem;
     @media (max-width: 900px) {
       flex-direction: column;
-      padding-left: 1.5rem;
+      blockquote:before {
+        top: -1.4rem;
+        left: -0.2rem;
+      }
     }
     .endorsement {
       flex: 1;
