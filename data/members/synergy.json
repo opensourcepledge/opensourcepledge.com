@@ -1,0 +1,19 @@
+{
+  "id": "synergy",
+  "role": "Member",
+  "active": true,
+  "name": "Synergy",
+  "description": "Synergy is the original keyboard and mouse sharing tool, and our product runs on code we help maintain. We pay developers to work on open source projects we depend on (including Deskflow), and we support KDE e.V. and the GNOME Foundation as the ecosystems we build on. The Pledge gives us a public number to hold ourselves to. We want to officially be part of the community of companies doing the same thing.",
+  "shortDescription": "Synergy is the original keyboard and mouse sharing tool. We are joining the Open Source Pledge because it matches how we already work, and the Pledge gives us a public number to hold ourselves to.",
+  "url": "https://symless.com/synergy",
+  "joinDate": "2026-04-23",
+  "annualReports": [
+    {
+      "url": "https://symless.com/synergy/news/we-gave-7450-to-open-source-developers-in-2025",
+      "year": "2025",
+      "reportDate": "2026-04-23",
+      "averageNumberOfDevs": 2,
+      "usdAmountPaid": 7450
+    }
+  ]
+}
