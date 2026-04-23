@@ -29,53 +29,48 @@ const totalArc = getLastYearTotalRaised(getMembers());
   <!-- </div> -->
 
   <main id="main-content">
-    <div class="container">
-      <!-- <div -->
-      <!--   class="custom-blob custom-blob--a custom-blob--under" -->
-      <!--   style="top: 21%; left: -16.5rem"></div> -->
-      <!-- <div -->
-      <!--   class="custom-blob custom-blob--a custom-blob--over custom-blob--s" -->
-      <!--   style="top: 69%; right: -14.0rem"></div> -->
-      <!-- <div -->
-      <!--   class="custom-blob custom-blob--b custom-blob--over custom-blob--s custom-blob--xs" -->
-      <!--   style="top: 149%; left: -21.5rem"></div> -->
-      <!-- <Blob kind="grad-dots-simplified-04" top="-13%" left="-20rem"></Blob> -->
-      <Blob kind="solid-fill-01" top="55%" left="-20rem"></Blob>
-      <Blob kind="solid-fill-05" top="70%" right="-16rem"></Blob>
+    <div class="hero-container">
+      <div class="container">
+        <!-- <div -->
+        <!--   class="custom-blob custom-blob--a custom-blob--under" -->
+        <!--   style="top: 21%; left: -16.5rem"></div> -->
+        <!-- <div -->
+        <!--   class="custom-blob custom-blob--a custom-blob--over custom-blob--s" -->
+        <!--   style="top: 69%; right: -14.0rem"></div> -->
+        <!-- <div -->
+        <!--   class="custom-blob custom-blob--b custom-blob--over custom-blob--s custom-blob--xs" -->
+        <!--   style="top: 149%; left: -21.5rem"></div> -->
+        <!-- <Blob kind="grad-dots-simplified-04" top="-13%" left="-20rem"></Blob> -->
+        <Blob kind="solid-fill-01" top="55%" left="-20rem"></Blob>
+        <Blob kind="solid-fill-05" top="70%" right="-16rem"></Blob>
 
-      <section class="hero-section">
-        <!-- <Blob kind="grad-dots-05" top="-8%" right="-7.0rem"></Blob> -->
-        <div class="hero">
-          <div class="hero-copy">
-            <div>
-              <h1>Together,&nbsp;<br>we pay the<br>maintainers</h1>
-              <p>Why? The world depends on Open Source software. We're here to prevent burnout and reduce risk in the software supply chain.</p>
-            </div>
-            <div>
-              <Button href="/join">Join the Pledge</Button>
-            </div>
-            <div class="totals">
+        <section class="hero-section">
+          <!-- <Blob kind="grad-dots-05" top="-8%" right="-7.0rem"></Blob> -->
+          <div class="hero">
+            <div class="hero-copy">
               <div>
-                <strong>{fmtCurrency(totalAlltime)}</strong>
-                raised since launch
+                <h1>Together,&nbsp;<br>we pay the<br>maintainers</h1>
+                <p>Why? The world depends on Open Source software. We're here to prevent burnout and reduce risk in the software supply chain.</p>
               </div>
               <div>
-                <strong>{fmtCurrency(totalArc)}</strong>
-                raised in the last year
+                <Button href="/join">Join the Pledge</Button>
+              </div>
+              <div class="totals">
+                <div>
+                  <strong>{fmtCurrency(totalArc)}</strong>
+                  this past year, ${Math.floor(totalAlltime / 1000000)}M+ all time
+                </div>
               </div>
             </div>
+            <div class="piggybank">
+              <div
+                class="custom-blob custom-blob--b custom-blob--under"
+                style="top: -5%; right: -3.0rem"></div>
+              <img src="https://vlad.website/t/test-harriet.webp" alt="TODO">
+            </div>
           </div>
-          <div class="piggybank">
-            <div
-              class="custom-blob custom-blob--b custom-blob--under"
-              style="top: -5%; right: -3.0rem"></div>
-            <img src="https://vlad.website/t/test-harriet.webp" alt="TODO">
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <div class="text-center">
+        </section>
+      </div>
       <MemberLogoMarquee></MemberLogoMarquee>
     </div>
 
@@ -186,9 +181,11 @@ const totalArc = getLastYearTotalRaised(getMembers());
 
 <style is:global>
   .member-logo-marquee {
-    position: relative;
+    position: absolute;
     z-index: 100;
-    margin-top: -6rem;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
   @media (max-width: 600px) {
     a.sentry-credit {
@@ -197,6 +194,9 @@ const totalArc = getLastYearTotalRaised(getMembers());
   }
 </style>
 <style>
+  .hero-container {
+    position: relative;
+  }
   .hero-section {
     position: relative;
     margin-top: 3rem;
@@ -234,10 +234,11 @@ const totalArc = getLastYearTotalRaised(getMembers());
       .totals {
         display: flex;
         gap: 3rem;
-        padding-bottom: 2rem;
+        margin-bottom: 5rem;
         @media (max-width: 900px) {
           flex-direction: column;
           gap: 0.5rem;
+          margin-bottom: 0;
         }
         strong {
           display: block;
