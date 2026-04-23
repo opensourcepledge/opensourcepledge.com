@@ -9,12 +9,13 @@ interface Props {
   imageUrl: string;
   sourceUrl?: string;
   hidden?: boolean;
+  extraClasses?: string;
 }
 
-const { name, title, handle, imageUrl, sourceUrl, hidden } = Astro.props;
+const { name, title, handle, imageUrl, sourceUrl, hidden, extraClasses } = Astro.props;
 ---
 
-<figure class="endorsement" hidden={hidden}>
+<figure class={['endorsement', extraClasses].join(' ')} hidden={hidden}>
   <blockquote>
     <slot></slot>
   </blockquote>

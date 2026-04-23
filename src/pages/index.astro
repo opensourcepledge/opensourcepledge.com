@@ -98,6 +98,7 @@ const totalArc = getLastYearTotalRaised(getMembers());
             handle="accel.com/noteworthy"
             imageUrl="/images/endorsers/accel.svg"
             sourceUrl="https://www.accel.com/noteworthy/why-accel-is-supporting-the-open-source-pledge"
+            extraClasses="extra-endorsement"
           >
             <p
               >The Open Source Pledge addresses a critical challenge facing the sustainability of the foundation upon
@@ -109,6 +110,7 @@ const totalArc = getLastYearTotalRaised(getMembers());
             handle="blog.opencollective.com"
             imageUrl="/images/endorsers/opensourcecollective.png"
             sourceUrl="https://blog.opencollective.com/why-the-open-source-pledge-is-both-relevant-and-timely/"
+            extraClasses="extra-endorsement"
           >
             <p>The Open Source Pledge's simple message is incredibly important. Companies: pay your share.</p>
           </Endorsement>
@@ -186,6 +188,11 @@ const totalArc = getLastYearTotalRaised(getMembers());
     bottom: 0;
     left: 0;
     right: 0;
+  }
+  @media (max-width: 900px) {
+    .featured-endorsements .extra-endorsement {
+      display: none;
+    }
   }
   @media (max-width: 600px) {
     a.sentry-credit {
