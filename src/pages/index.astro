@@ -50,16 +50,16 @@ const totalArc = getLastYearTotalRaised(getMembers());
             <div class="hero-copy">
               <div>
                 <h1>Together,&nbsp;<br>we pay the<br>maintainers</h1>
-                <p>Why? The world depends on Open Source software. We're here to prevent burnout and reduce risk in the software supply chain.</p>
-              </div>
-              <div>
-                <Button href="/join">Join the Pledge</Button>
+                <p>Why? The world depends on Open Source. We contribute cash to prevent maintainer burnout and software supply chain risk.</p>
               </div>
               <div class="totals">
                 <div>
                   <strong>{fmtCurrency(totalArc)}</strong>
-                  this past year, ${Math.floor(totalAlltime / 1000000)}M+ all time
+                  past year, ${Math.floor(totalAlltime / 1000000)}M+ all time
                 </div>
+              </div>
+              <div>
+                <Button href="/about/">Learn More</Button>
               </div>
             </div>
             <div class="piggybank">
@@ -241,7 +241,6 @@ const totalArc = getLastYearTotalRaised(getMembers());
       .totals {
         display: flex;
         gap: 3rem;
-        margin-bottom: 5rem;
         @media (max-width: 900px) {
           flex-direction: column;
           gap: 0.5rem;
