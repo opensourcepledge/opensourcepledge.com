@@ -168,6 +168,9 @@ SPDX-License-Identifier: Apache-2.0
   --font-body: 'PP Mori', sans-serif;
   --font-monospace: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, monospace;
   --border-radius: 0.5rem;
+  --border-radius-md: 1.0rem;
+  --border-radius-lg: 3.0rem;
+  --border-radius-xl: 6.0rem;
 }
 [hidden] {
   /* We never want anything to have higher specificity than `[hidden]`. */
@@ -340,6 +343,13 @@ details {
   &.container--narrow {
     max-width: 600px;
   }
+  &.container--left {
+    @media (min-width: 1000px) {
+      margin-left: calc((100% - 1000px) / 2);
+      margin-right: 0;
+      max-width: revert;
+    }
+  }
 }
 table {
   width: 100%;
@@ -412,6 +422,10 @@ blockquote {
     font-family: var(--font-display);
     color: var(--color-primary);
     pointer-events: none;
+    @media (max-width: 1000px) {
+      top: -1.4rem;
+      left: -0.2rem;
+    }
   }
 }
 fieldset {
