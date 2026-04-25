@@ -1,0 +1,72 @@
+---
+// © Functional Software, Inc. dba Sentry
+// SPDX-License-Identifier: Apache-2.0
+
+interface Props {
+  name: string;
+  role: string;
+  imageUrl: string;
+}
+
+const { name, role, imageUrl } = Astro.props;
+---
+
+<figure class="testimonial">
+  <div
+    class="testimonial-image"
+    aria-label=`A portrait of ${name}`
+  >
+    <figcaption>
+      <strong>{name}</strong>
+      <em>{role}</em>
+    </figcaption>
+  </div>
+  <blockquote>
+    <slot></slot>
+  </blockquote>
+</figure>
+
+<style define:vars={{ imageUrl: `url(${imageUrl})` }}>
+  .testimonial {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0;
+    font-size: 0.9rem;
+    .testimonial-image {
+      flex-basis: 17rem;
+      display: flex;
+      align-items: flex-end;
+      aspect-ratio: 1 / 1.7;
+      height: 17rem;
+      padding: 0.7rem 1rem;
+      background-image:
+        linear-gradient(
+          to bottom,
+          transparent,
+          transparent 60%,
+          black 92%,
+          black
+        ),
+        var(--imageUrl);
+      background-position: center;
+      background-size: cover;
+      border-radius: var(--border-radius-md);
+      border-top-left-radius: var(--border-radius-lg);
+      font-size: 0.8rem;
+      text-shadow: 0px 0px 10px black;
+      figcaption {
+        strong, em {
+          display: block;
+        }
+      }
+    }
+    blockquote {
+      margin: 0;
+      @media (max-width: 1000px) {
+        margin-top: 1.0rem;
+      }
+    }
+  }
+</style>
