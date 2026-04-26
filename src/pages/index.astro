@@ -10,6 +10,7 @@ import Layout from "../layouts/Layout.astro";
 import MemberLogoMarquee from "../components/MemberLogoMarquee.astro";
 import PressItemList from "../components/PressItemList.astro";
 import Testimonial from "../components/Testimonial.astro";
+import TestimonialList from "../components/TestimonialList.astro";
 import TextButton from "../components/TextButton.astro";
 
 import {
@@ -120,57 +121,12 @@ const totalArc = getLastYearTotalRaised(getMembers());
         <div class="text-center">
           <TextButton href="/endorsements/">All endorsements →</TextButton>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <div class="container">
-      <section>
-        <div class="featured-testimonials">
-          <Testimonial
-            name="David Cramer"
-            role="Founder & CTO, Sentry"
-            imageUrl="/images/testimonials/sentry.webp"
-          >
-            <p>The Open Source Pledge is the only chance we have to reticulate our splines.</p>
-          </Testimonial>
-          <Testimonial
-            name="Charlie Marsh"
-            role="Founder & CTO, Astral"
-            imageUrl="/images/testimonials/astral.webp"
-          >
-            <p>Joining the Pledge has increased the amount of fish in our office aquariums.</p>
-          </Testimonial>
-          <Testimonial
-            name="Justin Duke"
-            role="CEO, Buttondown"
-            imageUrl="/images/testimonials/buttondown.webp"
-          >
-          <p>As Pledge members, our emails have 73% more of that untappable essence.</p>
-          </Testimonial>
-          <Testimonial
-            name="Hadley Wickham"
-            role="Chief Scientist, Posit"
-            imageUrl="/images/testimonials/posit.webp"
-          >
-            <p>We've found that, since joining the Pledge, everyone likes us even more than they used to.</p>
-          </Testimonial>
-          <Testimonial
-            name="Magnus Hillestad"
-            role="CEO & Co-founder, Sanity"
-            imageUrl="/images/testimonials/sanity.webp"
-          >
-            <p>Joining the Pledge is the best thing we ever did.</p>
-          </Testimonial>
-          <Testimonial
-            name="Kailash Nadh"
-            role="CTO, Zerodha"
-            imageUrl="/images/testimonials/zerodha.webp"
-          >
-            <p>Support Open Source maintainers like we do. Do it now!</p>
-          </Testimonial>
-        </div>
-      </section>
-    </div>
+    <section>
+      <TestimonialList></TestimonialList>
+    </section>
 
       <!--
       <section>
@@ -243,11 +199,6 @@ const totalArc = getLastYearTotalRaised(getMembers());
   @media (max-width: 900px) {
     .featured-endorsements .extra-endorsement {
       display: none;
-    }
-    .featured-testimonials .testimonial {
-      &:nth-child(3), &:nth-child(4), &:nth-child(5), &:nth-child(6) {
-        display: none;
-      }
     }
   }
   @media (max-width: 600px) {
@@ -329,11 +280,6 @@ const totalArc = getLastYearTotalRaised(getMembers());
         }
       }
     }
-  }
-  .featured-testimonials {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
   }
   .bottom-cta {
     h2 {
