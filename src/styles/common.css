@@ -463,9 +463,16 @@ fieldset {
   font-weight: 600;
   font-size: 1.2em;
   cursor: pointer;
+  &.button--xs {
+    padding: 0.2rem 0.6rem;
+    font-size: 0.9rem;
+  }
   &.button--small {
     padding: 0.4rem 1rem;
     font-size: 1rem;
+  }
+  &.button--inline {
+    margin: 0;
   }
   &:hover {
     background: var(--color-secondary);
@@ -538,8 +545,9 @@ nav {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     justify-content: flex-end;
-    column-gap: 2rem;
+    column-gap: 1.5rem;
     @media (max-width: 800px) {
       justify-content: center;
       column-gap: 1.0rem;
