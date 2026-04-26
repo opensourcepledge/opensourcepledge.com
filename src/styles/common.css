@@ -1068,6 +1068,32 @@ hr {
   }
 }
 
+.pictured-cta {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-right: 2rem;
+  background: var(--color-light-bg);
+  border-radius: var(--border-radius-md);
+  .picture {
+    flex: 2;
+    &.picture--vlad-altctrlorg {
+      min-height: 15rem;
+      background-image: url(https://cdn.kinopio.club/B2HeL3hVJJKqiy0KrvlwV/AltCtrOrg-Event-46.jpg);
+      background-size: cover;
+      background-position: center;
+      border-radius: var(--border-radius-md);
+    }
+  }
+  .cta {
+    flex: 1;
+    text-align: center;
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+}
+
 /*
 Bluesky flutter — https://flutterby.philhawksworth.dev/
 SPDX-SnippetBegin
