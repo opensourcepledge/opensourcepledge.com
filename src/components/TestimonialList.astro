@@ -124,7 +124,7 @@ import Testimonial from "../components/Testimonial.astro";
 
   let currIdx = 0;
 
-  function move($testimonialGroup, idxDiff) {
+  function move($testimonialGroup: HTMLElement, idxDiff: number) {
     const n_testimonials = $testimonialGroup.childElementCount;
     let last_testimonial_shown = n_testimonials - 3;
     if (
@@ -145,12 +145,12 @@ import Testimonial from "../components/Testimonial.astro";
     const $testimonialGroup = $testimonialList.querySelector('.testimonial-group');
     $nextTriggers.forEach(($nextTrigger) => {
       $nextTrigger.addEventListener('click', debounceLeading(() => {
-        move($testimonialGroup, +1);
+        move($testimonialGroup as HTMLElement, +1);
       }, 100));
     });
     $prevTriggers.forEach(($prevTrigger) => {
       $prevTrigger.addEventListener('click', debounceLeading(() => {
-        move($testimonialGroup, -1);
+        move($testimonialGroup as HTMLElement, -1);
       }, 100));
     });
   });

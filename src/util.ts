@@ -25,15 +25,15 @@ export function slugify(str: string) {
     .replace(/-+/g, '-');
 }
 
-export function debounceLeading(func, timeout = 300){
-  let timer;
-  return (...args) => {
+export function debounceLeading(func: Function, timeout = 300){
+  let timer: ReturnType<typeof setTimeout> | null;
+  return (...args: any[]) => {
     if (!timer) {
-      func.apply(this, args);
+      func(...args);
     }
-    clearTimeout(timer);
+    clearTimeout(timer as ReturnType<typeof setTimeout>);
     timer = setTimeout(() => {
-      timer = undefined;
+      timer = null;
     }, timeout);
   };
 }
