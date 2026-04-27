@@ -514,7 +514,7 @@ fieldset {
   font-size: 1rem;
 }
 section {
-  margin: 4rem 0;
+  margin: 5rem 0;
   @media (max-width: 900px) {
     margin: 3rem 0;
   }
@@ -871,35 +871,40 @@ hr {
 
 .article-listing {
   position: relative;
-  margin: 0;
-  &:last-child hr {
-    display: none;
-  }
-  h2 {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: var(--color-light-bg);
+  border-radius: var(--border-radius);
+  a {
     font-size: 1.2rem;
+    line-height: 1.15;
     font-weight: normal;
     font-family: var(--font-body);
-  }
-  blockquote {
-    margin: 0;
+    text-decoration: none;
+    text-wrap: balance;
   }
   .meta {
     display: flex;
     align-items: center;
+    gap: 1rem;
+    font-size: 0.8rem;
     .avatar {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 1.8rem;
+      height: 1.8rem;
       background-size: cover;
       background-position: center center;
-      margin-right: 1rem;
       border-radius: 100%;
     }
-    em {
-      display: block;
-    }
-    time {
-      display: block;
-      font-size: 0.8rem;
+  }
+  .byline {
+    display: flex;
+    gap: 1rem;
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      gap: 0;
     }
   }
 }
