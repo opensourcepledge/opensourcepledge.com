@@ -3,6 +3,7 @@
 // © Vlad-Stefan Harbuz <vlad@vlad.website>
 // SPDX-License-Identifier: Apache-2.0
 
+import ArticleList from "../components/ArticleList.astro";
 import Blob from "../components/Blob.astro";
 import Button from "../components/Button.astro";
 import Endorsement from "../components/Endorsement.astro";
@@ -138,6 +139,18 @@ const totalArc = getLastYearTotalRaised(getMembers());
 
     <section>
       <TestimonialList></TestimonialList>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="text-center">
+          <h2>Our thoughts on Open Source</h2>
+        </div>
+        <ArticleList count={5}></ArticleList>
+        <div class="text-center">
+          <TextButton href="/blog/">See all posts →</TextButton>
+        </div>
+      </div>
     </section>
 
       <!--

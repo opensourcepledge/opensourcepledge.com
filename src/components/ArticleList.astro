@@ -4,9 +4,10 @@
 
 interface Props {
   showDrafts?: boolean;
+  count?: number;
 }
 
-const { showDrafts } = Astro.props;
+const { showDrafts, count } = Astro.props;
 
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
@@ -24,7 +25,7 @@ const ARTICLES_QUERY = `*[_type == "article"]|order(publishDateTime desc){
   author->{name, slug, avatar}
 }`;
 
-const articles = (await sanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY))
+let articles = (await sanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY))
   .filter((a) => {
     if (showDrafts) {
       return !dayjs(a.publishDateTime).isBefore(dayjs().utc());
@@ -32,26 +33,25 @@ const articles = (await sanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY))
       return dayjs(a.publishDateTime).isBefore(dayjs().utc());
     }
   });
+
+if (count) {
+  articles = articles.slice(0, count);
+}
 ---
 
 <div>
   {articles.map((article) => <div class="article-listing">
-    <blockquote>
-      <a href=`/blog/${article.slug.current}`>
-        <h2>{article.title}</h2>
-      </a>
-    </blockquote>
+    <a href=`/blog/${article.slug.current}`>{article.title}</a>
     <div class="meta">
       <div
         class="avatar"
         style={`background-image: url(${urlForImage(article.author.avatar)}`}
       ></div>
-      <div>
-        <em>{article.author.name}</em>
+      <div class="byline">
+        <div>{article.author.name}</div>
         <time>{dayjs(article.publishDateTime).format('DD MMM YYYY')}</time>
       </div>
     </div>
-    <hr>
   </div>)}
 </div>
 
