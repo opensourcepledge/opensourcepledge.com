@@ -199,10 +199,10 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 1rem 0;
 }
-p:first-child, ul:first-child, ol:first-child, fieldset legend + p {
+p:first-child, ul:first-child, ol:first-child, .button:first-child, fieldset legend + p {
   margin-top: 0;
 }
-p:last-child, ul:last-child, ol:last-child {
+p:last-child, ul:last-child, ol:last-child, .button:last-child {
   margin-bottom: 0;
 }
 table {
@@ -347,6 +347,13 @@ details {
     @media (min-width: 1000px) {
       margin-left: calc((100% - 1000px) / 2);
       margin-right: 0;
+      max-width: revert;
+    }
+  }
+  &.container--right {
+    @media (min-width: 1000px) {
+      margin-right: calc((100% - 1000px) / 2);
+      margin-left: 0;
       max-width: revert;
     }
   }
@@ -1070,15 +1077,17 @@ hr {
 
 .pictured-cta {
   display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding-right: 2rem;
-  background: var(--color-light-bg);
-  border-radius: var(--border-radius-md);
+  gap: 1rem;
+  @media (max-width: 850px) {
+    flex-direction: column;
+  }
   .picture {
-    flex: 2;
+    flex: 3;
+    @media (max-width: 1500px) {
+      flex: 2;
+    }
     &.picture--vlad-altctrlorg {
-      min-height: 15rem;
+      min-height: 17rem;
       background-image: url(https://cdn.kinopio.club/B2HeL3hVJJKqiy0KrvlwV/AltCtrOrg-Event-46.jpg);
       background-size: cover;
       background-position: center;
@@ -1087,9 +1096,21 @@ hr {
   }
   .cta {
     flex: 1;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 2rem;
+    background: var(--color-light-bg);
+    border-radius: var(--border-radius-md);
+    h2, p, .button {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
     h2 {
       font-size: 1.5rem;
+      text-align: center;
+      line-height: 1.1;
     }
   }
 }
