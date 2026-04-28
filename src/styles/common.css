@@ -858,6 +858,28 @@ footer {
   font-weight: bold;
   font-size: 1.2rem;
 }
+.term {
+  display: flex;
+  gap: 0.7rem;
+  margin: 1rem 0;
+  align-items: flex-start;
+  .signal {
+    width: 1.2rem;
+    height: 1.2rem;
+    flex: 0 0 1.2rem;
+    margin-top: 0.1rem;
+    border-radius: 100%;
+    &.signal--success {
+      background: var(--color-primary);
+    }
+    &.signal--fail {
+      background: var(--color-tertiary);
+    }
+  }
+  p {
+    margin-top: 0.5rem;
+  }
+}
 .badge-heading {
   text-align: center;
   h1, h2, h3, h4, h5, h6 {
