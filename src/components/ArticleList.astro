@@ -5,9 +5,10 @@
 interface Props {
   showDrafts?: boolean;
   count?: number;
+  compact?: boolean;
 }
 
-const { showDrafts, count } = Astro.props;
+const { showDrafts, count, compact } = Astro.props;
 
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
@@ -37,22 +38,29 @@ let articles = (await sanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY))
 if (count) {
   articles = articles.slice(0, count);
 }
+
+let listingClass = 'article-listing';
+if (compact) {
+  listingClass += ' article-listing--compact';
+}
 ---
 
 <div>
-  {articles.map((article) => <div class="article-listing">
-    <a href=`/blog/${article.slug.current}`>{article.title}</a>
-    <div class="meta">
-      <div
-        class="avatar"
-        style={`background-image: url(${urlForImage(article.author.avatar)}`}
-      ></div>
-      <div class="byline">
-        <div>{article.author.name}</div>
-        <time>{dayjs(article.publishDateTime).format('DD MMM YYYY')}</time>
+  {articles.map((article) => (
+    <a href=`/blog/${article.slug.current}` class={listingClass}>
+      <h2>{article.title}</h2>
+      <div class="meta">
+        <div
+          class="avatar"
+          style={`background-image: url(${urlForImage(article.author.avatar)}`}
+        ></div>
+        <div class="byline">
+          <div>{article.author.name}</div>
+          <time>{dayjs(article.publishDateTime).format('DD MMM YYYY')}</time>
+        </div>
       </div>
-    </div>
-  </div>)}
+    </a>
+  ))}
 </div>
 
 <!--

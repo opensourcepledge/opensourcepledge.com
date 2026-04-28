@@ -869,6 +869,13 @@ hr {
   border-width: 1px;
 }
 
+.section-bookend {
+  text-align: center;
+  h1, h2, h3, h4, h5, h6 {
+    word-wrap: balance;
+  }
+}
+
 .article-listing {
   position: relative;
   display: flex;
@@ -878,13 +885,32 @@ hr {
   padding: 1rem;
   background: var(--color-light-bg);
   border-radius: var(--border-radius);
-  a {
-    font-size: 1.2rem;
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    color: inherit;
+    h2 {
+      color: var(--color-secondary);
+    }
+  }
+  &.article-listing--compact {
+    gap: 0.4rem;
+    .meta .avatar {
+      display: none;
+    }
+    .byline {
+      gap: 0.7rem;
+    }
+  }
+  h2 {
+    margin: 0;
+    font-size: 1.0rem;
     line-height: 1.15;
     font-weight: normal;
     font-family: var(--font-body);
     text-decoration: none;
     text-wrap: balance;
+    color: var(--color-primary);
   }
   .meta {
     display: flex;
@@ -903,8 +929,7 @@ hr {
     display: flex;
     gap: 1rem;
     @media (max-width: 1000px) {
-      flex-direction: column;
-      gap: 0;
+      display: block;
     }
   }
 }
