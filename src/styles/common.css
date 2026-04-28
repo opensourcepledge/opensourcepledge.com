@@ -546,7 +546,16 @@ nav {
       max-height: 3.5rem;
     }
   }
-  ul {
+  .nav-group-set {
+    display: flex;
+    column-gap: 1.5rem;
+    row-gap: 0.4rem;
+    @media (max-width: 800px) {
+      flex-direction: column;
+      column-gap: 0.8rem;
+    }
+  }
+  .nav-group {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -557,7 +566,7 @@ nav {
     column-gap: 1.5rem;
     @media (max-width: 800px) {
       justify-content: center;
-      column-gap: 1.0rem;
+      column-gap: 0.8rem;
     }
   }
 }
