@@ -34,9 +34,16 @@ try {
 
 {faqItems && <div>
   <h2>{title}</h2>
-  <ol>
+  <span>Table of contents:</span>
+  <ul>
     {faqItems.map(({id, title}) => <li>
       <a href=`#${id}`>{title}</a>
     </li>)}
-  </ol>
+  </ul>
 </div>}
+
+<style>
+ul {
+  margin-top: 0.5rem;
+}
+</style>
