@@ -9,9 +9,10 @@
 
 interface Props {
   filepath: string;
+  title: string;
 }
 
-const { filepath } = Astro.props;
+const { filepath, title } = Astro.props;
 
 import * as cheerio from 'cheerio';
 import fs from 'node:fs';
@@ -23,7 +24,7 @@ try {
   const $ = cheerio.load(file);
   sections = $('section').toArray().map(($section) => {
     const id = $($section).attr('id');
-    const title = $($section).find('h2').first().text();
+    const title = $($section).find('h3').first().text();
     return {id, title};
   }).filter((s) => s.id && s.title.length > 0);
 } catch (err) {
@@ -32,7 +33,7 @@ try {
 ---
 
 {sections && <div>
-  <h2>Table of Contents</h2>
+  <h2>{title}</h2>
   <ol>
     {sections.map(({id, title}) => <li>
       <a href=`#${id}`>{title}</a>

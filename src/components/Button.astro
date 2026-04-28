@@ -6,11 +6,12 @@
 interface Props {
   href: string;
   target?: string;
+  extraClasses?: string;
 }
 
-const { href, target } = Astro.props;
+const { href, target, extraClasses } = Astro.props;
 ---
 
-<a class="button" href={href} target={target}>
+<a class={['button', extraClasses].join(' ')} href={href} target={target}>
   <slot></slot>
 </a>
