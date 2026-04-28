@@ -31,70 +31,123 @@ const members = getMembers();
           <h1>About the Pledge</h1>
         </div>
 
-        <TableOfContents filepath={Astro.self.moduleId || ""} />
-      </section>
-
-      <section id="what-is-the-open-source-pledge">
-        <h2>What is the Open Source Pledge?</h2>
-
         <p
           >The Open Source Pledge is a group of companies with a shared commitment to paying the maintainers of the Open
-          Source software we all consume. Our goal is to establish a new social norm in the tech industry of companies
-          paying Open Source maintainers, so that burnout and related security issues such as those in XZ and Apache
-          Log4j can become a thing of the past.</p
+          Source software we all depend on. Our goal is to establish a new social norm of companies paying Open Source
+          maintainers, so
+          <a href="/blog/burnout-in-open-source-a-structural-problem-we-can-fix-together">burnout</a>
+          and related security issues like the
+          <a href="https://en.wikipedia.org/wiki/XZ_Utils_backdoor" target="_blank">XZ Utils backdoor</a>
+          and
+          <a href="https://en.wikipedia.org/wiki/Log4Shell" target="_blank">Log4Shell</a>
+          can become a thing of the past.</p
         >
-      </section>
-
-      <section id="what-is-the-pledges-mission">
-        <h2>What is the Pledge's mission?</h2>
-
-        <p
-          >A massive portion of the software we all depend on is based on Open Source projects. Though these projects
-          are very important, the people who tirelessly maintain them often do so
-          <a href="https://openpath.chadwhitacre.com/2024/the-open-source-sustainability-crisis/" target="_blank"
-            >without being paid at all</a
-          >. This means
-          that many maintainers have to either struggle to make ends meet, or work a second shift after working hours to
-          maintain projects that often have to be looked after for years or decades.</p
-        >
-
-          <figure class="text-center">
-            <img
-              src="/images/dependency.png"
-              alt="This xkcd comic shows a Jenga-like tower of blocks, illustrating “all modern digital infrastructure”. The structure precariously rests on a small load-bearing block, titled “a project some random person in Nebraska has been thanklessly maintaining since 2003”."
-              title="Someday ImageMagick will finally break for good and we'll have a long period of scrambling as we try to reassemble civilization from the rubble."
-            >
-            <figcaption><a href="https://xkcd.com/2347/" target="_blank">xkcd #2347 — Dependency</a></figcaption>
-          </figure>
-
-        <p
-          >This arrangement isn't fair to the maintainers who build software we value. And it leads to a fragile
-          ecosystem that's susceptible to security issues, because the people who look after our digital infrastructure
-          are likely to suffer from burnout. This has led to issues such as the
-          <a href="https://en.wikipedia.org/wiki/XZ_Utils_backdoor" target="_blank">XZ backdoor</a>, the
-          <a href="https://en.wikipedia.org/wiki/Log4Shell" target="_blank">Log4Shell vulnerability</a>, and many other serious
-          issues.</p
-        >
-
-        <p
-          >This is why our main goal is <strong>to get companies to pay maintainers</strong> of software they depend on.
-          We believe that by doing this, we can contribute to a healthy, thriving and secure Open Source ecosystem. We
-          recognise this is a multifaceted problem, but the solution we are focusing on is providing <strong>direct
-          payments to maintainers</strong>, in order to support them and their work.</p
-        >
-      </section>
-
-      <section id="what-does-joining-the-pledge-entail">
-        <h2>What does joining the Pledge entail?</h2>
 
         <p
           >Our new norm is for companies to pay a minimum of $2000 per year per full-time equivalent developer on the
-          company's staff, to Open Source maintainers of each company's choosing.</p
+          company's staff, directly to Open Source maintainers and/or foundations of each company's choosing.</p
+        >
+
+        <hr>
+
+        <div class="text-with-figure">
+          <div>
+            <p
+              >Open Source projects lie at the foundation of the software we build and depend on. But, the people who
+              tirelessly maintain them often do so
+              <a href="https://openpath.chadwhitacre.com/2024/the-open-source-sustainability-crisis/" target="_blank"
+                >without being paid at all</a
+              >.
+              Many maintainers have to either struggle to make ends meet, or work a second shift after working hours to
+              maintain projects that often have to be looked after for years or decades.</p
+            >
+            <p
+              >This arrangement isn't fair to the maintainers who build software we value. And it leads to a fragile
+              ecosystem that's susceptible to security issues, because the people who look after our digital infrastructure
+              are likely to suffer from burnout.</p
+            >
+            <p
+              >This creates the risk of foundational OSS projects breaking, which threatens both our commercial
+              products, and public tech infrastructure like transportation, medical devices and the internet.</p
+            >
+          </div>
+          <figure>
+            <a href="https://xkcd.com/2347/" target="_blank">
+              <img
+                src="/images/dependency.webp"
+                alt="This xkcd comic shows a Jenga-like tower of blocks, illustrating “all modern digital infrastructure”. The structure precariously rests on a small load-bearing block, titled “a project some random person in Nebraska has been thanklessly maintaining since 2003”."
+                title="Someday ImageMagick will finally break for good and we'll have a long period of scrambling as we try to reassemble civilization from the rubble."
+              >
+            </a>
+          </figure>
+        </div>
+        <div class="button-container">
+          <Button
+            href="https://opensourcesecurity.io/2026/2026-04-open-source-pledge-vlad/"
+            target="_blank"
+            extraClasses="button--sm"
+          >Watch podcast episode →</Button>
+        </div>
+      </section>
+
+      <section>
+        <h2>Pledge Team</h2>
+
+        <p
+          >The Open Source Pledge is brought to you by
+          <a target="_blank" href="https://sentry.io/welcome/">Sentry</a>
+          and contributors.</p
+        >
+        <p>Our core team is:</p>
+        <ul>
+          <li>
+            <a target="_blank" href="https://vlad.website">Vlad-Stefan Harbuz</a> (independent)
+          </li>
+          <li>
+            <a target="_blank" href="https://www.kumparak.com/">Greg Kumparak</a> (Sentry)
+          </li>
+          <li>
+            <a target="_blank" href="https://chadwhitacre.com/">Chad Whitacre</a> (Sentry)
+          </li>
+        </ul>
+        <p>Former core team members, to whom we are eternally grateful:</p>
+        <ul>
+          <li>
+            <a target="_blank" href="https://github.com/selviano">Michael Selvidge</a> (formerly at Sentry)
+          </li>
+        </ul>
+        <p
+          >Most design work is done
+          by Sentry's in-house creative team,
+          <a href="https://sentry.design/" target="_blank">Studio 404</a>.
+        </p>
+        <p
+          >Additional supporting work has been done by people too numerous to name here — thank you!
+          Some contributors are listed <a target="_blank" href="https://github.com/opensourcepledge/opensourcepledge.com/graphs/contributors">on GitHub</a>.</p
+        >
+
+        <p
+          >To help us build the Open Source Pledge, read
+          <a href="https://github.com/opensourcepledge/opensourcepledge.com/blob/main/CONTRIBUTING.md" target="_blank"
+            >CONTRIBUTING.md</a
+          >,
+          <a href="https://github.com/opensourcepledge/opensourcepledge.com/issues" target="_blank"
+            >dive into our issues</a
+          >,
+          and feel free to reach out to the working group leads either in issues or
+          <a
+            href="https://join.slack.com/t/opensourcepledge/shared_invite/zt-33qxp7jsz-CJeYxDBnc2Y3FuZvGCHLMw"
+            target="_blank"
+          >on Slack</a>.</p
         >
       </section>
 
+      <section>
+        <TableOfContents filepath={Astro.self.moduleId || ""} title="Frequently Asked Questions" />
+      </section>
+
       <section id="other-ways-to-support-open-source">
-        <h2>What about other ways to support Open Source?</h2>
+        <h3>What about other ways to support Open Source?</h3>
 
         <p
           >Some companies support the Open Source ecosystem by hiring developers to work on Open Source Software, or by
@@ -107,7 +160,7 @@ const members = getMembers();
       </section>
 
       <section id="what-payments-are-eligible">
-        <h2>What payments are eligible?</h2>
+        <h3>What payments are eligible?</h3>
 
         <p>The primary intent with the Pledge is <b>no-strings-attached payments
           to Open Source maintainers</b>. Starting with that, here are some
@@ -163,13 +216,13 @@ const members = getMembers();
       </section>
 
       <section id="does-open-source-pledge-handle-funds">
-        <h2>Does the Open Source Pledge handle funds?</h2>
+        <h3>Does the Open Source Pledge handle funds?</h3>
 
         <p>Payments are made directly to maintainers — we never handle any funds.</p>
       </section>
 
       <section id="who-has-already-joined">
-        <h2>Who has already joined?</h2>
+        <h3>Who has already joined?</h3>
 
         <p>Here are some of our members:</p>
 
@@ -185,7 +238,7 @@ const members = getMembers();
       </section>
 
       <section id="what-are-open-source-pledge-innovators">
-        <h2>What are Open Source Pledge Innovators?</h2>
+        <h3>What are Open Source Pledge Innovators?</h3>
 
         <p
           >Innovators are founding members of the Pledge who joined before our launch on 08 Oct 2024. They can be
@@ -194,7 +247,7 @@ const members = getMembers();
       </section>
 
       <section id="how-can-i-join">
-        <h2>How can I join?</h2>
+        <h3>How can I join?</h3>
 
         <p
           >To join our {members.length} members and help promote a healthy Open Source ecosystem, see our
@@ -207,7 +260,7 @@ const members = getMembers();
       </section>
 
       <section id="can-individuals-join">
-        <h2>Can individuals join?</h2>
+        <h3>Can individuals join?</h3>
 
         <p
           >No, we don't offer an individual membership category, because we are focused on unlocking funding from <em>companies</em> to maintainers. That said, single-person companies are <a href="/join/">welcome to join</a>, and we also appreciate <a href="/endorsements/">endorsements</a> from individuals.</p
@@ -222,7 +275,7 @@ const members = getMembers();
       </section>
 
       <section id="is-it-unfair-to-ask-companies-in-diff-countries-to-pay-the-same-amount">
-        <h2>Is it unfair to ask companies in different countries to pay the same amount?</h2>
+        <h3>Is it unfair to ask companies in different countries to pay the same amount?</h3>
 
         <p
           >Our current ask is set to US$2000 per dev per year. We're trying to find ways to take purchasing power
@@ -232,8 +285,17 @@ const members = getMembers();
         >
       </section>
 
+      <section id="where-can-i-find-promotional-materials">
+        <h3>Where can I find promotional materials?</h3>
+
+        <p>
+          Members, ecosystem partners and general advocates will find a lot of helpful promotional materials on
+          <a href="/resources">our Resources page</a>. You can even make your own stickers! :)
+        </p>
+      </section>
+
       <section id="are-there-local-initiatives-similar-to-the-pledge">
-        <h2>Are there local initiatives similar to the Pledge?</h2>
+        <h3>Are there local initiatives similar to the Pledge?</h3>
 
         <p
           >French readers may be interested in
@@ -243,76 +305,11 @@ const members = getMembers();
       </section>
 
       <section id="is-the-pledge-related-to-cryptocurrencies-in-any-way">
-        <h2>Is the Pledge related to cryptocurrencies in any way?</h2>
+        <h3>Is the Pledge related to cryptocurrencies in any way?</h3>
 
         <p
           >The Pledge aims to improve the Open Source ecosystem using traditional funding methods. Our work is unrelated
           to cryptocurrencies, DAOs or any such technologies.</p
-        >
-      </section>
-
-      <section id="where-can-i-find-promotional-materials">
-        <h2>Where can I find promotional materials?</h2>
-
-        <p>
-          Members, ecosystem partners and general advocates will find a lot of helpful promotional materials on
-          <a href="/resources">our Resources page</a>. You can even make your own stickers! :)
-        </p>
-      </section>
-
-      <section id="how-can-i-help">
-        <h2>How can I help?</h2>
-
-        <p
-          >To help us build the Open Source Pledge, read
-          <a href="https://github.com/opensourcepledge/opensourcepledge.com/blob/main/CONTRIBUTING.md" target="_blank"
-            >CONTRIBUTING.md</a
-          >,
-          <a href="https://github.com/opensourcepledge/opensourcepledge.com/issues" target="_blank"
-            >dive into our issues</a
-          >,
-          and feel free to reach out to the working group leads either in issues or
-          <a
-            href="https://join.slack.com/t/opensourcepledge/shared_invite/zt-33qxp7jsz-CJeYxDBnc2Y3FuZvGCHLMw"
-            target="_blank"
-          >on Slack</a>.</p
-        >
-      </section>
-
-      <section id="who-maintains-the-open-source-pledge">
-        <h2>Who maintains the Open Source Pledge?</h2>
-
-        <p
-          >The Open Source Pledge is brought to you by
-          <a target="_blank" href="https://sentry.io/welcome/">Sentry</a>
-          and contributors.</p
-        >
-        <p>Our core team is:</p>
-        <ul>
-          <li>
-            <a target="_blank" href="https://vlad.website">Vlad-Stefan Harbuz</a> (independent)
-          </li>
-          <li>
-            <a target="_blank" href="https://www.kumparak.com/">Greg Kumparak</a> (Sentry)
-          </li>
-          <li>
-            <a target="_blank" href="https://chadwhitacre.com/">Chad Whitacre</a> (Sentry)
-          </li>
-        </ul>
-        <p>Former core team members, to whom we are eternally grateful:</p>
-        <ul>
-          <li>
-            <a target="_blank" href="https://github.com/selviano">Michael Selvidge</a> (formerly at Sentry)
-          </li>
-        </ul>
-        <p
-          >Most design work is done
-          by Sentry's in-house creative team,
-          <a href="https://sentry.design/" target="_blank">Studio 404</a>.
-        </p>
-        <p
-          >Additional supporting work has been done by people too numerous to name here — thank you!
-          Some contributors are listed <a target="_blank" href="https://github.com/opensourcepledge/opensourcepledge.com/graphs/contributors">on GitHub</a>.</p
         >
       </section>
     </main>
@@ -320,17 +317,7 @@ const members = getMembers();
 </Layout>
 
 <style>
-  figure {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem;
-    figcaption {
-      margin-top: 1rem;
-    }
-  }
-  h2 {
+  h3 {
     font-size: 1rem;
   }
 </style>

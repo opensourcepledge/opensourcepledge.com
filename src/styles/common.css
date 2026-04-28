@@ -178,7 +178,7 @@ SPDX-License-Identifier: Apache-2.0
 }
 html {
   font-size: 20px;
-  line-height: 1.5;
+  line-height: 1.4;
   background-color: var(--color-bg);
   color: var(--color-text);
   overflow-x: hidden;
@@ -198,6 +198,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 p {
   margin: 1rem 0;
+  text-align: justify;
 }
 p:first-child, ul:first-child, ol:first-child, .button:first-child, fieldset legend + p {
   margin-top: 0;
@@ -474,7 +475,11 @@ fieldset {
     padding: 0.2rem 0.6rem;
     font-size: 0.9rem;
   }
-  &.button--small {
+  &.button--sm {
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+  }
+  &.button--control {
     padding: 0.4rem 1rem;
     font-size: 1rem;
   }
@@ -489,6 +494,10 @@ fieldset {
     background: var(--color-tertiary);
     color: var(--color-bg);
   }
+}
+.button-container {
+  margin: 1.5rem 0;
+  text-align: center;
 }
 .button-group {
   display: flex;
@@ -505,6 +514,9 @@ fieldset {
       border-right: none;
     }
   }
+}
+p + .button {
+  margin-top: 0;
 }
 .select {
   padding: 0.5rem;
@@ -1114,6 +1126,21 @@ hr {
   }
 }
 
+.text-with-figure {
+  display: flex;
+  gap: 2rem;
+  figure {
+    min-width: 15rem;
+    margin: 0;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  @media (max-width: 800px) {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+}
+
 .pictured-cta {
   display: flex;
   gap: 1rem;
@@ -1150,6 +1177,9 @@ hr {
       font-size: 1.5rem;
       text-align: center;
       line-height: 1.1;
+    }
+    p {
+      text-align: left;
     }
   }
 }
