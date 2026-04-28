@@ -29,27 +29,22 @@
             </div>
             <div>
               <xsl:for-each select="/rss/channel/item">
-                <div class="article-listing">
-                  <blockquote>
-                    <a>
-                      <xsl:attribute name="href">
-                        <xsl:value-of select="link"/>
-                      </xsl:attribute>
-                      <h2><xsl:value-of select="title"/></h2>
-                    </a>
-                  </blockquote>
+                <a class="article-listing">
+                  <xsl:attribute name="href">
+                    <xsl:value-of select="link"/>
+                  </xsl:attribute>
+                  <h2><xsl:value-of select="title"/></h2>
                   <div class="meta">
-                    <div>
-                      <em>
+                    <div class="byline">
+                      <div>
                         <xsl:value-of select="author"/>
-                      </em>
+                      </div>
                       <time>
                         <xsl:value-of select="substring(pubDate, 6, 11)"/>
                       </time>
                     </div>
                   </div>
-                  <hr/>
-                </div>
+                </a>
               </xsl:for-each>
             </div>
           </section>
