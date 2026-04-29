@@ -9,6 +9,13 @@
   "joinDate": "2024-10-08",
   "annualReports": [
     {
+      "url": "https://www.vlt.io/blog/doubling-down-on-open-source",
+      "year": "2025",
+      "reportDate": "2026-04-29",
+      "averageNumberOfDevs": 4,
+      "usdAmountPaid": 14000
+    },
+    {
       "url": "https://blog.vlt.sh/blog/making-open-source-more-sustainable",
       "year": "2024",
       "reportDate": "2024-10-08",
