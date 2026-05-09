@@ -27,53 +27,43 @@ const members = getMembers();
 
     <main id="main-content">
       <section>
-        <div class="text-center">
-          <h1>About the Pledge</h1>
-        </div>
-
-        <p>
-          The Open Source Pledge is a group of companies with a shared commitment to paying the maintainers of the Open
-          Source software we all depend on. Our goal is to establish a new social norm of companies paying Open Source
-          maintainers, so
-          <a href="/blog/burnout-in-open-source-a-structural-problem-we-can-fix-together">burnout</a>
-          and related security issues like the
-          <a href="https://en.wikipedia.org/wiki/XZ_Utils_backdoor" target="_blank">XZ Utils backdoor</a>
-          and
-          <a href="https://en.wikipedia.org/wiki/Log4Shell" target="_blank">Log4Shell</a>
-          can become a thing of the past.
-        </p>
-
-        <p>
-          Our new norm is for companies to pay a minimum of $2000 per year per full-time equivalent developer on the
-          company's staff, directly to Open Source maintainers and/or foundations of each company's choosing.
-        </p>
-
-        <hr>
+        <h2 class="small-caps text-center"><small>The Problem&thinsp;—</small><br>Our tech is vulnerable</h2>
 
         <div class="text-with-figure">
           <div>
             <p>
-              Open Source projects lie at the foundation of the software we build and depend on. But, the people who
-              tirelessly maintain them often do so
+              Society depends on thousands of Open Source packages, but the people who
+              maintain them are often
               <a href="https://openpath.chadwhitacre.com/2024/the-open-source-sustainability-crisis/" target="_blank"
-                >without being paid at all</a
-              >.
-              Many maintainers have to either struggle to make ends meet, or work a second shift after working hours to
-              maintain projects that often have to be looked after for years or decades.
+                >unpaid</a
+              >
+              and
+              <a href="/blog/burnout-in-open-source-a-structural-problem-we-can-fix-together"
+                >burned out</a
+              >,
+              working second shifts after work for years or decades.
             </p>
             <p>
-              This arrangement isn't fair to the maintainers who build software we value. And it leads to a fragile
-              ecosystem that's susceptible to security issues, because the people who look after our digital infrastructure
-              are likely to suffer from burnout.
+              This arrangement isn't fair to maintainers, And it makes our ecosystem fragile and vulnerable to
+              security issues, because the stewards of our digital infrastructure can't sustainably support it.
             </p>
             <p>
-              This creates the risk of foundational OSS projects breaking, which threatens both our commercial
-              products, and public tech infrastructure like transportation, medical devices and the internet.
+              When
+              <a href="https://vlad.website/keystone-maintainers-keep-the-internet-going/" target="_blank"
+                >keystone</a
+              >
+              Open Source projects break&thinsp;—&thinsp;which is happening
+              <a href="https://en.wikipedia.org/wiki/XZ_Utils_backdoor" target="_blank">more</a>
+              and
+              <a href="https://en.wikipedia.org/wiki/Log4Shell" target="_blank">more</a>&thinsp;—&thinsp;all
+              our software is threatened, from commercial
+              products to public tech infrastructure like transportation, medical devices and the internet.
             </p>
           </div>
           <figure>
-            <a href="https://xkcd.com/2347/" target="_blank">
+            <a href="https://xkcd.com/2347/" target="_blank" class="image-link">
               <img
+                width="700"
                 src="/images/dependency.webp"
                 alt="This xkcd comic shows a Jenga-like tower of blocks, illustrating “all modern digital infrastructure”. The structure precariously rests on a small load-bearing block, titled “a project some random person in Nebraska has been thanklessly maintaining since 2003”."
                 title="Someday ImageMagick will finally break for good and we'll have a long period of scrambling as we try to reassemble civilization from the rubble."
@@ -81,6 +71,22 @@ const members = getMembers();
             </a>
           </figure>
         </div>
+      </section>
+      <section>
+        <h2 class="small-caps text-center"><small>Our Solution&thinsp;—</small><br>Companies pay maintainers</h2>
+
+        <p>
+          The Open Source Pledge is a group of companies with a shared commitment to paying the maintainers of the Open
+          Source software we all depend on. We believe a new social norm of companies paying maintainers will help make
+          burnout and the supply chain security issues it causes a thing of the past.
+        </p>
+
+        <p>
+          Our new norm is for companies to pay a minimum of $2000 per year per full-time equivalent developer on the
+          company's staff, to Open Source maintainers and/or foundations of each company's choosing. We do not handle
+          any funds — everything goes directly to maintainers.
+        </p>
+
         <div class="button-container">
           <Button
             href="https://opensourcesecurity.io/2026/2026-04-open-source-pledge-vlad/"
