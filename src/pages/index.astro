@@ -142,13 +142,6 @@ const totalArc = getLastYearTotalRaised(getMembers());
 </Layout>
 
 <style is:global>
-  .member-logo-marquee {
-    position: absolute;
-    z-index: 100;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
   .testimonial-list {
     /* Visually compensate for ←/→ buttons */
     /* margin-top: -2.0rem; */
@@ -167,6 +160,7 @@ const totalArc = getLastYearTotalRaised(getMembers());
 <style>
   .hero-container {
     position: relative;
+    padding-bottom: 2.5rem;
   }
   .hero-container + section {
     margin-top: 2.5rem;
@@ -178,7 +172,6 @@ const totalArc = getLastYearTotalRaised(getMembers());
     .hero {
       display: flex;
       gap: 2rem;
-      margin-bottom: 0.5rem;
       @media (max-width: 900px) {
         flex-direction: column;
       }
@@ -194,13 +187,17 @@ const totalArc = getLastYearTotalRaised(getMembers());
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
+        margin-bottom: 1rem;
         p {
           text-align: left;
         }
       }
       .piggybank {
         position: relative;
+        display: flex;
+        align-items: flex-end;
         img {
+          display: block;
           width: 50rem;
           max-width: 100%;
           position: relative;
