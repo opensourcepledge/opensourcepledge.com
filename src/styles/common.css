@@ -74,7 +74,7 @@ SPDX-License-Identifier: Apache-2.0
   --line-height-s: 25px;
   --line-height-m: 25px;
   --line-height-l: 30px;
-  --line-height-xl: 45px;
+  --line-height-xl: 40px;
   --line-height-xxl: 65px;
 }
 [hidden] {
@@ -127,6 +127,9 @@ h2 {
 }
 article h2 {
   margin-top: 40px;
+  @media (max-width: 900px) {
+    margin-top: 30px;
+  }
   &:first-child {
     margin-top: 0;
   }
@@ -142,6 +145,9 @@ h3 {
 }
 article h3 {
   margin-top: 40px;
+  @media (max-width: 900px) {
+    margin-top: 30px;
+  }
   &:first-child {
     margin-top: 0;
   }
@@ -157,6 +163,9 @@ h4, h5, h6 {
 }
 article h4, article h5, article h6 {
   margin-top: 20px;
+  @media (max-width: 900px) {
+    margin-top: 15px;
+  }
   &:first-child {
     margin-top: 0;
   }
@@ -1168,6 +1177,10 @@ hr {
   @media (max-width: 800px) {
     flex-direction: column-reverse;
     gap: 1rem;
+    figure img {
+      margin: 0 auto;
+      width: 250px;
+    }
   }
 }
 
