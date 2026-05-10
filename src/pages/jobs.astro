@@ -29,18 +29,10 @@ const memberMap = getMembersAsMap();
     <Blob kind="grad-dots-03" top="10%" left="-15rem"></Blob>
 
     <main id="main-content">
-      <section>
+      <section class="section--leading">
         <div class="text-center">
-          <h1>Jobs</h1>
+          <h1>Work with those<br>who match your values<small class="small-caps">Aggregated job postings<br>from companies pioneering<br>Open Source sustainability</small></h1>
         </div>
-        <p>
-          <strong>
-            Join the companies pioneering Open Source sustainability.
-          </strong>
-          <br>
-          This page aggregates open job postings from our member companies, so that you can find a job at a company that
-          matches your values.
-        </p>
       </section>
       <section>
         <div class="jotw">
@@ -259,7 +251,6 @@ const memberMap = getMembersAsMap();
               ) || (
                 <p>{memberMap[memberId].description}</p>
               )}
-              <hr>
               {jobSet.companies[memberId].map((job) =>
                 <a class="job-link" href={job.url} target="_blank">{job.title}</a>
               )}

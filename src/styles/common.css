@@ -100,6 +100,12 @@ html, body, input, button, textarea {
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   font-family: var(--font-display);
+  small {
+    display: block;
+    &:last-child {
+      margin-top: 20px;
+    }
+  }
 }
 h1 {
   margin-bottom: 30px;
@@ -115,7 +121,6 @@ h2 {
   font-size: var(--font-size-xl);
   line-height: var(--line-height-xl);
   small {
-    display: block;
     font-size: var(--font-size-l);
     line-height: var(--line-height-l);
   }
@@ -131,7 +136,6 @@ h3 {
   font-size: var(--font-size-l);
   line-height: var(--line-height-l);
   small {
-    display: block;
     font-size: var(--font-size-m);
     line-height: var(--line-height-m);
   }
@@ -147,7 +151,6 @@ h4, h5, h6 {
   font-size: var(--font-size-m);
   line-height: var(--line-height-m);
   small {
-    display: block;
     font-size: var(--font-size-s);
     line-height: var(--line-height-s);
   }
@@ -387,6 +390,12 @@ table {
 ul, ol {
   li {
     margin: 10px 0;
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   li > ul, li > ol {
     padding-left: 2rem;
@@ -508,6 +517,9 @@ p + .button {
 }
 section {
   margin: 5rem 0;
+  &.section--leading {
+    margin-top: 3rem;
+  }
   &.section--tight {
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -685,6 +697,9 @@ footer {
     a {
       text-decoration: underline;
     }
+    li {
+      margin: 0;
+    }
   }
   .footer-partners {
     .footer-partners__partner {
@@ -835,13 +850,14 @@ footer {
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding-bottom: 2px;
   width: 2rem;
   height: 2rem;
   border-radius: 100%;
   border: 3px solid var(--color-text);
-  font-weight: bold;
   font-size: var(--font-size-l);
-  line-height: var(--line-height-l);
+  line-height: 1;
+  font-weight: 800;
 }
 .term {
   display: flex;
