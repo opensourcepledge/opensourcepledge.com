@@ -177,6 +177,24 @@ information along with the file, are listed in `REUSE.toml`.
 
 We track uptime using [updown.io][updown]: [Open Source Pledge Status Page][status].
 
+## CSS Style Guide
+
+Use `rem` for dimensions that should shrink/grow when the user changes font size. Avoid `rem` for borders, padding and
+vertical spacing.
+
+Use `px` for dimensions that should not shrink/grow when the user changes font size. Use `px` for borders, padding and
+vertical spacing.
+
+([Read more][rem] on `rem` vs `px`.)
+
+Always use `5px` increments for vertical `px` dimensions, including `line-height`, to create vertical rhythm.
+
+([Read more][govuk-type-scale] on vertical rhythm.)
+
+Use the provided `--font-size-foo` and `--line-height-foo` variables instead of manually choosing values. When setting a
+`--font-size-foo`, always use the appropriate `--line-height-foo` together with it. Exceptions are allowed for unusual
+elements.
+
 ## Browser Support
 
 The least-supported clientside feature we're using is CSS Nesting. This means that our supported browser are described
@@ -184,8 +202,10 @@ by the [CSS Nesting Can I Use page][css-nesting].
 
 [crm]: https://github.com/opensourcepledge/crm/issues
 [css-nesting]: https://caniuse.com/css-nesting
+[govuk-type-scale]: https://design-system.service.gov.uk/styles/type-scale/
 [join]: https://opensourcepledge.com/join
 [member-logos]: https://drive.google.com/drive/folders/1HxYaaY1wy1hZT6O0ZY58s7Y8N4aV0fcn
+[rem]: https://www.joshwcomeau.com/css/surprising-truth-about-pixels-and-accessibility/#strategic-unit-deployment-6
 [sanity-studio]: https://opensourcepledge.sanity.studio/
 [status]: https://updown.io/p/3c87h
 [updown]: https://updown.io

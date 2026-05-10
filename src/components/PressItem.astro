@@ -25,27 +25,18 @@ const { name, title, date, imageUrl, sourceUrl, hidden } = Astro.props;
       <small>{date}</small>
     </div>
   </figcaption>
-  <hr>
 </figure>
 
 <style>
   .press-item {
     position: relative;
     margin: 0;
-    hr {
-      margin: 1.5rem auto;
-      max-width: 10rem;
-      border-color: var(--color-primary);
-      border-width: 1px;
-    }
-    &:last-child hr {
-      display: none;
-    }
     a {
       display: block;
       margin: 0;
       padding-bottom: 0.1rem; /* to counterbalance text-decoration */
-      font-size: 1.2rem;
+      font-size: var(--font-size-l);
+      line-height: var(--line-height-l);
     }
     blockquote {
       margin: 0;
@@ -55,7 +46,6 @@ const { name, title, date, imageUrl, sourceUrl, hidden } = Astro.props;
       align-items: center;
       gap: 1rem;
       margin-top: 0.7rem;
-      line-height: 1.3;
       img {
         border-radius: 100%;
         width: 3rem;

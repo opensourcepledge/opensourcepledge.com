@@ -21,11 +21,15 @@ import Layout from "../layouts/Layout.astro";
         <h1>We couldn't find this page…</h1>
 
         <p>
-          …but we hope to find funding for the Open Source projects we all depend on. Are you ready to do your part?
+          …but we hope to find funding for the Open&nbsp;Source projects we all depend on.
+        </p>
+
+        <p>
+          Are you ready to do your part?
         </p>
       </section>
 
-      <section class="flex-center bottom-cta">
+      <section class="flex-center">
         <div>
           <div class="text-center">
             <Button href="/join"
@@ -40,9 +44,13 @@ import Layout from "../layouts/Layout.astro";
 
 <style>
   h1 {
-    font-size: 3rem;
+    font-size: var(--font-size-xxl);
+    line-height: var(--line-height-xxl);
   }
   p {
-    font-size: 1.8rem;
+    font-size: var(--font-size-xl);
+    line-height: var(--line-height-xl);
+    max-width: 35rem;
+    text-align: left;
   }
 </style>

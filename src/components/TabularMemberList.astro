@@ -56,13 +56,6 @@ const { members } = Astro.props;
 </table>
 
 <style>
-  h2 {
-    margin-top: 2rem;
-    padding: 0.3rem 0.5rem;
-    background: var(--color-light-bg);
-    font-size: 1rem;
-    font-weight: normal;
-  }
   table {
     margin: 0;
     td, th {
@@ -76,6 +69,7 @@ const { members } = Astro.props;
     }
     th {
       font-weight: normal;
+      padding-bottom: 15px;
     }
     tr:has(td a:hover) td a {
       color: var(--color-secondary);

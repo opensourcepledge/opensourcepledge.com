@@ -199,8 +199,8 @@ const memberJobs = jobSet.companies[Astro.params.id];
     }
     h1 {
       margin: 0;
-      font-size: 2rem;
-      line-height: 1;
+      font-size: var(--font-size-xl);
+      line-height: var(--line-height-xl);
       .label {
         margin-top: 1rem;
       }
@@ -214,10 +214,8 @@ const memberJobs = jobSet.companies[Astro.params.id];
     border-radius: 0.5rem;
     background: var(--color-light-bg);
     h2 {
-      font-size: 1rem;
-    }
-    table {
-      margin-top: 2rem;
+      font-size: var(--font-size-m);
+      line-height: var(--line-height-m);
     }
     a {
       margin-bottom: 0;

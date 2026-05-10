@@ -27,7 +27,7 @@ const members = getMembers();
 
     <main id="main-content">
       <section class="section--tight">
-        <h2 class="small-caps text-center"><small>The Problem&thinsp;—</small><br>Our tech is vulnerable</h2>
+        <h2 class="small-caps text-center"><small>The Problem&thinsp;—</small>Our tech is vulnerable</h2>
 
         <div class="text-with-figure">
           <div>
@@ -73,7 +73,7 @@ const members = getMembers();
         </div>
       </section>
       <section class="section--tight">
-        <h2 class="small-caps text-center"><small>Our Solution&thinsp;—</small><br>Companies pay maintainers</h2>
+        <h2 class="small-caps text-center"><small>Our Solution&thinsp;—</small>Companies pay maintainers</h2>
 
         <p>
           The Open Source Pledge is a group of companies with a shared commitment to paying the maintainers of the Open
@@ -373,7 +373,8 @@ const members = getMembers();
 
 <style>
   h3 {
-    font-size: 1rem;
+    font-size: var(--font-size-m);
+    line-height: var(--line-height-m);
   }
   .team {
     display: grid;
@@ -411,7 +412,8 @@ const members = getMembers();
         }
         span {
           margin-bottom: 0.2rem;
-          font-size: 0.9rem;
+          font-size: var(--font-size-m);
+          line-height: var(--line-height-m);
         }
       }
     }
@@ -422,7 +424,7 @@ const members = getMembers();
     padding: 1rem;
     border-radius: var(--border-radius);
     h3 {
-      padding-bottom: 0.3rem;
+      padding-bottom: 1rem;
       border-bottom: 1px solid var(--color-muted);
     }
   }

@@ -32,7 +32,6 @@ const { name, role, imageUrl } = Astro.props;
     flex-direction: column;
     gap: 1rem;
     margin: 0;
-    font-size: 0.9rem;
     .testimonial-image {
       display: flex;
       align-items: flex-end;
@@ -51,7 +50,8 @@ const { name, role, imageUrl } = Astro.props;
       background-size: cover;
       border-radius: var(--border-radius-md);
       border-top-left-radius: var(--border-radius-lg);
-      font-size: 0.8rem;
+      font-size: var(--font-size-s);
+      line-height: var(--line-height-s);
       text-shadow: 0px 0px 10px var(--color-dark-bg);
       figcaption {
         strong, em {

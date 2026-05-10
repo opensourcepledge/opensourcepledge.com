@@ -40,10 +40,8 @@ const totalArc = getLastYearTotalRaised(getMembers());
                 </p>
               </div>
               <div class="totals">
-                <div>
-                  <strong>{fmtCurrency(totalArc)}</strong>
-                  past year, ${Math.floor(totalAlltime / 1000000)}M+ all time
-                </div>
+                <strong>{fmtCurrency(totalArc)}</strong>
+                <span>past year, ${Math.floor(totalAlltime / 1000000)}M+ all time</span>
               </div>
               <div>
                 <Button href="/about/">Learn More</Button>
@@ -89,7 +87,7 @@ const totalArc = getLastYearTotalRaised(getMembers());
             extraClasses="extra-endorsement"
           >
             <p
-              >The Open Source Pledge addresses a critical challenge facing the sustainability of the foundation upon
+              >The Pledge addresses a critical challenge facing the sustainability of the foundation upon
               which much of modern technology is built.</p
             >
           </Endorsement>
@@ -178,8 +176,8 @@ const totalArc = getLastYearTotalRaised(getMembers());
       }
       h1 {
         margin: 0;
-        font-size: 3.0rem;
-        line-height: 1.05;
+        font-size: var(--font-size-xxl);
+        line-height: var(--line-height-xxl);
       }
       p {
         text-wrap: balance;
@@ -227,7 +225,8 @@ const totalArc = getLastYearTotalRaised(getMembers());
           }
           b {
             font-family: var(--font-display);
-            font-size: 0.8rem;
+            font-size: var(--font-size-s);
+            line-height: var(--line-height-s);
           }
           .hero-post-info {
             display: flex;
@@ -235,23 +234,20 @@ const totalArc = getLastYearTotalRaised(getMembers());
             gap: 1rem;
             font-family: var(--font-body);
             h2 {
-              font-size: 1rem;
-              line-height: 1.33;
+              font-size: var(--font-size-m);
+              line-height: var(--line-height-m);
             }
           }
         }
       }
       .totals {
         display: flex;
-        gap: 3rem;
-        @media (max-width: 900px) {
-          flex-direction: column;
-          gap: 0.5rem;
-          margin-bottom: 0;
-        }
+        flex-direction: column;
+        gap: 5px;
         strong {
           display: block;
-          font-size: 1.8rem;
+          font-size: var(--font-size-xl);
+          line-height: var(--line-height-xl);
           font-weight: 800;
         }
       }
@@ -260,13 +256,14 @@ const totalArc = getLastYearTotalRaised(getMembers());
   .featured-endorsements {
     display: flex;
     gap: 3rem;
-    padding-bottom: 1rem;
+    padding-bottom: 20px;
     @media (max-width: 900px) {
       flex-direction: column;
     }
     .endorsement {
       flex: 1;
-      font-size: 0.9rem;
+      font-size: var(--font-size-s);
+      line-height: var(--line-height-s);
       figcaption {
         img {
           width: 2.3rem;
@@ -276,12 +273,6 @@ const totalArc = getLastYearTotalRaised(getMembers());
           display: none;
         }
       }
-    }
-  }
-  .bottom-cta {
-    h2 {
-      font-size: 2.8rem;
-      line-height: 1.2;
     }
   }
   .nasdaq-polaroid-section {
@@ -328,11 +319,6 @@ const totalArc = getLastYearTotalRaised(getMembers());
         flex-direction: column;
         align-items: center;
         padding-right: 0;
-      }
-    }
-    .bottom-cta {
-      h2 {
-        font-size: 2rem;
       }
     }
   }
