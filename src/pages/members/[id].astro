@@ -94,7 +94,7 @@ const memberJobs = jobSet.companies[Astro.params.id];
           <em>Joined on {dayjs(member.joinDate).format('DD MMM YYYY')}.</em>
         </p>
 
-        {member.annualReports.map(report => <section class="annual-report">
+        {member.annualReports.map(report => <section class="annual-report section--tight">
           <div>
             <h2>
               {report.year} Report, Submitted
