@@ -10,13 +10,13 @@ import {
 } from '../members/common.ts';
 ---
 
-<div class="total-tally">
-  <p>Our <a href="/members">Members</a> have paid maintainers</p>
+<div class="total-tally small-caps">
+  <p>Our Members have paid maintainers</p>
   <h2>{fmtCurrency(getLastYearTotalRaised(getMembers()))}</h2>
   <p
-    >over the last year, and
-    {fmtCurrency(getAllTimeTotalRaised(getMembers()))}
-    since launch.</p
+    >over the last year, and<br>
+    <span class="small-amount">{fmtCurrency(getAllTimeTotalRaised(getMembers()))}</span>
+    since launch</p
   >
 </div>
 
@@ -27,25 +27,29 @@ import {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 2rem 0;
     padding: 1rem;
     font-size: var(--font-size-l);
     line-height: var(--line-height-l);
+    font-family: var(--font-display);
+    font-variant-numeric: tabular-nums;
     p {
       margin: 0;
     }
-    h2 + p {
-      margin-top: 0.5rem;
-    }
     h2 {
       max-width: 100%;
-      margin: 10px 0;
+      margin-top: 15px;
+      margin-bottom: 20px;
       font-size: var(--font-size-xxl);
-      line-height: var(--line-height-xxl);
+      line-height: 1;
+    }
+    .small-amount {
+      font-size: 20px;
+    }
+    h2 {
       text-decoration: underline;
-      text-decoration-thickness: 0.5rem;
+      text-decoration-thickness: 7px;
       text-decoration-color: var(--color-primary);
-      text-underline-offset: 0.4rem;
+      text-underline-offset: 3px;
     }
   }
 </style>

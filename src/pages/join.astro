@@ -144,6 +144,10 @@ const currentYear = (new Date()).getFullYear();
     .step {
       /* QUIRK(@vlad): https://stackoverflow.com/a/66689926/3803222 */
       min-width: 0;
+      h3 {
+        font-size: var(--font-size-xl);
+        line-height: 1;
+      }
     }
     @media (max-width: 800px) {
       display: block;
