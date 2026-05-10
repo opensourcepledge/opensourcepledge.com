@@ -88,6 +88,9 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 0.7em;
   }
 }
+small {
+  font-size: 0.8rem;
+}
 p {
   margin: 1rem 0;
   text-align: justify;
@@ -425,6 +428,10 @@ p + .button {
 }
 section {
   margin: 5rem 0;
+  &.section--tight {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
   @media (max-width: 900px) {
     margin: 3rem 0;
   }
