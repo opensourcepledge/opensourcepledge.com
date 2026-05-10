@@ -22,7 +22,7 @@ const { members } = Astro.props;
         data-join-date={member.joinDate}
         data-name={member.name}
       >
-        <div class="main">
+        <div class="member__main">
           <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.name} logo`>
           <h2>
             <div>{member.name}</div>
@@ -31,7 +31,7 @@ const { members } = Astro.props;
             }
           </h2>
         </div>
-        <span>“{member.shortDescription}”</span>
+        <span class="member__desc">“{member.shortDescription}”</span>
         <div class="numbers">
           <span>{fmtDevs(member.annualReports[0].averageNumberOfDevs)}</span>
           <span>{fmtCurrency(getDollarsPerDev(member.annualReports[0]))} / dev</span>
@@ -78,7 +78,7 @@ const { members } = Astro.props;
       text-decoration: none;
       color: white;
     }
-    .main {
+    .member__main {
       display: flex;
       gap: 1rem;
       align-items: center;
@@ -101,13 +101,14 @@ const { members } = Astro.props;
         }
       }
     }
-    em {
+    .member__desc {
       flex: 1 0;
     }
     .numbers {
       flex: 0 1;
       display: flex;
       justify-content: space-between;
+      font-style: italic;
     }
   }
 </style>
