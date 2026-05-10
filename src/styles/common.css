@@ -427,14 +427,17 @@ fieldset {
   background: var(--color-mid-bg);
   legend {
     padding: 0.2rem 0.8rem;
+    padding-bottom: 0.3rem;
     background: var(--color-primary);
     color: var(--color-bg);
-    font-family: var(--font-monospace);
+    font-family: var(--font-display);
     font-weight: bold;
     font-variant-caps: small-caps;
     font-feature-settings: "smcp";
     text-transform: lowercase;
     letter-spacing: 1px;
+    font-size: var(--font-size-l);
+    line-height: var(--line-height-l);
   }
   ul {
     padding-left: 0;
