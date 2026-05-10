@@ -49,11 +49,17 @@ const totalArc = getLastYearTotalRaised(getMembers());
                 <Button href="/about/">Learn More</Button>
               </div>
             </div>
-            <div class="piggybank">
+            <div class="hero-image">
               <div
                 class="custom-blob custom-blob--b custom-blob--under"
                 style="top: -5%; right: -3.0rem"></div>
-              <img src="https://vlad.website/t/test-harriet.webp" alt="TODO">
+              <a href="/blog/npmx-a-lesson-in-open-source-collaboration-feedback-loops">
+                <b class="small-caps">Latest blog post</b>
+                <div class="hero-post-info">
+                  <h2>npmx: A Lesson in Open Source's Collaboration Feedback Loops</h2>
+                  <span>→</span>
+                </div>
+              </a>
             </div>
           </div>
         </section>
@@ -187,18 +193,52 @@ const totalArc = getLastYearTotalRaised(getMembers());
           text-align: left;
         }
       }
-      .piggybank {
+      .hero-image {
         position: relative;
-        display: flex;
-        align-items: flex-end;
-        img {
-          display: block;
-          width: 50rem;
+        width: 100%;
+        a {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          gap: 0.5rem;
+          width: 23rem;
+          padding: 1rem;
           max-width: 100%;
           position: relative;
           z-index: 95;
+          aspect-ratio: 0.76 / 1;
           border-top-left-radius: var(--border-radius-xl);
           border-top-right-radius: var(--border-radius-md);
+          background-image:
+            linear-gradient(
+              to bottom,
+              transparent,
+              transparent 50%,
+              var(--color-dark-bg) 92%,
+              var(--color-dark-bg)
+            ),
+            url(https://vlad.website/t/test-harriet.webp);
+          background-size: cover;
+          color: white;
+          text-decoration: none;
+          text-shadow: 0px 0px 10px var(--color-dark-bg);
+          @media (max-width: 900px) {
+            width: 100%;
+          }
+          b {
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+          }
+          .hero-post-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-family: var(--font-body);
+            h2 {
+              font-size: 1rem;
+              line-height: 1.33;
+            }
+          }
         }
       }
       .totals {

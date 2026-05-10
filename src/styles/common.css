@@ -44,6 +44,7 @@ SPDX-License-Identifier: Apache-2.0
 }
 :root {
   --color-bg: #080e17;
+  --color-dark-bg: #02060f;
   --color-light-bg: #16212d;
   --color-mid-bg: #0d131b;
   --color-primary: #2dde74;

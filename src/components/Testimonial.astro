@@ -43,8 +43,8 @@ const { name, role, imageUrl } = Astro.props;
           to bottom,
           transparent,
           transparent 60%,
-          black 92%,
-          black
+          var(--color-dark-bg) 92%,
+          var(--color-dark-bg)
         ),
         var(--imageUrl);
       background-position: center;
@@ -52,7 +52,7 @@ const { name, role, imageUrl } = Astro.props;
       border-radius: var(--border-radius-md);
       border-top-left-radius: var(--border-radius-lg);
       font-size: 0.8rem;
-      text-shadow: 0px 0px 10px black;
+      text-shadow: 0px 0px 10px var(--color-dark-bg);
       figcaption {
         strong, em {
           display: block;
