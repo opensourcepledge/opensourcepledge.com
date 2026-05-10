@@ -44,17 +44,14 @@ SPDX-License-Identifier = "LicenseRef-Restricted"
 
 [[annotations]]
 path = [
-    "public/fonts/azaret-mono*",
-    "public/fonts/AzeretMono*",
+    "public/fonts/ABC*",
 ]
-SPDX-FileCopyrightText = "Copyright The Azeret Project Authors (https://github.com/displaay/azeret)"
-SPDX-License-Identifier = "OFL-1.1"
-
+SPDX-FileCopyrightText = "© Pangram Pangram"
+SPDX-License-Identifier = "LicenseRef-Restricted"
 
 [[annotations]]
 path = [
-    "public/fonts/libre-franklin*",
-    "public/fonts/LibreFranklin*",
+    "public/fonts/PP*",
 ]
-SPDX-FileCopyrightText = "Copyright (c) Impallari Type (www.impallari.com)"
-SPDX-License-Identifier = "OFL-1.1"
+SPDX-FileCopyrightText = "© ABC Dinamo"
+SPDX-License-Identifier = "LicenseRef-Restricted"
