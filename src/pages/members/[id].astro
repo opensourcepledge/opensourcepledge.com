@@ -10,7 +10,7 @@ import TextButton from "../../components/TextButton.astro";
 import { getMembers, getDollarsPerDev, fmtCurrency } from '../../members/common.ts';
 import type { Member } from '../../members/common.ts';
 import type { SanityDocument } from "@sanity/client";
-import { ourSanityClient } from "../../sanityUtil.ts";
+import { sanityClient } from "../../sanityUtil.ts";
 import { urlForImage } from '../../sanityUtil.ts';
 import type { JobSet } from "../../jobs/index.ts";
 import jobSetRaw from "../../cache/jobSet.json";
@@ -47,7 +47,7 @@ const ARTICLE_QUERY = `*[_type == "article" && slug.current == $slug][0]{
 let memberArticle = undefined;
 let isMemberArticlePublished = false;
 if (member.blogProfileSlug) {
-  memberArticle = await ourSanityClient.fetch<SanityDocument>(ARTICLE_QUERY, { slug: member.blogProfileSlug });
+  memberArticle = await sanityClient.fetch<SanityDocument>(ARTICLE_QUERY, { slug: member.blogProfileSlug });
   isMemberArticlePublished = dayjs(memberArticle.publishDateTime).isBefore(dayjs().utc());
 }
 
