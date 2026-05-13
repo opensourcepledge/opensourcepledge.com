@@ -7,7 +7,7 @@ import utc from 'dayjs/plugin/utc';
 dayjs.extend(utc);
 
 import type { SanityDocument } from "@sanity/client";
-import { sanityClient } from "sanity:client";
+import { ourSanityClient } from "../sanityUtil.ts";
 
 const ARTICLES_QUERY = `*[_type == "article"]|order(publishDateTime desc){
   _id,
@@ -17,7 +17,7 @@ const ARTICLES_QUERY = `*[_type == "article"]|order(publishDateTime desc){
   author->{name, slug, avatar}
 }`;
 
-const articles = (await sanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY))
+const articles = (await ourSanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY))
   .filter((a) => dayjs(a.publishDateTime).isBefore(dayjs().utc()));
 
 const article = articles[0];

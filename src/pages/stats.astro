@@ -5,7 +5,7 @@
 import fs from 'fs';
 
 import type { SanityDocument } from "@sanity/client";
-import { sanityClient } from "sanity:client";
+import { ourSanityClient } from "../sanityUtil.ts";
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 dayjs.extend(utc);
@@ -31,7 +31,7 @@ async function countBlogPosts() {
     author->{name, slug, avatar}
   }`;
 
-  const articles = (await sanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY))
+  const articles = (await ourSanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY))
     .filter((a) => {
       if (showDrafts) {
         return !dayjs(a.publishDateTime).isBefore(dayjs().utc());

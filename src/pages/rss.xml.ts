@@ -9,7 +9,7 @@ import utc from 'dayjs/plugin/utc';
 dayjs.extend(utc);
 
 import type { SanityDocument } from "@sanity/client";
-import { sanityClient } from "sanity:client";
+import { ourSanityClient } from "../sanityUtil.ts";
 import { toHTML } from '@portabletext/to-html'
 import { urlForImage } from '../sanityUtil.ts';
 
@@ -23,7 +23,7 @@ const ARTICLES_QUERY = `*[_type == "article"]|order(publishDateTime desc){
 }`;
 
 export const GET: APIRoute = async (context) => {
-  const articles = (await sanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY))
+  const articles = (await ourSanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY))
     .filter((a) => dayjs(a.publishDateTime).isBefore(dayjs().utc()));
 
   const rssString = await getRssString({

@@ -11,7 +11,7 @@ import utc from 'dayjs/plugin/utc';
 dayjs.extend(utc);
 
 import type { SanityDocument } from "@sanity/client";
-import { sanityClient } from "sanity:client";
+import { ourSanityClient } from "../../sanityUtil.ts";
 import { PortableText } from "astro-portabletext";
 import { urlForImage } from '../../sanityUtil.ts';
 import Block from '../../portableTextComponents/Block.astro';
@@ -34,7 +34,7 @@ const ARTICLE_QUERY = `*[_type == "article" && slug.current == $slug][0]{
   content,
   author->{name, slug, avatar}
 }`;
-const article = await sanityClient.fetch<SanityDocument>(ARTICLE_QUERY, Astro.params);
+const article = await ourSanityClient.fetch<SanityDocument>(ARTICLE_QUERY, Astro.params);
 if (!article) {
   return Astro.rewrite('/404');
 }
@@ -44,7 +44,7 @@ export async function getStaticPaths(): Promise<{ params: { slug: string } }> {
   const SLUGS_QUERY = `*[_type == "article"]{
     "params": { "slug": slug.current }
   }`;
-  return await sanityClient.fetch(SLUGS_QUERY, Astro.params);
+  return await ourSanityClient.fetch(SLUGS_QUERY, Astro.params);
 }
 
 const components = {
