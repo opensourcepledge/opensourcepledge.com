@@ -52,11 +52,14 @@ const totalArc = getLastYearTotalRaised(getMembers());
                 class="custom-blob custom-blob--b custom-blob--under"
                 style="top: -5%; right: -3.0rem"></div>
               <a href="/blog/npmx-a-lesson-in-open-source-collaboration-feedback-loops">
-                <b class="small-caps">Latest blog post</b>
-                <div class="hero-post-info">
-                  <h2>npmx: A Lesson in Open Source's Collaboration Feedback Loops</h2>
-                  <span>→</span>
+                <div>
+                  <b class="small-caps">Latest blog post</b>
+                  <div class="hero-image__post-info">
+                    <h2>npmx: A Lesson in Open Source's Collaboration Feedback Loops</h2>
+                    <span>→</span>
+                  </div>
                 </div>
+                <div class="hero-image__credit">Daniel Roe, Steward of npmx</div>
               </a>
             </div>
           </div>
@@ -198,9 +201,9 @@ const totalArc = getLastYearTotalRaised(getMembers());
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
-          gap: 0.5rem;
+          gap: 10px;
           width: 23rem;
-          padding: 1rem;
+          padding: 15px;
           max-width: 100%;
           position: relative;
           z-index: 95;
@@ -211,10 +214,11 @@ const totalArc = getLastYearTotalRaised(getMembers());
             linear-gradient(
               to bottom,
               transparent,
-              transparent 50%,
+              transparent 45%,
+              var(--color-dark-bg) 96%,
               var(--color-dark-bg)
             ),
-            url(https://vlad.website/t/test-harriet.webp);
+            url(https://vlad.website/t/test-daniel.webp);
           background-size: cover;
           color: white;
           text-decoration: none;
@@ -227,16 +231,25 @@ const totalArc = getLastYearTotalRaised(getMembers());
             font-size: var(--font-size-s);
             line-height: var(--line-height-s);
           }
-          .hero-post-info {
+          .hero-image__post-info {
             display: flex;
             align-items: center;
             gap: 1rem;
             font-family: var(--font-body);
             h2 {
-              font-size: var(--font-size-m);
-              line-height: var(--line-height-m);
+              font-size: var(--font-size-l);
+              line-height: var(--line-height-l);
               margin-bottom: 0;
             }
+          }
+          .hero-image__credit {
+            position: absolute;
+            top: -20px;
+            right: 50px;
+            font-size: var(--font-size-xs);
+            line-height: var(--line-height-xs);
+            text-align: right;
+            color: var(--color-text-orange-faded);
           }
         }
       }
