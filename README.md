@@ -64,7 +64,7 @@ Most design work is done by Sentry's in-house creative team,
 [issues]: https://github.com/opensourcepledge/opensourcepledge.com/issues
 [join]: https://opensourcepledge.com/join/
 [launch-ticket]: https://github.com/opensourcepledge/opensourcepledge.com/issues/4
-[mailto]: mailto:chadwhitacre@sentry.io?&cc=vlad@vlad.website;michael.selvidge@sentry.io;greg.kumparak@sentry.io
+[mailto]: mailto:vlad@vlad.website
 [mastodon]: https://fosstodon.org/@opensourcepledge
 [newissue]: https://github.com/opensourcepledge/opensourcepledge.com/issues/new
 [openpath]: https://openpath.quest/
