@@ -541,12 +541,12 @@ p + .button {
 }
 section {
   margin: 5rem 0;
-  &.section--leading {
-    margin-top: 3rem;
-  }
   &.section--tight {
     margin-top: 3rem;
     margin-bottom: 3rem;
+  }
+  &.section--leading {
+    margin-top: 0;
   }
   @media (max-width: 900px) {
     margin: 3rem 0;
