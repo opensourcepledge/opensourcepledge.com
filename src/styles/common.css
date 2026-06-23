@@ -107,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
   small {
     display: block;
     &:last-child {
-      margin-top: 20px;
+      margin-top: 15px;
     }
   }
 }
@@ -117,7 +117,7 @@ h1 {
   line-height: var(--line-height-xxl);
   small {
     font-size: var(--font-size-l);
-    line-height: var(--line-height-l);
+    line-height: var(--line-height-m);
   }
 }
 h2 {
@@ -406,6 +406,7 @@ table {
   }
 }
 ul, ol {
+  padding-left: 15px;
   li {
     margin: 10px 0;
     &:first-child {
@@ -442,10 +443,12 @@ blockquote {
 fieldset {
   padding: 1rem;
   border: none;
+  border-radius: var(--border-radius);
   background: var(--color-mid-bg);
   legend {
     padding: 0.2rem 0.8rem;
     padding-bottom: 0.3rem;
+    border-radius: var(--border-radius);
     background: var(--color-primary);
     color: var(--color-bg);
     font-family: var(--font-display);

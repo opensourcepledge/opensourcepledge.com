@@ -201,6 +201,10 @@ const { full } = Astro.props;
       blockquote {
         font-size: var(--font-size-l);
         line-height: var(--line-height-l);
+        @media (max-width: 800px) {
+          font-size: var(--font-size-m);
+          line-height: var(--line-height-m);
+        }
       }
     }
   }
