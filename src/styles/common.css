@@ -765,19 +765,22 @@ footer {
     }
   }
   .footer-partners {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     .footer-partners__partner {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 1rem;
+      gap: 15px;
       @media (max-width: 900px) {
         flex-direction: column;
-        gap: 0.3rem;
+        gap: 3px;
       }
       img {
         position: relative;
         top: 1px;
-        max-height: 0.8rem;
+        width: 100px;
       }
     }
   }
