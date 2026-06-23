@@ -6,7 +6,6 @@
 interface Props {
   title?: string;
   canonicalUrl?: string;
-  navless?: boolean;
   preventIndexing?: boolean;
   ogDescription?: string;
   ogImageUrl?: string;
@@ -14,7 +13,7 @@ interface Props {
 }
 
 const {
-  title, canonicalUrl, navless, preventIndexing, ogDescription, ogImageUrl, ogImageAlt,
+  title, canonicalUrl, preventIndexing, ogDescription, ogImageUrl, ogImageAlt,
 } = Astro.props;
 
 import '../styles/common.css';
@@ -63,12 +62,12 @@ import '../styles/common.css';
   </head>
   <body>
     <a class="skiplink" href="#main-content">Skip to main content</a>
-    { !navless && (
-      <slot name="prebanner"></slot>
-      <nav class="container">
-        <a href="/">
-          <img src="/logos/opensourcepledge-logo-horiz-color.png" alt="The Open Source Pledge logo">
-        </a>
+    <slot name="prebanner"></slot>
+    <header class="container">
+      <a href="/">
+        <img src="/logos/opensourcepledge-logo-horiz-color.png" alt="The Open Source Pledge logo">
+      </a>
+      <nav class="nav--desktop">
         <div class="nav-group-set">
           <div class="nav-group">
             <a class="sneaky" href="/about">About</a>
@@ -81,7 +80,17 @@ import '../styles/common.css';
           </div>
         </div>
       </nav>
-    ) }
+      <button class="mobile-nav-trigger">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#ffffff" viewBox="0 0 256 256"><path d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"></path></svg>
+      </button>
+      <nav class="nav--mobile" hidden>
+        <a class="sneaky" href="/about">About</a>
+        <a class="sneaky" href="/members">Members</a>
+        <a class="sneaky" href="/jobs">Jobs</a>
+        <a class="sneaky" href="/blog">Blog</a>
+        <a href="/join"><div class="button button--block">Join</div></a>
+      </nav>
+    </header>
     <slot></slot>
     <footer>
       <div class="footer-main container">
@@ -143,5 +152,25 @@ import '../styles/common.css';
         </div>
       </div>
     </footer>
+<script>
+  import { debounceLeading } from '../util.ts';
+
+  let isNavOpen = false;
+  const $mobileNav = document.querySelector('nav.nav--mobile');
+  const $mobileNavTriggers = document.querySelectorAll('.mobile-nav-trigger');
+  $mobileNavTriggers.forEach(($mobileNavTrigger) => {
+    $mobileNavTrigger.addEventListener('click', debounceLeading(() => {
+      isNavOpen = !isNavOpen;
+      $mobileNav.hidden = !isNavOpen;
+      if (isNavOpen) {
+        document.body.classList.add('no-scroll');
+        document.documentElement.classList.add('no-scroll');
+      } else {
+        document.body.classList.remove('no-scroll');
+        document.documentElement.classList.remove('no-scroll');
+      }
+    }));
+  });
+</script>
   </body>
 </html>
