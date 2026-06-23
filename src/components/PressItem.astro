@@ -37,6 +37,7 @@ const { name, title, date, imageUrl, sourceUrl, hidden } = Astro.props;
       padding-bottom: 0.1rem; /* to counterbalance text-decoration */
       font-size: var(--font-size-l);
       line-height: var(--line-height-l);
+      text-decoration: none;
       @media (max-width: 800px) {
         font-size: var(--font-size-m);
         line-height: var(--line-height-m);
@@ -48,8 +49,8 @@ const { name, title, date, imageUrl, sourceUrl, hidden } = Astro.props;
     figcaption {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      margin-top: 0.7rem;
+      gap: 20px;
+      margin-top: 10px;
       @media (max-width: 800px) {
         font-size: var(--font-size-s);
         line-height: var(--line-height-s);

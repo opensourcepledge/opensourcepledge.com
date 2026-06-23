@@ -221,7 +221,10 @@ const { full } = Astro.props;
   .press-item-list {
     display: flex;
     flex-direction: column;
-    gap: 80px;
+    gap: 60px;
+    @media (max-width: 800px) {
+      gap: 80px;
+    }
   }
 </style>
 
