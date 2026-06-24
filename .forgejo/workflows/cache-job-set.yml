@@ -1,0 +1,27 @@
+name: Cache job set
+
+on:
+  schedule:
+    - cron: "25 16 * * 2"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write
+  issues: write
+
+jobs:
+  build:
+    runs-on: codeberg-tiny
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Install npm packages
+        run: npm install
+      - name: Cache job set
+        run: ./src/jobs/bin/cacheJobSet.ts
+      - name: Commit cache changes, if any
+        run: bash ./bin/commit-cache-changes
