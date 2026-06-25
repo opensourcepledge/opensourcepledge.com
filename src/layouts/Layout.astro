@@ -164,12 +164,14 @@ import '../styles/common.css';
   import { debounceLeading } from '../util.ts';
 
   let isNavOpen = false;
-  const $mobileNav = document.querySelector('nav.nav--mobile');
+  const $mobileNav: HTMLElement | null = document.querySelector('nav.nav--mobile');
   const $mobileNavTriggers = document.querySelectorAll('.mobile-nav-trigger');
   $mobileNavTriggers.forEach(($mobileNavTrigger) => {
     $mobileNavTrigger.addEventListener('click', debounceLeading(() => {
       isNavOpen = !isNavOpen;
-      $mobileNav.hidden = !isNavOpen;
+      if ($mobileNav) {
+        $mobileNav.hidden = !isNavOpen;
+      }
       if (isNavOpen) {
         document.body.classList.add('no-scroll');
         document.documentElement.classList.add('no-scroll');
