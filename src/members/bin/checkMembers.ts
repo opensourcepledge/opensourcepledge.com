@@ -10,8 +10,6 @@ import { Octokit } from '@octokit/rest';
 import {
   isReportDueSoon,
   isReportOverdue,
-  isMemberUrlNotRetrievable,
-  isReportUrlNotRetrievable,
   makeIssueIfNotExists,
 } from '../common.ts';
 import { getMembers } from '../../members/common.ts';
@@ -33,12 +31,6 @@ async function main() {
       await makeIssueIfNotExists(octokit, MemberException.ReportOverdue, member);
     } else if (isReportDueSoon(member)) {
       await makeIssueIfNotExists(octokit, MemberException.ReportDueSoon, member);
-    }
-    if (await isMemberUrlNotRetrievable(member)) {
-      await makeIssueIfNotExists(octokit, MemberException.MemberUrlNotRetrievable, member);
-    }
-    if (await isReportUrlNotRetrievable(member)) {
-      await makeIssueIfNotExists(octokit, MemberException.ReportUrlNotRetrievable, member);
     }
   }
 }
