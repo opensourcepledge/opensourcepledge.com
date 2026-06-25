@@ -12,8 +12,8 @@ import { performance } from 'perf_hooks';
 import { getMembers, getAllTimeTotalRaised, fmtCurrency } from '../common.ts';
 
 const FONT_FILES = [
-  './public/fonts/AzeretMono-Bold.ttf',
-  './public/fonts/LibreFranklin-Regular.ttf',
+  './public/fonts/PPMori-Regular.ttf',
+  './public/fonts/PPMori-Black.ttf',
 ];
 
 async function main() {
