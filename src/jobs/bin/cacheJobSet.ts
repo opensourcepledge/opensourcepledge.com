@@ -23,7 +23,7 @@ try {
   }
 
   const jobSetString = JSON.stringify(jobSet);
-  fs.writeFileSync('src/cache/jobSet.json', jobSetString);
+  fs.writeFileSync('data/jobSet.json', jobSetString);
   console.log('Saved to cache');
 } catch (e) {
   console.error(e);
