@@ -3,10 +3,6 @@
 // SPDX-License-Identifier: Apache-2.0
 // Written by Vlad-Stefan Harbuz <vlad@vlad.website>
 
-import fs from 'fs';
-
-import type { SanityDocument } from "@sanity/client";
-import { sanityClient } from "../sanityUtil.ts";
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 dayjs.extend(utc);
@@ -21,56 +17,11 @@ import {
   sortMembersByDevs,
 } from '../members/common.ts';
 
-async function countBlogPosts() {
-  const showDrafts = false;
-
-  const ARTICLES_QUERY = `*[_type == "article"]|order(publishDateTime desc){
-    _id,
-    title,
-    slug,
-    publishDateTime,
-    author->{name, slug, avatar}
-  }`;
-
-  const articles = (await sanityClient.fetch<SanityDocument[]>(ARTICLES_QUERY))
-    .filter((a) => {
-      if (showDrafts) {
-        return !dayjs(a.publishDateTime).isBefore(dayjs().utc());
-      } else {
-        return dayjs(a.publishDateTime).isBefore(dayjs().utc());
-      }
-    });
-
-  return articles.length;
-}
-
-/*
-HACK:
-To count press items and blog posts, we just read PressItemList.astro and EndorsementList.astro, and count the number of
-occurences of the strings `<PressItem` and `<Endorsement`, respectively. This is certainly a hack, but a more elegant
-solution would require moving the press item and endorsement data out of the .astro files, which would be more work, and
-would make editing these items more difficult in the future. We can figure out a better solution later.
-— vladh, 09 Dec 2025
-*/
-function countOccurencesInFile(filepath: string, pattern: RegExp) {
-  const fileContents = fs
-    .readFileSync(filepath)
-    .toString();
-  return (fileContents.match(pattern) || []).length;
-}
-
-function countPressItems() {
-  return countOccurencesInFile('src/components/PressItemList.astro', /<PressItem/g);
-}
-
-function countEndorsements() {
-  return countOccurencesInFile('src/components/EndorsementList.astro', /<Endorsement/g);
-}
-
-const members = getMembers();
-const maxNDevs = sortMembersByDevs(members)[0].annualReports[0].averageNumberOfDevs;
-const allTimeTotal = getAllTimeTotalRaised(members);
-const lastYearTotal = getLastYearTotalRaised(members);
+const activeMembers = getMembers();
+const allMembers = getMembers({ includeInactive: true });
+const maxNDevs = sortMembersByDevs(activeMembers)[0].annualReports[0].averageNumberOfDevs;
+const allTimeTotal = Math.floor(getAllTimeTotalRaised(allMembers));
+const lastYearTotal = Math.floor(getLastYearTotalRaised(activeMembers));
 ---
 
 <Layout
@@ -84,8 +35,6 @@ const lastYearTotal = getLastYearTotalRaised(members);
   <div class="container">
     <Blob kind="solid-fill-04" top="4%" right="-22rem"></Blob>
     <Blob kind="solid-fill-02" top="25%" left="-22rem"></Blob>
-    <Blob kind="grad-dots-05" top="33%" left="-16rem"></Blob>
-    <Blob kind="grad-dots-03" top="60%" right="-16rem"></Blob>
     <Blob kind="solid-fill-05" top="65%" left="-7rem"></Blob>
     <Blob kind="grad-dots-02" top="80%" left="-16rem"></Blob>
 
@@ -95,7 +44,7 @@ const lastYearTotal = getLastYearTotalRaised(members);
         <table>
           <tr>
             <td>Number of members</td>
-            <td>{members.length}</td>
+            <td>{activeMembers.length}</td>
           </tr>
           <tr>
             <td>Largest company by number of devs</td>
@@ -108,18 +57,6 @@ const lastYearTotal = getLastYearTotalRaised(members);
           <tr>
             <td>Rolling one-year total raised</td>
             <td>{fmtCurrency(lastYearTotal)}</td>
-          </tr>
-          <tr>
-            <td>Blog posts</td>
-            <td>{await countBlogPosts()}</td>
-          </tr>
-          <tr>
-            <td>Press items</td>
-            <td>{countPressItems()}</td>
-          </tr>
-          <tr>
-            <td>Endorsements</td>
-            <td>{countEndorsements()}</td>
           </tr>
         </table>
       </section>
