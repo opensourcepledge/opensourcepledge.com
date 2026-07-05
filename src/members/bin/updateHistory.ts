@@ -24,7 +24,7 @@ const allTimeTotal = Math.floor(getAllTimeTotalRaised(allMembers));
 const lastYearTotal = Math.floor(getLastYearTotalRaised(activeMembers));
 
 const timestamp = dayjs().utc().format('YYYY-MM-DD');
-const outputData = `${lastYearTotal},${allTimeTotal},${maxNDevs}`;
+const outputData = `${activeMembers.length},${lastYearTotal},${allTimeTotal},${maxNDevs}`;
 const outputLine = `${timestamp},${outputData}`;
 
 console.log(`Current tally: ${outputLine}`);
