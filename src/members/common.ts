@@ -37,6 +37,7 @@ export type MemberMap = {
 };
 export type MemberParams = {
   onlyInactive?: boolean;
+  includeInactive?: boolean;
 };
 
 export enum MemberException {
@@ -350,7 +351,15 @@ export function getMembers(params?: MemberParams): Member[] {
     );
   });
   return members
-    .filter((member) => member.active == !(params && params.onlyInactive))
+    .filter((member) => {
+      if (params && params.onlyInactive) {
+        return !member.active;
+      }
+      if (params && params.includeInactive) {
+        return true;
+      }
+      return member.active;
+    })
     .filter((member) => member.annualReports.length > 0)
     .map(sortReportsForMember);
 }

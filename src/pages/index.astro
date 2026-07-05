@@ -19,7 +19,7 @@ import {
   fmtCurrency,
 } from '../members/common.ts';
 
-const totalAlltime = getAllTimeTotalRaised(getMembers());
+const totalAlltime = getAllTimeTotalRaised(getMembers({ includeInactive: true }));
 const totalArc = getLastYearTotalRaised(getMembers());
 ---
 

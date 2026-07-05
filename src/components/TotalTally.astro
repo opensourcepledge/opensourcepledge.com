@@ -15,7 +15,7 @@ import {
     <p>Our members have<br>paid maintainers</p>
   </div>
   <div>
-    <h2>{fmtCurrency(getAllTimeTotalRaised(getMembers()))}</h2>
+    <h2>{fmtCurrency(getAllTimeTotalRaised(getMembers({ includeInactive: true })))}</h2>
     <p>since launch</p>
   </div>
   <div>
