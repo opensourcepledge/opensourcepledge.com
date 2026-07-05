@@ -66,7 +66,7 @@ def get_member_totals(member):
 
 
 def update_history(commit_date, stats):
-    output_data = f'{stats["arcAmount"]},{stats["totalAmount"]},{stats["maxDevs"]}'
+    output_data = f'{stats["nMembers"]},{stats["arcAmount"]},{stats["totalAmount"]},{stats["maxDevs"]}'
     output_line = f'{commit_date},{output_data}'
 
     history_path = '/tmp/history.csv'
@@ -91,6 +91,7 @@ def main():
     commit_date = get_commit_date()
     paths = get_member_paths()
     stats = {
+        'nMembers': 0,
         'arcAmount': 0,
         'totalAmount': 0,
         'maxDevs': 0,
@@ -98,6 +99,8 @@ def main():
     for path in paths:
         member = json.load(open(path))
         totals = get_member_totals(member)
+        if member.get('active', True):
+            stats['nMembers'] += 1
         stats['arcAmount'] += totals['arcAmount']
         stats['totalAmount'] += totals['totalAmount']
         if totals['maxDevs'] > stats['maxDevs']:
