@@ -1,5 +1,6 @@
 // © Functional Software, Inc. dba Sentry
 // SPDX-License-Identifier: Apache-2.0
+// Written by Vlad-Stefan Harbuz <vlad@vlad.website>
 
 import type { APIRoute } from 'astro';
 
