@@ -18,7 +18,7 @@ const FONT_FILES = [
 ];
 
 async function main() {
-  const allTimeTotal = fmtCurrency(getAllTimeTotalRaised(getMembers()));
+  const allTimeTotal = fmtCurrency(getAllTimeTotalRaised(getMembers({ includeInactive: true })));
   const svgTemplate = fs.readFileSync('./public/generated/templates/opengraph.svg').toString();
   const svg = svgTemplate.replace('{{ALL_TIME_TOTAL}}', allTimeTotal);
   console.log('Generated SVG file');
