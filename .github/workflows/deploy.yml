@@ -1,4 +1,4 @@
-name: Build, update members and deploy
+name: Build website (incl fetching and checking data)
 
 on:
   push:
@@ -15,12 +15,16 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Check out repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Run npm install
         run: npm install
+      - name: Cache job set
+        run: ./src/jobs/bin/cacheJobSet.ts
+      - name: Commit cache changes, if any
+        run: bash ./bin/commit-cache-changes
       - name: Check all member data
         run: ./src/members/bin/checkMembers.ts
         env:
