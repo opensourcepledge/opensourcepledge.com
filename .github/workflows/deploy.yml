@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - name: Run npm install
@@ -32,7 +32,7 @@ jobs:
       - name: Make OpenGraph image
         run: ./src/members/bin/makeOpenGraphImage.ts
       - name: Build website files
-        uses: withastro/action@v2
+        uses: withastro/action@b7d53628f8b666036b0238aadb0b984a2a489f26
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -42,4 +42,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
