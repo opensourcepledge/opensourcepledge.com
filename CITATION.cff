@@ -5,6 +5,8 @@ message: "Please use this information to cite the Open Source Pledge. See the pr
 authors:
 - family-names: "Harbuz"
   given-names: "Vlad-Stefan"
+- family-names: "Heath"
+  given-names: "Miranda"
 - family-names: "Kumparak"
   given-names: "Greg"
 - family-names: "Selvidge"
@@ -16,15 +18,6 @@ contact:
 - family-names: "Harbuz"
   given-names: "Vlad-Stefan"
   email: vlad@vlad.website
-- family-names: "Kumparak"
-  given-names: "Greg"
-  email: greg.kumparak@sentry.io
-- family-names: "Selvidge"
-  given-names: "Michael"
-  email: michael.selvidge@sentry.io
-- family-names: "Whitacre"
-  given-names: "Chad"
-  email: chadwhitacre@sentry.io
 title: "Open Source Pledge"
 date-released: 2024-10-08
 url: "https://opensourcepledge.com/"
