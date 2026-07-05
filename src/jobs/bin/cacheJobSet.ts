@@ -22,6 +22,7 @@ try {
     throw new Error('Got a total of 0 jobs. This seems funny. Aborting');
   }
 
+  /* TODO: Check if jobSet has changed before writing. */
   const jobSetString = JSON.stringify(jobSet);
   fs.writeFileSync('data/jobSet.json', jobSetString);
   console.log('Saved to cache');
