@@ -11,12 +11,11 @@ path = [
     "CNAME",
     "REUSE.toml",
     "astro.config.mjs",
-    "data/members/*",
+    "data/**",
     "package-lock.json",
     "package.json",
     "public/.well-known/atproto-did",
     "public/robots.txt",
-    "src/cache/jobSet.json",
     "src/env.d.ts",
     "tsconfig.json",
 ]

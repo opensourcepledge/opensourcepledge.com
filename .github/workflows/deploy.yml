@@ -23,8 +23,10 @@ jobs:
         run: npm install
       - name: Cache job set
         run: ./src/jobs/bin/cacheJobSet.ts
-      - name: Commit cache changes, if any
-        run: bash ./bin/commit-cache-changes
+      - name: Update history
+        run: ./src/members/bin/updateHistory.ts
+      - name: Commit data changes, if any
+        run: bash ./bin/commit-data-changes
       - name: Check all member data
         run: ./src/members/bin/checkMembers.ts
         env:
