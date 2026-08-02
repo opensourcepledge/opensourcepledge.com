@@ -13,7 +13,6 @@ type Job = {
 };
 
 export type JobSet = {
-  // fetchedTimestamp: number,
   companies: {
     [id: string]: Job[];
   };
@@ -333,7 +332,6 @@ async function getJobsForUrl(jobsUrl: string) {
 export async function getJobSet() {
   let jobSet: JobSet = {
     companies: {},
-    // fetchedTimestamp: +(new Date()),
   };
   const members = getMembers();
   for (const member of members) {
