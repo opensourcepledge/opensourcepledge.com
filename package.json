@@ -21,6 +21,7 @@
     "@sanity/image-url": "^2.1.1",
     "astro": "7.1.1",
     "astro-portabletext": "^0.12.0",
+    "chart.js": "^4.5.1",
     "cheerio": "^1.2.0",
     "dayjs": "^1.11.21",
     "node-fetch": "^3.3.2",

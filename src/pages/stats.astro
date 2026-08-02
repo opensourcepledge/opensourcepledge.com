@@ -3,6 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 // Written by Vlad-Stefan Harbuz <vlad@vlad.website>
 
+import fs from 'fs';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 dayjs.extend(utc);
@@ -22,6 +23,21 @@ const allMembers = getMembers({ includeInactive: true });
 const maxNDevs = sortMembersByDevs(activeMembers)[0].annualReports[0].averageNumberOfDevs;
 const allTimeTotal = Math.floor(getAllTimeTotalRaised(allMembers));
 const lastYearTotal = Math.floor(getLastYearTotalRaised(activeMembers));
+
+const tallyHistory = fs.readFileSync('./data/history.csv')
+  .toString()
+  .split('\n')
+  .reverse()
+  .map((line) => {
+    const parts = line.split(',');
+    return {
+      date: parts[0],
+      nMembers: +parts[1],
+      lastYearTotal: +parts[2],
+      allTimeTotal: +parts[3],
+      maxNDevs: +parts[4],
+    };
+  });
 ---
 
 <Layout
@@ -41,24 +57,30 @@ const lastYearTotal = Math.floor(getLastYearTotalRaised(activeMembers));
     <main id="main-content">
       <section>
         <h1>Stats</h1>
-        <table>
-          <tr>
-            <td>Number of members</td>
-            <td>{activeMembers.length}</td>
-          </tr>
-          <tr>
-            <td>Largest company by number of devs</td>
-            <td>{maxNDevs}</td>
-          </tr>
-          <tr>
-            <td>All-time total raised</td>
-            <td>{fmtCurrency(allTimeTotal)}</td>
-          </tr>
-          <tr>
-            <td>Rolling one-year total raised</td>
-            <td>{fmtCurrency(lastYearTotal)}</td>
-          </tr>
-        </table>
+        <article>
+          <table>
+            <tr>
+              <td>Number of members</td>
+              <td>{activeMembers.length}</td>
+            </tr>
+            <tr>
+              <td>Largest company by number of devs</td>
+              <td>{maxNDevs}</td>
+            </tr>
+            <tr>
+              <td>All-time total raised</td>
+              <td>{fmtCurrency(allTimeTotal)}</td>
+            </tr>
+            <tr>
+              <td>Rolling one-year total raised</td>
+              <td>{fmtCurrency(lastYearTotal)}</td>
+            </tr>
+          </table>
+          <h2>Chart of members and money raised</h2>
+          <canvas id="main-chart"></canvas>
+          <h2>Chart of largest company by number of devs</h2>
+          <canvas id="devs-chart"></canvas>
+        </article>
       </section>
     </main>
   </div>
@@ -74,3 +96,90 @@ const lastYearTotal = Math.floor(getLastYearTotalRaised(activeMembers));
     }
   }
 </style>
+
+<script
+  is:inline
+  id="tallyHistory"
+  type="application/json"
+  set:html={JSON.stringify(tallyHistory)}
+></script>
+
+<script>
+  import { Chart } from 'chart.js/auto';
+
+  const tallyHistory = JSON.parse(document.getElementById("tallyHistory")!.innerText);
+
+  new Chart(document.getElementById('main-chart'), {
+    type: 'bar',
+    data: {
+      labels: tallyHistory.map((d) => d.date),
+      datasets: [
+        {
+          label: '№ members',
+          data: tallyHistory.map((d) => d.nMembers),
+          borderWidth: 1,
+          yAxisID: 'members',
+          type: 'line',
+        },
+        {
+          label: 'Last year total',
+          data: tallyHistory.map((d) => d.lastYearTotal),
+          borderWidth: 1,
+          yAxisID: 'dollars',
+        },
+        {
+          label: 'All-time total',
+          data: tallyHistory.map((d) => d.allTimeTotal),
+          borderWidth: 1,
+          yAxisID: 'dollars',
+        },
+      ]
+    },
+    options: {
+      scales: {
+        members: {
+          type: 'linear',
+          display: true,
+          position: 'left',
+        },
+        dollars: {
+          type: 'linear',
+          display: true,
+          position: 'right',
+          ticks: {
+            callback: (value, index, values) => {
+              const formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0,
+              });
+              return formatter.format(value);
+            }
+          },
+        },
+      },
+    },
+  });
+
+  new Chart(document.getElementById('devs-chart'), {
+    type: 'line',
+    data: {
+      labels: tallyHistory.map((d) => d.date),
+      datasets: [
+        {
+          label: 'Max № devs',
+          data: tallyHistory.map((d) => d.maxNDevs),
+          borderWidth: 1,
+        },
+      ]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+        },
+      }
+    }
+  });
+</script>
