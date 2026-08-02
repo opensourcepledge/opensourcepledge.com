@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { createClient } from '@sanity/client';
-import imageUrlBuilder from "@sanity/image-url";
-import type { SanityAsset } from '@sanity/image-url/lib/types/types';
+import { createImageUrlBuilder } from '@sanity/image-url';
+import type { SanityAsset } from '@sanity/image-url';
 
 export const sanityClient = makeClient();
-export const imageBuilder = imageUrlBuilder(sanityClient);
+export const imageBuilder = createImageUrlBuilder(sanityClient);
 
 export function urlForImage(source: SanityAsset) {
   return imageBuilder.image(source).url();

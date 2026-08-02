@@ -44,7 +44,7 @@ export async function getStaticPaths(): Promise<{ params: { slug: string } }> {
   const SLUGS_QUERY = `*[_type == "article"]{
     "params": { "slug": slug.current }
   }`;
-  return await sanityClient.fetch(SLUGS_QUERY, Astro.params);
+  return await sanityClient.fetch(SLUGS_QUERY);
 }
 
 const components = {

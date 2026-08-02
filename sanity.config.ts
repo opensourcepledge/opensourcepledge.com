@@ -1,25 +1,9 @@
 // © Vlad-Stefan Harbuz <vlad@vlad.website>
 // SPDX-License-Identifier: Apache-2.0
 
-import { defineConfig, defineField } from "sanity";
-import { structureTool } from "sanity/structure";
-import React from 'react';
-
-class HighlightBox extends React.Component {
-  render() {
-    return React.createElement(
-      'div',
-      {
-        style: {
-          background: '#16212d',
-          borderRadius: '0.5rem',
-          padding: '1rem 1.25rem',
-          color: 'white',
-        }
-      },
-      ...(this.props as any).children);
-  }
-}
+import { defineConfig, defineField } from 'sanity';
+import { structureTool } from 'sanity/structure';
+import HighlightBox from './src/sanityEditorComponents/HighlightBox';
 
 export default defineConfig({
   projectId: '4jfayhvz',
