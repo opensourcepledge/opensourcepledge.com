@@ -20,7 +20,7 @@ the code, developer time, and gifts-in-kind that many Pledge member companies al
 
 * **Want to learn more?** Visit [opensourcepledge.com][osp].
 * **Want to join the Pledge?** [Find out how][join].
-* **Know a company that might be interested in joining the Pledge?** Introduce them to Vlad, the Plegde's director, [via
+* **Know a company that might be interested in joining the Pledge?** Introduce them to Vlad, the Pledge's director, [via
   email][mailto].
 * **Just want to keep up to date?** Follow us on [Mastodon][mastodon] or [Bluesky][bsky].
 * **Want to learn about the Pledge's background?** Read:
