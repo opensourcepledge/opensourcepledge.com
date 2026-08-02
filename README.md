@@ -18,7 +18,7 @@ Our goal is to establish a new social norm in the tech industry of companies pay
 of $2000 per year per developer on staff, to Open Source maintainers of each company’s choosing. This is in addition to
 the code, developer time, and gifts-in-kind that many Pledge member companies also contribute.
 
-* **Want to learn more?** Visit [opensourcepledge.com][osp].
+* **Want to learn more?** Visit [opensourcepledge.com][osp] and join our [Discord][discord].
 * **Want to join the Pledge?** [Find out how][join].
 * **Know a company that might be interested in joining the Pledge?** Introduce them to Vlad, the Pledge's director, [via
   email][mailto].
@@ -34,6 +34,7 @@ the code, developer time, and gifts-in-kind that many Pledge member companies al
 [bsky]: https://bsky.app/profile/opensourcepledge.com
 [cramer-author]: https://blog.sentry.io/authors/david-cramer/
 [crisis]: https://openpath.quest/2024/the-open-source-sustainability-crisis/
+[discord]: https://discord.com/invite/Ay5abGkaxX
 [fosdem-talk]: https://www.youtube.com/watch?v=UarZwUjFJpI
 [fosdem]: https://fosdem.org/2025/
 [join]: https://opensourcepledge.com/join/
