@@ -107,9 +107,22 @@ const tallyHistory = fs.readFileSync('./data/history.csv')
 <script>
   import { Chart } from 'chart.js/auto';
 
-  const tallyHistory = JSON.parse(document.getElementById("tallyHistory")!.innerText);
+  interface TallyHistoryItem {
+    date: string;
+    nMembers: number;
+    lastYearTotal: number;
+    allTimeTotal: number;
+    maxNDevs: number;
+  }
 
-  new Chart(document.getElementById('main-chart'), {
+  type TallyHistory = TallyHistoryItem[];
+
+  const tallyHistory = JSON.parse(document.getElementById('tallyHistory')!.innerText) as TallyHistory;
+
+  const $mainChart = document.getElementById('main-chart')! as HTMLCanvasElement;
+  const $devsChart = document.getElementById('devs-chart')! as HTMLCanvasElement;
+
+  new Chart($mainChart, {
     type: 'bar',
     data: {
       labels: tallyHistory.map((d) => d.date),
@@ -147,14 +160,14 @@ const tallyHistory = fs.readFileSync('./data/history.csv')
           display: true,
           position: 'right',
           ticks: {
-            callback: (value, index, values) => {
+            callback: (value: any) => {
               const formatter = new Intl.NumberFormat('en-US', {
                 style: 'currency',
                 currency: 'USD',
                 minimumFractionDigits: 0,
                 maximumFractionDigits: 0,
               });
-              return formatter.format(value);
+              return formatter.format(value.toString());
             }
           },
         },
@@ -162,7 +175,7 @@ const tallyHistory = fs.readFileSync('./data/history.csv')
     },
   });
 
-  new Chart(document.getElementById('devs-chart'), {
+  new Chart($devsChart, {
     type: 'line',
     data: {
       labels: tallyHistory.map((d) => d.date),
