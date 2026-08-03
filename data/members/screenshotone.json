@@ -1,0 +1,19 @@
+{
+  "id": "screenshotone",
+  "role": "Member",
+  "active": true,
+  "name": "ScreenshotOne",
+  "description": "ScreenshotOne wouldn’t exist without Open Source. It is built with Open Source languages, libraries, frameworks, and infrastructure maintained by people whose work we rely on every day.",
+  "shortDescription": "ScreenshotOne wouldn’t exist without Open Source. It is built with Open Source languages, libraries, frameworks, and infrastructure maintained by people whose work we rely on every day.",
+  "url": "https://screenshotone.com/blog/screenshotone-joins-the-open-source-pledge/",
+  "joinDate": "2026-08-03",
+  "annualReports": [
+    {
+      "url": "https://screenshotone.com/blog/screenshotone-joins-the-open-source-pledge/",
+      "year": "2026",
+      "reportDate": "2026-08-03",
+      "averageNumberOfDevs": 1,
+      "usdAmountPaid": 7950
+    }
+  ]
+}
