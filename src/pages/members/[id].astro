@@ -97,10 +97,11 @@ const memberJobs = jobSet.companies[Astro.params.id];
         {member.annualReports.map(report => <section class="annual-report section--tight">
           <div>
             <h2>
-              {report.year} Report, Submitted
-              <abbr title="Members submit once per year, but can submit at any point during the year, to accommodate eg differing international fiscal years.">
-                {dayjs(report.reportDate).format('DD MMM YYYY')}
-              </abbr>
+              {report.year} report
+              &middot; submitted <abbr
+              title="Members submit once per year, but can submit at any point during the year, to accommodate eg differing international fiscal years."
+                >{dayjs(report.reportDate).format('DD MMM YYYY')}</abbr
+              >
             </h2>
           </div>
 
