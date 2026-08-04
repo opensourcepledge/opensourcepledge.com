@@ -23,6 +23,20 @@ const allMembers = getMembers({ includeInactive: true });
 const maxNDevs = sortMembersByDevs(activeMembers)[0].annualReports[0].averageNumberOfDevs;
 const allTimeTotal = Math.floor(getAllTimeTotalRaised(allMembers));
 const lastYearTotal = Math.floor(getLastYearTotalRaised(activeMembers));
+const membersByRenewalDate = activeMembers.map((member) => {
+  return {
+    member: member,
+    renewalDate: dayjs(member.annualReports[0].reportDate).add(1, 'year'),
+  };
+}).toSorted((d1, d2) => {
+  if (d2.renewalDate.isBefore(d1.renewalDate)) {
+    return 1;
+  }
+  if (d2.renewalDate.isSame(d1.renewalDate)) {
+    return 0;
+  }
+  return -1;
+});
 
 const tallyHistory = fs.readFileSync('./data/history.csv')
   .toString()
@@ -58,7 +72,7 @@ const tallyHistory = fs.readFileSync('./data/history.csv')
       <section>
         <h1>Stats</h1>
         <article>
-          <table>
+          <table class="table--bordered">
             <tr>
               <td>Number of members</td>
               <td>{activeMembers.length}</td>
@@ -80,6 +94,30 @@ const tallyHistory = fs.readFileSync('./data/history.csv')
           <canvas id="main-chart"></canvas>
           <h2>Chart of largest company by number of devs</h2>
           <canvas id="devs-chart"></canvas>
+          <h2>Members by renewal date</h2>
+          <table class="members-table table--bordered table--lr">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Next renewal date</th>
+              </tr>
+            </thead>
+            <tbody class="members">
+              {membersByRenewalDate.map(({ member, renewalDate }) =>
+                <tr class="member">
+                  <td class="name">
+                    <a class="sneaky" href={`/members/${member.id}`}>
+                      <img src=`/images/members/${member.id}/logo.webp` alt=`The ${member.name} logo`>
+                      {member.name}
+                    </a>
+                  </td>
+                  <td>
+                    {renewalDate.format('DD MMM YYYY')}
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         </article>
       </section>
     </main>
@@ -87,12 +125,27 @@ const tallyHistory = fs.readFileSync('./data/history.csv')
 </Layout>
 
 <style>
-  table {
-    td {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  .members-table {
+    margin: 0;
+    td, th {
+      padding-left: 0;
+      padding-right: 0;
     }
-    tr:last-child td {
-      border-bottom: 0;
+    tr:has(td a:hover) td a {
+      color: var(--color-secondary);
+      text-decoration: none;
+    }
+    td {
+      a {
+        display: flex;
+        align-items: center;
+        padding: 5px 0;
+      }
+      img {
+        max-width: 2.0rem;
+        max-height: 100%;
+        margin-right: 1rem;
+      }
     }
   }
 </style>
