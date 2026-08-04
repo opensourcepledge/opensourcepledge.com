@@ -31,6 +31,9 @@ the code, developer time, and gifts-in-kind that many Pledge member companies al
     at [FOSDEM 2025][fosdem]
 * **Want to cite our work?** Click “cite this repository” in the top right.
 
+The Open Source Pledge is managed by [Vlad-Stefan Harbuz][vlad.website] ([email][mailto]) and funded by
+[Sentry][sentry].
+
 [bsky]: https://bsky.app/profile/opensourcepledge.com
 [cramer-author]: https://blog.sentry.io/authors/david-cramer/
 [crisis]: https://openpath.quest/2024/the-open-source-sustainability-crisis/
@@ -44,4 +47,5 @@ the code, developer time, and gifts-in-kind that many Pledge member companies al
 [osp]: https://opensourcepledge.com
 [pledgephil]: https://vlad.website/the-philosophy-of-the-open-source-pledge/
 [sentry-blog-post]: https://blog.sentry.io/join-the-pledge/
+[sentry]: https://sentry.io/
 [vlad.website]: https://vlad.website/
