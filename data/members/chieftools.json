@@ -9,6 +9,13 @@
   "joinDate": "2024-09-15",
   "annualReports": [
     {
+      "url": "https://chief.app/blog/renewing-our-open-source-pledge-2026",
+      "year": "2026",
+      "reportDate": "2026-09-16",
+      "averageNumberOfDevs": 1,
+      "usdAmountPaid": 2400
+    },
+    {
       "url": "https://chief.app/blog/renewing-our-open-source-pledge-2025",
       "year": "2025",
       "reportDate": "2025-09-11",
