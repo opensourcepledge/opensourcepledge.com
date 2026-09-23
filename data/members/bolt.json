@@ -10,6 +10,13 @@
   "joinDate": "2024-09-19",
   "annualReports": [
     {
+      "url": "https://bolt.new/blog/bolt-open-source-fund-2026",
+      "year": "2026",
+      "reportDate": "2026-08-21",
+      "averageNumberOfDevs": 27,
+      "usdAmountPaid": 82200
+    },
+    {
       "url": "https://blog.stackblitz.com/posts/bolt-100k-oss-fund/",
       "year": "2025",
       "reportDate": "2025-02-13",
