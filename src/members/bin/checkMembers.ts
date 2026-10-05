@@ -1,6 +1,6 @@
 #!/usr/bin/env -S npx tsx
 
-// © Vlad-Stefan Harbuz <vlad@vlad.website>
+// © Vlad Miricioiu <vlad@vlad.website>
 // SPDX-License-Identifier: Apache-2.0
 
 // Must be run in repository root.

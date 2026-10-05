@@ -1,4 +1,4 @@
-// © Vlad-Stefan Harbuz <vlad@vlad.website>
+// © Vlad Miricioiu <vlad@vlad.website>
 // SPDX-License-Identifier: Apache-2.0
 
 import { defineConfig, defineField } from 'sanity';
@@ -26,7 +26,7 @@ export default defineConfig({
           defineField({
             name: 'slug',
             title: 'Slug',
-            description: 'The URL part that identifies this author, such as vlad-stefan-harbuz',
+            description: 'The URL part that identifies this author, such as bob-smith',
             type: 'slug',
             options: {
               source: 'name',

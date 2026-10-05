@@ -1,5 +1,5 @@
 <!--
-© Vlad-Stefan Harbuz <vlad@vlad.website>
+© Vlad Miricioiu <vlad@vlad.website>
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 

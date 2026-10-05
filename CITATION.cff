@@ -3,7 +3,7 @@ cff-version: 1.2.0
 abstract: "Our goal is to make the Open Source ecosystem more sustainable by establishing a new social norm of companies paying the Open Source maintainers they depend on."
 message: "Please use this information to cite the Open Source Pledge. See the project's REUSE data for license information."
 authors:
-- family-names: "Harbuz"
+- family-names: "Miricioiu"
   given-names: "Vlad-Stefan"
 - family-names: "Heath"
   given-names: "Miranda"
@@ -14,7 +14,7 @@ authors:
 - family-names: "Whitacre"
   given-names: "Chad"
 contact:
-- family-names: "Harbuz"
+- family-names: "Miricioiu"
   given-names: "Vlad-Stefan"
   email: vlad@vlad.website
 title: "Open Source Pledge"

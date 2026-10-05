@@ -2,7 +2,7 @@
 
 # © Functional Software, Inc. dba Sentry
 # SPDX-License-Identifier: Apache-2.0
-# Written by Vlad-Stefan Harbuz
+# Written by Vlad Miricioiu
 
 """
 This script gets member statistics for a particular revision in the Open Source Pledge git repository.

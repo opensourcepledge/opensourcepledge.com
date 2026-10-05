@@ -1,7 +1,7 @@
 <!--
 © Functional Software, Inc. dba Sentry
 SPDX-License-Identifier: CC-BY-SA-4.0
-Written by Vlad-Stefan Harbuz <vlad@vlad.website>
+Written by Vlad Miricioiu <vlad@vlad.website>
 -->
 
 # Open Source Pledge EthicalAds Materials

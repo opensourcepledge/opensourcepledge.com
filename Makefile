@@ -1,4 +1,4 @@
-# © Vlad-Stefan Harbuz <vlad@vlad.website>
+# © Vlad Miricioiu <vlad@vlad.website>
 # SPDX-License-Identifier: Apache-2.0
 
 # This file is just used by Vlad to make staging deployments.

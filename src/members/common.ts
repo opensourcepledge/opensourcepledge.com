@@ -1,4 +1,4 @@
-// © Vlad-Stefan Harbuz <vlad@vlad.website>
+// © Vlad Miricioiu <vlad@vlad.website>
 // © Functional Software, Inc. dba Sentry
 // SPDX-License-Identifier: Apache-2.0
 
