@@ -4,6 +4,7 @@ import { defineConfig } from "astro/config";
 // https://astro.build/config
 export default defineConfig({
   site: "https://opensourcepledge.com",
+  compressHTML: true,
 
   redirects: {
     'opensourcepledge.pdf': '/open-source-pledge-one-pager.pdf',
