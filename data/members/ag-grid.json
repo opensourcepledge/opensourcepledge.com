@@ -1,7 +1,7 @@
 {
   "id": "ag-grid",
   "role": "Member",
-  "active": true,
+  "active": false,
   "name": "AG Grid",
   "description": "AG Grid is the best JavaScript Data Grid in the world, and now AG Charts is the best JavaScript Charting Library in the world, too. Since our foundation in 2016, we've always been strong supporters of the Open Source ecosystem, and we're proud to formalise this by joining the Open Source Pledge.",
   "shortDescription": "Since our foundation in 2016, we've always been strong supporters of the Open Source ecosystem.",
