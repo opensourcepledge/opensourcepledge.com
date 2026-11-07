@@ -1,0 +1,42 @@
+name: Build, update members and deploy
+
+on:
+  # TODO: Re-enable
+  # push:
+  #   branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write
+  issues: write
+
+jobs:
+  build:
+    # NOTE: Tested `codeberg-tiny` and it did not suffice. We should review
+    # this sometime in the future so as to minimally tax Codeberg's
+    # infrastructure.
+    # — vladh, 2025-11-27
+    runs-on: codeberg-small
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Run npm install
+        run: npm install
+      # TODO: Fix
+      # - name: Check all member data
+      #   run: ./src/members/bin/checkMembers.ts
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Install ImageMagick
+        run: sudo apt install imagemagick
+      - name: Build generated resources
+        run: ./bin/make-generated-resources
+      - name: Run npm build
+        run: npm run build
+      # TODO: Deploy
