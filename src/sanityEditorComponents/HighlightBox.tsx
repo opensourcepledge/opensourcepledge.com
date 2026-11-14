@@ -1,7 +1,5 @@
----
 // © Vlad Miricioiu <vlad@vlad.website>
 // SPDX-License-Identifier: Apache-2.0
----
 
 export default (props: any) => (
   <div
