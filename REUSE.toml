@@ -14,6 +14,8 @@ path = [
     "data/**",
     "package-lock.json",
     "package.json",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
     "public/.well-known/atproto-did",
     "public/robots.txt",
     "src/env.d.ts",
