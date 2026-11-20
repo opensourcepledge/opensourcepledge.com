@@ -54,6 +54,8 @@ if (member.blogProfileSlug) {
 /* Get jobs, if they exist */
 const jobSet = jobSetRaw as JobSet;
 const memberJobs = jobSet.companies[Astro.params.id];
+
+const renewalDate = dayjs(member.annualReports[0].reportDate).add(1, 'year');
 ---
 
 <Layout title={member.name}>
@@ -91,7 +93,10 @@ const memberJobs = jobSet.companies[Astro.params.id];
         <a href={member.url} target="_blank">Learn more →</a>
 
         <p>
-          <em>Joined on {dayjs(member.joinDate).format('DD MMM YYYY')}.</em>
+          <em>
+            Joined on {dayjs(member.joinDate).format('DD MMM YYYY')}.
+            Renewal due {renewalDate.format('DD MMM YYYY')}.
+          </em>
         </p>
 
         {member.annualReports.map(report => <section class="annual-report section--tight">
