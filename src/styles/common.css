@@ -1252,7 +1252,7 @@ hr {
     }
     &.picture--vlad-altctrlorg {
       min-height: 17rem;
-      background-image: url(https://cdn.kinopio.club/B2HeL3hVJJKqiy0KrvlwV/AltCtrOrg-Event-46.jpg);
+      background-image: url(https://static.vlad.website/vlad-with-altctrlorg-badge@2000px.webp);
       background-size: cover;
       background-position: center;
       border-radius: var(--border-radius-md);
