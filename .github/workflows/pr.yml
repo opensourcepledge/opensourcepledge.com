@@ -14,8 +14,6 @@ jobs:
         uses: actions/checkout@v7
       - name: Install pnpm
         uses: pnpm/setup@731dfb6463bbd11c11fd0ee11fe00ed0e36d48a1
-      - run: node --version
-      - run: pnpm test
       - name: Run pnpm install
         run: pnpm install
       - name: Run checks
