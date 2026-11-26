@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
-      - name: Run npm install
-        run: npm install
+      - name: Run pnpm install
+        run: pnpm install
       - name: Run checks
         run: npx astro check
       - name: Make OpenGraph image

@@ -19,8 +19,8 @@ jobs:
         uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - name: Run npm install
-        run: npm install
+      - name: Run pnpm install
+        run: pnpm install
       - name: Cache job set
         run: ./src/jobs/bin/cacheJobSet.ts
       - name: Update history
