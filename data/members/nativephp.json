@@ -1,0 +1,26 @@
+{
+  "id": "nativephp",
+  "role": "Member",
+  "active": true,
+  "name": "NativePHP",
+  "description": "Bifrost Technology builds the MIT-licensed SuperNative (aka NativePHP) and Bifrost. Together they provide the fastest way to build native apps with AI. We're joining the Open Source Pledge to show that Open Source projects aren't just takers; they can be givers too.",
+  "shortDescription": "We're joining the Open Source Pledge to show that Open Source projects aren't just takers; they can be givers too.",
+  "url": "https://nativephp.com/blog/open-source-pledge",
+  "joinDate": "2026-11-27",
+  "annualReports": [
+    {
+      "url": "https://nativephp.com/blog/open-source-pledge",
+      "year": "2026",
+      "reportDate": "2026-11-27",
+      "averageNumberOfDevs": 2,
+      "usdAmountPaid": 4000
+    },
+    {
+      "url": "https://nativephp.com/blog/open-source-pledge",
+      "year": "2025",
+      "reportDate": "2026-11-27",
+      "averageNumberOfDevs": 2,
+      "usdAmountPaid": 7393
+    }
+  ]
+}
