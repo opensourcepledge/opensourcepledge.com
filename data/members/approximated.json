@@ -1,0 +1,19 @@
+{
+  "id": "approximated",
+  "role": "Member",
+  "active": true,
+  "name": "Approximated",
+  "description": "Approximated runs custom domains and automatic HTTPS for SaaS products. Our proxies are built on Caddy, and we pay its maintainers through GitHub Sponsors. We're joining the Open Source Pledge because the Open Source we rely on should be funded, and we want to help make that the norm.",
+  "shortDescription": "We're joining the Open Source Pledge because the Open Source we rely on should be funded, and we want to help make that the norm.",
+  "url": "https://approximated.app/blog/open-source-pledge/",
+  "joinDate": "2026-11-26",
+  "annualReports": [
+    {
+      "url": "https://approximated.app/blog/open-source-pledge/",
+      "year": "2026",
+      "reportDate": "2026-11-26",
+      "averageNumberOfDevs": 1,
+      "usdAmountPaid": 3000
+    }
+  ]
+}
