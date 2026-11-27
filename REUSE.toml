@@ -45,14 +45,14 @@ SPDX-License-Identifier = "LicenseRef-Restricted"
 
 [[annotations]]
 path = [
-    "public/fonts/ABC*",
+    "public/fonts/PP*",
 ]
 SPDX-FileCopyrightText = "© Pangram Pangram"
 SPDX-License-Identifier = "LicenseRef-Restricted"
 
 [[annotations]]
 path = [
-    "public/fonts/PP*",
+    "public/fonts/ABC*",
 ]
 SPDX-FileCopyrightText = "© ABC Dinamo"
 SPDX-License-Identifier = "LicenseRef-Restricted"
